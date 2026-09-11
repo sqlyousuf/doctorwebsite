@@ -198,21 +198,25 @@ p:last-child { margin-bottom: 0; }
 
 .brand { display: flex; align-items: center; gap: 12px; }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
+/* Logo mark swaps between its light and colour variants, because the
+   header is transparent over the dark hero and cream once scrolled. */
+.brand-logo {
+  position: relative;
   flex: none;
-  border-radius: 13px;
-  background: linear-gradient(140deg, var(--teal-2), var(--pine));
-  color: var(--white);
-  display: grid;
-  place-items: center;
-  font-family: var(--serif);
-  font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  box-shadow: 0 8px 18px -8px rgba(11, 42, 37, 0.6);
+  width: 39px;
+  height: 56px;
 }
+.brand-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.35s ease;
+}
+.brand-logo .logo-on-light { opacity: 0; }
+.scrolled .brand-logo .logo-on-dark { opacity: 0; }
+.scrolled .brand-logo .logo-on-light { opacity: 1; }
 
 .brand-name {
   font-family: var(--serif);
@@ -871,9 +875,9 @@ p:last-child { margin-bottom: 0; }
   grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
   gap: clamp(30px, 4vw, 56px);
 }
-.site-footer .brand-name { color: var(--white); }
-.site-footer .brand-sub { color: rgba(255, 255, 255, 0.45); }
-.footer-brand p { margin: 20px 0 0; color: rgba(255, 255, 255, 0.55); font-size: 0.9rem; max-width: 34ch; }
+.footer-logo { display: inline-block; }
+.footer-logo img { width: 215px; height: auto; }
+.footer-brand p { margin: 22px 0 0; color: rgba(255, 255, 255, 0.55); font-size: 0.9rem; max-width: 34ch; }
 
 .footer-social { display: flex; gap: 10px; margin-top: 24px; }
 .footer-social a {
