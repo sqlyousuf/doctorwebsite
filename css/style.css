@@ -147,17 +147,33 @@ p { margin: 0 0 16px; color: var(--muted); }
 
 /* Hero */
 .hero {
-  background: radial-gradient(circle at 15% 20%, rgba(47,168,154,0.18), transparent 45%), var(--navy);
+  position: relative;
   color: var(--white);
-  padding: 90px 0 70px;
+  padding: 130px 0 110px;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(15,42,63,0.92) 0%, rgba(15,42,63,0.78) 45%, rgba(15,42,63,0.55) 100%);
+  z-index: -1;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 50px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  max-width: 640px;
 }
 
 .hero-eyebrow {
@@ -179,19 +195,10 @@ p { margin: 0 0 16px; color: var(--muted); }
 .hero-stat strong { display: block; font-size: 1.6rem; color: var(--white); }
 .hero-stat span { font-size: 0.82rem; color: #a9c2ca; }
 
-.hero-visual {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
-}
-
-.hero-visual img { width: 100%; height: 460px; object-fit: cover; }
-
 .hero-badge {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 28px;
+  right: 5%;
   background: var(--white);
   color: var(--navy);
   padding: 14px 18px;
@@ -202,6 +209,7 @@ p { margin: 0 0 16px; color: var(--muted); }
   gap: 12px;
   font-size: 0.85rem;
   font-weight: 600;
+  z-index: 2;
 }
 
 .hero-badge .stars { color: #f5a623; letter-spacing: 2px; }
@@ -420,8 +428,8 @@ section { padding: 84px 0; }
 
 /* Responsive */
 @media (max-width: 980px) {
-  .hero-grid, .about-grid, .insurance, .guide-cta { grid-template-columns: 1fr; }
-  .about-photo img, .hero-visual img { height: 340px; }
+  .about-grid, .insurance, .guide-cta { grid-template-columns: 1fr; }
+  .about-photo img { height: 340px; }
   .services-grid, .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -446,4 +454,6 @@ section { padding: 84px 0; }
   .guide-cta { padding: 36px 24px; }
   .footer-grid { grid-template-columns: 1fr; }
   .trust-row { justify-content: center; }
+  .hero { padding: 100px 0 90px; }
+  .hero-badge { position: static; margin-top: 32px; display: inline-flex; }
 }
