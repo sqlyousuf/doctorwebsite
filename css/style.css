@@ -511,12 +511,18 @@ p:last-child { margin-bottom: 0; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
   gap: clamp(40px, 6vw, 84px);
   align-items: center;
 }
 
-.about-media { position: relative; }
+/* Capped near the source photo's native 300px width so it stays sharp. */
+.about-media {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  justify-self: center;
+}
 .about-media::before {
   content: "";
   position: absolute;
@@ -533,8 +539,10 @@ p:last-child { margin-bottom: 0; }
 }
 .about-photo img {
   width: 100%;
-  height: clamp(380px, 52vw, 520px);
+  height: auto;
+  aspect-ratio: 300 / 396;
   object-fit: cover;
+  object-position: center top;
 }
 
 .about-chip {
