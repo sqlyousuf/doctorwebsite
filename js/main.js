@@ -42,21 +42,6 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach((item) => item.classList.add('in-view'));
 }
 
-// The floating CTA only appears once the hero (which has its own CTA) is past.
-const hero = document.getElementById('top');
-const pill = document.getElementById('candidatePill');
-if (hero && pill) {
-  pill.classList.add('hidden');
-  if ('IntersectionObserver' in window) {
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => pill.classList.toggle('hidden', entry.isIntersecting));
-    }, { threshold: 0.25 });
-    heroObserver.observe(hero);
-  } else {
-    pill.classList.remove('hidden');
-  }
-}
-
 // Some mobile browsers only allow autoplay once the video is muted,
 // inline, and explicitly kicked off after load (a plain autoplay
 // attribute is sometimes ignored on first paint on iOS/Android).
