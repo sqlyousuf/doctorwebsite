@@ -366,9 +366,11 @@ const copy = [
 
   // ---- language switcher: swap which side is active, and step up a level ----
   ['aria-label="Language"', 'aria-label="Idioma"', 1],
+  // Language names always appear in their own language on both pages, so only
+  // the hrefs and the active state change here.
   [
-    '<a href="index.html" hreflang="en" lang="en" class="is-active" aria-current="true">EN</a>\n  <a href="es/index.html" hreflang="es" lang="es">ES</a>',
-    '<a href="../index.html" hreflang="en" lang="en">EN</a>\n  <a href="index.html" hreflang="es" lang="es" class="is-active" aria-current="true">ES</a>',
+    '<a href="index.html" hreflang="en" lang="en" class="is-active" aria-current="true"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>English</a>\n  <a href="es/index.html" hreflang="es" lang="es"><svg class="flag" aria-hidden="true"><use href="#flag-es"/></svg>Español</a>',
+    '<a href="../index.html" hreflang="en" lang="en"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>English</a>\n  <a href="index.html" hreflang="es" lang="es" class="is-active" aria-current="true"><svg class="flag" aria-hidden="true"><use href="#flag-es"/></svg>Español</a>',
     1,
   ],
 
@@ -383,7 +385,9 @@ const copy = [
   ['poster="media/', 'poster="../media/', 1],
 ];
 
-let html = fs.readFileSync(srcPath, 'utf8');
+// Normalised to LF so the multi-line entries still match if git checks the
+// file out with CRLF line endings on Windows.
+let html = fs.readFileSync(srcPath, 'utf8').replace(/\r\n/g, '\n');
 const problems = [];
 
 for (const [en, es, expected] of copy) {

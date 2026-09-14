@@ -42,6 +42,19 @@
   <symbol id="ic-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="ic-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-3a5 5 0 0 0-5 5v3H4v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></symbol>
   <symbol id="ic-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 6.9a2.8 2.8 0 0 0-2-2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.2 12a29 29 0 0 0 .4 5.1 2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .4-5.1 29 29 0 0 0-.5-5.1z"/><path d="m9.8 15.3 5.7-3.3-5.7-3.3z"/></symbol>
+
+  <!-- Flags are drawn rather than set as emoji: Windows ships no flag glyphs,
+       so regional-indicator emoji render there as bare "US"/"ES" letter boxes. -->
+  <symbol id="flag-us" viewBox="0 0 21 15">
+    <rect width="21" height="15" fill="#ffffff"/>
+    <g fill="#b22234"><rect width="21" height="1.154" y="0"/><rect width="21" height="1.154" y="2.308"/><rect width="21" height="1.154" y="4.615"/><rect width="21" height="1.154" y="6.923"/><rect width="21" height="1.154" y="9.231"/><rect width="21" height="1.154" y="11.538"/><rect width="21" height="1.154" y="13.846"/></g>
+    <rect width="9" height="8.077" fill="#3c3b6e"/>
+    <g fill="#ffffff"><circle cx="1.6" cy="1.4" r="0.42"/><circle cx="4.5" cy="1.4" r="0.42"/><circle cx="7.4" cy="1.4" r="0.42"/><circle cx="3.05" cy="3.05" r="0.42"/><circle cx="5.95" cy="3.05" r="0.42"/><circle cx="1.6" cy="4.7" r="0.42"/><circle cx="4.5" cy="4.7" r="0.42"/><circle cx="7.4" cy="4.7" r="0.42"/><circle cx="3.05" cy="6.35" r="0.42"/><circle cx="5.95" cy="6.35" r="0.42"/></g>
+  </symbol>
+  <symbol id="flag-es" viewBox="0 0 21 15">
+    <rect width="21" height="15" fill="#c60b1e"/>
+    <rect width="21" height="7.5" y="3.75" fill="#ffc400"/>
+  </symbol>
 </svg>
 
 <!-- ======================= HEADER ======================= -->
@@ -465,8 +478,8 @@
 </footer>
 
 <nav class="lang-switch" aria-label="Idioma">
-  <a href="../index.html" hreflang="en" lang="en">EN</a>
-  <a href="index.html" hreflang="es" lang="es" class="is-active" aria-current="true">ES</a>
+  <a href="../index.html" hreflang="en" lang="en"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>English</a>
+  <a href="index.html" hreflang="es" lang="es" class="is-active" aria-current="true"><svg class="flag" aria-hidden="true"><use href="#flag-es"/></svg>Español</a>
 </nav>
 
 <a href="#contact" class="candidate-pill" id="candidatePill">¿Es Usted Candidato?</a>

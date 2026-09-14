@@ -958,10 +958,23 @@ p a:hover { text-decoration: underline; }
   letter-spacing: 0.12em;
 }
 .lang-switch a {
-  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
   color: var(--muted);
   line-height: 1.2;
+  white-space: nowrap;
   transition: background 0.25s ease, color 0.25s ease;
+}
+/* The hairline keeps the white stripes of the US flag legible on the
+   white pill, and the flag readable on the accent-filled active state. */
+.lang-switch .flag {
+  width: 19px;
+  height: 13.5px;
+  flex: none;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22);
 }
 .lang-switch a + a { border-left: 1px solid var(--line); }
 .lang-switch a:hover { color: var(--accent); }
@@ -1012,6 +1025,12 @@ p a:hover { text-decoration: underline; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero-video { animation: none; transform: scale(1.02); }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* The switcher is fixed at top left; on narrow screens the header needs to
+   start below it so the pill never sits on top of the centred logo. */
+@media (max-width: 620px) {
+  .header-inner { padding-top: 56px; }
 }
 
 /* ---------- Mobile nav ---------- */
