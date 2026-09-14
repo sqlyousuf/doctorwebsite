@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="media/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
   <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
   <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="ic-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+  <symbol id="ic-star-o" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z"/></symbol>
   <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="ic-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.2 14.3-1.4 7.2 5.2-2.8 5.2 2.8-1.4-7.2"/></symbol>
   <symbol id="ic-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
@@ -39,80 +40,116 @@
   <symbol id="ic-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 6.9a2.8 2.8 0 0 0-2-2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.2 12a29 29 0 0 0 .4 5.1 2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .4-5.1 29 29 0 0 0-.5-5.1z"/><path d="m9.8 15.3 5.7-3.3-5.7-3.3z"/></symbol>
 </svg>
 
+<!-- ======================= HEADER ======================= -->
 <header class="site-header" id="siteHeader">
-  <div class="nav-row">
+  <div class="header-inner">
     <a href="#top" class="brand">
-      <span class="brand-logo">
-        <img class="logo-on-dark" src="media/logo-mark-light.png" alt="" width="405" height="583">
-        <img class="logo-on-light" src="media/logo-mark.png" alt="" width="405" height="583">
-      </span>
-      <span>
-        <span class="brand-name">Houston Surgical Weight Loss</span>
-        <span class="brand-sub">Bariatric &amp; Weight Loss Center</span>
-      </span>
+      <img class="brand-mark" src="media/logo-mark.png" alt="" width="405" height="583">
+      <span class="brand-name">Houston Surgical</span>
+      <span class="brand-name brand-name-lg">Weight Loss</span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Procedures</a></li>
-      <li><a href="#about">Our Surgeon</a></li>
-      <li><a href="#process">How It Works</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#testimonials">Stories</a></li>
-      <li><a href="#insurance">Insurance</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="tel:+15552104488" class="nav-phone"><svg><use href="#ic-phone"/></svg> (555) 210-4488</a>
-      <a href="#contact" class="btn btn-outline nav-cta">Book a Consult</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+
+    <nav class="nav-wrap">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Procedures</a></li>
+        <li><a href="#about">Our Surgeon</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#insurance">Insurance</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <a href="#insurance" class="btn btn-solid header-cta">Request a Free Insurance Check</a>
   </div>
 </header>
 
+<!-- ======================= HERO ======================= -->
 <section class="hero" id="top">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none" poster="media/hero-poster.jpg">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="media/hero-poster.jpg">
     <source src="media/hero-bg.mp4" type="video/mp4">
   </video>
-  <div class="hero-overlay"></div>
-  <div class="container">
-    <div class="hero-inner">
-      <span class="eyebrow reveal">Bariatric Surgery &amp; Medical Weight Loss</span>
-      <h1 class="reveal" style="--delay:80ms">A lighter you starts with a plan <em>built around your life</em>.</h1>
-      <p class="lead reveal" style="--delay:160ms">Dr. Irfan Wadiwala and the Houston Surgical Weight Loss team combine surgical expertise, nutrition coaching, and long-term support to help patients reach a healthier weight — safely and sustainably.</p>
-      <div class="hero-actions reveal" style="--delay:240ms">
-        <a href="#contact" class="btn btn-gold">Schedule a Free Consultation <svg><use href="#ic-arrow"/></svg></a>
-        <a href="#services" class="btn btn-ghost">Explore Procedures</a>
-      </div>
-      <div class="hero-stats reveal" style="--delay:320ms">
-        <div class="hero-stat"><strong>18+</strong><span>Years in Practice</span></div>
-        <div class="hero-stat"><strong>3,000+</strong><span>Patients Treated</span></div>
-        <div class="hero-stat"><strong>4.9 / 5</strong><span>Patient Rating</span></div>
-      </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <img class="hero-mark reveal" src="media/logo-mark-light.png" alt="" width="405" height="583">
+    <p class="hero-kicker reveal" style="--delay:90ms">Houston Surgical</p>
+    <h1 class="hero-word reveal" style="--delay:150ms">Weight Loss</h1>
+    <p class="hero-tag reveal" style="--delay:220ms">Bariatric Surgery &amp; Medical Weight Loss</p>
+    <a href="#contact" class="btn btn-outline-light hero-cta reveal" style="--delay:300ms">Get Started Now</a>
+    <div class="hero-rating reveal" style="--delay:380ms">
+      <span class="stars">
+        <svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg>
+      </span>
+      <span class="hero-rating-text"><strong>4.9</strong> | 3,000+ patients treated</span>
     </div>
   </div>
-  <div class="hero-badge">
-    <span class="stars">
-      <svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg>
-    </span>
-    Rated 4.9/5 by patients
-  </div>
+
+  <a class="hero-scroll" href="#why" aria-label="Scroll to content"><span></span></a>
 </section>
 
-<div class="trust-strip">
-  <div class="container trust-row">
-    <div class="trust-item"><svg><use href="#ic-shield"/></svg> Board-Certified Bariatric Surgeon</div>
-    <div class="trust-item"><svg><use href="#ic-award"/></svg> Fellowship-Trained Specialist</div>
-    <div class="trust-item"><svg><use href="#ic-card"/></svg> Most Major Insurance Accepted</div>
-    <div class="trust-item"><svg><use href="#ic-video"/></svg> In-Person &amp; Virtual Consults</div>
-  </div>
-</div>
-
-<section id="services">
+<!-- ======================= WHY US ======================= -->
+<section id="why" class="pad-lg">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">What We Offer</span>
-      <h2>Procedures tailored to your goals</h2>
-      <p>Dr. Wadiwala offers a full range of minimally invasive weight-loss and general surgery procedures, matched to your health history and goals during a one-on-one consultation.</p>
+    <h2 class="display center reveal">Bariatric Surgery and<br>Medical Weight Loss</h2>
+    <ul class="star-list reveal">
+      <li><svg><use href="#ic-star-o"/></svg> Board-Certified, Fellowship-Trained Bariatric Surgeon</li>
+      <li><svg><use href="#ic-star-o"/></svg> Houston Location with In-Person &amp; Virtual Consultations</li>
+      <li><svg><use href="#ic-star-o"/></svg> Rated 4.9 / 5 Across 3,000+ Patients Treated</li>
+      <li><svg><use href="#ic-star-o"/></svg> Most Major Insurance Plans Accepted</li>
+      <li><svg><use href="#ic-star-o"/></svg> 18+ Years of Surgical Experience</li>
+      <li><svg><use href="#ic-star-o"/></svg> Surgical and Medical Weight Loss with Proven Results</li>
+    </ul>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ======================= LIFESTYLE STRIP ======================= -->
+<section class="word-strip pad-sm">
+  <div class="container word-stack">
+    <figure class="word-panel reveal">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" loading="lazy">
+      <figcaption>Powerful.</figcaption>
+    </figure>
+    <figure class="word-panel reveal">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" loading="lazy">
+      <figcaption>Thriving.</figcaption>
+    </figure>
+    <figure class="word-panel reveal">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" loading="lazy">
+      <figcaption>Confident.</figcaption>
+    </figure>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ======================= INTRO: SURGICAL / MEDICAL ======================= -->
+<section class="pad-lg">
+  <div class="container split">
+    <div class="reveal">
+      <h2 class="display">Bariatric Surgical<br>Weight Loss</h2>
+      <p>Houston Surgical Weight Loss, with Dr. Irfan Wadiwala, offers a full range of <a href="#services">minimally invasive bariatric procedures</a> — including gastric sleeve, gastric bypass, gastric balloon, lap-band, and revision surgery — so you can choose the option that best fits your health history and your goals.</p>
+      <a href="#services" class="btn btn-outline">Explore Procedures</a>
     </div>
+    <div class="reveal" style="--delay:120ms">
+      <h2 class="display">Medical<br>Weight Loss</h2>
+      <p>Not everyone needs surgery. Dr. Wadiwala and our nutrition team work closely with you to assess your medical history and weight-loss goals, then build a physician-supervised plan using nutrition planning, behavioral coaching, and medication support tailored to you.</p>
+      <a href="#process" class="btn btn-outline">See How It Works</a>
+    </div>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ======================= PROCEDURES ======================= -->
+<section id="services" class="pad-lg">
+  <div class="container">
+    <h2 class="display bar reveal">Bariatric Surgical Options</h2>
     <div class="card-grid">
       <article class="card reveal">
         <span class="card-index">01</span>
@@ -151,145 +188,128 @@
         <p>Gallbladder removal, hernia repair, and appendectomy performed with the same minimally invasive, patient-first approach.</p>
       </article>
     </div>
+    <div class="center-cta"><a href="#contact" class="btn btn-outline">Learn More</a></div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section class="about" id="about">
-  <div class="container about-grid">
-    <div class="about-media reveal">
-      <div class="about-photo">
+<!-- ======================= ABOUT ======================= -->
+<section class="about pad-lg" id="about">
+  <div class="container">
+    <h2 class="display bar reveal">Meet Your Surgeon</h2>
+    <div class="about-grid">
+      <figure class="about-media reveal">
         <img src="media/Dr-Irfan-Wadiwala-DO-62235-zoom.jpg" width="300" height="396" alt="Dr. Irfan Wadiwala, bariatric and general surgeon">
+        <figcaption>Dr. Irfan Wadiwala, DO</figcaption>
+      </figure>
+      <div class="reveal" style="--delay:120ms">
+        <p>Dr. Wadiwala is a fellowship-trained bariatric and general surgeon with over 18 years of experience helping patients achieve meaningful, lasting weight loss. He founded Houston Surgical Weight Loss to give patients a practice that treats the whole person — not just the procedure — with honest guidance and steady support at every step, from the first consultation through long-term follow-up.</p>
+        <ul class="check-list">
+          <li><svg><use href="#ic-check"/></svg> Board-Certified in General &amp; Bariatric Surgery</li>
+          <li><svg><use href="#ic-check"/></svg> Fellowship-Trained in Minimally Invasive &amp; Bariatric Surgery</li>
+          <li><svg><use href="#ic-check"/></svg> Member, American Society for Metabolic &amp; Bariatric Surgery</li>
+          <li><svg><use href="#ic-check"/></svg> 18+ Years of Surgical Experience</li>
+        </ul>
+        <a href="#contact" class="btn btn-solid">Request a Consultation</a>
       </div>
-      <div class="about-chip">
-        <strong>18+</strong>
-        <span>Years of Experience</span>
-      </div>
-    </div>
-    <div class="reveal" style="--delay:120ms">
-      <span class="eyebrow">Meet Your Surgeon</span>
-      <h2>Dr. Irfan Wadiwala</h2>
-      <p>Dr. Wadiwala is a fellowship-trained bariatric and general surgeon with over 18 years of experience helping patients achieve meaningful, lasting weight loss. He founded Houston Surgical Weight Loss to give patients a practice that treats the whole person — not just the procedure — with honest guidance and steady support at every step, from the first consultation through long-term follow-up.</p>
-      <ul class="credential-list">
-        <li><svg><use href="#ic-check"/></svg> Board-Certified in General &amp; Bariatric Surgery</li>
-        <li><svg><use href="#ic-check"/></svg> Fellowship-Trained in Minimally Invasive &amp; Bariatric Surgery</li>
-        <li><svg><use href="#ic-check"/></svg> Member, American Society for Metabolic &amp; Bariatric Surgery</li>
-        <li><svg><use href="#ic-check"/></svg> 18+ Years of Surgical Experience</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary">Request a Consultation <svg><use href="#ic-arrow"/></svg></a>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section id="process" class="bg-white">
+<!-- ======================= PROCESS ======================= -->
+<section id="process" class="pad-lg">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Getting Started</span>
-      <h2>Your path, in four steps</h2>
-      <p>Every patient starts with a conversation. Here's what to expect from your first call to your first follow-up.</p>
-    </div>
+    <h2 class="display center reveal">Your Path, In Four Steps</h2>
+    <p class="intro center reveal">Every patient starts with a conversation. Here's what to expect from your first call to your first follow-up.</p>
     <div class="process-steps">
-      <div class="step reveal">
-        <div class="step-num">1</div>
-        <h3>Free Consultation</h3>
-        <p>Discuss your health history, goals, and options with our care team, in person or virtually.</p>
-      </div>
-      <div class="step reveal" style="--delay:90ms">
-        <div class="step-num">2</div>
-        <h3>Insurance Review</h3>
-        <p>We verify your coverage and walk you through costs, financing, or self-pay options.</p>
-      </div>
-      <div class="step reveal" style="--delay:180ms">
-        <div class="step-num">3</div>
-        <h3>Personalized Plan</h3>
-        <p>Dr. Wadiwala builds a surgical or medical weight-loss plan tailored to your goals.</p>
-      </div>
-      <div class="step reveal" style="--delay:270ms">
-        <div class="step-num">4</div>
-        <h3>Ongoing Support</h3>
-        <p>Regular follow-ups with our surgical, nutrition, and coaching team keep you on track.</p>
-      </div>
+      <div class="step reveal"><div class="step-num">1</div><h3>Free Consultation</h3><p>Discuss your health history, goals, and options with our care team, in person or virtually.</p></div>
+      <div class="step reveal" style="--delay:90ms"><div class="step-num">2</div><h3>Insurance Review</h3><p>We verify your coverage and walk you through costs, financing, or self-pay options.</p></div>
+      <div class="step reveal" style="--delay:180ms"><div class="step-num">3</div><h3>Personalized Plan</h3><p>Dr. Wadiwala builds a surgical or medical weight-loss plan tailored to your goals.</p></div>
+      <div class="step reveal" style="--delay:270ms"><div class="step-num">4</div><h3>Ongoing Support</h3><p>Regular follow-ups with our surgical, nutrition, and coaching team keep you on track.</p></div>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section class="testimonials" id="testimonials">
+<!-- ======================= TESTIMONIALS ======================= -->
+<section class="testimonials pad-lg" id="testimonials">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Patient Stories</span>
-      <h2>Real results from real patients</h2>
-      <p>A few of the stories that keep us motivated every day.</p>
-    </div>
+    <h2 class="display bar reveal">What Our Patients Are Saying</h2>
     <div class="testimonial-grid">
       <article class="testimonial-card reveal">
-        <span class="quote-mark">&ldquo;</span>
-        <span class="stars">
-          <svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg>
-        </span>
+        <h3>Maria S.</h3>
+        <p class="t-sub">I finally feel comfortable in my own skin.</p>
         <blockquote>The whole team made me feel supported from day one. Eighteen months later I'm active, off my blood pressure medication, and finally comfortable in my own skin.</blockquote>
-        <div class="testimonial-author">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="">
-          <div><strong>Maria S.</strong><span>Gastric Sleeve Patient</span></div>
+        <div class="t-foot">
+          <span class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></span>
+          <span>Gastric Sleeve Patient</span>
         </div>
       </article>
       <article class="testimonial-card reveal" style="--delay:90ms">
-        <span class="quote-mark">&ldquo;</span>
-        <span class="stars">
-          <svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg>
-        </span>
+        <h3>James T.</h3>
+        <p class="t-sub">A plan I could actually stick to.</p>
         <blockquote>I tried every diet before coming here. The medical weight loss program finally gave me a plan I could actually stick to, with real accountability.</blockquote>
-        <div class="testimonial-author">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="">
-          <div><strong>James T.</strong><span>Medical Weight Loss Patient</span></div>
+        <div class="t-foot">
+          <span class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></span>
+          <span>Medical Weight Loss Patient</span>
         </div>
       </article>
       <article class="testimonial-card reveal" style="--delay:180ms">
-        <span class="quote-mark">&ldquo;</span>
-        <span class="stars">
-          <svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg>
-        </span>
+        <h3>Priya K.</h3>
+        <p class="t-sub">I've never felt more informed about a decision.</p>
         <blockquote>Dr. Wadiwala took the time to answer every question, even the ones I was embarrassed to ask. I've never felt more informed about a decision.</blockquote>
-        <div class="testimonial-author">
-          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&q=80" alt="">
-          <div><strong>Priya K.</strong><span>Gastric Bypass Patient</span></div>
+        <div class="t-foot">
+          <span class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></span>
+          <span>Gastric Bypass Patient</span>
         </div>
       </article>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section id="insurance">
-  <div class="container insurance-grid">
+<!-- ======================= INSURANCE / SELF-PAY ======================= -->
+<section id="insurance" class="pad-lg">
+  <div class="container narrow">
+    <h2 class="display center reveal">Insurance</h2>
     <div class="reveal">
-      <span class="eyebrow">Insurance &amp; Affordability</span>
-      <h2>Making weight-loss care accessible</h2>
-      <p>Our team works directly with your insurance provider to confirm your coverage before you commit to anything — and offers flexible plans for patients paying out of pocket.</p>
-      <p>Most major insurance plans cover bariatric surgery when medical necessity criteria are met. We'll tell you exactly where you stand before you take the next step.</p>
-      <a href="#contact" class="btn btn-outline" style="margin-top:10px">Check My Insurance <svg><use href="#ic-arrow"/></svg></a>
-    </div>
-    <div class="price-card reveal" style="--delay:120ms">
-      <h3>What's typically covered</h3>
-      <ul class="covered-list">
+      <p>At Houston Surgical Weight Loss, we make it easy to check your insurance coverage for bariatric surgery. Our team offers a free insurance verification to see if your plan covers weight loss surgery and to review your estimated out-of-pocket costs.</p>
+      <p>We accept most major commercial insurance, Medicare, and Medicaid plans to help more patients get the care they need. Our goal is to make the bariatric surgery process simple, clear, and stress-free.</p>
+      <ul class="check-list">
         <li><svg><use href="#ic-check"/></svg> Initial consultation &amp; evaluation</li>
         <li><svg><use href="#ic-check"/></svg> Pre-operative nutrition &amp; psych clearance</li>
         <li><svg><use href="#ic-check"/></svg> Surgical procedure &amp; hospital stay</li>
         <li><svg><use href="#ic-check"/></svg> Post-op follow-up visits (12 months)</li>
       </ul>
-      <div class="price-note">
-        <strong>From $6,999</strong>
-        <p>Self-pay sleeve gastrectomy pricing, with flexible monthly financing and reduced-cost programs available for qualifying patients.</p>
-      </div>
+      <div class="center-cta"><a href="#contact" class="btn btn-outline">Insurance Check</a></div>
+    </div>
+
+    <hr class="mini-rule">
+
+    <h2 class="display center reveal">Self-Pay</h2>
+    <div class="reveal">
+      <p>With self-pay bariatric surgery starting at just $6,999, Houston Surgical Weight Loss offers one of the most affordable gastric sleeve and gastric bypass programs in the region.</p>
+      <p>We accept cash, cashier's checks, debit cards, credit cards, and financing to help make weight loss surgery possible. Flexible monthly plans and reduced-cost programs are available for qualifying patients.</p>
+    </div>
+
+    <div class="price-block reveal">
+      <span class="price-label">Self-Pay Rates</span>
+      <span class="price-starting">Starting at</span>
+      <span class="price-figure">$6,999*</span>
+      <img src="media/hero-poster.jpg" alt="Operating room at Houston Surgical Weight Loss" loading="lazy">
+      <p class="price-fine">*Additional program fee applies to all surgeries, and includes your initial and final consultations with your surgeon, educational materials, nutrition guidance, and access to our support programs.</p>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section id="resources" class="about">
+<!-- ======================= RESOURCES ======================= -->
+<section id="resources" class="pad-lg">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Patient Resources</span>
-      <h2>Support before and after your procedure</h2>
-      <p>Weight-loss surgery is a lifelong journey. Our team stays with you at every stage, not just the day of surgery.</p>
-    </div>
-    <div class="card-grid">
+    <h2 class="display bar reveal">Patient Resources</h2>
+    <p class="intro reveal">Weight-loss surgery is a lifelong journey. Our team stays with you at every stage, not just the day of surgery.</p>
+    <div class="card-grid three">
       <article class="card reveal">
         <div class="card-icon"><svg><use href="#ic-clipboard"/></svg></div>
         <h3>Pre- &amp; Post-Op Guidance</h3>
@@ -307,29 +327,47 @@
       </article>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section class="bg-white">
-  <div class="container">
-    <div class="guide-cta reveal">
-      <div>
-        <h2>Get our free weight-loss guide</h2>
-        <p>Learn about surgical and non-surgical options, what to expect at each stage, and how to talk to your insurance provider — delivered straight to your inbox.</p>
-      </div>
+<!-- ======================= VIRTUAL ======================= -->
+<section class="pad-lg">
+  <div class="container narrow">
+    <h2 class="display bar reveal">See You (Virtually) Soon!</h2>
+    <p class="reveal">Houston Surgical Weight Loss welcomes patients from across Texas and beyond. With the click of a button you can start your weight loss journey virtually with Dr. Wadiwala and our care team, then stay engaged with a program that takes you from your initial consultation through to your final visit and long-term follow-up.</p>
+    <div class="trust-row reveal">
+      <div class="trust-item"><svg><use href="#ic-shield"/></svg> Board-Certified Bariatric Surgeon</div>
+      <div class="trust-item"><svg><use href="#ic-award"/></svg> Fellowship-Trained Specialist</div>
+      <div class="trust-item"><svg><use href="#ic-card"/></svg> Most Major Insurance Accepted</div>
+      <div class="trust-item"><svg><use href="#ic-video"/></svg> In-Person &amp; Virtual Consults</div>
+    </div>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ======================= GUIDE ======================= -->
+<section class="pad-lg">
+  <div class="container narrow">
+    <h2 class="display bar reveal">Download Your Weight Loss Success Guide Now!</h2>
+    <div class="reveal">
+      <p>Our free guide is packed with practical insights for pre- and post-surgery success, with nutrition and lifestyle guidance for lasting results — plus how to talk to your insurance provider about coverage.</p>
+      <p>We'd love to stay in touch and assist you further. We respect your privacy and will only send you relevant, valuable information to support your weight loss journey.</p>
+      <p class="fine">By downloading this guide, you are opting in for email updates. You can unsubscribe at any time.</p>
       <form class="guide-form" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
-        <button type="submit" class="btn btn-gold">Send Me the Guide</button>
+        <input type="text" placeholder="Name" aria-label="Name" required>
+        <input type="email" placeholder="Email" aria-label="Email address" required>
+        <input type="tel" placeholder="Phone Number" aria-label="Phone number">
+        <button type="submit" class="btn btn-outline">Submit</button>
       </form>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section id="faq">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Common Questions</span>
-      <h2>Frequently asked questions</h2>
-    </div>
+<!-- ======================= FAQ ======================= -->
+<section id="faq" class="pad-lg">
+  <div class="container narrow">
+    <h2 class="display center reveal">Frequently Asked Questions</h2>
     <div class="faq-list reveal">
       <details class="faq-item">
         <summary>Am I a candidate for bariatric surgery? <span class="faq-icon"></span></summary>
@@ -361,65 +399,68 @@
       </details>
     </div>
   </div>
+  <div class="rule"></div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="container reveal">
-    <span class="eyebrow">Get In Touch</span>
-    <h2>Ready to take the first step?</h2>
-    <p class="lead" style="margin-inline:auto">Schedule a free, no-obligation consultation with our team to discuss your options and find out exactly what your insurance covers.</p>
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="pad-lg">
+  <div class="container narrow center-block reveal">
+    <h2 class="display center">Ready To Take The First Step?</h2>
+    <p class="intro center">Schedule a free, no-obligation consultation with our team to discuss your options and find out exactly what your insurance covers.</p>
     <div class="contact-actions">
-      <a href="tel:+15552104488" class="btn btn-primary"><svg><use href="#ic-phone"/></svg> Call (555) 210-4488</a>
+      <a href="tel:+15552104488" class="btn btn-solid"><svg><use href="#ic-phone"/></svg> Call (555) 210-4488</a>
       <a href="mailto:info@houstonsurgicalweightloss.com" class="btn btn-outline"><svg><use href="#ic-mail"/></svg> Email Our Team</a>
     </div>
   </div>
 </section>
 
+<!-- ======================= FOOTER ======================= -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#top" class="footer-logo">
-        <img src="media/logo-light.png" alt="Houston Surgical Weight Loss" width="900" height="583">
-      </a>
-      <p>Bariatric surgery and medical weight loss care led by Dr. Irfan Wadiwala, focused on safe, sustainable results.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><svg><use href="#ic-instagram"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg><use href="#ic-facebook"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg><use href="#ic-youtube"/></svg></a>
-      </div>
+  <div class="container">
+    <a href="#top" class="footer-logo">
+      <img src="media/logo-light.png" alt="Houston Surgical Weight Loss" width="900" height="583">
+    </a>
+
+    <div class="footer-location">
+      <h4>Houston Surgical Weight Loss</h4>
+      <p>123 Wellness Drive, Suite 200<br>Houston, TX 77002</p>
     </div>
-    <div>
-      <h4>Procedures</h4>
-      <ul>
-        <li><a href="#services">Gastric Sleeve</a></li>
-        <li><a href="#services">Gastric Bypass</a></li>
-        <li><a href="#services">Gastric Balloon</a></li>
-        <li><a href="#services">Revision Surgery</a></li>
-      </ul>
+
+    <div class="footer-rule"></div>
+
+    <ul class="footer-contact">
+      <li><svg><use href="#ic-phone"/></svg> <a href="tel:+15552104488">(555) 210-4488</a></li>
+      <li><svg><use href="#ic-mail"/></svg> <a href="mailto:info@houstonsurgicalweightloss.com">info@houstonsurgicalweightloss.com</a></li>
+    </ul>
+
+    <div class="footer-rating">
+      <span class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></span>
+      <span>4.9 of 5 &middot; 3,000+ patients treated</span>
     </div>
-    <div>
-      <h4>Practice</h4>
-      <ul>
-        <li><a href="#about">Dr. Irfan Wadiwala</a></li>
-        <li><a href="#resources">Patient Resources</a></li>
-        <li><a href="#insurance">Insurance &amp; Cost</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
+
+    <nav class="footer-nav">
+      <a href="#services">Procedures</a>
+      <a href="#about">Our Surgeon</a>
+      <a href="#process">How It Works</a>
+      <a href="#resources">Resources</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram"><svg><use href="#ic-instagram"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg><use href="#ic-facebook"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg><use href="#ic-youtube"/></svg></a>
     </div>
-    <div>
-      <h4>Visit Us</h4>
-      <ul class="footer-contact">
-        <li><svg><use href="#ic-pin"/></svg> <span>123 Wellness Drive, Suite 200<br>Houston, TX 77002</span></li>
-        <li><svg><use href="#ic-phone"/></svg> <a href="tel:+15552104488">(555) 210-4488</a></li>
-        <li><svg><use href="#ic-mail"/></svg> <a href="mailto:info@houstonsurgicalweightloss.com">info@houstonsurgicalweightloss.com</a></li>
-      </ul>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Houston Surgical Weight Loss. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a></span>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Houston Surgical Weight Loss. All rights reserved.</span>
-    <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a></span>
   </div>
 </footer>
+
+<a href="#contact" class="candidate-pill" id="candidatePill">Are You A Candidate?</a>
 
 <script src="js/main.js"></script>
 </body>
