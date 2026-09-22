@@ -1200,17 +1200,38 @@ p a:hover { text-decoration: underline; }
 @media (max-width: 899px) {
   /* On phones the submenu is an accordion inside the burger menu — it only
      unfolds once Patient Center is tapped, so the menu never becomes a wall
-     of eighteen links. */
-  .nav-links .has-sub > .nav-sub {
+     of eighteen links.
+
+     The 0fr/1fr trick collapses ONE grid child, so the grid has to be the
+     <li> — two rows, the toggle and the whole submenu — not the <ul>. Making
+     the <ul> the grid container silently half-works: grid-template-rows sets
+     only the first row, the other eleven items get auto-sized implicit rows,
+     and the menu collapses its first entry while the rest stay on screen. */
+  .nav-links .has-sub {
     display: grid;
-    grid-template-rows: 0fr;
+    grid-template-rows: auto 0fr;
     transition: grid-template-rows 0.3s ease;
+  }
+  .nav-links .has-sub.open { grid-template-rows: auto 1fr; }
+  .nav-links .has-sub > .nav-sub {
+    overflow: hidden;
+    min-height: 0;
     background: var(--paper-2);
   }
-  .nav-links .has-sub.open > .nav-sub { grid-template-rows: 1fr; }
-  .nav-sub > li { overflow: hidden; min-height: 0; border-bottom: 0 !important; }
+  /* .sub-toggle is inline-flex so the caret sits beside the label, which also
+     opts it out of the centred text every other nav row gets. Put it back. */
+  .nav-links .has-sub > .sub-toggle { justify-content: center; }
+  .nav-sub > li { border-bottom: 0 !important; }
   .nav-sub > li:first-child { border-top: 0 !important; }
   .nav-sub a { padding: 11px 4px; }
+
+  /* The open menu is taller than the screen, so the floating candidate pill
+     ends up sitting on top of the links it overlaps. Stand it down until the
+     menu closes. */
+  body:has(.nav-wrap.open) .candidate-pill {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 /* ---------- Interior page hero ---------- */
