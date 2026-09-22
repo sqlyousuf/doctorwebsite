@@ -298,9 +298,11 @@ p a:hover { text-decoration: underline; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* Fluid, because Spanish labels run ~25% longer than English and the seven
-     practice links have to share one row in both. */
-  gap: 4px clamp(14px, 1.4vw, 26px);
+  /* Spanish labels run ~25% longer than English, and the seven practice links
+     have to share one row in both. The cap matters more than the floor: left
+     fluid to 26px, Spanish needs 1,122px of a 1,092px container on a wide
+     monitor and Centro del Paciente drops to the next row. */
+  gap: 4px clamp(13px, 1.2vw, 20px);
 }
 
 /* Zero-height full-width flex item: forces the store and Lantern onto a row of
@@ -319,7 +321,10 @@ p a:hover { text-decoration: underline; }
   font-family: var(--display);
   font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: var(--track-sm);
+  /* Slightly tighter than --track-sm: across ~85 characters of Spanish nav
+     this recovers more width than any gap change can, and at 0.82rem the
+     difference from 0.14em is not perceptible. */
+  letter-spacing: 0.105em;
   color: var(--ink);
   border-bottom: 1px solid transparent;
   transition: color 0.25s ease, border-color 0.25s ease;
@@ -1097,7 +1102,7 @@ p a:hover { text-decoration: underline; }
 
 /* ---------- Mobile nav ---------- */
 
-@media (max-width: 899px) {
+@media (max-width: 1023px) {
   .nav-wrap {
     display: grid;
     grid-template-rows: 0fr;
@@ -1133,7 +1138,16 @@ p a:hover { text-decoration: underline; }
   .candidate-pill { left: 22px; bottom: 22px; }
 }
 
-@media (min-width: 900px) {
+/* Between the mobile breakpoint and roughly a laptop, the container is narrow
+   enough that Spanish still cannot fit seven links at full size. Shrink the
+   nav type a little through that band rather than let Centro del Paciente
+   strand itself on a row of its own. English has room to spare either way. */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .nav-links a { font-size: 0.74rem; }
+  .nav-shop { padding: 7px 13px !important; }
+}
+
+@media (min-width: 1024px) {
   .nav-toggle { display: none; }
   .header-inner { padding-bottom: 22px; }
   .header-cta { max-width: none; width: auto; }
@@ -1188,7 +1202,7 @@ p a:hover { text-decoration: underline; }
   color: var(--muted);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .nav-sub {
     position: absolute;
     top: 100%;
@@ -1224,7 +1238,7 @@ p a:hover { text-decoration: underline; }
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1023px) {
   /* On phones the submenu is an accordion inside the burger menu — it only
      unfolds once Patient Center is tapped, so the menu never becomes a wall
      of eighteen links.
@@ -1461,7 +1475,7 @@ p a:hover { text-decoration: underline; }
 @media (min-width: 640px) {
   .pc-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .pc-link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -1784,12 +1798,12 @@ p a:hover { text-decoration: underline; }
 .nav-brand:hover img { opacity: 0.72; }
 .nav-brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .nav-brand-item { margin-left: 4px; }
   .nav-brand img { height: 23px; }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1023px) {
   .nav-links .nav-brand-item { display: flex; justify-content: center; }
   .nav-brand {
     padding: 11px 18px;
@@ -1826,7 +1840,7 @@ p a:hover { text-decoration: underline; }
 }
 .nav-shop:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   /* The store and the Lantern badge are the two items that lead off-site, and
      the nav wraps them onto a row of their own at common desktop widths. That
      reads well — practice sections above, actions below — so lean into it with
@@ -1834,7 +1848,7 @@ p a:hover { text-decoration: underline; }
   .nav-shop-item { margin-left: 8px; }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1023px) {
   .nav-links .nav-shop-item { display: flex; justify-content: center; }
   .nav-shop { margin: 11px 0; padding: 12px 22px !important; }
   .nav-shop svg { width: 16px; height: 16px; }
