@@ -395,8 +395,21 @@ p a:hover { text-decoration: underline; }
   filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
 }
 
+/* The h1 wraps the three hero lines so the heading carries the full
+   positioning statement. It is a flex column matching .hero-inner, so the
+   lockup stacks and centres exactly as it did when these were siblings. */
+.hero-heading {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
 .hero-kicker {
   margin: 0;
+  display: block;
   font-family: var(--display);
   font-weight: 300;
   font-size: clamp(0.82rem, 3.2vw, 1.05rem);

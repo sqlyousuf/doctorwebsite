@@ -362,11 +362,12 @@ const faq = (pairs) =>
 const page = {
   slug: 'lantern',
   nav: 'Lantern',
+    seoTitle: 'Lantern Bariatric Coverage | Houston, TX',
   title: 'Lantern Bariatric Surgery Coverage',
   tagline: 'Hundreds of major U.S. employers now cover weight loss surgery in full. Yours may be one of them.',
   description:
-    'Houston Surgical Weight Loss is a designated Lantern (formerly SurgeryPlus) network provider. Search the employer list and see whether your bariatric surgery is covered at no out-of-pocket cost.',
-  image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=70',
+      'Houston Surgical Weight Loss is a Lantern network provider. Search the employer list and see if your bariatric surgery is covered at no cost.',
+  image: '../media/img/u-1454165804606-c3d57bc86b40.jpg',
 
   // Drives the employer search box at the foot of the generated page.
   script: `

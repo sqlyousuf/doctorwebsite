@@ -149,7 +149,7 @@ function renderPage(page) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} | Houston Surgical Weight Loss</title>
+<title>${page.seoTitle || `${title} | Houston Surgical Weight Loss`}</title>
 <meta name="description" content="${escapeAttr(page.description)}">
 <link rel="canonical" href="${ORIGIN}/patient-center/${page.slug}.html">
 <link rel="icon" type="image/png" href="../media/favicon.png">

@@ -35,11 +35,12 @@ const pages = [
   {
     slug: 'self-pay',
     nav: 'Self-Pay',
+    seoTitle: 'Self-Pay Gastric Sleeve $6,999 | Houston, TX',
     title: 'Self-Pay Sleeve Gastrectomy',
     tagline: 'Sleeve gastrectomy starting at $6,999 — all-inclusive, with lifetime follow-up.',
     description:
       'Self-pay sleeve gastrectomy in Houston starting at $6,999, all-inclusive with lifetime follow-up from a board-certified, fellowship-trained bariatric surgeon.',
-    image: 'https://images.unsplash.com/photo-1775947933085-30050ddad6b3?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1775947933085-30050ddad6b3.jpg',
     body: `
       <div class="price-block">
         <p class="price-label">Self-Pay Price</p>
@@ -152,11 +153,12 @@ const pages = [
   {
     slug: 'financing-payment',
     nav: 'Financing Payment',
+    seoTitle: 'Weight Loss Surgery Financing | Houston, TX',
     title: 'Financing &amp; Payment Options',
     tagline: 'Financing options for weight loss surgery — vertical sleeve gastrectomy starting at $6,999.',
     description:
       'Financing and payment options for weight loss surgery at Houston Surgical Weight Loss, including an all-inclusive self-pay price, Cherry and CareCredit.',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1563013544-824ae1b704d3.jpg',
     body: `
       <p class="intro">Vertical Sleeve Gastrectomy starting at <strong>$6,999</strong>.</p>
 
@@ -211,11 +213,12 @@ const pages = [
   {
     slug: 'patient-forms',
     nav: 'Patient Forms',
+    seoTitle: 'New Patient Forms | Houston Surgical Weight Loss',
     title: 'Patient Forms',
     tagline: 'Complete your new patient paperwork before your first visit.',
     description:
       'Download and complete your new patient forms for Houston Surgical Weight Loss before your first visit, in English or Spanish.',
-    image: 'https://images.unsplash.com/photo-1758691462814-485c3672e447?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1758691462814-485c3672e447.jpg',
     body: `
       <p class="intro">We ask all new patients to complete the forms below before their first visit. You may choose to
       fill them out directly or print and complete them by hand. Once finished, you can either bring the forms with you
@@ -250,11 +253,12 @@ const pages = [
   {
     slug: 'after-surgery',
     nav: 'After Surgery',
+    seoTitle: 'Life After Bariatric Surgery | Houston, TX',
     title: 'Life After Weight Loss Surgery',
     tagline: 'Recovery, follow-up, diet and exercise — the habits that make the results last.',
     description:
-      'What life looks like after bariatric surgery: recovery, follow-up appointments, your new diet, exercise and ongoing aftercare at Houston Surgical Weight Loss.',
-    image: 'https://images.unsplash.com/photo-1758691462878-6edc3d3da1be?auto=format&fit=crop&w=1600&q=70',
+      'Recovery, follow-up visits, diet and exercise after bariatric surgery with Dr. Irfan Wadiwala in Spring, TX.',
+    image: '../media/img/u-1758691462878-6edc3d3da1be.jpg',
     body: `
       <h2 class="display bar">A New Beginning After Surgery</h2>
       <p class="intro">Weight loss surgery serves as a powerful tool for achieving long-term health and well-being, with
@@ -349,11 +353,12 @@ const pages = [
   {
     slug: 'vitamin-guide',
     nav: 'Vitamin Guide',
+    seoTitle: 'Bariatric Vitamin Guide | Houston, TX',
     title: 'Vitamin Guide',
     tagline: 'Daily supplementation that protects your health after weight-loss surgery.',
     description:
       'Bariatric vitamin guide: package options and daily supplementation advice for patients of Houston Surgical Weight Loss.',
-    image: 'https://images.unsplash.com/photo-1664956618021-73c47736845e?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1664956618021-73c47736845e.jpg',
     body: `
       <p class="intro">Bariatric surgery changes how your body absorbs nutrients, so specialized vitamins are necessary
       to prevent deficiencies and protect your overall health.</p>
@@ -399,11 +404,12 @@ const pages = [
   {
     slug: 'bariatric-vitamins',
     nav: 'Bariatric Vitamins',
+    seoTitle: 'Bariatric Vitamins in Houston, TX | Bariatric Fusion',
     title: 'Bariatric Vitamins Specialist in Houston, TX',
     tagline: 'Bariatric Fusion® supplements and a personalised plan for life after surgery.',
     description:
       'Bariatric vitamins specialist in Houston, TX. Bariatric Fusion® supplements and personalised post-surgery supplement plans from Dr. Irfan Wadiwala.',
-    image: 'https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1707129785947-ddc627a8bab9.jpg',
     sub: [
       {
         nav: 'Vitamin E Store',
@@ -564,11 +570,12 @@ const pages = [
   {
     slug: 'pre-op-and-post-op',
     nav: 'Pre-Op and Post-Op',
+    seoTitle: 'Pre-Op &amp; Post-Op Bariatric Diet | Houston, TX',
     title: 'Pre-Op and Post-Op Diet',
     tagline: 'The two-week liquid fast before surgery, and the four diet stages after it.',
     description:
       'The pre-op protein liquid fast and the four post-op diet stages for bariatric surgery patients at Houston Surgical Weight Loss.',
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1490645935967-10de6ba17061.jpg',
     body: `
       <h2 class="display bar">Pre-Op Protein Liquid Fast</h2>
       <h3>When Does the Pre-Op Diet Start?</h3>
@@ -702,11 +709,12 @@ const pages = [
   {
     slug: 'exercise-regimens',
     nav: 'Exercise Regimens',
+    seoTitle: 'Exercise After Bariatric Surgery | Houston, TX',
     title: 'Exercise Regimens',
     tagline: 'Physical activity before and after weight loss surgery — safe, gradual, consistent.',
     description:
       'Exercise regimens before and after bariatric surgery: when to start, what to do, and how to progress safely.',
-    image: 'https://images.unsplash.com/photo-1487956382158-bb926046304a?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1487956382158-bb926046304a.jpg',
     body: `
       <h2 class="display bar">Physical Activity Before and After Weight Loss Surgery</h2>
       <p class="intro">Regular physical activity plays a vital role in the weight loss journey. Combined with healthy
@@ -812,11 +820,12 @@ const pages = [
   {
     slug: 'discharge-instructions',
     nav: 'Discharge Instructions',
+    seoTitle: 'Bariatric Discharge Instructions | Houston, TX',
     title: 'Discharge Instructions',
     tagline: 'What is normal, what is not, and how to care for yourself in the first weeks home.',
     description:
       'Bariatric discharge instructions: normal symptoms, when to call the office, hydration, incision care, binder use, medications and activity.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1576091160550-2173dba999ef.jpg',
     body: `
       <h2 class="display bar">Normal Symptoms (First 1–2 Weeks After Surgery)</h2>
       <p>It is common to experience:</p>
@@ -894,11 +903,12 @@ const pages = [
   {
     slug: 'for-out-of-town-patients',
     nav: 'For Out of Town Patients',
+    seoTitle: 'Out-of-Town Bariatric Patients | Houston, TX',
     title: 'For Out of Town Patients',
     tagline: 'Travelling to Houston for surgery — where to stay, eat and land.',
     description:
       'Travelling to Houston for weight loss surgery: nearby hotels, restaurants, airports and shopping centres close to our Spring, TX office.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=70',
+    image: '../media/img/u-1436491865332-7a61a109cc05.jpg',
     body: `
       <h2 class="display bar">Traveling to Houston for Weight Loss Surgery</h2>
       <p class="intro">At Houston Surgical Weight Loss, the practice offers advanced general, laparoscopic, and

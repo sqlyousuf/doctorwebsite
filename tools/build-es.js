@@ -62,13 +62,13 @@ const copy = [
   ['"inLanguage": "en-US"', '"inLanguage": "es-US"', 1],
   ['<html lang="en">', '<html lang="es">', 1],
   [
-    '<title>Houston Surgical Weight Loss | Bariatric Surgery &amp; Medical Weight Loss</title>',
-    '<title>Houston Surgical Weight Loss | Cirugía Bariátrica y Pérdida de Peso Médica</title>',
+    '<title>Bariatric Surgery Houston, TX | Houston Surgical Weight Loss</title>',
+    '<title>Cirugía Bariátrica en Houston | Houston Surgical Weight Loss</title>',
     1,
   ],
   [
-    'Houston Surgical Weight Loss, led by Dr. Irfan Wadiwala, offers bariatric surgery and medically supervised weight loss with a focus on long-term health and personalized care.',
-    'Houston Surgical Weight Loss, dirigido por el Dr. Irfan Wadiwala, ofrece cirugía bariátrica y pérdida de peso con supervisión médica, con un enfoque en la salud a largo plazo y la atención personalizada.',
+    'Gastric sleeve, bypass and revision surgery in Spring, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon. Most insurance accepted.',
+    'Manga gástrica, bypass y cirugía de revisión en Spring, TX con el Dr. Irfan Wadiwala, cirujano bariátrico. Aceptamos la mayoría de los seguros.',
     1,
   ],
 
@@ -118,7 +118,7 @@ const copy = [
   [">See If You're Covered</a>", '>Vea Si Tiene Cobertura</a>', 1],
 
   // ---- hero ----
-  ['>Bariatric Surgery &amp; Medical Weight Loss</p>', '>Cirugía Bariátrica y Pérdida de Peso Médica</p>', 1],
+  ['>Bariatric Surgery &amp; Medical Weight Loss</span>', '>Cirugía Bariátrica y Pérdida de Peso Médica</span>', 1],
   ['>Talk to Dr. Wadiwala</a>', '>Hable con el Dr. Wadiwala</a>', 1],
   ['<strong>4.9</strong> average rating &middot; 3,000+ patients treated', '<strong>4.9</strong> de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['aria-label="Scroll to content"', 'aria-label="Desplazarse al contenido"', 1],
@@ -442,7 +442,7 @@ const copy = [
   ['href="patient-center/', 'href="../patient-center/', 13],
   ['href="css/', 'href="../css/', 1],
   ['src="js/', 'src="../js/', 1],
-  ['src="media/', 'src="../media/', 7],
+  ['src="media/', 'src="../media/', 10],
   ['poster="media/', 'poster="../media/', 1],
 ];
 
