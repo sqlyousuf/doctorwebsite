@@ -1,48 +1,68 @@
 #!/usr/bin/env node
 /*
- * Generates the patient-center/ pages from tools/patient-center-content.js.
+ * Generates the Patient Center pages, in both languages:
+ *
+ *     patient-center/<slug>.html        English
+ *     es/patient-center/<slug>.html     Spanish
  *
  *     node tools/build-patient-center.js
  *
- * index.html stays the single source of truth for the chrome: the SVG sprite,
- * header and footer are lifted out of it at build time and re-pointed one
- * directory up, so a change to the brand mark or the footer address only has
- * to be made once. Re-run this after editing index.html or the content file.
+ * Content comes from tools/patient-center-content.js and its Spanish twin
+ * tools/content/patient-center.es.js. The chrome — sprite, header, nav, footer
+ * — is shared with the procedure pages via tools/chrome.js and lifted out of
+ * index.html, so it cannot drift from the home page.
  *
- * The Patient Center dropdown itself is shared markup — buildNav() below emits
- * it for these pages, and the same list is written into index.html by hand
- * (kept honest by the nav check at the bottom of this script).
+ * Every English page must have a Spanish twin of the same shape. The parity
+ * check at the bottom fails the build otherwise, so a new English section
+ * cannot quietly ship as a half-translated Spanish page.
  */
 
 const fs = require('fs');
 const path = require('path');
 const { pages, PHONE, PHONE_HREF } = require('./patient-center-content.js');
-const { ORIGIN, breadcrumbSchema } = require('./site.js');
-const { root, src, sprite, footerFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
+const { translations } = require('./content/patient-center.es.js');
+const { ORIGIN } = require('./site.js');
+const { UI } = require('./i18n.js');
+const { root, sprite, footerFor, buildNav, header, tail, escapeAttr, plain, navLabel } = require('./chrome.js');
 
-const outDir = path.join(root, 'patient-center');
+/** Where each language's pages live, and how they climb back to the root. */
+const LANGS = {
+  en: { dir: 'patient-center', up: '../', urlBase: '/patient-center/' },
+  es: { dir: 'es/patient-center', up: '../../', urlBase: '/es/patient-center/' },
+};
 
-// These pages are siblings inside patient-center/, so they reach each other
-// with a bare filename.
-const footer = footerFor('');
-const nav = (slug) => buildNav({ pcPrefix: '', active: { patientCenter: slug } });
+/** The page's own fields in the requested language. */
+function localised(page, lang) {
+  if (lang === 'en') return page;
+  const es = translations[page.slug];
+  if (!es) throw new Error(`build-patient-center: no Spanish translation for "${page.slug}"`);
+  return { ...page, ...es };
+}
 
-/* ---------- page template ---------- */
+const breadcrumb = (t, title, slug, lang) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t.home, item: `${ORIGIN}/${lang === 'es' ? 'es/' : ''}` },
+    { '@type': 'ListItem', position: 2, name: t.patientCenter, item: `${ORIGIN}${LANGS[lang].urlBase}self-pay.html` },
+    { '@type': 'ListItem', position: 3, name: title, item: `${ORIGIN}${LANGS[lang].urlBase}${slug}.html` },
+  ],
+});
 
 /** The "explore the rest of the Patient Center" grid at the foot of each page. */
-function relatedGrid(currentSlug) {
+function relatedGrid(currentSlug, lang, t) {
   const cards = pages
     .filter((p) => p.slug !== currentSlug)
     .map(
       (p) => `      <a class="pc-link" href="${p.slug}.html">
-        <span class="pc-link-label">${p.nav}</span>
+        <span class="pc-link-label">${navLabel(p, lang)}</span>
         <svg aria-hidden="true"><use href="#ic-arrow"/></svg>
       </a>`
     )
     .join('\n');
   return `<section class="pad-lg pc-related">
   <div class="container">
-    <h2 class="display center">More in the Patient Center</h2>
+    <h2 class="display center">${t.moreInPatientCenter}</h2>
     <div class="pc-link-grid">
 ${cards}
     </div>
@@ -50,34 +70,49 @@ ${cards}
 </section>`;
 }
 
-function renderPage(page) {
+function renderPage(basePage, lang) {
+  const page = localised(basePage, lang);
+  const t = UI[lang];
+  const { up, urlBase } = LANGS[lang];
   const title = plain(page.title);
+  const url = `${ORIGIN}${urlBase}${page.slug}.html`;
+  // The same page in the other language, so switching keeps the reader here.
+  const twin = lang === 'en' ? `../es/patient-center/${page.slug}.html` : `../../patient-center/${page.slug}.html`;
+  const img = path.basename(basePage.image);
+
+  const nav = buildNav({ lang, up, home: '../index.html', pcPrefix: '', active: { patientCenter: page.slug } });
+  const footer = footerFor({ lang, up, pcPrefix: '', home: '../index.html' });
+
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${t.htmlLang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${page.seoTitle || `${title} | Houston Surgical Weight Loss`}</title>
 <meta name="description" content="${escapeAttr(page.description)}">
-<link rel="canonical" href="${ORIGIN}/patient-center/${page.slug}.html">
-<link rel="icon" type="image/png" href="../media/favicon.png">
-<link rel="apple-touch-icon" href="../media/favicon.png">
+<link rel="canonical" href="${url}">
+<link rel="alternate" hreflang="en" href="${ORIGIN}/patient-center/${page.slug}.html">
+<link rel="alternate" hreflang="es" href="${ORIGIN}/es/patient-center/${page.slug}.html">
+<link rel="alternate" hreflang="x-default" href="${ORIGIN}/patient-center/${page.slug}.html">
+<link rel="icon" type="image/png" href="${up}media/favicon.png">
+<link rel="apple-touch-icon" href="${up}media/favicon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Houston Surgical Weight Loss">
-<meta property="og:url" content="${ORIGIN}/patient-center/${page.slug}.html">
+<meta property="og:locale" content="${lang === 'es' ? 'es_ES' : 'en_US'}">
+<meta property="og:url" content="${url}">
 <meta property="og:title" content="${escapeAttr(title)}">
 <meta property="og:description" content="${escapeAttr(page.description)}">
-<meta property="og:image" content="${page.image}">
+<meta property="og:image" content="${ORIGIN}/media/img/${img}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escapeAttr(title)}">
 <meta name="twitter:description" content="${escapeAttr(page.description)}">
-<meta name="twitter:image" content="${page.image}">
+<meta name="twitter:image" content="${ORIGIN}/media/img/${img}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">
-${JSON.stringify(breadcrumbSchema(title, `/patient-center/${page.slug}.html`), null, 2)}
+${JSON.stringify(breadcrumb(t, title, page.slug, lang), null, 2)}
 </script>
 <!-- Generated by tools/build-patient-center.js — do not edit by hand. -->
 </head>
@@ -86,44 +121,26 @@ ${JSON.stringify(breadcrumbSchema(title, `/patient-center/${page.slug}.html`), n
 ${sprite}
 
 <!-- ======================= HEADER ======================= -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="../index.html" class="brand">
-      <img class="brand-mark" src="../media/logo-mark.png" alt="" width="405" height="583">
-      <span class="brand-name">Houston Surgical</span>
-      <span class="brand-name brand-name-lg">Weight Loss</span>
-    </a>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span>
-    </button>
-
-    <nav class="nav-wrap">
-${nav(page.slug)}
-    </nav>
-
-    <a href="../index.html#insurance" class="btn btn-solid header-cta">See If You're Covered</a>
-  </div>
-</header>
+${header({ nav, lang, up, home: '../index.html' })}
 
 <!-- ======================= PAGE HERO ======================= -->
 <section class="page-hero" id="top">
-  <img class="page-hero-img" src="${page.image}" alt="" loading="eager" fetchpriority="high">
+  <img class="page-hero-img" src="${up}media/img/${img}" alt="" loading="eager" fetchpriority="high">
   <div class="page-hero-scrim" aria-hidden="true"></div>
   <div class="page-hero-inner container">
-    <p class="page-hero-kicker">Patient Center</p>
+    <p class="page-hero-kicker">${t.patientCenter}</p>
     <h1 class="page-hero-title">${page.title}</h1>
     <p class="page-hero-tag">${page.tagline}</p>
   </div>
 </section>
 
-<nav class="crumbs" aria-label="Breadcrumb">
+<nav class="crumbs" aria-label="${t.breadcrumbLabel}">
   <div class="container">
-    <a href="../index.html">Home</a>
+    <a href="../index.html">${t.home}</a>
     <span aria-hidden="true">/</span>
-    <span>Patient Center</span>
+    <span>${t.patientCenter}</span>
     <span aria-hidden="true">/</span>
-    <span aria-current="page">${plain(page.title)}</span>
+    <span aria-current="page">${title}</span>
   </div>
 </nav>
 
@@ -137,28 +154,22 @@ ${page.body.trim()}
 <!-- ======================= CTA ======================= -->
 <section class="pc-cta">
   <div class="container center-block">
-    <h2 class="display center">Questions? We're Here to Help</h2>
-    <p class="intro center">Call the office and one of our team will walk you through it — no appointment needed to
-    ask a question.</p>
+    <h2 class="display center">${t.ctaHeading}</h2>
+    <p class="intro center">${t.ctaBody}</p>
     <div class="contact-actions">
       <a href="${PHONE_HREF}" class="btn btn-solid"><svg><use href="#ic-phone"/></svg> ${PHONE}</a>
-      <a href="../index.html#contact" class="btn btn-outline-light">Request a Consultation</a>
+      <a href="../index.html#contact" class="btn btn-outline-light">${t.ctaButton}</a>
     </div>
   </div>
 </section>
 
-${relatedGrid(page.slug)}
+${relatedGrid(page.slug, lang, t)}
 
 ${footer}
 
-<nav class="lang-switch" aria-label="Language">
-  <a href="#" hreflang="en" lang="en" class="is-active" aria-current="true"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>English</a>
-  <a href="../es/index.html" hreflang="es" lang="es"><svg class="flag" aria-hidden="true"><use href="#flag-es"/></svg>Español</a>
-</nav>
+${tail({ lang, twin, home: '../index.html' })}
 
-<a href="../index.html#contact" class="candidate-pill" id="candidatePill">Do I Qualify?</a>
-
-<script src="../js/main.js"></script>${page.script ? `\n<script>${page.script.trim()}\n</script>` : ''}
+<script src="${up}js/main.js"></script>
 </body>
 </html>
 `;
@@ -166,19 +177,55 @@ ${footer}
 
 /* ---------- write ---------- */
 
-fs.mkdirSync(outDir, { recursive: true });
-for (const page of pages) {
-  fs.writeFileSync(path.join(outDir, `${page.slug}.html`), renderPage(page), 'utf8');
+for (const [lang, { dir }] of Object.entries(LANGS)) {
+  const out = path.join(root, dir);
+  fs.mkdirSync(out, { recursive: true });
+  for (const page of pages) fs.writeFileSync(path.join(out, `${page.slug}.html`), renderPage(page, lang), 'utf8');
 }
 
-// index.html carries the same dropdown, written by hand. If a menu item is
-// added here and not there, the two menus silently disagree — so check.
-const missing = pages
-  .filter((p) => !src.includes(`href="patient-center/${p.slug}.html"`))
-  .map((p) => p.nav);
-if (missing.length) {
-  console.error(`build-patient-center: index.html is missing dropdown link(s) for: ${missing.join(', ')}`);
+/* ---------- checks ---------- */
+
+const problems = [];
+
+// index.html carries the same dropdown, written by hand.
+const src = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+for (const p of pages) {
+  if (!src.includes(`href="patient-center/${p.slug}.html"`)) {
+    problems.push(`index.html is missing a dropdown link for ${p.nav}`);
+  }
+}
+
+// Every English page needs a Spanish twin of the same shape. Counting the
+// structural elements catches the realistic failure — a section added in
+// English and forgotten in Spanish — without demanding a string-for-string map
+// of seven thousand words.
+const shape = (html) => ({
+  h2: (html.match(/<h2/g) || []).length,
+  h3: (html.match(/<h3/g) || []).length,
+  li: (html.match(/<li/g) || []).length,
+  details: (html.match(/<details/g) || []).length,
+  table: (html.match(/<table/g) || []).length,
+});
+for (const p of pages) {
+  const es = translations[p.slug];
+  if (!es) {
+    problems.push(`no Spanish translation for ${p.slug}`);
+    continue;
+  }
+  const a = shape(p.body);
+  const b = shape(es.body);
+  for (const k of Object.keys(a)) {
+    if (a[k] !== b[k]) problems.push(`${p.slug}: English has ${a[k]} <${k}>, Spanish has ${b[k]}`);
+  }
+  for (const field of ['title', 'tagline', 'description']) {
+    if (!es[field]) problems.push(`${p.slug}: Spanish ${field} is missing`);
+  }
+}
+
+if (problems.length) {
+  console.error(`build-patient-center: ${problems.length} problem(s):`);
+  console.error(problems.map((p) => `  ${p}`).join('\n'));
   process.exit(1);
 }
 
-console.log(`build-patient-center: wrote ${pages.length} pages to ${path.relative(root, outDir)}/`);
+console.log(`build-patient-center: wrote ${pages.length} pages x 2 languages`);

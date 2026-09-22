@@ -19,8 +19,8 @@ const { ORIGIN } = require('./site.js');
 const { root, sprite, footerFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
 
 const outDir = path.join(root, 'procedures');
-const footer = footerFor('../patient-center/');
-const nav = buildNav({ pcPrefix: '../patient-center/' });
+const footer = footerFor({ up: '../', pcPrefix: '../patient-center/', home: '../index.html' });
+const nav = buildNav({ lang: 'en', up: '../', home: '../index.html', pcPrefix: '../patient-center/' });
 
 const breadcrumb = (title, slug) => ({
   '@context': 'https://schema.org',
@@ -105,7 +105,7 @@ ${blocks}
 ${sprite}
 
 <!-- ======================= HEADER ======================= -->
-${header(nav)}
+${header({ nav, lang: 'en', up: '../', home: '../index.html' })}
 ${page.draft ? '\n' + draftBanner(page) + '\n' : ''}
 <!-- ======================= PAGE HERO ======================= -->
 <section class="page-hero" id="top">
@@ -158,7 +158,7 @@ ${page.body.trim()}
 
 ${footer}
 
-${tail()}
+${tail({ lang: 'en', twin: '../es/index.html', home: '../index.html' })}
 
 <script src="../js/main.js"></script>
 </body>

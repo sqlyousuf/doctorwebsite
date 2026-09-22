@@ -44,17 +44,17 @@ const PHYSICIAN = {
 /** Every indexable page: path, priority, and whether it has a Spanish twin. */
 const PAGES = [
   { path: '/', priority: '1.0', es: '/es/' },
-  { path: '/patient-center/self-pay.html', priority: '0.9' },
-  { path: '/patient-center/lantern.html', priority: '0.9' },
-  { path: '/patient-center/financing-payment.html', priority: '0.8' },
-  { path: '/patient-center/bariatric-vitamins.html', priority: '0.7' },
-  { path: '/patient-center/after-surgery.html', priority: '0.7' },
-  { path: '/patient-center/pre-op-and-post-op.html', priority: '0.7' },
-  { path: '/patient-center/exercise-regimens.html', priority: '0.6' },
-  { path: '/patient-center/discharge-instructions.html', priority: '0.6' },
-  { path: '/patient-center/vitamin-guide.html', priority: '0.6' },
-  { path: '/patient-center/patient-forms.html', priority: '0.6' },
-  { path: '/patient-center/for-out-of-town-patients.html', priority: '0.5' },
+  { path: '/patient-center/self-pay.html', priority: '0.9', es: '/es/patient-center/self-pay.html' },
+  { path: '/patient-center/lantern.html', priority: '0.9', es: '/es/patient-center/lantern.html' },
+  { path: '/patient-center/financing-payment.html', priority: '0.8', es: '/es/patient-center/financing-payment.html' },
+  { path: '/patient-center/bariatric-vitamins.html', priority: '0.7', es: '/es/patient-center/bariatric-vitamins.html' },
+  { path: '/patient-center/after-surgery.html', priority: '0.7', es: '/es/patient-center/after-surgery.html' },
+  { path: '/patient-center/pre-op-and-post-op.html', priority: '0.7', es: '/es/patient-center/pre-op-and-post-op.html' },
+  { path: '/patient-center/exercise-regimens.html', priority: '0.6', es: '/es/patient-center/exercise-regimens.html' },
+  { path: '/patient-center/discharge-instructions.html', priority: '0.6', es: '/es/patient-center/discharge-instructions.html' },
+  { path: '/patient-center/vitamin-guide.html', priority: '0.6', es: '/es/patient-center/vitamin-guide.html' },
+  { path: '/patient-center/patient-forms.html', priority: '0.6', es: '/es/patient-center/patient-forms.html' },
+  { path: '/patient-center/for-out-of-town-patients.html', priority: '0.5', es: '/es/patient-center/for-out-of-town-patients.html' },
 ];
 
 /** The LocalBusiness graph, emitted once on the home page. */

@@ -641,4 +641,4 @@ ${s.stats
     `,
 };
 
-module.exports = { page, employerCount };
+module.exports = { page, employerCount, employerGroups };

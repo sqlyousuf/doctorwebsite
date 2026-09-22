@@ -53,16 +53,19 @@ const urls = PAGES.map(({ path: p, priority, es }) => {
   </url>`;
 }).join('\n');
 
-// The Spanish page is its own URL and belongs in the sitemap too.
-const esPage = PAGES.find((x) => x.es);
-const esUrl = `  <url>
-    <loc>${ORIGIN}${esPage.es}</loc>
-    <lastmod>${lastmod(esPage.es)}</lastmod>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="${ORIGIN}${esPage.path}"/>
-    <xhtml:link rel="alternate" hreflang="es" href="${ORIGIN}${esPage.es}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${esPage.path}"/>
-  </url>`;
+// Each Spanish page is its own URL and belongs in the sitemap too.
+const esUrl = PAGES.filter((x) => x.es)
+  .map(
+    (x) => `  <url>
+    <loc>${ORIGIN}${x.es}</loc>
+    <lastmod>${lastmod(x.es)}</lastmod>
+    <priority>${x.priority}</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="${ORIGIN}${x.path}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${ORIGIN}${x.es}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${x.path}"/>
+  </url>`
+  )
+  .join(String.fromCharCode(10));
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -80,4 +83,4 @@ Sitemap: ${ORIGIN}/sitemap.xml
 
 fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemap, 'utf8');
 fs.writeFileSync(path.join(root, 'robots.txt'), robots, 'utf8');
-console.log(`build-seo: wrote sitemap.xml (${PAGES.length + 1} urls) and robots.txt`);
+console.log(`build-seo: wrote sitemap.xml (${PAGES.length + PAGES.filter((x) => x.es).length} urls) and robots.txt`);

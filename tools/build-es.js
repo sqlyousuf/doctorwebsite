@@ -439,7 +439,10 @@ const copy = [
   // hreflang is no longer rewritten: the tags are absolute URLs now, and both
   // pages must advertise the same complete set, each including itself.
   ['href="media/', 'href="../media/', 2],
-  ['href="patient-center/', 'href="../patient-center/', 13],
+  // Left alone deliberately: from es/index.html, "patient-center/x.html"
+  // already resolves to es/patient-center/x.html — the Spanish pages. Before
+  // those existed this rewrote to ../patient-center/ and sent Spanish readers
+  // into the English site, which is exactly the bug being fixed.
   ['href="css/', 'href="../css/', 1],
   ['src="js/', 'src="../js/', 1],
   ['src="media/', 'src="../media/', 10],
