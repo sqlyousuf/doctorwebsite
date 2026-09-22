@@ -1713,3 +1713,48 @@ p a:hover { text-decoration: underline; }
 @media (min-width: 560px) {
   .surgery-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ---------- Lantern: a nav tab badged with its own logo ----------
+   The supplied asset is an opaque white JPEG, so it can only sit on a white
+   surface. That is the header on desktop; on mobile the nav panel goes to
+   paper-2, so the tab carries its own white chip to sit on. */
+
+.nav-brand {
+  display: inline-flex !important;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+}
+.nav-brand img {
+  width: auto;
+  height: 21px;
+  /* Nudges the logo's own white ground toward the header's warm ivory so the
+     asset does not read as a pasted-on rectangle. */
+  mix-blend-mode: multiply;
+  transition: opacity 0.25s ease;
+}
+.nav-brand:hover img { opacity: 0.72; }
+.nav-brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (min-width: 900px) {
+  /* A hairline rule sets the partner badge apart from the practice's own
+     sections without adding a word of chrome. */
+  .nav-brand-item {
+    padding-left: 24px;
+    margin-left: -2px;
+    border-left: 1px solid var(--line);
+  }
+  .nav-brand img { height: 23px; }
+}
+
+@media (max-width: 899px) {
+  .nav-links .nav-brand-item { display: flex; justify-content: center; }
+  .nav-brand {
+    padding: 11px 18px;
+    margin: 9px 0;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand img { height: 22px; mix-blend-mode: normal; }
+}

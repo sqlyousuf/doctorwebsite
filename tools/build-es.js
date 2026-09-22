@@ -376,10 +376,10 @@ const copy = [
   ['<link rel="alternate" hreflang="es" href="es/index.html">', '<link rel="alternate" hreflang="es" href="index.html">', 1],
   ['<link rel="alternate" hreflang="x-default" href="index.html">', '<link rel="alternate" hreflang="x-default" href="../index.html">', 1],
   ['href="media/', 'href="../media/', 2],
-  ['href="patient-center/', 'href="../patient-center/', 12],
+  ['href="patient-center/', 'href="../patient-center/', 13],
   ['href="css/', 'href="../css/', 1],
   ['src="js/', 'src="../js/', 1],
-  ['src="media/', 'src="../media/', 6],
+  ['src="media/', 'src="../media/', 7],
   ['poster="media/', 'poster="../media/', 1],
 ];
 

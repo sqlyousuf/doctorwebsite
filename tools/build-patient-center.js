@@ -77,6 +77,10 @@ function buildSubmenu(prefix, activeSlug) {
 
 function buildNav(activeSlug) {
   const primary = PRIMARY.map(([href, label]) => `        <li><a href="${href}">${label}</a></li>`).join('\n');
+  // Lantern gets a tab of its own, badged with its own mark, as well as its
+  // place in the dropdown — the benefit is the reason a lot of these visitors
+  // are here at all, and a logo is what they are scanning for.
+  const current = activeSlug === 'lantern' ? ' aria-current="page"' : '';
   return `      <ul class="nav-links" id="navLinks">
 ${primary}
         <li class="has-sub">
@@ -84,6 +88,11 @@ ${primary}
           <ul class="nav-sub">
 ${buildSubmenu('', activeSlug)}
           </ul>
+        </li>
+        <li class="nav-brand-item">
+          <a href="lantern.html" class="nav-brand" aria-label="Lantern — employer-covered surgery"${current}>
+            <img src="../media/lantern-logo.jpg" alt="Lantern" width="350" height="91" loading="lazy">
+          </a>
         </li>
       </ul>`;
 }
