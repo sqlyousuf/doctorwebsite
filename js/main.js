@@ -4,11 +4,23 @@ const navToggle = document.getElementById('navToggle');
 const navWrap = navToggle && navToggle.parentElement.querySelector('.nav-wrap');
 const navLinks = document.getElementById('navLinks');
 
+// The Patient Center item is a submenu, not a destination, so closing the
+// burger menu has to fold its accordion back up too.
+const closeSubmenus = () => {
+  if (!navLinks) return;
+  navLinks.querySelectorAll('.has-sub.open').forEach((item) => {
+    item.classList.remove('open');
+    const toggle = item.querySelector('.sub-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  });
+};
+
 const closeNav = () => {
   if (!navWrap) return;
   navWrap.classList.remove('open');
   navToggle.classList.remove('open');
   navToggle.setAttribute('aria-expanded', 'false');
+  closeSubmenus();
 };
 
 if (navToggle && navWrap) {
@@ -17,9 +29,24 @@ if (navToggle && navWrap) {
     const isOpen = navWrap.classList.toggle('open');
     navToggle.classList.toggle('open', isOpen);
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    if (!isOpen) closeSubmenus();
   });
 
-  navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
+  // Desktop opens the submenu on hover/focus via CSS; this handles the tap,
+  // which is the only way in on a phone. The toggle itself goes nowhere.
+  navLinks.querySelectorAll('.sub-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const item = toggle.closest('.has-sub');
+      const isOpen = item.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  navLinks
+    .querySelectorAll('a:not(.sub-toggle)')
+    .forEach((link) => link.addEventListener('click', closeNav));
   document.addEventListener('keydown', (e) => e.key === 'Escape' && closeNav());
   document.addEventListener('click', (e) => {
     if (!navWrap.contains(e.target) && !navToggle.contains(e.target)) closeNav();

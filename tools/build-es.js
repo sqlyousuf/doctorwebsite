@@ -46,6 +46,25 @@ const copy = [
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],
   ['<li><a href="#faq">FAQ</a></li>', '<li><a href="#faq">Preguntas</a></li>', 1],
 
+  // ---- Patient Center dropdown ----
+  // The destination pages themselves only exist in English so far, so the
+  // Spanish menu keeps the same structure and labels its items in Spanish
+  // while still linking across to ../patient-center/. When Spanish versions
+  // of those pages are written, point these at es/patient-center/ instead.
+  ['>Patient Center<svg class="sub-caret"', '>Centro del Paciente<svg class="sub-caret"', 1],
+  ['>Self-Pay</a>', '>Pago Particular</a>', 1],
+  ['>Financing Payment</a>', '>Financiamiento y Pagos</a>', 1],
+  ['>Patient Forms</a>', '>Formularios del Paciente</a>', 1],
+  ['>After Surgery</a>', '>Después de la Cirugía</a>', 1],
+  ['>Vitamin Guide</a>', '>Guía de Vitaminas</a>', 1],
+  ['>Bariatric Vitamins</a>', '>Vitaminas Bariátricas</a>', 1],
+  ['>Vitamin E Store</a>', '>Tienda de Vitaminas</a>', 1],
+  ['>Lantern</a>', '>Lantern</a>', 1],
+  ['>Pre-Op and Post-Op</a>', '>Preoperatorio y Postoperatorio</a>', 1],
+  ['>Exercise Regimens</a>', '>Rutinas de Ejercicio</a>', 1],
+  ['>Discharge Instructions</a>', '>Instrucciones de Alta</a>', 1],
+  ['>For Out of Town Patients</a>', '>Para Pacientes de Fuera</a>', 1],
+
   ['aria-label="Toggle menu"', 'aria-label="Abrir menú"', 1],
   ['>Request a Free Insurance Check</a>', '>Verificación de Seguro Gratuita</a>', 1],
 
@@ -356,6 +375,11 @@ const copy = [
   ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],
   ['<a href="#resources">Resources</a>', '<a href="#resources">Recursos</a>', 1],
   ['<a href="#insurance">Insurance</a>', '<a href="#insurance">Seguro</a>', 1],
+  [
+    '<a href="patient-center/self-pay.html">Patient Center</a>',
+    '<a href="patient-center/self-pay.html">Centro del Paciente</a>',
+    1,
+  ],
   ['<a href="#faq">FAQ</a>', '<a href="#faq">Preguntas</a>', 1],
   ['&copy; 2026 Houston Surgical Weight Loss. All rights reserved.', '&copy; 2026 Houston Surgical Weight Loss. Todos los derechos reservados.', 1],
   ['<a href="#">Privacy Policy</a>', '<a href="#">Política de Privacidad</a>', 1],
@@ -379,6 +403,7 @@ const copy = [
   ['<link rel="alternate" hreflang="es" href="es/index.html">', '<link rel="alternate" hreflang="es" href="index.html">', 1],
   ['<link rel="alternate" hreflang="x-default" href="index.html">', '<link rel="alternate" hreflang="x-default" href="../index.html">', 1],
   ['href="media/', 'href="../media/', 2],
+  ['href="patient-center/', 'href="../patient-center/', 12],
   ['href="css/', 'href="../css/', 1],
   ['src="js/', 'src="../js/', 1],
   ['src="media/', 'src="../media/', 6],
