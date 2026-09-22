@@ -357,6 +357,11 @@ const copy = [
   ['<span>Fax: 281-807-9702</span>', '<span>Fax: 281-807-9702</span>', 1],
 
   // ---- footer ----
+  [
+    'Some links on this site are affiliate links. Houston Surgical Weight Loss earns a commission on purchases made through them.',
+    'Algunos enlaces de este sitio son enlaces de afiliados. Houston Surgical Weight Loss recibe una comisión por las compras realizadas a través de ellos.',
+    1,
+  ],
   ['<h4>Houston Surgical Weight Loss</h4>', '<h4>Houston Surgical Weight Loss</h4>', 1],
   ['4.9 average rating &middot; 3,000+ patients treated', '4.9 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],

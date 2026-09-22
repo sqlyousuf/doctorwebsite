@@ -1812,3 +1812,42 @@ p a:hover { text-decoration: underline; }
   .nav-shop { margin: 11px 0; padding: 12px 22px !important; }
   .nav-shop svg { width: 16px; height: 16px; }
 }
+
+/* ---------- Affiliate disclosure ----------
+   The practice earns a commission on the vitamin store link, so the FTC wants
+   this stated clearly and next to the link itself. That rules out fine print:
+   body-size text on a tinted panel, at full body contrast, sitting directly
+   under the button rather than italicised at the foot of the page. */
+
+.affiliate-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  max-width: 64ch;
+  margin: 18px auto 0;
+  padding: 15px 19px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+  font-size: 0.89rem;
+  line-height: 1.65;
+  color: var(--body);
+  text-align: left;
+}
+.affiliate-note svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  margin-top: 0.3em;
+  color: var(--accent);
+}
+.affiliate-note strong { color: var(--ink); }
+
+/* The same statement site-wide, covering the store tab in the nav. */
+.footer-affiliate {
+  max-width: 68ch;
+  margin: 0 auto clamp(20px, 3vw, 28px);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.66);
+}

@@ -387,6 +387,12 @@ const pages = [
           Visit the Vitamin Store <svg><use href="#ic-arrow"/></svg>
         </a>
       </div>
+      <p class="affiliate-note">
+        <svg aria-hidden="true"><use href="#ic-info"/></svg>
+        <span><strong>Disclosure:</strong> Houston Surgical Weight Loss earns a commission on purchases made through
+        this link. Your supplement plan is set by your surgeon and dietitian based on your procedure, and you are free
+        to buy equivalent bariatric vitamins anywhere.</span>
+      </p>
     `,
   },
 
@@ -462,6 +468,12 @@ const pages = [
           Vitamin E Store <svg><use href="#ic-arrow"/></svg>
         </a>
       </div>
+      <p class="affiliate-note">
+        <svg aria-hidden="true"><use href="#ic-info"/></svg>
+        <span><strong>Disclosure:</strong> Houston Surgical Weight Loss earns a commission on purchases made through
+        this link. Your supplement plan is set by your surgeon and dietitian based on your procedure, and you are free
+        to buy equivalent bariatric vitamins anywhere.</span>
+      </p>
 
       <h2 class="display bar">Your Complete Post-Surgery Health Plan</h2>
       <p>Vitamins alone aren't enough to maintain your health after bariatric surgery. Our team at Houston Surgical
