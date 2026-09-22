@@ -12,7 +12,7 @@
  * Copy is the practice's own, from houstonsurgicalweightloss.com/lantern/.
  */
 
-const PHONE = '(281) 653-6544';
+const PHONE = '281-653-6544';
 const PHONE_HREF = 'tel:+12816536544';
 const LANTERN_PHONE = '(855) 200-2099';
 

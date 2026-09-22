@@ -15,7 +15,7 @@
 // in its own module.
 const { page: lantern } = require('./content/lantern.js');
 
-const PHONE = '(281) 653-6544';
+const PHONE = '281-653-6544';
 const PHONE_HREF = 'tel:+12816536544';
 
 /** Shorthand so the copy below stays readable. */
