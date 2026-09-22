@@ -1864,3 +1864,77 @@ p a:hover { text-decoration: underline; }
   text-align: center;
   color: rgba(255, 255, 255, 0.66);
 }
+
+/* ---------- Procedure pages ---------- */
+
+/* The figures that answer "what does this actually do", above the fold. */
+.proc-stats {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(26px, 4vw, 40px);
+}
+.proc-stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 34px);
+  margin: 0;
+  text-align: center;
+}
+.proc-stat-row dt {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(1.3rem, 4.2vw, 1.85rem);
+  line-height: 1.1;
+  color: var(--accent);
+}
+.proc-stat-row dd {
+  margin: 7px 0 0;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+@media (min-width: 760px) {
+  .proc-stat-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* A draft awaiting clinical sign-off says so loudly, in the practice's own
+   sight line, so it cannot quietly be mistaken for finished copy. */
+.draft-banner {
+  background: #fff6e5;
+  border-bottom: 3px solid #c9a86a;
+  padding-block: clamp(20px, 3vw, 30px);
+  color: #4a3a1c;
+}
+.draft-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: var(--track-sm);
+  color: #7a5c14;
+}
+.draft-title svg { width: 18px; height: 18px; flex: none; }
+.draft-banner p { margin: 0 0 10px; font-size: 0.92rem; line-height: 1.65; }
+.draft-banner code {
+  background: rgba(122, 92, 20, 0.12);
+  padding: 1px 6px;
+  font-size: 0.86em;
+}
+.draft-sub { font-weight: 700; margin-top: 14px !important; }
+.draft-banner .prose-steps { margin: 0; }
+.draft-banner .prose-steps > li { font-size: 0.92rem; margin-bottom: 8px; }
+.draft-banner .prose-steps > li::before { color: #7a5c14; }
+
+/* A section the surgeon still has to write, marked so it cannot ship unnoticed. */
+.review-placeholder {
+  border: 2px dashed #c9a86a;
+  background: #fffaf0;
+  padding: clamp(18px, 3vw, 26px);
+  margin-block: clamp(20px, 3vw, 28px);
+  color: #4a3a1c;
+}
+.review-placeholder p { font-size: 0.93rem; }
+.review-placeholder p:last-child { margin-bottom: 0; }

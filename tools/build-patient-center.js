@@ -18,108 +18,16 @@ const fs = require('fs');
 const path = require('path');
 const { pages, PHONE, PHONE_HREF } = require('./patient-center-content.js');
 const { ORIGIN, breadcrumbSchema } = require('./site.js');
+const { root, src, sprite, footerFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
 
-const root = path.join(__dirname, '..');
-const srcPath = path.join(root, 'index.html');
 const outDir = path.join(root, 'patient-center');
 
-const src = fs.readFileSync(srcPath, 'utf8').replace(/\r\n/g, '\n');
-
-/** Pull a block out of index.html, or fail loudly rather than ship a broken page. */
-function extract(startMarker, endMarker, label) {
-  const start = src.indexOf(startMarker);
-  if (start === -1) throw new Error(`build-patient-center: could not find the ${label} start in index.html`);
-  const end = src.indexOf(endMarker, start);
-  if (end === -1) throw new Error(`build-patient-center: could not find the ${label} end in index.html`);
-  return src.slice(start, end + endMarker.length);
-}
-
-const sprite = extract('<svg aria-hidden="true" style="position:absolute', '</svg>\n\n<!-- ======================= HEADER', 'SVG sprite')
-  .replace(/\n\n<!-- =+ HEADER[\s\S]*$/, '');
-
-const footer = extract('<footer class="site-footer">', '</footer>', 'footer')
-  // The pages sit one level down, so the footer needs three rewrites — and
-  // only three. Section anchors have to travel back to the home page, but
-  // `<use href="#ic-…">` points at the inlined sprite in *this* document and
-  // `href="#"` is a placeholder, so both must be left alone: matching only
-  // `<a href="#word">` keeps them out of it.
-  .replace(/<a href="#([a-z][\w-]*)"/g, '<a href="../index.html#$1"')
-  .replace(/href="patient-center\//g, 'href="')
-  .replace(/src="media\//g, 'src="../media/');
-
-/* ---------- nav ---------- */
-
-const PRIMARY = [
-  ['../index.html#services', 'Procedures'],
-  ['../index.html#about', 'Our Surgeon'],
-  ['../index.html#process', 'How It Works'],
-  ['../index.html#testimonials', 'Stories'],
-  ['../index.html#insurance', 'Insurance'],
-  ['../index.html#faq', 'FAQ'],
-];
-
-// The store is the one external item in the menu, and it now appears twice:
-// as its own tab and as the child entry under Bariatric Vitamins. Take the URL
-// from the page data so the two can never drift apart, and fail loudly if that
-// entry is ever removed.
-const VITAMIN_STORE = (() => {
-  const store = pages.flatMap((p) => p.sub || []).find((s) => s.nav === 'Vitamin E Store');
-  if (!store) throw new Error('build-patient-center: no Vitamin E Store entry in the page data');
-  return store.href;
-})();
-
-/**
- * The Patient Center dropdown. `prefix` is '' on the home page and '' here too
- * (these pages are siblings inside patient-center/), `activeSlug` marks the
- * page you are on.
- */
-function buildSubmenu(prefix, activeSlug) {
-  const items = [];
-  for (const page of pages) {
-    const current = page.slug === activeSlug ? ' aria-current="page"' : '';
-    items.push(`          <li><a href="${prefix}${page.slug}.html"${current}>${page.nav}</a></li>`);
-    for (const sub of page.sub || []) {
-      const attrs = sub.external ? ' target="_blank" rel="noopener"' : '';
-      items.push(`          <li class="nav-sub-child"><a href="${sub.href}"${attrs}>${sub.nav}</a></li>`);
-    }
-  }
-  return items.join('\n');
-}
-
-function buildNav(activeSlug) {
-  const primary = PRIMARY.map(([href, label]) => `        <li><a href="${href}">${label}</a></li>`).join('\n');
-  // Lantern gets a tab of its own, badged with its own mark, as well as its
-  // place in the dropdown — the benefit is the reason a lot of these visitors
-  // are here at all, and a logo is what they are scanning for.
-  const current = activeSlug === 'lantern' ? ' aria-current="page"' : '';
-  return `      <ul class="nav-links" id="navLinks">
-${primary}
-        <li class="has-sub">
-          <a href="#" class="sub-toggle" aria-expanded="false" aria-haspopup="true">Patient Center<svg class="sub-caret" aria-hidden="true"><use href="#ic-caret"/></svg></a>
-          <ul class="nav-sub">
-${buildSubmenu('', activeSlug)}
-          </ul>
-        </li>
-        <li class="nav-shop-item">
-          <a href="${VITAMIN_STORE}" class="nav-shop" target="_blank" rel="noopener"
-            aria-label="Vitamin E Store — opens in a new tab">
-            <svg aria-hidden="true"><use href="#ic-cart"/></svg>
-            <span>Vitamin E Store</span>
-          </a>
-        </li>
-        <li class="nav-brand-item">
-          <a href="lantern.html" class="nav-brand" aria-label="Lantern — employer-covered surgery"${current}>
-            <img src="../media/lantern-logo.jpg" alt="Lantern" width="350" height="91" loading="lazy">
-          </a>
-        </li>
-      </ul>`;
-}
+// These pages are siblings inside patient-center/, so they reach each other
+// with a bare filename.
+const footer = footerFor('');
+const nav = (slug) => buildNav({ pcPrefix: '', active: { patientCenter: slug } });
 
 /* ---------- page template ---------- */
-
-const escapeAttr = (s) => s.replace(/"/g, '&quot;');
-/** Headings carry entities like &amp;; strip them back out for <title>. */
-const plain = (s) => s.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '');
 
 /** The "explore the rest of the Patient Center" grid at the foot of each page. */
 function relatedGrid(currentSlug) {
@@ -191,7 +99,7 @@ ${sprite}
     </button>
 
     <nav class="nav-wrap">
-${buildNav(page.slug)}
+${nav(page.slug)}
     </nav>
 
     <a href="../index.html#insurance" class="btn btn-solid header-cta">See If You're Covered</a>
