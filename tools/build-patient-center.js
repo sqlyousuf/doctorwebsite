@@ -209,7 +209,7 @@ ${footer}
 
 <a href="../index.html#contact" class="candidate-pill" id="candidatePill">Are You A Candidate?</a>
 
-<script src="../js/main.js"></script>
+<script src="../js/main.js"></script>${page.script ? `\n<script>${page.script.trim()}\n</script>` : ''}
 </body>
 </html>
 `;

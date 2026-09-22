@@ -11,6 +11,10 @@
  * assets: the brief was "same text, different pics".
  */
 
+// Lantern is long enough — and its employer list interactive enough — to keep
+// in its own module.
+const { page: lantern } = require('./content/lantern.js');
+
 const PHONE = '(281) 653-6544';
 const PHONE_HREF = 'tel:+12816536544';
 
@@ -543,162 +547,7 @@ const pages = [
     `,
   },
 
-  {
-    slug: 'lantern',
-    nav: 'Lantern',
-    title: 'Lantern Bariatric Surgery Coverage',
-    tagline: 'Hundreds of major employers cover weight loss surgery at zero out-of-pocket cost.',
-    description:
-      'Houston Surgical Weight Loss is a designated Lantern (formerly SurgeryPlus) network provider — bariatric surgery covered as an employer benefit at zero out-of-pocket cost.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=70',
-    body: `
-      <h2 class="display bar">The Complete Guide to Lantern Benefits</h2>
-      <p class="intro">If you've been told weight loss surgery is too expensive or that insurance won't cover it,
-      there's important news: hundreds of major U.S. employers now offer bariatric surgery as a fully covered, zero-cost
-      benefit through Lantern (formerly SurgeryPlus). Millions of American workers and covered family members may have
-      access to this benefit without deductibles, co-pays, or out-of-pocket expenses.</p>
-      <p>Houston Surgical Weight Loss is a designated Lantern Network Provider in Houston, TX, helping eligible patients
-      use this benefit daily.</p>
-
-      <h2 class="display bar">What Is Lantern?</h2>
-      <p>Lantern is a national employer-sponsored healthcare platform connecting employees with credentialed surgical
-      providers at dramatically reduced or eliminated costs. Employers partner with Lantern to offer their workforce
-      access to vetted networks of top-tier surgical centers and board-certified surgeons. In exchange, employers reduce
-      healthcare costs and pass savings to employees as zero out-of-pocket expenses.</p>
-      <p>For bariatric surgery, Lantern covers gastric sleeve, gastric bypass, revisional procedures, and related care —
-      often with no patient cost whatsoever.</p>
-
-      <h2 class="display bar">How Does Lantern Work for Bariatric Surgery?</h2>
-      <p>Your employer pre-negotiates with Lantern, which assembles a network of credentialed surgeons and centers. When
-      you use a Lantern Network provider for covered procedures, your employer's plan pays the full cost.</p>
-      <h3>How it Works</h3>
-      ${ol([
-        'Your employer enrolls in Lantern as a separate surgery benefit (may not appear on standard insurance cards)',
-        'You contact Lantern at <a href="tel:+18552002099">(855) 200-2099</a> or through Houston Surgical Weight Loss',
-        'Lantern assigns a dedicated Care Advocate to guide you through the entire process',
-        'You meet with surgeons — virtual or in-person consultations are covered',
-        'Surgery is approved and scheduled (typically less than a month from first consultation)',
-        'Facility fees, surgeon fees, anesthesia, and post-operative care are covered',
-        'Your bill arrives showing $0',
-      ])}
-
-      <h2 class="display bar">What Does "No Out-of-Pocket" Actually Mean?</h2>
-      <div class="split">
-        <div>
-          <h3>Covered</h3>
-          ${ul([
-            'Surgeon fees',
-            'Surgical facility fees',
-            'Anesthesia',
-            'Pre-operative testing and lab work',
-            'Post-operative follow-up visits',
-          ])}
-        </div>
-        <div>
-          <h3>Does Not Apply</h3>
-          ${ul(['Deductible', 'Co-pay', 'Co-insurance'])}
-        </div>
-      </div>
-      <p>For eligible patients, gastric sleeve or gastric bypass (normally $15,000–$25,000+) costs exactly zero
-      dollars.</p>
-      <p class="fine">*Deductible may apply; Houston Surgical Weight Loss will discuss at your initial consult.</p>
-
-      <h2 class="display bar">Which Employers Offer Lantern Bariatric Benefits?</h2>
-      <p>Lantern works with hundreds of employers across virtually every industry — retailers, energy companies,
-      government entities, healthcare systems, and educational institutions.</p>
-      <p>Participating employers include 7-Eleven, AT&amp;T, BJ's Wholesale Club, Carter's, Dollar General, Edward
-      Jones, Flex-N-Gate, The Home Depot, Marriott International, Phillips 66, Southwest Airlines, State Farm Insurance,
-      and many others.</p>
-      <p class="fine">This list is current as of 2025–2026. If your employer isn't listed, call our office at
-      <a href="${PHONE_HREF}">${PHONE}</a> and we will check your eligibility.</p>
-
-      <h2 class="display bar">Covered Surgeries</h2>
-      <div class="card-grid">
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-bypass"/></svg></span>
-          <h3>Gastric Bypass Surgery (Roux-En-Y)</h3>
-          <p>Gold-standard procedure for severe obesity and type 2 diabetes. Results in 70–80% excess weight loss; type
-          2 diabetes remission in 98%+ of cases. Recovery typically 1 week.</p>
-        </article>
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-sleeve"/></svg></span>
-          <h3>Gastric Sleeve Surgery (Sleeve Gastrectomy)</h3>
-          <p>Removes approximately 80% of the stomach, leaving a sleeve-shaped tube. Eliminates ghrelin (hunger
-          hormone). Patients lose 60–70% excess weight. Highly effective for type 2 diabetes, hypertension, sleep apnea,
-          and joint pain. Recovery around 1 week.</p>
-        </article>
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-revision"/></svg></span>
-          <h3>Revisional Bariatric Surgery</h3>
-          <p>For patients with previous bariatric procedures who experienced inadequate weight loss, weight regain, acid
-          reflux, or complications. Lantern covers revisional procedures for eligible patients.</p>
-        </article>
-      </div>
-
-      <h2 class="display bar">Frequently Asked Questions</h2>
-      ${faq([
-        [
-          'Does my employer offer this benefit?',
-          '<p>See the comprehensive employer list above, or call our office and we will verify it for you.</p>',
-        ],
-        [
-          'Does Lantern cover my spouse or children?',
-          '<p>In most plans, yes. Covered dependents are typically eligible for the same benefit.</p>',
-        ],
-        ['What is the BMI requirement?', '<p>Your surgeon reviews your specific case during consultation.</p>'],
-        [
-          'Will my employer know I had bariatric surgery?',
-          '<p>No. Medical information is HIPAA-protected and not shared with employers.</p>',
-        ],
-        [
-          'What happens if my surgery has complications?',
-          '<p>Lantern-covered procedures include standard post-operative care. Your care team coordinates continued coverage for medically necessary treatment.</p>',
-        ],
-        [
-          'Can part-time employees use this benefit?',
-          '<p>It depends on enrollment in employer-sponsored health coverage. Contact us to verify.</p>',
-        ],
-        [
-          'Is there a waiting period?',
-          "<p>Usually not — we'll confirm your plan's requirements during eligibility verification.</p>",
-        ],
-      ])}
-
-      <h2 class="display bar">Dr. Irfan Wadiwala — Bariatric &amp; General Surgeon</h2>
-      <p>Fellowship-trained bariatric surgeon and board-certified general surgeon with over 18 years of surgical
-      experience and thousands of successful bariatric procedures.</p>
-      <h3>Expertise includes</h3>
-      ${ul([
-        'Gastric sleeve, gastric bypass, and revision bariatric surgery',
-        'Advanced laparoscopic and minimally invasive techniques',
-        'Hernia repairs, gallbladder removal, appendectomies, cyst removals',
-      ])}
-      <h3>Hospital Privileges</h3>
-      ${ul([
-        'HCA Houston Healthcare Northwest',
-        "St. Luke's Health – The Vintage Hospital",
-        'Houston Methodist Willowbrook Hospital',
-      ])}
-      <h3>Education &amp; Training</h3>
-      ${ul([
-        'Fellowship in Laparoscopic Bariatric Surgery – Penn State Milton Hershey Medical Center',
-        'General Surgery Residency – Martin Luther King and Arrowhead Regional Medical Center, Los Angeles',
-        'Doctor of Osteopathic Medicine, Summa Cum Laude – Western University, Pomona, CA',
-        'Board-Certified in General Surgery and Bariatric Surgery',
-      ])}
-      <p>Dr. Wadiwala treats the whole person and guides patients from preoperative education through long-term
-      follow-up.</p>
-
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Fellowship-trained, board-certified bariatric surgeon with 18+ years of experience',
-        'Expertise in minimally invasive laparoscopic weight loss surgery',
-        'Personalized care plans tailored to your goals',
-        'Comprehensive support before, during, and after surgery',
-        'Telehealth and in-office consultation options',
-      ])}
-    `,
-  },
+  lantern,
 
   {
     slug: 'pre-op-and-post-op',
