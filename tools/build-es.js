@@ -338,7 +338,7 @@ const copy = [
     1,
   ],
   ['Call 281-653-6544</a>', 'Llame al 281-653-6544</a>', 1],
-  ['Check My Insurance</a>', 'Verifique Mi Seguro</a>', 1],
+  ['Email Our Team</a>', 'Escríbanos por Correo</a>', 1],
   ['<span>Fax: 281-807-9702</span>', '<span>Fax: 281-807-9702</span>', 1],
 
   // ---- footer ----
