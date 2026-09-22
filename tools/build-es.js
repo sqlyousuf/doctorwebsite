@@ -64,6 +64,21 @@ const copy = [
   ['>Discharge Instructions</a>', '>Instrucciones de Alta</a>', 1],
   ['>For Out of Town Patients</a>', '>Para Pacientes de Fuera</a>', 1],
 
+  // ---- the two standalone tabs ----
+  // Their labels sit in different markup from the dropdown entries above, so
+  // they need their own lines; the counts there stay at 1.
+  ['<span>Vitamin E Store</span>', '<span>Tienda de Vitaminas</span>', 1],
+  [
+    'aria-label="Vitamin E Store — opens in a new tab"',
+    'aria-label="Tienda de Vitaminas — se abre en una pestaña nueva"',
+    1,
+  ],
+  [
+    'aria-label="Lantern — employer-covered surgery"',
+    'aria-label="Lantern — cirugía cubierta por su empleador"',
+    1,
+  ],
+
   ['aria-label="Toggle menu"', 'aria-label="Abrir menú"', 1],
   ['>Request a Free Insurance Check</a>', '>Verificación de Seguro Gratuita</a>', 1],
 
@@ -412,9 +427,15 @@ html = html.replace(
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(outPath, html, 'utf8');
 
-const leftovers = ['Gastric Sleeve', 'Frequently Asked', 'Insurance Check', 'Are You A Candidate'].filter((s) =>
-  html.includes(s)
-);
+const leftovers = [
+  'Gastric Sleeve',
+  'Frequently Asked',
+  'Insurance Check',
+  'Are You A Candidate',
+  'Vitamin E Store',
+  'opens in a new tab',
+  'employer-covered',
+].filter((s) => html.includes(s));
 if (leftovers.length) {
   console.error(`build-es: untranslated copy still present: ${leftovers.join(', ')}`);
   process.exit(1);

@@ -57,6 +57,16 @@ const PRIMARY = [
   ['../index.html#faq', 'FAQ'],
 ];
 
+// The store is the one external item in the menu, and it now appears twice:
+// as its own tab and as the child entry under Bariatric Vitamins. Take the URL
+// from the page data so the two can never drift apart, and fail loudly if that
+// entry is ever removed.
+const VITAMIN_STORE = (() => {
+  const store = pages.flatMap((p) => p.sub || []).find((s) => s.nav === 'Vitamin E Store');
+  if (!store) throw new Error('build-patient-center: no Vitamin E Store entry in the page data');
+  return store.href;
+})();
+
 /**
  * The Patient Center dropdown. `prefix` is '' on the home page and '' here too
  * (these pages are siblings inside patient-center/), `activeSlug` marks the
@@ -88,6 +98,13 @@ ${primary}
           <ul class="nav-sub">
 ${buildSubmenu('', activeSlug)}
           </ul>
+        </li>
+        <li class="nav-shop-item">
+          <a href="${VITAMIN_STORE}" class="nav-shop" target="_blank" rel="noopener"
+            aria-label="Vitamin E Store — opens in a new tab">
+            <svg aria-hidden="true"><use href="#ic-cart"/></svg>
+            <span>Vitamin E Store</span>
+          </a>
         </li>
         <li class="nav-brand-item">
           <a href="lantern.html" class="nav-brand" aria-label="Lantern — employer-covered surgery"${current}>

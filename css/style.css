@@ -1758,13 +1758,7 @@ p a:hover { text-decoration: underline; }
 .nav-brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 @media (min-width: 900px) {
-  /* A hairline rule sets the partner badge apart from the practice's own
-     sections without adding a word of chrome. */
-  .nav-brand-item {
-    padding-left: 24px;
-    margin-left: -2px;
-    border-left: 1px solid var(--line);
-  }
+  .nav-brand-item { margin-left: 4px; }
   .nav-brand img { height: 23px; }
 }
 
@@ -1778,4 +1772,43 @@ p a:hover { text-decoration: underline; }
     border-bottom: 1px solid var(--line);
   }
   .nav-brand img { height: 22px; mix-blend-mode: normal; }
+}
+
+/* ---------- Vitamin E Store: a tab that reads as an action ----------
+   Every other nav item takes you to a page about the practice; this one takes
+   you off-site to buy something. It gets the accent pill so patients can find
+   it without reading the menu, and so it does not get mistaken for a section. */
+
+.nav-shop {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px !important;
+  border: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent) !important;
+  border-radius: 999px;
+  color: var(--accent) !important;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+.nav-shop svg { width: 15px; height: 15px; flex: none; }
+.nav-shop:hover {
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+  color: var(--white) !important;
+  box-shadow: 0 6px 16px rgba(1, 162, 234, 0.28);
+}
+.nav-shop:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (min-width: 900px) {
+  /* The store and the Lantern badge are the two items that lead off-site, and
+     the nav wraps them onto a row of their own at common desktop widths. That
+     reads well — practice sections above, actions below — so lean into it with
+     spacing rather than a divider rule, which dangles once a wrap happens. */
+  .nav-shop-item { margin-left: 8px; }
+}
+
+@media (max-width: 899px) {
+  .nav-links .nav-shop-item { display: flex; justify-content: center; }
+  .nav-shop { margin: 11px 0; padding: 12px 22px !important; }
+  .nav-shop svg { width: 16px; height: 16px; }
 }
