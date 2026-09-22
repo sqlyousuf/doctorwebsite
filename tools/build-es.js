@@ -25,6 +25,41 @@ const outPath = path.join(outDir, 'index.html');
 /** [english, spanish, expectedOccurrences] */
 const copy = [
   // ---- head ----
+  // The Spanish page is its own URL, so it needs its own canonical and
+  // og:url. The hreflang set is deliberately identical on both pages — each
+  // must list every language including itself.
+  [
+    '<link rel="canonical" href="https://houstonsurgicalweightloss.com/">',
+    '<link rel="canonical" href="https://houstonsurgicalweightloss.com/es/">',
+    1,
+  ],
+  [
+    '<meta property="og:url" content="https://houstonsurgicalweightloss.com/">',
+    '<meta property="og:url" content="https://houstonsurgicalweightloss.com/es/">',
+    1,
+  ],
+  ['<meta property="og:locale" content="en_US">', '<meta property="og:locale" content="es_ES">', 1],
+  [
+    '<meta property="og:locale:alternate" content="es_ES">',
+    '<meta property="og:locale:alternate" content="en_US">',
+    1,
+  ],
+  [
+    'content="Bariatric Surgery in Houston, TX | Houston Surgical Weight Loss"',
+    'content="Cirugía Bariátrica en Houston, TX | Houston Surgical Weight Loss"',
+    2,
+  ],
+  [
+    'content="Gastric sleeve, bypass and revision surgery with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon in Spring, TX. Most insurance accepted."',
+    'content="Manga gástrica, bypass y cirugía de revisión con el Dr. Irfan Wadiwala, cirujano bariátrico en Spring, TX. Aceptamos la mayoría de los seguros."',
+    1,
+  ],
+  [
+    'content="Gastric sleeve, bypass and revision surgery with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon in Spring, TX."',
+    'content="Manga gástrica, bypass y cirugía de revisión con el Dr. Irfan Wadiwala, cirujano bariátrico en Spring, TX."',
+    1,
+  ],
+  ['"inLanguage": "en-US"', '"inLanguage": "es-US"', 1],
   ['<html lang="en">', '<html lang="es">', 1],
   [
     '<title>Houston Surgical Weight Loss | Bariatric Surgery &amp; Medical Weight Loss</title>',
@@ -391,10 +426,18 @@ const copy = [
     1,
   ],
 
-  // ---- hreflang + asset paths for the extra directory level ----
-  ['<link rel="alternate" hreflang="en" href="index.html">', '<link rel="alternate" hreflang="en" href="../index.html">', 1],
-  ['<link rel="alternate" hreflang="es" href="es/index.html">', '<link rel="alternate" hreflang="es" href="index.html">', 1],
-  ['<link rel="alternate" hreflang="x-default" href="index.html">', '<link rel="alternate" hreflang="x-default" href="../index.html">', 1],
+  // The procedure names inside the JSON-LD, which describe a Spanish page and
+  // so should read in Spanish too.
+  ['"name": "Gastric Sleeve"', '"name": "Manga Gástrica"', 1],
+  ['"name": "Gastric Bypass"', '"name": "Bypass Gástrico"', 1],
+  ['"name": "Gastric Balloon"', '"name": "Balón Gástrico"', 1],
+  ['"name": "Lap-Band"', '"name": "Banda Gástrica"', 1],
+  ['"name": "Revision Bariatric Surgery"', '"name": "Cirugía Bariátrica de Revisión"', 1],
+  ['"name": "Medical Weight Loss"', '"name": "Pérdida de Peso Médica"', 1],
+
+  // ---- asset paths for the extra directory level ----
+  // hreflang is no longer rewritten: the tags are absolute URLs now, and both
+  // pages must advertise the same complete set, each including itself.
   ['href="media/', 'href="../media/', 2],
   ['href="patient-center/', 'href="../patient-center/', 13],
   ['href="css/', 'href="../css/', 1],
