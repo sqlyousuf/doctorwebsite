@@ -80,12 +80,12 @@ const copy = [
   ],
 
   ['aria-label="Toggle menu"', 'aria-label="Abrir menú"', 1],
-  ['>Request a Free Insurance Check</a>', '>Verificación de Seguro Gratuita</a>', 1],
+  [">See If You're Covered</a>", '>Vea Si Tiene Cobertura</a>', 1],
 
   // ---- hero ----
   ['>Bariatric Surgery &amp; Medical Weight Loss</p>', '>Cirugía Bariátrica y Pérdida de Peso Médica</p>', 1],
-  ['>Get Started Now</a>', '>Comience Ahora</a>', 1],
-  ['<strong>4.9</strong> | 3,000+ patients treated', '<strong>4.9</strong> | más de 3,000 pacientes atendidos', 1],
+  ['>Talk to Dr. Wadiwala</a>', '>Hable con el Dr. Wadiwala</a>', 1],
+  ['<strong>4.9</strong> average rating &middot; 3,000+ patients treated', '<strong>4.9</strong> de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['aria-label="Scroll to content"', 'aria-label="Desplazarse al contenido"', 1],
 
   // ---- why us ----
@@ -98,9 +98,9 @@ const copy = [
   ['Surgical and Medical Weight Loss with Proven Results', 'Pérdida de peso quirúrgica y médica con resultados comprobados', 1],
 
   // ---- lifestyle strip ----
-  ['<figcaption>Powerful.</figcaption>', '<figcaption>Poderosa.</figcaption>', 1],
-  ['<figcaption>Thriving.</figcaption>', '<figcaption>Plena.</figcaption>', 1],
-  ['<figcaption>Confident.</figcaption>', '<figcaption>Segura.</figcaption>', 1],
+  ['<figcaption>Lighter.</figcaption>', '<figcaption>Ligera.</figcaption>', 1],
+  ['<figcaption>Stronger.</figcaption>', '<figcaption>Fuerte.</figcaption>', 1],
+  ['<figcaption>Steady.</figcaption>', '<figcaption>Estable.</figcaption>', 1],
 
   // ---- split intro ----
   ['Bariatric Surgical<br>Weight Loss', 'Pérdida de Peso<br>Quirúrgica', 1],
@@ -243,7 +243,7 @@ const copy = [
   ['Pre-operative nutrition &amp; psych clearance', 'Autorización nutricional y psicológica preoperatoria', 1],
   ['Surgical procedure &amp; hospital stay', 'Procedimiento quirúrgico y estancia hospitalaria', 1],
   ['Post-op follow-up visits (12 months)', 'Citas de seguimiento postoperatorio (12 meses)', 1],
-  ['>Insurance Check</a>', '>Verificar Mi Seguro</a>', 1],
+  ['>Check My Coverage</a>', '>Verificar Mi Cobertura</a>', 1],
 
   // ---- self-pay ----
   ['>Self-Pay</h2>', '>Pago Particular</h2>', 1],
@@ -267,7 +267,7 @@ const copy = [
   ],
 
   // ---- virtual ----
-  ['>See You (Virtually) Soon!</h2>', '>¡Nos Vemos (Virtualmente) Pronto!</h2>', 1],
+  ['>Care Without the Commute</h2>', '>Atención Sin Desplazarse</h2>', 1],
   [
     'Houston Surgical Weight Loss welcomes patients from across Texas and beyond. With the click of a button you can start your weight loss journey virtually with Dr. Wadiwala and our care team, then stay engaged with a program that takes you from your initial consultation through to your final visit and long-term follow-up.',
     'Houston Surgical Weight Loss recibe pacientes de todo Texas y de más allá. Con un solo clic puede comenzar su camino de pérdida de peso de forma virtual con el Dr. Wadiwala y nuestro equipo, y continuar con un programa que lo acompaña desde su consulta inicial hasta su última cita y el seguimiento a largo plazo.',
@@ -358,7 +358,7 @@ const copy = [
 
   // ---- footer ----
   ['<h4>Houston Surgical Weight Loss</h4>', '<h4>Houston Surgical Weight Loss</h4>', 1],
-  ['4.9 of 5 &middot; 3,000+ patients treated', '4.9 de 5 &middot; más de 3,000 pacientes atendidos', 1],
+  ['4.9 average rating &middot; 3,000+ patients treated', '4.9 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
   ['<a href="#about">Our Surgeon</a>', '<a href="#about">Nuestro Cirujano</a>', 1],
   ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],
@@ -374,7 +374,7 @@ const copy = [
   ['<a href="#">Terms of Use</a>', '<a href="#">Términos de Uso</a>', 1],
 
   // ---- floating CTA ----
-  ['>Are You A Candidate?</a>', '>¿Es Usted Candidato?</a>', 1],
+  ['>Do I Qualify?</a>', '>¿Califico?</a>', 1],
 
   // ---- language switcher: swap which side is active, and step up a level ----
   ['aria-label="Language"', 'aria-label="Idioma"', 1],
@@ -430,8 +430,9 @@ fs.writeFileSync(outPath, html, 'utf8');
 const leftovers = [
   'Gastric Sleeve',
   'Frequently Asked',
-  'Insurance Check',
-  'Are You A Candidate',
+  "See If You're Covered",
+  'Do I Qualify',
+  'Check My Coverage',
   'Vitamin E Store',
   'opens in a new tab',
   'employer-covered',

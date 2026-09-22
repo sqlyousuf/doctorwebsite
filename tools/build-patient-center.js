@@ -179,7 +179,7 @@ ${sprite}
 ${buildNav(page.slug)}
     </nav>
 
-    <a href="../index.html#insurance" class="btn btn-solid header-cta">Request a Free Insurance Check</a>
+    <a href="../index.html#insurance" class="btn btn-solid header-cta">See If You're Covered</a>
   </div>
 </header>
 
@@ -233,7 +233,7 @@ ${footer}
   <a href="../es/index.html" hreflang="es" lang="es"><svg class="flag" aria-hidden="true"><use href="#flag-es"/></svg>Español</a>
 </nav>
 
-<a href="../index.html#contact" class="candidate-pill" id="candidatePill">Are You A Candidate?</a>
+<a href="../index.html#contact" class="candidate-pill" id="candidatePill">Do I Qualify?</a>
 
 <script src="../js/main.js"></script>${page.script ? `\n<script>${page.script.trim()}\n</script>` : ''}
 </body>
