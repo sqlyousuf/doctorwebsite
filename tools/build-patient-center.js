@@ -52,7 +52,6 @@ const PRIMARY = [
   ['../index.html#services', 'Procedures'],
   ['../index.html#about', 'Our Surgeon'],
   ['../index.html#process', 'How It Works'],
-  ['../index.html#resources', 'Resources'],
   ['../index.html#testimonials', 'Stories'],
   ['../index.html#insurance', 'Insurance'],
   ['../index.html#faq', 'FAQ'],

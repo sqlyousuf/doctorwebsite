@@ -41,7 +41,6 @@ const copy = [
   ['<li><a href="#services">Procedures</a></li>', '<li><a href="#services">Procedimientos</a></li>', 1],
   ['<li><a href="#about">Our Surgeon</a></li>', '<li><a href="#about">Nuestro Cirujano</a></li>', 1],
   ['<li><a href="#process">How It Works</a></li>', '<li><a href="#process">Cómo Funciona</a></li>', 1],
-  ['<li><a href="#resources">Resources</a></li>', '<li><a href="#resources">Recursos</a></li>', 1],
   ['<li><a href="#testimonials">Stories</a></li>', '<li><a href="#testimonials">Testimonios</a></li>', 1],
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],
   ['<li><a href="#faq">FAQ</a></li>', '<li><a href="#faq">Preguntas</a></li>', 1],
@@ -252,32 +251,6 @@ const copy = [
     1,
   ],
 
-  // ---- resources ----
-  ['>Patient Resources</h2>', '>Recursos para Pacientes</h2>', 1],
-  [
-    'Weight-loss surgery is a lifelong journey. Our team stays with you at every stage, not just the day of surgery.',
-    'La cirugía de pérdida de peso es un camino de por vida. Nuestro equipo lo acompaña en cada etapa, no solo el día de la cirugía.',
-    1,
-  ],
-  ['<h3>Pre- &amp; Post-Op Guidance</h3>', '<h3>Guía Pre y Postoperatoria</h3>', 1],
-  [
-    'Step-by-step instructions before your procedure and clear discharge guidance to support a smooth recovery.',
-    'Instrucciones paso a paso antes de su procedimiento e indicaciones claras de alta para una recuperación sin complicaciones.',
-    1,
-  ],
-  ['<h3>Nutrition &amp; Exercise Coaching</h3>', '<h3>Acompañamiento en Nutrición y Ejercicio</h3>', 1],
-  [
-    'Personalized eating plans, vitamin and supplement guidance, and activity coaching to help your results last.',
-    'Planes de alimentación personalizados, orientación sobre vitaminas y suplementos, y acompañamiento en actividad física para que sus resultados duren.',
-    1,
-  ],
-  ['<h3>Out-of-Town Patients</h3>', '<h3>Pacientes de Fuera de la Ciudad</h3>', 1],
-  [
-    'Travel and lodging guidance for patients coming from outside the area, plus virtual visits before and after surgery.',
-    'Orientación sobre viaje y hospedaje para pacientes que vienen de fuera del área, además de consultas virtuales antes y después de la cirugía.',
-    1,
-  ],
-
   // ---- virtual ----
   ['>See You (Virtually) Soon!</h2>', '>¡Nos Vemos (Virtualmente) Pronto!</h2>', 1],
   [
@@ -373,7 +346,6 @@ const copy = [
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
   ['<a href="#about">Our Surgeon</a>', '<a href="#about">Nuestro Cirujano</a>', 1],
   ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],
-  ['<a href="#resources">Resources</a>', '<a href="#resources">Recursos</a>', 1],
   ['<a href="#insurance">Insurance</a>', '<a href="#insurance">Seguro</a>', 1],
   [
     '<a href="patient-center/self-pay.html">Patient Center</a>',
