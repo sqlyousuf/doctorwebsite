@@ -121,6 +121,23 @@ function renderBlocks(list, indent) {
     .map((b) => {
       if (b.type === 'h2') return `${pad}<h2 class="display bar">${b.text}</h2>`;
       if (b.type === 'h3') return `${pad}<h3>${b.text}</h3>`;
+      if (b.type === 'table') {
+        const [head, ...rest] = b.rows;
+        return (
+          `${pad}<div class="table-wrap">
+${pad}  <table class="prose-table">
+` +
+          `${pad}    <thead><tr>` + head.map((c) => `<th>${c.replace(/<\/?strong>/g, '')}</th>`).join('') + `</tr></thead>
+` +
+          `${pad}    <tbody>
+` +
+          rest.map((r) => `${pad}      <tr>` + r.map((c) => `<td>${c}</td>`).join('') + `</tr>`).join('\n') +
+          `
+${pad}    </tbody>
+${pad}  </table>
+${pad}</div>`
+        );
+      }
       if (b.type === 'list') {
         const cls = b.ordered ? 'prose-steps' : 'prose-list';
         const tag = b.ordered ? 'ol' : 'ul';
@@ -131,10 +148,67 @@ function renderBlocks(list, indent) {
     .join('\n');
 }
 
+/*
+ * Corrections for defects in the source markup.
+ *
+ * Faithful import is the goal, but not when the source is broken. On the
+ * general surgery page the third bullet of "How do I prepare for surgery?"
+ * sits outside its <ul> as a bare paragraph, run together with the sentence
+ * after it — so the imported page reads "...stop or continue You'll receive a
+ * customized pre-surgery plan." Their own self-pay page carries this same FAQ
+ * with all three items in the list, so the intent is not in doubt.
+ *
+ * Each entry is applied once and the build fails if it stops matching, which
+ * is the signal that they have fixed it upstream and this can go.
+ */
+const CORRECTIONS = [
+  {
+    file: 'general-surgery.html',
+    find: 'Instructions on which medications to stop or continue You’ll receive a customized pre-surgery plan at your consultation.',
+    // Becomes the missing third bullet plus its own closing sentence.
+    lastItem: 'Instructions on which medications to stop or continue',
+    trailing: 'You’ll receive a customized pre-surgery plan at your consultation.',
+  },
+  {
+    // Same defect again: the third bullet of "Most patients experience" sits
+    // outside its <ul>, so it renders as a stray sentence after the list.
+    file: 'laparoscopic-surgery.html',
+    find: 'Shorter downtime before returning to work and daily life',
+    lastItem: 'Shorter downtime before returning to work and daily life',
+    trailing: null,
+  },
+];
+
+function applyCorrections(page) {
+  for (const c of CORRECTIONS) {
+    if (c.file !== page.file) continue;
+    let hit = false;
+    const walk = (blocks) => {
+      for (let i = 0; i < blocks.length; i++) {
+        if (blocks[i].type === 'p' && blocks[i].text === c.find) {
+          const list = blocks[i - 1];
+          if (list && list.type === 'list') list.items.push(c.lastItem);
+          // A null trailing means the stray paragraph was only ever the bullet.
+          if (c.trailing) blocks[i] = { type: 'p', text: c.trailing };
+          else blocks.splice(i--, 1);
+          hit = true;
+        }
+      }
+    };
+    walk(page.body);
+    for (const f of page.faqs) walk(f.a);
+    if (!hit) {
+      console.error(`make-procedures-content: correction for ${c.file} no longer matches — remove it if the source is fixed`);
+      process.exit(1);
+    }
+  }
+}
+
 const imported = JSON.parse(fs.readFileSync(process.argv[2] || '.imported.json', 'utf8'));
 const out = [];
 
 for (const page of imported) {
+  applyCorrections(page);
   const meta = META[page.file];
   if (!meta) {
     console.error(`make-procedures-content: no metadata for ${page.file}`);

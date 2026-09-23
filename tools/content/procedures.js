@@ -319,7 +319,6 @@ const pages = [
         <li><strong>Traditional open surgery:</strong> Used for complex cases or when necessary.</li>
       </ul>
       <p>Laparoscopic surgery results in <strong>less scarring, quicker recovery, and reduced pain</strong>.</p>
-      <h3><strong></strong></h3>
       <h3><strong>Intestinal Surgery (Small Intestine &amp; Colon)</strong></h3>
       <p>Surgery on the intestines may be required for a variety of conditions, including:</p>
       <ul class="prose-list">
@@ -335,7 +334,6 @@ const pages = [
         <li><strong>Colon surgery:</strong> Removal of affected portions to restore proper function.</li>
       </ul>
       <p>Whenever possible, we use <strong>laparoscopic techniques</strong> to reduce recovery times and surgical risks.</p>
-      <h3><strong></strong></h3>
       <h3><strong>Stomach Surgery</strong></h3>
       <p>The <strong>stomach</strong> plays a crucial role in digestion. Some conditions that may require surgery include:</p>
       <ul class="prose-list">
@@ -343,14 +341,12 @@ const pages = [
         <li>Stomach cancer</li>
         <li>Severe <strong>GERD (acid reflux)</strong></li>
       </ul>
-      <p><strong></strong></p>
       <p><strong>Common procedures:</strong></p>
       <ul class="prose-list">
         <li><strong>Gastrectomy:</strong> Partial or total removal of the stomach.</li>
         <li><strong>Nissen Fundoplication:</strong> A minimally invasive anti-reflux procedure.</li>
       </ul>
       <p>Our goal is to <strong>restore normal digestive function</strong> while prioritizing patient comfort and recovery.</p>
-      <h3><strong></strong></h3>
       <h3><strong>Liver Surgery</strong></h3>
       <p>The <strong>liver</strong> is vital for metabolism, detoxification, and nutrient storage. It also has a unique ability to <strong>regenerate itself</strong> after surgical removal of damaged tissue.</p>
       <p><strong>Common reasons for liver surgery:</strong></p>
@@ -379,16 +375,6 @@ const pages = [
         <li>Skin biopsies</li>
         <li>Removal of lesions or tumors</li>
       </ul>
-      <h2 class="display bar">About Houston Surgical Weight Loss</h2>
-      <p>Located in Spring, Texas, Houston Surgical Weight Loss provides state-of-the-art bariatric and general surgery services.</p>
-      <p>Our mission is to improve patients’ lives through safe, advanced surgical techniques and personalized care at every stage of treatment.</p>
-      <p><strong>Contact Us:</strong></p>
-      <ul class="prose-list">
-        <li><strong>Phone:</strong> (281) 653-6544</li>
-        <li><strong>Email:</strong> [email&#160;protected]</li>
-        <li><strong>Address:</strong> 5220 FM 2920, Suite 120, Spring, TX 77388</li>
-      </ul>
-      <p>Take the first step toward better health today. <strong>Call now to schedule your free initial consultation</strong> with Dr. Wadiwala and our expert surgical team.</p>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -410,7 +396,7 @@ const pages = [
         ],
         [
           'How do I prepare for surgery?',
-          '<p>Preparation may include:</p><ul class="prose-list">  <li>Pre-surgery lab tests</li>  <li>Dietary adjustments</li></ul><p>Instructions on which medications to stop or continue You’ll receive a customized pre-surgery plan at your consultation.</p>',
+          '<p>Preparation may include:</p><ul class="prose-list">  <li>Pre-surgery lab tests</li>  <li>Dietary adjustments</li>  <li>Instructions on which medications to stop or continue</li></ul><p>You’ll receive a customized pre-surgery plan at your consultation.</p>',
         ],
       ])}
     `,
@@ -510,16 +496,6 @@ const pages = [
         <li>Prefer a weight loss option that is <strong>adjustable and reversible</strong><strong></strong></li>
       </ul>
       <p>During your consultation, Dr. Wadiwala will review your health history and goals to determine whether Lap-Band surgery is your best option.</p>
-      <h2 class="display bar">About Houston Surgical Weight Loss</h2>
-      <p>Located in <strong>Spring, Texas</strong>, Houston Surgical Weight Loss provides a full spectrum of <strong>weight loss services</strong>, including bariatric surgery, nutritional guidance, and post-surgery care.</p>
-      <p>Our team is dedicated to supporting patients at every step of their journey, from initial consultation to lifelong weight management.</p>
-      <p><strong>Contact Us Today:</strong></p>
-      <ul class="prose-list">
-        <li><strong>Phone:</strong> (281) 653-6544</li>
-        <li><strong>Email:</strong> [email&#160;protected]</li>
-        <li><strong>Address:</strong> 5220 FM 2920, Suite 120, Spring, TX 77388</li>
-      </ul>
-      <p>Take control of your health today. <strong>Call now or schedule a consultation online</strong> to explore your options for Lap-Band surgery.</p>
       <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Lap-Band Surgery</h2>
       <ul class="prose-list">
         <li>Fellowship-trained, board-certified bariatric surgeon with over 18 years of experience</li>
@@ -678,27 +654,19 @@ const pages = [
       </ul>
       <p>Each procedure is carefully planned to deliver optimal outcomes with the least disruption to the body. Patients searching for <strong>laparoscopic weight loss surgery in Houston</strong> often choose minimally invasive options due to lower risk, faster recovery, and proven long-term success in managing obesity and related health conditions.</p>
       <h2 class="display bar">Benefits of Laparoscopic Surgery vs. Open Surgery</h2>
-      <p><strong>Feature</strong></p>
-      <p><strong>Laparoscopic Surgery</strong></p>
-      <p><strong>Open Surgery</strong></p>
-      <p>Incision Size</p>
-      <p>Small incisions (½ inch or less)</p>
-      <p>Large incision</p>
-      <p>Scarring</p>
-      <p>Minimal, less visible</p>
-      <p>Significant, more noticeable</p>
-      <p>Recovery Time</p>
-      <p>1–3 weeks for most patients</p>
-      <p>4–6 weeks or longer</p>
-      <p>Hospital Stay</p>
-      <p>Outpatient or 1 night</p>
-      <p>Several nights required</p>
-      <p>Infection Risk</p>
-      <p>Lower risk</p>
-      <p>Higher risk</p>
-      <p>Return to Activities</p>
-      <p>Faster</p>
-      <p>Slower</p>
+      <div class="table-wrap">
+        <table class="prose-table">
+          <thead><tr><th>Feature</th><th>Laparoscopic Surgery</th><th>Open Surgery</th></tr></thead>
+          <tbody>
+            <tr><td>Incision Size</td><td>Small incisions (½ inch or less)</td><td>Large incision</td></tr>
+            <tr><td>Scarring</td><td>Minimal, less visible</td><td>Significant, more noticeable</td></tr>
+            <tr><td>Recovery Time</td><td>1–3 weeks for most patients</td><td>4–6 weeks or longer</td></tr>
+            <tr><td>Hospital Stay</td><td>Outpatient or 1 night</td><td>Several nights required</td></tr>
+            <tr><td>Infection Risk</td><td>Lower risk</td><td>Higher risk</td></tr>
+            <tr><td>Return to Activities</td><td>Faster</td><td>Slower</td></tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="display bar">Laparoscopic Surgery Recovery Time</h2>
       <p>Recovery time depends on the procedure and patient health:</p>
       <ul class="prose-list">
@@ -710,8 +678,8 @@ const pages = [
       <ul class="prose-list">
         <li>Less pain after surgery</li>
         <li>Faster mobility</li>
+        <li>Shorter downtime before returning to work and daily life</li>
       </ul>
-      <p>Shorter downtime before returning to work and daily life</p>
       <h2 class="display bar">Minimally Invasive Surgery in Houston – Cost and Insurance</h2>
       <p>The <strong>cost of laparoscopic surgery</strong> varies based on the procedure, complexity, and insurance coverage. At Houston Surgical Weight Loss, we provide:</p>
       <ul class="prose-list">
@@ -720,16 +688,14 @@ const pages = [
         <li>Flexible financing plans for self-pay patients</li>
       </ul>
       <p>Many insurance plans cover laparoscopic surgeries when they are medically necessary. Our staff will guide you through every step, from cost planning to recovery.</p>
-      <h2 class="display bar">About Houston Surgical Weight Loss</h2>
-      <p>Located in Spring, Texas, Houston Surgical Weight Loss provides state-of-the-art bariatric and general surgery services.</p>
-      <p>Our mission is to improve patients’ lives through safe, advanced surgical techniques and personalized care at every stage of treatment.</p>
-      <p><strong>Contact Us:</strong></p>
+      <h2 class="display bar">Why Patients Trust Houston Surgical Weight Loss</h2>
       <ul class="prose-list">
-        <li><strong>Phone:</strong> (281) 653-6544</li>
-        <li><strong>Email:</strong> [email&#160;protected]</li>
-        <li><strong>Address:</strong> 5220 FM 2920, Suite 120, Spring, TX 77388</li>
+        <li>Fellowship-trained, board-certified surgeon with 18+ years of experience.</li>
+        <li>Expertise in laparoscopic hernia repair, gallbladder surgery, colon surgery, and bariatric procedures.</li>
+        <li>Focus on minimally invasive techniques for better results and quicker recovery.</li>
+        <li>Personalized care plans designed for each patient’s health and lifestyle needs.</li>
+        <li>Convenient telehealth consultations and comprehensive follow-up care.</li>
       </ul>
-      <p>Take the first step toward better health today. <strong>Call now to schedule your free initial consultation</strong> with Dr. Wadiwala and our expert surgical team.</p>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -756,10 +722,6 @@ const pages = [
         [
           'How do I know if I need laparoscopic general surgery near me?',
           '<p>If you are experiencing ongoing abdominal pain, digestive issues, or hernia symptoms, schedule a <strong>consultation</strong> to explore your options.</p>',
-        ],
-        [
-          'Why Patients Trust Houston Surgical Weight Loss',
-          '<ul class="prose-list">  <li>Fellowship-trained, board-certified surgeon with 18+ years of experience.</li>  <li>Expertise in laparoscopic hernia repair, gallbladder surgery, colon surgery, and bariatric procedures.</li>  <li>Focus on minimally invasive techniques for better results and quicker recovery.</li>  <li>Personalized care plans designed for each patient’s health and lifestyle needs.</li>  <li>Convenient telehealth consultations and comprehensive follow-up care.</li></ul>',
         ],
       ])}
     `,

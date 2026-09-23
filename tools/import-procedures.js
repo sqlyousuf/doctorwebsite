@@ -67,6 +67,17 @@ function contentRegion(html) {
 /** Walk the block elements in order. */
 function blocks(region) {
   const out = [];
+  // Pull tables out first and leave a marker, so the paragraph walker below
+  // does not shred their cells into standalone blocks.
+  const tables = [];
+  region = region.replace(/<table\b[^>]*>([\s\S]*?)<\/table>/gi, (_, inner) => {
+    const rows = [...inner.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((r) =>
+      [...r[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((c) => inline(c[1]))
+    );
+    if (!rows.length) return '';
+    tables.push(rows);
+    return `<p>::table${tables.length - 1}::</p>`;
+  });
   const re = /<(h1|h2|h3|h4|p|ul|ol)\b[^>]*>([\s\S]*?)<\/\1>/gi;
   let m;
   while ((m = re.exec(region))) {
@@ -77,14 +88,35 @@ function blocks(region) {
       if (items.length) out.push({ tag, items });
     } else {
       const text = inline(raw);
-      if (text) out.push({ tag, text });
+      const marker = /^::table(\d+)::$/.exec(text);
+      if (marker) {
+        out.push({ tag: 'table', rows: tables[Number(marker[1])] });
+        continue;
+      }
+      // Their CMS leaves empty headings behind as <h3><strong></strong></h3>.
+      // inline() keeps <strong>, so the string is truthy while the heading is
+      // blank — test the text content, not the markup.
+      if (text.replace(/<[^>]+>/g, '').trim()) out.push({ tag, text });
     }
   }
   return out;
 }
 
 const FAQ_HEADING = /frequently asked questions/i;
-const WHY_HEADING = /^why choose/i;
+const WHY_HEADING = /^why (choose|patients trust)/i;
+
+/*
+ * Sections to drop rather than import.
+ *
+ * Their pages repeat an "About / Contact Us Today" block in the body, which
+ * duplicates our footer — and on three pages its email line comes through as
+ * "[email protected]", the placeholder Cloudflare's email obfuscation leaves
+ * behind for scrapers. Carrying that onto a live page would be worse than
+ * carrying nothing, so the whole block goes and the footer does that job.
+ */
+const DROP_SECTION = /^(about houston surgical weight loss|contact us today)/i;
+/** Standalone call-to-action lines that are buttons on their site, not copy. */
+const DROP_BLOCK = /^(make an appointment|schedule today|schedule a consultation)$/i;
 
 function convert(file) {
   const html = fs.readFileSync(path.join(srcDir, file), 'utf8');
@@ -97,9 +129,13 @@ function convert(file) {
   const faqs = [];
   let inFaq = false;
   let pendingQ = null;
+  let dropping = false;
 
   for (const b of bs.slice(1)) {
     if (b.tag === 'h2' || b.tag === 'h3' || b.tag === 'h4') {
+      // A dropped section runs until the next heading.
+      dropping = DROP_SECTION.test(b.text);
+      if (dropping) continue;
       if (FAQ_HEADING.test(b.text)) {
         inFaq = true;
         continue;
@@ -113,9 +149,11 @@ function convert(file) {
       body.push({ type: b.tag === 'h2' ? 'h2' : 'h3', text: b.text });
       continue;
     }
+    if (dropping) continue;
     const target = inFaq && pendingQ ? pendingQ.a : body;
-    if (b.tag === 'ul' || b.tag === 'ol') target.push({ type: 'list', ordered: b.tag === 'ol', items: b.items });
-    else if (!/^make an appointment$/i.test(b.text)) target.push({ type: 'p', text: b.text });
+    if (b.tag === 'table') target.push({ type: 'table', rows: b.rows });
+    else if (b.tag === 'ul' || b.tag === 'ol') target.push({ type: 'list', ordered: b.tag === 'ol', items: b.items });
+    else if (!DROP_BLOCK.test(b.text)) target.push({ type: 'p', text: b.text });
   }
 
   return { file, title, body, faqs };
