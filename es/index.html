@@ -597,7 +597,8 @@
 <!-- Opens on a timer, once per visitor per week. Markup lives here rather than
      being injected by script so it is in the DOM for assistive tech and does
      not depend on JS to be readable. -->
-<div class="appt-overlay" id="apptOverlay" hidden>
+<div class="appt-overlay" id="apptOverlay" hidden
+  data-delay="20" data-rearm="180" data-max="3" data-submitted-days="30">
   <div class="appt-modal" role="dialog" aria-modal="true" aria-labelledby="apptTitle">
     <div class="appt-head">
       <h2 id="apptTitle">Solicitud de Cita</h2>

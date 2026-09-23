@@ -92,40 +92,71 @@ if (heroVideo) {
 }
 
 /* ---------- Appointment request modal ----------
-   Opens on a timer, not on load: a popup in someone's face before they have
-   read anything is the fastest way to lose them. Once dismissed or submitted
-   it stays away for a week. */
+   Timing follows the usual convention for a lead-capture dialog:
+
+     - first appearance 20s into a page, not on load
+     - after a dismissal it re-arms 3 minutes later, and again on each new page
+     - at most 3 appearances per session, so it never becomes harassment
+     - once actually submitted it stays away for 30 days
+
+   The counters live in sessionStorage, so a fresh visit starts over; only the
+   submitted flag persists. All four numbers are data- attributes on the
+   overlay so they can be tuned without touching this file. */
 const apptOverlay = document.getElementById('apptOverlay');
 if (apptOverlay) {
-  const KEY = 'hswl-appt-dismissed';
-  const WEEK = 7 * 24 * 60 * 60 * 1000;
-  const DELAY = 25000;
+  const num = (name, fallback) => Number(apptOverlay.dataset[name]) || fallback;
+  const DELAY = num('delay', 20) * 1000;
+  const REARM = num('rearm', 180) * 1000;
+  const MAX_PER_SESSION = num('max', 3);
+  const SUBMITTED_MS = num('submittedDays', 30) * 24 * 60 * 60 * 1000;
+
+  const SUBMITTED_KEY = 'hswl-appt-submitted';
+  const SHOWN_KEY = 'hswl-appt-shown';
 
   const form = document.getElementById('apptForm');
   const errorBox = document.getElementById('apptError');
   let lastFocused = null;
+  let timer = null;
 
-  // localStorage throws in some privacy modes; a popup is not worth an error.
-  const suppressed = () => {
+  // Storage throws in some privacy modes, and a popup is not worth an error.
+  const read = (store, key) => {
     try {
-      const at = Number(localStorage.getItem(KEY));
-      return at && Date.now() - at < WEEK;
+      return window[store].getItem(key);
     } catch (e) {
-      return false;
+      return null;
     }
   };
-  const suppress = () => {
+  const write = (store, key, value) => {
     try {
-      localStorage.setItem(KEY, String(Date.now()));
+      window[store].setItem(key, value);
     } catch (e) {
-      /* nothing to do — it just reopens next visit */
+      /* nothing to do — the policy just resets */
     }
   };
+
+  const hasSubmitted = () => {
+    const at = Number(read('localStorage', SUBMITTED_KEY));
+    return Boolean(at) && Date.now() - at < SUBMITTED_MS;
+  };
+  const shownCount = () => Number(read('sessionStorage', SHOWN_KEY)) || 0;
+  const mayShow = () => !hasSubmitted() && shownCount() < MAX_PER_SESSION && apptOverlay.hidden;
 
   const focusable = () =>
     [...apptOverlay.querySelectorAll('a[href], button, input, [tabindex]:not([tabindex="-1"])')].filter(
       (el) => !el.disabled && el.offsetParent !== null
     );
+
+  const openAppt = (byRequest) => {
+    if (!apptOverlay.hidden) return;
+    lastFocused = document.activeElement;
+    apptOverlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => apptOverlay.classList.add('is-open'));
+    const first = apptOverlay.querySelector('#apptFirst');
+    if (first) first.focus();
+    // A deliberate click does not burn one of the automatic appearances.
+    if (!byRequest) write('sessionStorage', SHOWN_KEY, String(shownCount() + 1));
+  };
 
   const closeAppt = () => {
     apptOverlay.classList.remove('is-open');
@@ -134,20 +165,14 @@ if (apptOverlay) {
       document.body.style.overflow = '';
       if (lastFocused) lastFocused.focus();
     };
-    // Wait for the fade unless the visitor has asked for less motion.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) done();
     else setTimeout(done, 250);
-    suppress();
-  };
-
-  const openAppt = () => {
-    if (!apptOverlay.hidden) return;
-    lastFocused = document.activeElement;
-    apptOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => apptOverlay.classList.add('is-open'));
-    const first = apptOverlay.querySelector('#apptFirst');
-    if (first) first.focus();
+    // Dismissing re-arms rather than silencing: try again later on this page,
+    // up to the per-session cap.
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if (mayShow()) openAppt();
+    }, REARM);
   };
 
   document.getElementById('apptClose').addEventListener('click', closeAppt);
@@ -176,16 +201,16 @@ if (apptOverlay) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    const get = (k) => String(data.get(k) || '').trim();
+    const field = (k) => String(data.get(k) || '').trim();
 
     const required = [
-      ['apptFirst', get('firstName'), 'first name'],
-      ['apptLast', get('lastName'), 'last name'],
-      ['apptEmail', get('email'), 'email'],
-      ['apptPhone', get('phone'), 'phone number'],
+      ['apptFirst', field('firstName'), 'first name'],
+      ['apptLast', field('lastName'), 'last name'],
+      ['apptEmail', field('email'), 'email'],
+      ['apptPhone', field('phone'), 'phone number'],
     ];
     const missing = required.filter(([, v]) => !v);
-    const badEmail = get('email') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(get('email'));
+    const badEmail = field('email') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(field('email'));
 
     required.forEach(([id, v]) => document.getElementById(id).setAttribute('aria-invalid', String(!v)));
     if (badEmail) document.getElementById('apptEmail').setAttribute('aria-invalid', 'true');
@@ -193,9 +218,9 @@ if (apptOverlay) {
     if (missing.length || badEmail) {
       errorBox.hidden = false;
       errorBox.textContent = missing.length
-        ? `Please add your ${missing.map(([, , label]) => label).join(', ')}.`
+        ? 'Please add your ' + missing.map((m) => m[2]).join(', ') + '.'
         : 'Please check your email address.';
-      (document.getElementById(missing.length ? missing[0][0] : 'apptEmail')).focus();
+      document.getElementById(missing.length ? missing[0][0] : 'apptEmail').focus();
       return;
     }
     errorBox.hidden = true;
@@ -204,17 +229,19 @@ if (apptOverlay) {
     // client with everything already filled in. Replace this with a real
     // endpoint when the practice has one.
     const body = [
-      `Visit type: ${get('visitType')}`,
-      `Patient: ${get('patientType')}`,
-      `Name: ${get('firstName')} ${get('lastName')}`,
-      `Email: ${get('email')}`,
-      `Phone: ${get('phone')}`,
-      `Date of birth: ${get('dob') || '(not given)'}`,
+      'Visit type: ' + field('visitType'),
+      'Patient: ' + field('patientType'),
+      'Name: ' + field('firstName') + ' ' + field('lastName'),
+      'Email: ' + field('email'),
+      'Phone: ' + field('phone'),
+      'Date of birth: ' + (field('dob') || '(not given)'),
     ].join('\n');
     window.location.href =
       'mailto:info@houstonsurgicalweightloss.com' +
-      '?subject=' + encodeURIComponent('Appointment Request — ' + get('firstName') + ' ' + get('lastName')) +
-      '&body=' + encodeURIComponent(body);
+      '?subject=' +
+      encodeURIComponent('Appointment Request — ' + field('firstName') + ' ' + field('lastName')) +
+      '&body=' +
+      encodeURIComponent(body);
 
     form.innerHTML =
       '<div class="appt-done">' +
@@ -223,17 +250,24 @@ if (apptOverlay) {
       '<p>Your email app should open with your request ready to send. If it does not, call us on ' +
       '<a href="tel:+12816536544">281-653-6544</a> and we will book you in.</p>' +
       '</div>';
-    suppress();
+    // Someone who has asked for an appointment should not be asked again.
+    write('localStorage', SUBMITTED_KEY, String(Date.now()));
+    clearTimeout(timer);
   });
 
-  // Anything marked data-appt-open opens the dialog on demand. A deliberate
-  // click ignores the once-a-week suppression — that only governs the timer.
+  // Anything marked data-appt-open opens the dialog on demand, whatever the
+  // automatic policy currently says.
   document.querySelectorAll('[data-appt-open]').forEach((el) =>
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      openAppt();
+      clearTimeout(timer);
+      openAppt(true);
     })
   );
 
-  if (!suppressed()) setTimeout(openAppt, DELAY);
+  if (mayShow()) {
+    timer = setTimeout(() => {
+      if (mayShow()) openAppt();
+    }, DELAY);
+  }
 }
