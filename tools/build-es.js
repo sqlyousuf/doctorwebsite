@@ -153,6 +153,18 @@ const copy = [
     1,
   ],
 
+  // The procedure pages exist in English only so far. Rather than send a
+  // Spanish reader into an English page — the exact complaint that prompted
+  // the translation work — the Spanish cards drop the link until their
+  // Spanish twins are written. Delete these six rules then, and translate
+  // the label instead.
+  ['<a class="card-more" href="procedures/gastric-sleeve.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+  ['<a class="card-more" href="procedures/gastric-bypass.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+  ['<a class="card-more" href="procedures/gastric-balloon.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+  ['<a class="card-more" href="procedures/lap-band.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+  ['<a class="card-more" href="procedures/revision-bariatric-surgery.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+  ['<a class="card-more" href="procedures/general-surgery.html">Read more <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>', '', 1],
+
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],
   ['<h3>Gastric Sleeve</h3>', '<h3>Manga Gástrica</h3>', 1],

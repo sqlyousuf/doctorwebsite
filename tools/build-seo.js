@@ -26,8 +26,10 @@ for (const { path: p, es } of PAGES) {
 
 // And the reverse: every built patient-center page must be in the list.
 const listed = new Set(PAGES.map((x) => x.path));
-for (const f of fs.readdirSync(path.join(root, 'patient-center')).filter((f) => f.endsWith('.html'))) {
-  if (!listed.has(`/patient-center/${f}`)) problems.push(`on disk but missing from site.js PAGES: /patient-center/${f}`);
+for (const dir of ['patient-center', 'procedures']) {
+  for (const f of fs.readdirSync(path.join(root, dir)).filter((f) => f.endsWith('.html'))) {
+    if (!listed.has(`/${dir}/${f}`)) problems.push(`on disk but missing from site.js PAGES: /${dir}/${f}`);
+  }
 }
 
 if (problems.length) {

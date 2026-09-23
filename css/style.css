@@ -2130,3 +2130,22 @@ p a:hover { text-decoration: underline; }
   .appt-overlay,
   .appt-modal { transition: none; }
 }
+
+/* "Read more" on a procedure card — the cards now lead somewhere, and that
+   needs to be visible rather than discovered by hovering. */
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: var(--track-sm);
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, gap 0.25s ease;
+}
+.card-more svg { width: 15px; height: 15px; flex: none; }
+.card-more:hover { border-bottom-color: var(--accent); gap: 11px; }
+.card:hover .card-more { border-bottom-color: var(--accent); }
