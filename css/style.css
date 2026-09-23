@@ -1966,3 +1966,167 @@ p a:hover { text-decoration: underline; }
 }
 .review-placeholder p { font-size: 0.93rem; }
 .review-placeholder p:last-child { margin-bottom: 0; }
+
+/* ======================================================================
+   Appointment request modal.
+
+   Opens on a timer rather than immediately, and remembers a dismissal for a
+   week — a popup that reappears every page view is the fastest way to make
+   people leave. Styled after the reference: plain labels, soft grey fields,
+   generous spacing, nothing shouting.
+   ====================================================================== */
+
+.appt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 4vw, 32px);
+  background: rgba(11, 29, 42, 0.55);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  overflow-y: auto;
+}
+.appt-overlay[hidden] { display: none; }
+.appt-overlay.is-open { opacity: 1; }
+
+.appt-modal {
+  width: 100%;
+  max-width: 620px;
+  max-height: calc(100vh - clamp(24px, 8vw, 64px));
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 30px 70px rgba(11, 29, 42, 0.32);
+  transform: translateY(12px) scale(0.99);
+  transition: transform 0.25s ease;
+}
+.appt-overlay.is-open .appt-modal { transform: none; }
+
+.appt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 24px) clamp(20px, 4vw, 32px);
+  border-bottom: 1px solid var(--line);
+}
+.appt-head h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 3.4vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-transform: none;
+}
+.appt-close {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--muted);
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.appt-close svg { width: 18px; height: 18px; }
+.appt-close:hover { background: var(--paper-2); color: var(--ink); }
+.appt-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.appt-form { padding: clamp(18px, 3vw, 26px) clamp(20px, 4vw, 32px) clamp(22px, 4vw, 30px); }
+
+.appt-field { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
+.appt-field > label,
+.appt-field > legend {
+  display: block;
+  padding: 0;
+  margin-bottom: 7px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.appt-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 18px;
+}
+@media (min-width: 520px) {
+  .appt-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.appt-field input[type="text"],
+.appt-field input[type="email"],
+.appt-field input[type="tel"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: #e9eef0;
+  font-family: var(--sans);
+  font-size: 0.97rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.appt-field input::placeholder { color: #8d9aa2; }
+.appt-field input:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.appt-field input[aria-invalid="true"] {
+  border-color: #b3261e;
+  background: #fdf0ef;
+}
+
+.appt-radios { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.appt-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--body);
+}
+.appt-radio input { width: 17px; height: 17px; accent-color: var(--accent); cursor: pointer; flex: none; }
+.appt-radio svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
+.appt-radio:hover { color: var(--ink); }
+
+.appt-error {
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  background: #fdf0ef;
+  border-left: 3px solid #b3261e;
+  font-size: 0.9rem;
+  color: #7f1d17;
+}
+.appt-error[hidden] { display: none; }
+
+.appt-submit { width: 100%; margin-top: 4px; }
+
+.appt-fine {
+  margin: 14px 0 0;
+  font-size: 0.84rem;
+  text-align: center;
+  color: var(--muted);
+}
+.appt-fine a { color: var(--accent); font-weight: 700; }
+
+/* The confirmation that replaces the form on submit. */
+.appt-done { padding: clamp(26px, 5vw, 40px) clamp(20px, 4vw, 32px); text-align: center; }
+.appt-done svg { width: 44px; height: 44px; color: var(--leaf); margin-bottom: 14px; }
+.appt-done h3 { margin-bottom: 10px; }
+.appt-done p { font-size: 0.95rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .appt-overlay,
+  .appt-modal { transition: none; }
+}

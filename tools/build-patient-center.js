@@ -23,7 +23,7 @@ const { pages, PHONE, PHONE_HREF } = require('./patient-center-content.js');
 const { translations } = require('./content/patient-center.es.js');
 const { ORIGIN } = require('./site.js');
 const { UI } = require('./i18n.js');
-const { root, sprite, footerFor, buildNav, header, tail, escapeAttr, plain, navLabel } = require('./chrome.js');
+const { root, sprite, footerFor, apptModalFor, buildNav, header, tail, escapeAttr, plain, navLabel } = require('./chrome.js');
 
 /** Where each language's pages live, and how they climb back to the root. */
 const LANGS = {
@@ -158,7 +158,7 @@ ${page.body.trim()}
     <p class="intro center">${t.ctaBody}</p>
     <div class="contact-actions">
       <a href="${PHONE_HREF}" class="btn btn-solid"><svg><use href="#ic-phone"/></svg> ${PHONE}</a>
-      <a href="../index.html#contact" class="btn btn-outline-light">${t.ctaButton}</a>
+      <a href="../index.html#contact" class="btn btn-outline-light" data-appt-open>${t.ctaButton}</a>
     </div>
   </div>
 </section>
@@ -166,6 +166,8 @@ ${page.body.trim()}
 ${relatedGrid(page.slug, lang, t)}
 
 ${footer}
+
+${apptModalFor(lang)}
 
 ${tail({ lang, twin, home: '../index.html' })}
 

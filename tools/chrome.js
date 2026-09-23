@@ -134,6 +134,17 @@ ${items.join('\n')}
       </ul>`;
 }
 
+/**
+ * The appointment modal, lifted per language from the home page it is written
+ * in. `up` re-points nothing — the modal has no assets — but the phone links
+ * inside it are absolute tel: URLs, so it travels as-is.
+ */
+const apptModalFor = (lang = 'en') => {
+  const doc = lang === 'es' ? esSrc : src;
+  const where = lang === 'es' ? 'es/index.html' : 'index.html';
+  return extractFrom(doc, 'appointment modal', '<div class="appt-overlay"', '<!-- /appt -->', where);
+};
+
 /** The header, identical on every generated page bar the nav's active item. */
 const header = ({ nav, lang = 'en', up = '../', home = '../index.html' }) => {
   const t = UI[lang];
@@ -180,4 +191,4 @@ const escapeAttr = (s) => s.replace(/"/g, '&quot;');
 /** Headings carry entities like &amp;; strip them back out for <title>. */
 const plain = (s) => s.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '');
 
-module.exports = { root, src, sprite, footerFor, buildNav, header, tail, escapeAttr, plain, VITAMIN_STORE, navLabel };
+module.exports = { root, src, sprite, footerFor, apptModalFor, buildNav, header, tail, escapeAttr, plain, VITAMIN_STORE, navLabel };

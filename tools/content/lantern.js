@@ -597,7 +597,7 @@ ${s.stats
       care.</p>
 
       <h3>Experience</h3>
-      <p>With over 18 years of surgical experience, Dr. Wadiwala has performed thousands of successful bariatric
+      <p>With two decades of surgical experience, Dr. Wadiwala has performed thousands of successful bariatric
       procedures with excellent outcomes. He previously served as the Director of Bariatric Surgery at CyFair Medical
       Center, where he led and expanded minimally invasive bariatric services.</p>
       <p>His expertise includes:</p>
@@ -631,7 +631,7 @@ ${s.stats
 
       <h2 class="display bar">Why Choose Houston Surgical Weight Loss</h2>
       <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with 18+ years of experience</li>
+        <li>Fellowship-trained, board-certified bariatric surgeon with 2 decades of experience</li>
         <li>Expertise in minimally invasive laparoscopic weight loss surgery</li>
         <li>Personalized care plans tailored to your goals</li>
         <li>Comprehensive support before, during, and after surgery</li>

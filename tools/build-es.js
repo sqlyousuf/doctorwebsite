@@ -119,17 +119,18 @@ const copy = [
 
   // ---- hero ----
   ['>Bariatric Surgery &amp; Medical Weight Loss</span>', '>Cirugía Bariátrica y Pérdida de Peso Médica</span>', 1],
-  ['>Talk to Dr. Wadiwala</a>', '>Hable con el Dr. Wadiwala</a>', 1],
-  ['<strong>4.9</strong> average rating &middot; 3,000+ patients treated', '<strong>4.9</strong> de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
+  ['>Request an Appointment</a>', '>Solicite una Cita</a>', 3],
+  [' Request an Appointment</a>', ' Solicite una Cita</a>', 1],
+  ['<strong>4.8</strong> average rating &middot; 3,000+ patients treated', '<strong>4.8</strong> de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['aria-label="Scroll to content"', 'aria-label="Desplazarse al contenido"', 1],
 
   // ---- why us ----
   ['Bariatric Surgery and<br>Medical Weight Loss', 'Cirugía Bariátrica y<br>Pérdida de Peso Médica', 1],
   ['Board-Certified, Fellowship-Trained Bariatric Surgeon', 'Cirujano bariátrico certificado y con subespecialidad', 1],
   ['Houston Location with In-Person &amp; Virtual Consultations', 'Consultas presenciales y virtuales en Houston', 1],
-  ['Rated 4.9 / 5 Across 3,000+ Patients Treated', 'Calificación de 4.9 / 5 con más de 3,000 pacientes atendidos', 1],
+  ['Rated 4.8 / 5 Across 3,000+ Patients Treated', 'Calificación de 4.8 / 5 con más de 3,000 pacientes atendidos', 1],
   ['Most Major Insurance Plans Accepted', 'Aceptamos la mayoría de los seguros médicos', 1],
-  ['18+ Years of Surgical Experience', 'Más de 18 años de experiencia quirúrgica', 2],
+  ['2 Decades of Surgical Experience', '2 décadas de experiencia quirúrgica', 2],
   ['Surgical and Medical Weight Loss with Proven Results', 'Pérdida de peso quirúrgica y médica con resultados comprobados', 1],
 
   // ---- lifestyle strip ----
@@ -147,11 +148,10 @@ const copy = [
   ['>Explore Procedures</a>', '>Ver Procedimientos</a>', 1],
   ['Medical<br>Weight Loss', 'Pérdida de Peso<br>Médica', 1],
   [
-    'Not everyone needs surgery. Dr. Wadiwala and our nutrition team work closely with you to assess your medical history and weight-loss goals, then build a physician-supervised plan using nutrition planning, behavioral coaching, and medication support tailored to you.',
-    'No todos necesitan cirugía. El Dr. Wadiwala y nuestro equipo de nutrición trabajan de cerca con usted para evaluar su historial médico y sus metas, y luego crean un plan supervisado por un médico con planificación nutricional, acompañamiento conductual y apoyo con medicamentos adaptado a usted.',
+    'Not everyone needs surgery. Dr. Wadiwala will work closely with you to assess your medical history and weight-loss goals, then build a physician-supervised plan using medication support tailored to you.',
+    'No todos necesitan cirugía. El Dr. Wadiwala trabajará de cerca con usted para evaluar su historial médico y sus metas de pérdida de peso, y luego creará un plan supervisado por un médico con apoyo de medicamentos adaptado a usted.',
     1,
   ],
-  ['>See How It Works</a>', '>Vea Cómo Funciona</a>', 1],
 
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],
@@ -197,8 +197,8 @@ const copy = [
   ['>Meet Your Surgeon</h2>', '>Conozca a Su Cirujano</h2>', 1],
   ['alt="Dr. Irfan Wadiwala, bariatric and general surgeon"', 'alt="Dr. Irfan Wadiwala, cirujano bariátrico y general"', 1],
   [
-    'Dr. Wadiwala is a fellowship-trained bariatric and general surgeon with over 18 years of experience helping patients achieve meaningful, lasting weight loss. He founded Houston Surgical Weight Loss to give patients a practice that treats the whole person — not just the procedure — with honest guidance and steady support at every step, from the first consultation through long-term follow-up.',
-    'El Dr. Wadiwala es cirujano bariátrico y general con subespecialidad y más de 18 años de experiencia ayudando a sus pacientes a lograr una pérdida de peso significativa y duradera. Fundó Houston Surgical Weight Loss para ofrecer una práctica que trata a la persona completa — no solo el procedimiento — con orientación honesta y apoyo constante en cada paso, desde la primera consulta hasta el seguimiento a largo plazo.',
+    'Dr. Wadiwala is a fellowship-trained bariatric and general surgeon with two decades of experience helping patients achieve meaningful, lasting weight loss. He founded Houston Surgical Weight Loss to give patients a practice that treats the whole person — not just the procedure — with honest guidance and steady support at every step, from the first consultation through long-term follow-up.',
+    'El Dr. Wadiwala es cirujano bariátrico y general con subespecialidad y dos décadas de experiencia ayudando a sus pacientes a lograr una pérdida de peso significativa y duradera. Fundó Houston Surgical Weight Loss para ofrecer una práctica que trata a la persona completa — no solo el procedimiento — con orientación honesta y apoyo constante en cada paso, desde la primera consulta hasta el seguimiento a largo plazo.',
     1,
   ],
   ['Board-Certified in General &amp; Bariatric Surgery', 'Certificado en Cirugía General y Bariátrica', 1],
@@ -219,7 +219,7 @@ const copy = [
     'Converse sobre su historial médico, sus metas y sus opciones con nuestro equipo, en persona o de forma virtual.',
     1,
   ],
-  ['<h3>Insurance Review</h3>', '<h3>Revisión del Seguro</h3>', 1],
+  ['<h3>Review</h3>', '<h3>Revisión</h3>', 1],
   [
     'We verify your coverage and walk you through costs, financing, or self-pay options.',
     'Verificamos su cobertura y le explicamos los costos, el financiamiento y las opciones de pago particular.',
@@ -278,7 +278,7 @@ const copy = [
   ['Pre-operative nutrition &amp; psych clearance', 'Autorización nutricional y psicológica preoperatoria', 1],
   ['Surgical procedure &amp; hospital stay', 'Procedimiento quirúrgico y estancia hospitalaria', 1],
   ['Post-op follow-up visits (12 months)', 'Citas de seguimiento postoperatorio (12 meses)', 1],
-  ['>Check My Coverage</a>', '>Verificar Mi Cobertura</a>', 1],
+  
 
   // ---- self-pay ----
   ['>Self-Pay</h2>', '>Pago Particular</h2>', 1],
@@ -316,8 +316,8 @@ const copy = [
   // ---- guide ----
   ['>Download Your Weight Loss Success Guide Now!</h2>', '>¡Descargue Ahora Su Guía de Éxito para la Pérdida de Peso!</h2>', 1],
   [
-    'Our free guide is packed with practical insights for pre- and post-surgery success, with nutrition and lifestyle guidance for lasting results — plus how to talk to your insurance provider about coverage.',
-    'Nuestra guía gratuita está llena de consejos prácticos para tener éxito antes y después de la cirugía, con orientación sobre nutrición y estilo de vida para resultados duraderos — además de cómo hablar con su seguro sobre la cobertura.',
+    'Our free guide is packed with practical insights for pre- and post-surgery success, with nutrition and lifestyle guidance for lasting results!',
+    '¡Nuestra guía gratuita está llena de consejos prácticos para tener éxito antes y después de la cirugía, con orientación sobre nutrición y estilo de vida para resultados duraderos!',
     1,
   ],
   [
@@ -388,8 +388,34 @@ const copy = [
     1,
   ],
   ['Call 281-653-6544</a>', 'Llame al 281-653-6544</a>', 1],
-  ['Email Our Team</a>', 'Escríbanos por Correo</a>', 1],
+  
   ['<span>Fax: 281-807-9702</span>', '<span>Fax: 281-807-9702</span>', 1],
+
+  // ---- appointment modal ----
+  ['<h2 id="apptTitle">Appointment Request</h2>', '<h2 id="apptTitle">Solicitud de Cita</h2>', 1],
+  ['aria-label="Close"', 'aria-label="Cerrar"', 1],
+  ['<legend>Visit Type</legend>', '<legend>Tipo de Consulta</legend>', 1],
+  ['<span>In-Office Visit</span>', '<span>Consulta en la Oficina</span>', 1],
+  ['<span>Virtual Visit</span>', '<span>Consulta Virtual</span>', 1],
+  [
+    '<legend>Are you a new or returning patient?</legend>',
+    '<legend>¿Es paciente nuevo o ya nos ha visitado?</legend>',
+    1,
+  ],
+  ['<span>New</span>', '<span>Nuevo</span>', 1],
+  ['<span>Returning</span>', '<span>Ya me han atendido</span>', 1],
+  ['<label for="apptFirst">First Name</label>', '<label for="apptFirst">Nombre</label>', 1],
+  ['<label for="apptLast">Last Name</label>', '<label for="apptLast">Apellido</label>', 1],
+  ['<label for="apptEmail">Email</label>', '<label for="apptEmail">Correo Electrónico</label>', 1],
+  ['<label for="apptPhone">Phone</label>', '<label for="apptPhone">Teléfono</label>', 1],
+  ['<label for="apptDob">Date of Birth</label>', '<label for="apptDob">Fecha de Nacimiento</label>', 1],
+  ['placeholder="MM/DD/YYYY"', 'placeholder="MM/DD/AAAA"', 1],
+  ['>Request Appointment</button>', '>Solicitar Cita</button>', 1],
+  [
+    'Or call <a href="tel:+12816536544">281-653-6544</a>. We will never share your details.',
+    'O llame al <a href="tel:+12816536544">281-653-6544</a>. Nunca compartiremos sus datos.',
+    1,
+  ],
 
   // ---- footer ----
   [
@@ -398,7 +424,7 @@ const copy = [
     1,
   ],
   ['<h4>Houston Surgical Weight Loss</h4>', '<h4>Houston Surgical Weight Loss</h4>', 1],
-  ['4.9 average rating &middot; 3,000+ patients treated', '4.9 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
+  ['4.8 average rating &middot; 3,000+ patients treated', '4.8 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
   ['<a href="#about">Our Surgeon</a>', '<a href="#about">Nuestro Cirujano</a>', 1],
   ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],

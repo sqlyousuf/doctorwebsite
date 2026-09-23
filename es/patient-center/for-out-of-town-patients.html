@@ -84,6 +84,7 @@
   <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 13h6M9 17h4"/></symbol>
   <symbol id="ic-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="ic-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-3a5 5 0 0 0-5 5v3H4v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="ic-tiktok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3c.3 2.2 1.8 3.9 4 4.2v3.1a7.3 7.3 0 0 1-4-1.3v5.9a5.9 5.9 0 1 1-5.1-5.9v3.2a2.7 2.7 0 1 0 1.9 2.6V3z"/></symbol>
   <symbol id="ic-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 6.9a2.8 2.8 0 0 0-2-2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.2 12a29 29 0 0 0 .4 5.1 2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .4-5.1 29 29 0 0 0-.5-5.1z"/><path d="m9.8 15.3 5.7-3.3-5.7-3.3z"/></symbol>
 
   <!-- Flags are drawn rather than set as emoji: Windows ships no flag glyphs,
@@ -208,7 +209,7 @@
     <p class="intro center">Llame a la oficina y alguien de nuestro equipo le explicará todo — no necesita cita para hacer una pregunta.</p>
     <div class="contact-actions">
       <a href="tel:+12816536544" class="btn btn-solid"><svg><use href="#ic-phone"/></svg> 281-653-6544</a>
-      <a href="../index.html#contact" class="btn btn-outline-light">Solicite una Consulta</a>
+      <a href="../index.html#contact" class="btn btn-outline-light" data-appt-open>Solicite una Consulta</a>
     </div>
   </div>
 </section>
@@ -283,7 +284,7 @@
 
     <div class="footer-rating">
       <span class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></span>
-      <span>4.9 de calificación promedio &middot; más de 3,000 pacientes atendidos</span>
+      <span>4.8 de calificación promedio &middot; más de 3,000 pacientes atendidos</span>
     </div>
 
     <nav class="footer-nav">
@@ -298,7 +299,7 @@
     <div class="footer-social">
       <a href="#" aria-label="Instagram"><svg><use href="#ic-instagram"/></svg></a>
       <a href="#" aria-label="Facebook"><svg><use href="#ic-facebook"/></svg></a>
-      <a href="#" aria-label="YouTube"><svg><use href="#ic-youtube"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg><use href="#ic-tiktok"/></svg></a>
     </div>
 
     <p class="footer-affiliate">Algunos enlaces de este sitio son enlaces de afiliados. Houston Surgical Weight Loss recibe una comisión por las compras realizadas a través de ellos.</p>
@@ -309,6 +310,82 @@
     </div>
   </div>
 </footer>
+
+<div class="appt-overlay" id="apptOverlay" hidden>
+  <div class="appt-modal" role="dialog" aria-modal="true" aria-labelledby="apptTitle">
+    <div class="appt-head">
+      <h2 id="apptTitle">Solicitud de Cita</h2>
+      <button type="button" class="appt-close" id="apptClose" aria-label="Cerrar">
+        <svg aria-hidden="true"><use href="#ic-x"/></svg>
+      </button>
+    </div>
+
+    <form class="appt-form" id="apptForm" novalidate>
+      <fieldset class="appt-field">
+        <legend>Tipo de Consulta</legend>
+        <div class="appt-radios">
+          <label class="appt-radio">
+            <input type="radio" name="visitType" value="In-Office Visit" checked>
+            <span>Consulta en la Oficina</span>
+            <svg aria-hidden="true"><use href="#ic-pin"/></svg>
+          </label>
+          <label class="appt-radio">
+            <input type="radio" name="visitType" value="Virtual Visit">
+            <span>Consulta Virtual</span>
+            <svg aria-hidden="true"><use href="#ic-video"/></svg>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="appt-field">
+        <legend>¿Es paciente nuevo o ya nos ha visitado?</legend>
+        <div class="appt-radios">
+          <label class="appt-radio">
+            <input type="radio" name="patientType" value="New" checked>
+            <span>Nuevo</span>
+          </label>
+          <label class="appt-radio">
+            <input type="radio" name="patientType" value="Returning">
+            <span>Ya me han atendido</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="appt-row">
+        <div class="appt-field">
+          <label for="apptFirst">Nombre</label>
+          <input type="text" id="apptFirst" name="firstName" autocomplete="given-name" required>
+        </div>
+        <div class="appt-field">
+          <label for="apptLast">Apellido</label>
+          <input type="text" id="apptLast" name="lastName" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="appt-field">
+        <label for="apptEmail">Correo Electrónico</label>
+        <input type="email" id="apptEmail" name="email" placeholder="email@domain.com" autocomplete="email" required>
+      </div>
+
+      <div class="appt-field">
+        <label for="apptPhone">Teléfono</label>
+        <input type="tel" id="apptPhone" name="phone" placeholder="(888) 888-8888" autocomplete="tel" required>
+      </div>
+
+      <div class="appt-field">
+        <label for="apptDob">Fecha de Nacimiento</label>
+        <input type="text" id="apptDob" name="dob" placeholder="MM/DD/AAAA" inputmode="numeric" autocomplete="bday">
+      </div>
+
+      <p class="appt-error" id="apptError" role="alert" hidden></p>
+
+      <button type="submit" class="btn btn-solid appt-submit">Solicitar Cita</button>
+
+      <p class="appt-fine">O llame al <a href="tel:+12816536544">281-653-6544</a>. Nunca compartiremos sus datos.</p>
+    </form>
+  </div>
+</div>
+<!-- /appt -->
 
 <nav class="lang-switch" aria-label="Idioma">
   <a href="../../patient-center/for-out-of-town-patients.html" hreflang="en" lang="en"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>English</a>

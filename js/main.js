@@ -90,3 +90,150 @@ if (heroVideo) {
     videoObserver.observe(heroVideo);
   }
 }
+
+/* ---------- Appointment request modal ----------
+   Opens on a timer, not on load: a popup in someone's face before they have
+   read anything is the fastest way to lose them. Once dismissed or submitted
+   it stays away for a week. */
+const apptOverlay = document.getElementById('apptOverlay');
+if (apptOverlay) {
+  const KEY = 'hswl-appt-dismissed';
+  const WEEK = 7 * 24 * 60 * 60 * 1000;
+  const DELAY = 25000;
+
+  const form = document.getElementById('apptForm');
+  const errorBox = document.getElementById('apptError');
+  let lastFocused = null;
+
+  // localStorage throws in some privacy modes; a popup is not worth an error.
+  const suppressed = () => {
+    try {
+      const at = Number(localStorage.getItem(KEY));
+      return at && Date.now() - at < WEEK;
+    } catch (e) {
+      return false;
+    }
+  };
+  const suppress = () => {
+    try {
+      localStorage.setItem(KEY, String(Date.now()));
+    } catch (e) {
+      /* nothing to do — it just reopens next visit */
+    }
+  };
+
+  const focusable = () =>
+    [...apptOverlay.querySelectorAll('a[href], button, input, [tabindex]:not([tabindex="-1"])')].filter(
+      (el) => !el.disabled && el.offsetParent !== null
+    );
+
+  const closeAppt = () => {
+    apptOverlay.classList.remove('is-open');
+    const done = () => {
+      apptOverlay.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    };
+    // Wait for the fade unless the visitor has asked for less motion.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) done();
+    else setTimeout(done, 250);
+    suppress();
+  };
+
+  const openAppt = () => {
+    if (!apptOverlay.hidden) return;
+    lastFocused = document.activeElement;
+    apptOverlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => apptOverlay.classList.add('is-open'));
+    const first = apptOverlay.querySelector('#apptFirst');
+    if (first) first.focus();
+  };
+
+  document.getElementById('apptClose').addEventListener('click', closeAppt);
+  apptOverlay.addEventListener('click', (e) => {
+    if (e.target === apptOverlay) closeAppt();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (apptOverlay.hidden) return;
+    if (e.key === 'Escape') closeAppt();
+    if (e.key === 'Tab') {
+      // Keep tabbing inside the dialog while it is open.
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const get = (k) => String(data.get(k) || '').trim();
+
+    const required = [
+      ['apptFirst', get('firstName'), 'first name'],
+      ['apptLast', get('lastName'), 'last name'],
+      ['apptEmail', get('email'), 'email'],
+      ['apptPhone', get('phone'), 'phone number'],
+    ];
+    const missing = required.filter(([, v]) => !v);
+    const badEmail = get('email') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(get('email'));
+
+    required.forEach(([id, v]) => document.getElementById(id).setAttribute('aria-invalid', String(!v)));
+    if (badEmail) document.getElementById('apptEmail').setAttribute('aria-invalid', 'true');
+
+    if (missing.length || badEmail) {
+      errorBox.hidden = false;
+      errorBox.textContent = missing.length
+        ? `Please add your ${missing.map(([, , label]) => label).join(', ')}.`
+        : 'Please check your email address.';
+      (document.getElementById(missing.length ? missing[0][0] : 'apptEmail')).focus();
+      return;
+    }
+    errorBox.hidden = true;
+
+    // No form backend on this static site, so hand off to the visitor's mail
+    // client with everything already filled in. Replace this with a real
+    // endpoint when the practice has one.
+    const body = [
+      `Visit type: ${get('visitType')}`,
+      `Patient: ${get('patientType')}`,
+      `Name: ${get('firstName')} ${get('lastName')}`,
+      `Email: ${get('email')}`,
+      `Phone: ${get('phone')}`,
+      `Date of birth: ${get('dob') || '(not given)'}`,
+    ].join('\n');
+    window.location.href =
+      'mailto:info@houstonsurgicalweightloss.com' +
+      '?subject=' + encodeURIComponent('Appointment Request — ' + get('firstName') + ' ' + get('lastName')) +
+      '&body=' + encodeURIComponent(body);
+
+    form.innerHTML =
+      '<div class="appt-done">' +
+      '<svg aria-hidden="true"><use href="#ic-check"/></svg>' +
+      '<h3>Thank you</h3>' +
+      '<p>Your email app should open with your request ready to send. If it does not, call us on ' +
+      '<a href="tel:+12816536544">281-653-6544</a> and we will book you in.</p>' +
+      '</div>';
+    suppress();
+  });
+
+  // Anything marked data-appt-open opens the dialog on demand. A deliberate
+  // click ignores the once-a-week suppression — that only governs the timer.
+  document.querySelectorAll('[data-appt-open]').forEach((el) =>
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openAppt();
+    })
+  );
+
+  if (!suppressed()) setTimeout(openAppt, DELAY);
+}

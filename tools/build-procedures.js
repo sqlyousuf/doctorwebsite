@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const { pages, PHONE, PHONE_HREF } = require('./content/procedures.js');
 const { ORIGIN } = require('./site.js');
-const { root, sprite, footerFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
+const { root, sprite, footerFor, apptModalFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
 
 const outDir = path.join(root, 'procedures');
 const footer = footerFor({ up: '../', pcPrefix: '../patient-center/', home: '../index.html' });
@@ -151,12 +151,14 @@ ${page.body.trim()}
     talk you through your options — no obligation.</p>
     <div class="contact-actions">
       <a href="${PHONE_HREF}" class="btn btn-solid"><svg><use href="#ic-phone"/></svg> ${PHONE}</a>
-      <a href="../index.html#contact" class="btn btn-outline-light">Request a Consultation</a>
+      <a href="../index.html#contact" class="btn btn-outline-light" data-appt-open>Request a Consultation</a>
     </div>
   </div>
 </section>
 
 ${footer}
+
+${apptModalFor('en')}
 
 ${tail({ lang: 'en', twin: '../es/index.html', home: '../index.html' })}
 

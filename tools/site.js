@@ -27,13 +27,13 @@ const PHYSICIAN = {
   name: 'Irfan Wadiwala, DO',
   jobTitle: 'Bariatric and General Surgeon',
   description:
-    'Fellowship-trained bariatric surgeon and board-certified general surgeon with over 18 years of surgical experience.',
+    'Fellowship-trained bariatric surgeon and board-certified general surgeon with two decades of surgical experience.',
 };
 
 /**
  * Deliberately NOT in the schema: aggregateRating.
  *
- * The site states "4.9 average rating, 3,000+ patients treated", but that is a
+ * The site states "4.8 average rating, 3,000+ patients treated", but that is a
  * self-reported figure, not a count of reviews shown on the page. Marking it up
  * as an aggregateRating is exactly what Google's reviews-snippet guidelines
  * call self-serving, and it risks a manual action. If the practice wires up

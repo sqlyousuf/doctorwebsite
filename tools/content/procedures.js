@@ -85,7 +85,7 @@ const pages = [
       week.</p>
 
       <p>Your surgery is performed by <a href="../index.html#about">Dr. Irfan Wadiwala</a>, a fellowship-trained,
-      board-certified bariatric surgeon with over 18 years of experience.</p>
+      board-certified bariatric surgeon with two decades of experience.</p>
 
       <h2 class="display bar">Is a Gastric Sleeve Right for Me?</h2>
       <p>Eligibility depends mainly on your BMI and how you intend to pay.</p>

@@ -298,7 +298,7 @@ ${s.stats.map(([figure, label]) => `            <div><dt>${figure}</dt><dd>${lab
       ])}
 
       <h2 class="display bar">Dr. Irfan Wadiwala — Cirujano Bariátrico y General</h2>
-      <p>Cirujano bariátrico con subespecialidad y cirujano general certificado por la junta médica, con más de 18 años
+      <p>Cirujano bariátrico con subespecialidad y cirujano general certificado por la junta médica, con dos décadas
       de experiencia quirúrgica y miles de procedimientos bariátricos exitosos.</p>
       <h3>Su experiencia incluye</h3>
       ${ul([
@@ -324,7 +324,7 @@ ${s.stats.map(([figure, label]) => `            <div><dt>${figure}</dt><dd>${lab
 
       <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
       ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de 18 años de experiencia',
+        'Cirujano bariátrico certificado y con subespecialidad, con dos décadas de experiencia',
         'Especialista en cirugía de pérdida de peso laparoscópica mínimamente invasiva',
         'Planes de atención personalizados según sus metas',
         'Apoyo integral antes, durante y después de la cirugía',

@@ -331,7 +331,7 @@ const translations = {
 
       <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
       ${ul([
-        'Dirigido por el Dr. Irfan Wadiwala, cirujano bariátrico certificado y con subespecialidad, con más de 18 años de experiencia',
+        'Dirigido por el Dr. Irfan Wadiwala, cirujano bariátrico certificado y con subespecialidad, con dos décadas de experiencia',
         'Un equipo de atención integral que incluye dietistas registradas y personal de apoyo dedicado',
         'Planes de cuidado posoperatorio diseñados para sus necesidades particulares',
         'Acceso las 24 horas para preguntas o inquietudes urgentes',

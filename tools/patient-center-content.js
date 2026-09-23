@@ -335,7 +335,7 @@ const pages = [
 
       <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Post-Surgical Care</h2>
       ${ul([
-        'Led by Dr. Irfan Wadiwala, a fellowship-trained, board-certified bariatric surgeon with over 18 years of experience',
+        'Led by Dr. Irfan Wadiwala, a fellowship-trained, board-certified bariatric surgeon with two decades of experience',
         'A comprehensive care team, including registered dietitians and dedicated support staff',
         'Personalized aftercare plans designed to fit unique needs',
         '24/7 access for urgent questions or concerns',
