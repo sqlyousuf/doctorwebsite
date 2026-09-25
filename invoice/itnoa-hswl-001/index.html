@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice 2026-001 — Itnoa Group Inc</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground: #f7f6f3;
+    --panel: #ffffff;
+    --ink: #17212a;
+    --body: #4a5866;
+    --muted: #8493a0;
+    --rule: rgba(23, 33, 42, 0.13);
+    --accent: #0a6c9e;
+    --display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans: 'Karla', -apple-system, 'Segoe UI', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #10161b; --panel: #161e25; --ink: #eaf1f6; --body: #b4c2cd;
+      --muted: #7e8e9b; --rule: rgba(255,255,255,.15); --accent: #58b7e4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--body);
+    font-family: var(--sans); font-size: 15.5px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 720px; margin: 0 auto; padding-block: clamp(28px, 6vw, 60px); padding-inline: 18px; }
+  .doc { background: var(--panel); border: 1px solid var(--rule); padding: clamp(26px, 6vw, 52px); }
+
+  /* ---- masthead ---- */
+  .top { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: flex-start; }
+  .from-name {
+    margin: 0 0 2px; font-family: var(--display); font-weight: 500;
+    font-size: clamp(1.25rem, 4vw, 1.5rem); color: var(--ink); line-height: 1.2;
+  }
+  .from p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+  .from a { color: var(--accent); text-decoration: none; }
+  .from a:hover { text-decoration: underline; }
+  .stamp { text-align: left; }
+  @media (min-width: 520px) { .stamp { text-align: right; } }
+  .stamp h1 {
+    margin: 0 0 6px; font-family: var(--display); font-weight: 400;
+    font-size: clamp(1.6rem, 6vw, 2.1rem); line-height: 1; color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .stamp dl { margin: 0; display: grid; grid-template-columns: auto auto; gap: 2px 14px; font-size: 0.86rem; }
+  @media (min-width: 520px) { .stamp dl { justify-content: end; } }
+  .stamp dt { color: var(--muted); }
+  .stamp dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  hr { border: 0; border-top: 1px solid var(--rule); margin: clamp(24px, 5vw, 36px) 0; }
+
+  h2 {
+    margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.17em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700;
+  }
+  .billto p { margin: 0; color: var(--ink); }
+  .billto .sub { color: var(--muted); font-size: 0.92rem; }
+
+  /* ---- line items ---- */
+  table { width: 100%; border-collapse: collapse; }
+  caption { text-align: left; }
+  th {
+    text-align: left; padding: 0 0 9px; font-size: 0.72rem; letter-spacing: 0.17em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700;
+    border-bottom: 1px solid var(--rule);
+  }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td { padding: 16px 0; vertical-align: top; border-bottom: 1px solid var(--rule); color: var(--ink); }
+  td .desc { display: block; margin-top: 5px; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+
+  .totals { display: flex; justify-content: flex-end; margin-top: 18px; }
+  .totals dl {
+    margin: 0; display: grid; grid-template-columns: auto auto; gap: 8px 26px;
+    align-items: baseline; min-width: 240px;
+  }
+  .totals dt { color: var(--muted); font-size: 0.9rem; }
+  .totals dd { margin: 0; text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .totals .due dt {
+    font-size: 0.72rem; letter-spacing: 0.17em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; align-self: center;
+  }
+  .totals .due dd {
+    font-family: var(--display); font-size: clamp(1.75rem, 6vw, 2.3rem); line-height: 1; color: var(--ink);
+  }
+  .totals .rule { grid-column: 1 / -1; border-top: 1px solid var(--rule); margin: 4px 0 2px; }
+
+  .note { margin: 0; font-size: 0.93rem; }
+  .note + .note { margin-top: 9px; }
+  .fine {
+    margin: clamp(24px, 5vw, 34px) 0 0; padding-top: 18px;
+    border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted);
+  }
+  mark { background: color-mix(in srgb, var(--accent) 17%, transparent); color: inherit; padding: 0 4px; }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { padding: 0; max-width: none; }
+    .doc { border: 0; padding: 0; }
+    mark { background: none; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="doc">
+
+    <div class="top">
+      <div class="from">
+        <p class="from-name">Itnoa Group Inc</p>
+        <p>832 919 7030</p>
+        <p><a href="mailto:yousuf@itnoagroup.com">yousuf@itnoagroup.com</a></p>
+      </div>
+      <div class="stamp">
+        <h1>Invoice</h1>
+        <dl>
+          <dt>Number</dt><dd>2026-001</dd>
+          <dt>Date</dt><dd>25 Sep 2026</dd>
+          <dt>Due</dt><dd>10 Oct 2026</dd>
+        </dl>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="billto">
+      <h2>Billed to</h2>
+      <p>Houston Surgical Weight Loss</p>
+      <p class="sub">Dr. Irfan Wadiwala<br>5220 FM 2920 Rd. Suite 120, Spring, TX 77388</p>
+    </div>
+
+    <hr>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col" class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Website design and build
+            <span class="desc">New site built from scratch, in English and Spanish throughout — procedure pages,
+            Patient Center, Lantern benefit pages, online appointment requests, mobile layout and search engine
+            foundations.</span>
+          </td>
+          <td class="num">$6,500.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <dl>
+        <dt>Subtotal</dt><dd>$6,500.00</dd>
+        <div class="rule"></div>
+        <div class="due" style="display:contents"><dt>Amount due</dt><dd>$6,500.00</dd></div>
+      </dl>
+    </div>
+
+    <hr>
+
+    <p class="note"><strong>Payment:</strong> <mark>[payment method — e.g. check payable to Itnoa Group Inc, or bank
+    transfer details]</mark></p>
+    <p class="note">Search engine optimisation to continue on an ongoing basis, quoted separately.</p>
+
+    <p class="fine">Payable within 15 days. Questions about this invoice: 832 919 7030 or
+      <a href="mailto:yousuf@itnoagroup.com" style="color:var(--accent)">yousuf@itnoagroup.com</a>.</p>
+
+  </div>
+</div>
+
+</body>
+</html>
