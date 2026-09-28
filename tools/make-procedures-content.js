@@ -53,7 +53,20 @@ const META = {
           ],
         },
       ],
-      videoSlot: true,
+    },
+    /*
+     * Procedure animation. Sourced from Pixabay under the Pixabay Content
+     * License (free for commercial use, no attribution required); the credit
+     * below is kept anyway so the provenance of every asset is traceable.
+     * The clip is silent and loops, so it is played muted and autoplaying —
+     * `prefers-reduced-motion` readers get the poster frame and the controls.
+     */
+    video: {
+      src: 'gastric-sleeve',
+      seconds: 18,
+      credit: 'Animation: F1Digitals via Pixabay (Pixabay Content License)',
+      caption: 'How a sleeve gastrectomy is performed: about 75-80% of the stomach is removed, leaving a narrow, banana-shaped sleeve.',
+      captionEs: 'Cómo se realiza una gastrectomía en manga: se extrae cerca del 75-80% del estómago y queda una manga estrecha con forma de plátano.',
     },
     seoTitle: 'Gastric Sleeve Surgery Houston, TX | Sleeve Gastrectomy',
     description:
@@ -378,8 +391,8 @@ ${draft}`.trimEnd() + `
     stats: [
 ${meta.stats.map(([f, l]) => `      [${js(f)}, ${js(l)}],`).join('\n')}
     ],
-    edits: { videoSlot: true },
-    procedureSchema: {
+    edits: { videoSlot: ${meta.video ? 'false' : 'true'} },
+${meta.video ? '    video: ' + JSON.stringify(meta.video) + ',' + NL : ''}    procedureSchema: {
       '@type': 'MedicalProcedure',
       name: ${js(page.title.replace(/ Specialist in Houston, TX$/, ''))},
       procedureType: 'https://schema.org/SurgicalProcedure',

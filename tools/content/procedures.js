@@ -812,7 +812,8 @@ const pages = [
       ['Same day', 'most patients go home'],
       ['2–4 weeks', 'back to normal routines'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    video: {"src":"gastric-sleeve","seconds":18,"credit":"Animation: F1Digitals via Pixabay (Pixabay Content License)","caption":"How a sleeve gastrectomy is performed: about 75-80% of the stomach is removed, leaving a narrow, banana-shaped sleeve.","captionEs":"Cómo se realiza una gastrectomía en manga: se extrae cerca del 75-80% del estómago y queda una manga estrecha con forma de plátano."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Sleeve Gastrectomy',

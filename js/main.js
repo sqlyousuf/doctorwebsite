@@ -271,3 +271,39 @@ if (apptOverlay) {
     }, DELAY);
   }
 }
+
+/* ======================================================================
+   Procedure animations.
+
+   The clips autoplay because they are silent illustration, not something the
+   reader chose to watch. Two exceptions: anyone who has asked the system for
+   reduced motion gets the poster frame and the play button instead, and a
+   clip that is off screen stays paused rather than looping out of sight.
+   ====================================================================== */
+
+(function procVideos() {
+  const vids = document.querySelectorAll('.proc-video video');
+  if (!vids.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    vids.forEach((v) => {
+      v.autoplay = false;
+      v.loop = false;
+      v.pause();
+    });
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        // play() rejects if the browser blocks autoplay; nothing to do but let it be.
+        if (e.isIntersecting) e.target.play().catch(() => {});
+        else e.target.pause();
+      });
+    },
+    { threshold: 0.25 }
+  );
+  vids.forEach((v) => io.observe(v));
+})();

@@ -1979,6 +1979,46 @@ p a:hover { text-decoration: underline; }
 .review-placeholder p { font-size: 0.93rem; }
 .review-placeholder p:last-child { margin-bottom: 0; }
 
+/* ----------------------------------------------------------------------
+   Procedure animation.
+
+   Stock medical animations come on a saturated orange ground that fights the
+   ivory page, so the clip sits in its own dark panel — the colour then reads
+   as part of a contained illustration rather than a clash. Letterboxed with
+   `contain` so nothing is cropped whatever the source aspect ratio.
+   ---------------------------------------------------------------------- */
+
+.proc-video {
+  margin: clamp(28px, 4vw, 40px) 0;
+}
+
+.proc-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.proc-video figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.proc-video-text { display: block; }
+
+.proc-video-credit {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 /* ======================================================================
    Appointment request modal.
 

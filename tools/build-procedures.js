@@ -91,6 +91,28 @@ const videoSlot = (lang) =>
         Preferred format: MP4, under 60 seconds, no audio needed.</p>
       </div>`;
 
+/**
+ * The procedure animation, where we have one. Muted, looping and autoplaying,
+ * because it is silent illustration rather than content anyone chose to watch;
+ * controls stay on so it can be paused, and `prefers-reduced-motion` readers
+ * get the poster frame instead (handled in CSS/JS via the paused attribute).
+ */
+const videoFigure = (video, lang, up) => {
+  const caption = lang === 'es' ? video.captionEs : video.caption;
+  return `      <figure class="proc-video">
+        <video
+          src="${up}media/video/${video.src}.mp4"
+          poster="${up}media/video/${video.src}.jpg"
+          width="1280" height="720"
+          muted loop playsinline autoplay preload="metadata" controls
+          aria-label="${escapeAttr(caption)}"></video>
+        <figcaption>
+          <span class="proc-video-text">${caption}</span>
+          <span class="proc-video-credit">${video.credit}</span>
+        </figcaption>
+      </figure>`;
+};
+
 function renderPage(basePage, lang) {
   const page = localised(basePage, lang);
   const t = UI[lang];
@@ -187,7 +209,7 @@ ${page.stats.map(([f, l]) => `      <div><dt>${f}</dt><dd>${l}</dd></div>`).join
 <article class="pad-lg">
   <div class="container narrow prose prose-proc">
 ${page.body.trim()}
-${basePage.edits && basePage.edits.videoSlot ? videoSlot(lang) : ''}
+${basePage.video ? videoFigure(basePage.video, lang, up) : basePage.edits && basePage.edits.videoSlot ? videoSlot(lang) : ''}
   </div>
 </article>
 
