@@ -11,7 +11,18 @@
 
 const fs = require('fs');
 const path = require('path');
-const { ORIGIN, PAGES } = require('./site.js');
+const { ORIGIN, PAGES: ALL_PAGES } = require('./site.js');
+const { pages: procedurePages } = require('./content/procedures.js');
+
+/*
+ * A draft page is noindex and must stay out of the sitemap — listing a page
+ * you have told crawlers to ignore is a contradictory signal. site.js lists
+ * every procedure path, so the draft slugs are filtered out here rather than
+ * maintained in two places.
+ */
+const DRAFT_SLUGS = new Set(procedurePages.filter((p) => p.draft).map((p) => p.slug));
+const isDraft = (p) => [...DRAFT_SLUGS].some((slug) => p.endsWith(`/${slug}.html`));
+const PAGES = ALL_PAGES.filter((x) => !isDraft(x.path));
 
 const root = path.join(__dirname, '..');
 
@@ -28,7 +39,8 @@ for (const { path: p, es } of PAGES) {
 const listed = new Set(PAGES.map((x) => x.path));
 for (const dir of ['patient-center', 'procedures']) {
   for (const f of fs.readdirSync(path.join(root, dir)).filter((f) => f.endsWith('.html'))) {
-    if (!listed.has(`/${dir}/${f}`)) problems.push(`on disk but missing from site.js PAGES: /${dir}/${f}`);
+    const rel = `/${dir}/${f}`;
+    if (!listed.has(rel) && !isDraft(rel)) problems.push(`on disk but missing from site.js PAGES: ${rel}`);
   }
 }
 
