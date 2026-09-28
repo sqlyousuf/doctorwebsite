@@ -386,6 +386,12 @@ const pages = [
   {
     slug: 'lap-band-removal',
     nav: 'Lap-Band Removal',
+    draft: true,
+    reviewNotes: [
+      'The body of this page still describes placing a Lap-Band, not removing one. Please supply the removal copy: what the procedure involves, who needs it, recovery, and what happens next (conversion to sleeve or bypass, or no further surgery).',
+      'Decide whether this should be its own page at all — the Revision Bariatric Surgery page already covers band removal and conversion. Merging may serve patients better than two pages on the same subject.',
+      'Confirm the FAQs, which currently answer questions about having a band fitted.',
+    ],
     title: 'Lap-Band® Surgery Specialist in Houston, TX',
     seoTitle: 'Lap-Band Removal Houston, TX | Gastric Band Removal',
     tagline: 'Removing an adjustable gastric band.',

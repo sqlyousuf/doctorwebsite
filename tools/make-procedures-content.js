@@ -357,9 +357,19 @@ for (const page of imported) {
     )
     .join('\n');
 
+  // Emit the draft flag and its review notes, which are declared in META but
+  // were previously never written into the generated module — so a page
+  // marked draft was still shipping indexable.
+  const NL = String.fromCharCode(10);
+  const draft = meta.draft
+    ? '    draft: true,' + NL + '    reviewNotes: [' + NL +
+      meta.reviewNotes.map((n) => '      ' + js(n) + ',').join(NL) + NL + '    ],' + NL
+    : '';
+
   out.push(`  {
     slug: ${js(meta.slug)},
     nav: ${js(meta.nav)},
+${draft}`.trimEnd() + `
     title: ${js(page.title)},
     seoTitle: ${js(meta.seoTitle)},
     tagline: ${js(meta.tagline)},
