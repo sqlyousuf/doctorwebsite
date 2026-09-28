@@ -75,6 +75,22 @@ ${(page.reviewNotes || []).map((n) => `      <li>${n}</li>`).join('\n')}
   </div>
 </aside>`;
 
+/**
+ * Placeholder for the procedure animation the practice is supplying. Marked
+ * rather than left blank, so it reads as outstanding to them and is obvious to
+ * remove once the file lands.
+ */
+const videoSlot = (lang) =>
+  lang === 'es'
+    ? `      <div class="review-placeholder">
+        <p><strong>Pendiente:</strong> aquí irá una animación breve del procedimiento, que la práctica va a
+        proporcionar. Formato preferido: MP4, menos de 60 segundos, sin audio necesario.</p>
+      </div>`
+    : `      <div class="review-placeholder">
+        <p><strong>To come:</strong> a short animation of the procedure goes here, which the practice is supplying.
+        Preferred format: MP4, under 60 seconds, no audio needed.</p>
+      </div>`;
+
 function renderPage(basePage, lang) {
   const page = localised(basePage, lang);
   const t = UI[lang];
@@ -169,8 +185,9 @@ ${page.stats.map(([f, l]) => `      <div><dt>${f}</dt><dd>${l}</dd></div>`).join
 
 <!-- ======================= CONTENT ======================= -->
 <article class="pad-lg">
-  <div class="container narrow prose">
+  <div class="container narrow prose prose-proc">
 ${page.body.trim()}
+${basePage.edits && basePage.edits.videoSlot ? videoSlot(lang) : ''}
   </div>
 </article>
 

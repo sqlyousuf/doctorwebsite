@@ -27,15 +27,6 @@ const translations = {
       ['2–4 semanas', 'para retomar la rutina normal'],
     ],
     body: `
-      <p>Si la dieta y el ejercicio por sí solos no le han dado resultados duraderos, la gastrectomía en manga puede
-      ser la solución segura y eficaz que busca para bajar de peso de forma sostenible.</p>
-      <p>En Houston Surgical Weight Loss, el Dr. Irfan Wadiwala, cirujano bariátrico con subespecialidad y certificado
-      por la junta médica, se especializa en la gastrectomía en manga laparoscópica. Este procedimiento mínimamente
-      invasivo ayuda a los pacientes a perder <strong>hasta el 70% de su exceso de peso corporal durante el primer
-      año</strong>, mejorando además las condiciones de salud relacionadas con la obesidad.</p>
-      <p>Llame al <strong>(281) 653-6544</strong> o programe una consulta en línea hoy mismo para saber si la
-      gastrectomía en manga es el paso correcto hacia una vida más sana.</p>
-
       <h2 class="display bar">¿Qué es la Gastrectomía en Manga?</h2>
       <p>La gastrectomía en manga, también llamada cirugía de manga gástrica, es un procedimiento bariátrico
       mínimamente invasivo aprobado por la FDA. Durante la cirugía se retira una gran parte del estómago, dejando una
@@ -85,6 +76,8 @@ const translations = {
         'Retorno a actividades ligeras en 1–2 semanas',
         'Retorno a la rutina normal en 2–4 semanas',
         'La pérdida de peso a largo plazo comienza durante los primeros meses',
+        'Etapas dietéticas especiales (líquidos → purés → suaves → alimentos regulares)',
+        'Se requiere suplementación vitamínica de por vida para evitar deficiencias',
       ])}
       <p>Los pacientes suelen experimentar menos dolor, menos complicaciones y una recuperación más cómoda que con
       procedimientos más invasivos.</p>
@@ -100,16 +93,6 @@ const translations = {
       ])}
       <p>Durante su consulta, el Dr. Wadiwala revisará con detenimiento su historial médico y sus metas de pérdida de
       peso para determinar si la gastrectomía en manga es su mejor opción.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de dos décadas de experiencia',
-        'Especialista en cirugía de pérdida de peso laparoscópica mínimamente invasiva',
-        'Planes de atención personalizados según sus metas',
-        'Apoyo integral antes, durante y después de la cirugía',
-        'Opciones de consulta por telemedicina y en la oficina',
-      ])}
-      <p>Nuestra misión es ayudarle a lograr una pérdida de peso segura y duradera, con el apoyo que usted merece.</p>
     `,
     faqs: [
       [
@@ -152,16 +135,6 @@ const translations = {
       ['2–4 semanas', 'para retomar la rutina normal'],
     ],
     body: `
-      <p>Si ha luchado contra la obesidad y no ha logrado resultados duraderos con dieta, ejercicio o métodos no
-      quirúrgicos, el bypass gástrico puede ser la solución segura y eficaz para bajar de peso a largo plazo.</p>
-      <p>En Houston Surgical Weight Loss, el cirujano bariátrico con subespecialidad y certificado por la junta médica
-      Dr. Irfan Wadiwala realiza el bypass gástrico por laparoscopia para ayudar a los pacientes a perder peso de forma
-      significativa y mejorar las condiciones asociadas a la obesidad. Muchos pacientes pierden
-      <strong>entre el 60 y el 80% de su exceso de peso corporal durante los primeros 12 a 18 meses</strong> después de
-      la cirugía.</p>
-      <p>Llame al <strong>(281) 653-6544</strong> o programe su consulta en línea hoy mismo para saber si el bypass
-      gástrico es el paso correcto hacia un futuro más saludable.</p>
-
       <h2 class="display bar">¿Qué es el Bypass Gástrico?</h2>
       <p>El <strong>bypass gástrico</strong> (también conocido como <strong>bypass gástrico en Y de Roux</strong>) es
       un procedimiento para bajar de peso mínimamente invasivo y aprobado por la FDA. Durante la cirugía:</p>
@@ -196,8 +169,7 @@ const translations = {
       ${ul(['El dolor es menor', 'La recuperación es más rápida', 'Las cicatrices son mínimas'])}
 
       <h2 class="display bar">La Recuperación Después del Bypass Gástrico</h2>
-      <p>La recuperación suele ser más rápida con técnicas laparoscópicas, aunque es más compleja que con la banda
-      gástrica, debido a la redirección digestiva.</p>
+      <p>La recuperación suele ser más rápida con técnicas laparoscópicas.</p>
       <p>Qué esperar:</p>
       ${ul([
         'Muchos pacientes regresan a casa en 1–2 días',
@@ -218,15 +190,6 @@ const translations = {
       ])}
       <p>Durante su consulta, el Dr. Wadiwala revisará su historial médico, su estilo de vida y sus metas para
       determinar si el bypass gástrico es adecuado para usted.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de dos décadas de experiencia',
-        'Especialista en bypass gástrico laparoscópico mínimamente invasivo',
-        'Historial comprobado ayudando a los pacientes a lograr resultados que cambian vidas',
-        'Atención personalizada, desde la consulta inicial hasta el seguimiento de por vida',
-        'Consultas por telemedicina y en la oficina para el acompañamiento continuo',
-      ])}
     `,
     faqs: [
       [
@@ -264,15 +227,6 @@ const translations = {
       ['2–3 días', 'para volver al trabajo y la rutina'],
     ],
     body: `
-      <p>Si la dieta y el ejercicio por sí solos no le han dado resultados duraderos, el balón gástrico puede ser la
-      solución segura y sin cirugía que estaba buscando.</p>
-      <p>En Houston Surgical Weight Loss, el Dr. Irfan Wadiwala, cirujano bariátrico con subespecialidad y certificado
-      por la junta médica, ofrece el procedimiento de balón gástrico para ayudar a los pacientes a bajar de peso y
-      construir hábitos más saludables. Muchos pacientes obtienen resultados importantes: pierden
-      <strong>hasta el 30–40% de su exceso de peso corporal en seis meses</strong>.</p>
-      <p>Llame al <strong>(281) 653-6544</strong> o programe su consulta en línea hoy mismo para saber si el balón
-      gástrico es la opción adecuada para usted.</p>
-
       <h2 class="display bar">¿Qué es el Balón Gástrico?</h2>
       <p>El balón gástrico es un procedimiento para bajar de peso no quirúrgico, mínimamente invasivo y aprobado por la
       FDA. Consiste en colocar dentro del estómago un balón blando y expandible que reduce la cantidad de alimento que
@@ -326,6 +280,7 @@ const translations = {
         'Retorno gradual a la dieta normal, comenzando con líquidos',
         'La mayoría de los pacientes retoma el trabajo y sus actividades diarias en pocos días',
         'Seguimientos regulares para monitorear el progreso y ajustar el estilo de vida',
+        'Etapas dietéticas especiales (líquidos → purés → suaves → alimentos regulares)',
       ])}
       <p>Como el balón es temporal:</p>
       ${ul([
@@ -352,15 +307,6 @@ const translations = {
       ])}
       <p>Durante su consulta, el Dr. Wadiwala revisará su historial médico y sus metas para determinar si el balón
       gástrico es la mejor opción para usted.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de dos décadas de experiencia',
-        'Experiencia especializada en procedimientos no quirúrgicos y mínimamente invasivos',
-        'Planes de atención personalizados según sus metas',
-        'Apoyo integral, con orientación dietética y seguimientos',
-        'Consultas convenientes por telemedicina y en la oficina',
-      ])}
     `,
     faqs: [
       [
@@ -386,7 +332,7 @@ const translations = {
     ],
   },
 
-  'lap-band': {
+  'lap-band-removal': {
     title: 'Especialista en Cirugía LAP-BAND® en Houston, TX',
     seoTitle: 'Banda Gástrica LAP-BAND en Houston, TX | Ajustable',
     tagline: 'Una banda ajustable y reversible, sin grapas ni redirección.',
@@ -398,15 +344,6 @@ const translations = {
       ['Ajustable', 'y totalmente reversible'],
     ],
     body: `
-      <p>Si ha tenido dificultades para bajar de peso solo con dieta y ejercicio, la cirugía LAP-BAND® puede ser la
-      solución segura, eficaz y ajustable que estaba buscando.</p>
-      <p>En Houston Surgical Weight Loss, el Dr. Irfan Wadiwala, cirujano bariátrico con subespecialidad y certificado
-      por la junta médica, realiza la cirugía LAP-BAND por laparoscopia para ayudar a los pacientes a lograr una
-      pérdida de peso sostenible. Con este procedimiento mínimamente invasivo, muchos pacientes pierden
-      <strong>hasta el 65% de su exceso de peso corporal durante el primer año</strong>.</p>
-      <p>Llame al <strong>(281) 653-6544</strong> o programe su consulta en línea hoy mismo para saber si la cirugía
-      LAP-BAND es el paso correcto para usted.</p>
-
       <h2 class="display bar">¿Qué es la Cirugía LAP-BAND®?</h2>
       <p>La cirugía LAP-BAND es un procedimiento para bajar de peso mínimamente invasivo y aprobado por la FDA, que
       utiliza una banda ajustable especializada para reducir el tamaño del estómago.</p>
@@ -468,15 +405,6 @@ const translations = {
         'Las necesidades nutricionales son más sencillas: con frecuencia basta un multivitamínico diario',
       ])}
 
-      <h2 class="display bar">Ajustes y Seguimiento de su LAP-BAND®</h2>
-      <p>Una de las principales ventajas de la cirugía LAP-BAND es que se ajusta por completo a su progreso.</p>
-      ${ul([
-        'Los ajustes se hacen a través del reservorio de solución salina bajo la piel.',
-        'La banda se aprieta o se afloja conforme avanza su proceso de pérdida de peso.',
-        'Los ajustes son rápidos, sencillos y no requieren otra cirugía.',
-      ])}
-      <p>Esta flexibilidad asegura que su plan siga siendo eficaz y personalizado con el paso del tiempo.</p>
-
       <h2 class="display bar">¿Es la Cirugía LAP-BAND Adecuada para Usted?</h2>
       <p>Los candidatos ideales para la cirugía LAP-BAND suelen ser personas que:</p>
       ${ul([
@@ -487,15 +415,6 @@ const translations = {
       ])}
       <p>Durante su consulta, el Dr. Wadiwala revisará su historial de salud y sus metas para determinar si la cirugía
       LAP-BAND es su mejor opción.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de dos décadas de experiencia',
-        'Especialista en cirugía de pérdida de peso laparoscópica mínimamente invasiva',
-        'Planes de atención personalizados según su salud y sus metas',
-        'Acompañamiento continuo, con ajustes de la banda y monitoreo a largo plazo',
-        'Consultas convenientes por telemedicina y citas en la oficina',
-      ])}
     `,
     faqs: [
       [
@@ -533,28 +452,10 @@ const translations = {
       'Cirugía bariátrica de revisión en Houston, TX por recuperación de peso, pérdida insuficiente, reflujo o complicaciones de una cirugía previa.',
     stats: [['2–3 semanas', 'para retomar las actividades normales']],
     body: `
-      <p>Si su primera cirugía para bajar de peso no dio los resultados que esperaba, o si está teniendo
-      complicaciones, la cirugía bariátrica de revisión puede ser la solución.</p>
-      <p>En Houston Surgical Weight Loss, el Dr. Irfan Wadiwala, cirujano bariátrico con subespecialidad y certificado
-      por la junta médica, se especializa en procedimientos de revisión seguros y eficaces que ayudan a los pacientes a
-      recuperar su salud y lograr una pérdida de peso duradera. Ya sea que enfrente recuperación de peso, problemas
-      médicos sin resolver o complicaciones de su primer procedimiento, la cirugía de revisión ofrece una segunda
-      oportunidad.</p>
-      <p>Llame al <strong>(281) 653-6544</strong> o programe su consulta en línea hoy mismo para saber si la cirugía de
-      revisión es adecuada para usted.</p>
-
-      <h2 class="display bar">Por Qué Elegir al Dr. Wadiwala para su Cirugía de Revisión</h2>
-      ${ul([
-        'Cirujano bariátrico con subespecialidad',
-        'Amplia experiencia en procedimientos de revisión',
-        'Técnicas avanzadas mínimamente invasivas',
-        'Planificación quirúrgica personalizada',
-        'Sólido seguimiento a largo plazo',
-      ])}
-
       <h2 class="display bar">¿Qué es la Cirugía Bariátrica de Revisión?</h2>
-      <p>La cirugía bariátrica de revisión se realiza cuando un procedimiento previo para bajar de peso no logró el
-      resultado deseado o provocó complicaciones. Este procedimiento correctivo puede:</p>
+      <p>Si su primera cirugía para bajar de peso no dio los resultados que esperaba — o si está teniendo
+      complicaciones — la cirugía bariátrica de revisión puede ser la solución. Este procedimiento correctivo
+      puede:</p>
       ${ul([
         'Atender la recuperación de peso después de una cirugía bariátrica',
         'Corregir complicaciones como deslizamiento de la banda, estrecheces o reflujo',
@@ -628,16 +529,6 @@ const translations = {
       determinar si la cirugía de revisión es su mejor opción. Pacientes de Houston, Spring y Cypress confían en
       nuestra clínica para procedimientos de revisión avanzados y atención personalizada. Nuestra ubicación facilita el
       acceso a pacientes de toda el área metropolitana de Houston.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con más de dos décadas de experiencia',
-        'Experiencia especializada en procedimientos de revisión complejos',
-        'Abordaje laparoscópico mínimamente invasivo para una recuperación más rápida',
-        'Planes de atención personalizados según sus necesidades particulares',
-        'Apoyo a largo plazo, desde la cirugía hasta los cambios de estilo de vida',
-        'Consultas convenientes por telemedicina y citas en la oficina',
-      ])}
     `,
     faqs: [
       [
@@ -682,14 +573,14 @@ const translations = {
       ['4–6 semanas', 'de recuperación, cirugía abierta'],
     ],
     body: `
-      <p>En Houston Surgical Weight Loss, nuestro equipo se dedica a ofrecer atención quirúrgica general, laparoscópica
-      y bariátrica integral. Nos enfocamos en el diagnóstico, el tratamiento y el manejo de condiciones médicas tanto
-      comunes como complejas, procurando que cada paciente reciba una atención segura, eficaz y personalizada.</p>
-      <p>Nuestros cirujanos colaboran estrechamente con los médicos que refieren y con otros especialistas para crear
-      planes de tratamiento a la medida. Al combinar tecnología quirúrgica avanzada con una atención humana, buscamos
-      reducir el tiempo de recuperación y maximizar los resultados.</p>
-
       <h2 class="display bar">Nuestros Servicios de Cirugía General</h2>
+      <p>En Houston Surgical Weight Loss, nuestro equipo se dedica a ofrecer atención quirúrgica general,
+      laparoscópica y bariátrica integral. Nos enfocamos en el diagnóstico, el tratamiento y el manejo de
+      condiciones médicas tanto comunes como complejas, procurando que cada paciente reciba una atención segura,
+      eficaz y personalizada.</p>
+      <p>Nuestros cirujanos colaboran estrechamente con los médicos que refieren y con otros especialistas para
+      crear planes de tratamiento a la medida. Al combinar tecnología quirúrgica avanzada con una atención humana,
+      buscamos reducir el tiempo de recuperación y maximizar los resultados.</p>
       <p>Ofrecemos una amplia gama de cirugías generales, con énfasis en técnicas mínimamente invasivas y
       laparoscópicas para lograr una cicatrización más rápida y menos molestias. Nuestros servicios incluyen reparación
       de hernias, extirpación de vesícula y cirugías intestinales para condiciones como cáncer de colon, enfermedad
@@ -836,19 +727,6 @@ const translations = {
       'Cirugía laparoscópica mínimamente invasiva en Houston, TX con el Dr. Irfan Wadiwala: incisiones más pequeñas y recuperación más rápida.',
     stats: [['El mismo día', 'la mayoría de los pacientes regresa a casa']],
     body: `
-      <p>En Houston Surgical Weight Loss nos especializamos en la cirugía laparoscópica en Houston, una técnica moderna
-      y mínimamente invasiva que se utiliza ampliamente en procedimientos como la cirugía bariátrica, la extirpación de
-      vesícula, la apendicectomía, la reparación de hernias y otras condiciones abdominales. Este abordaje avanzado
-      emplea incisiones pequeñas e instrumentos guiados con precisión para reducir el dolor, minimizar las cicatrices y
-      favorecer una cicatrización más rápida que la cirugía abierta tradicional. Muchos pacientes se benefician de
-      estancias hospitalarias más cortas o del alta el mismo día, lo que les permite retomar sus actividades con mayor
-      rapidez.</p>
-      <p>El Dr. Irfan Wadiwala, cirujano con subespecialidad y certificado por la junta médica, con más de dos décadas
-      de experiencia, aporta un amplio dominio de los procedimientos laparoscópicos avanzados y de pérdida de peso, con
-      un enfoque firme en la seguridad del paciente, la precisión quirúrgica y el éxito a largo plazo. Su abordaje
-      centrado en el paciente asegura que cada plan de tratamiento se adapte cuidadosamente a la condición de cada
-      persona.</p>
-
       <h2 class="display bar">Por Qué la Cirugía Laparoscópica es la Opción Preferida</h2>
       <p>La cirugía laparoscópica, también conocida como cirugía mínimamente invasiva, utiliza incisiones pequeñas y un
       laparoscopio — un tubo delgado y flexible con una cámara diminuta en la punta — para ver y operar dentro del
@@ -996,15 +874,6 @@ const translations = {
       ${ul(['Estimaciones de costo transparentes', 'Ayuda con la verificación del seguro', 'Planes de financiamiento flexibles para pacientes de pago particular'])}
       <p>Muchos planes de seguro cubren las cirugías laparoscópicas cuando son médicamente necesarias. Nuestro personal
       le acompañará en cada paso, desde la planificación del costo hasta la recuperación.</p>
-
-      <h2 class="display bar">Por Qué los Pacientes Confían en Nosotros</h2>
-      ${ul([
-        'Cirujano certificado y con subespecialidad, con más de dos décadas de experiencia.',
-        'Experiencia en reparación laparoscópica de hernias, cirugía de vesícula, cirugía de colon y procedimientos bariátricos.',
-        'Enfoque en técnicas mínimamente invasivas para mejores resultados y una recuperación más rápida.',
-        'Planes de atención personalizados según la salud y el estilo de vida de cada paciente.',
-        'Consultas convenientes por telemedicina y seguimiento integral.',
-      ])}
     `,
     faqs: [
       [

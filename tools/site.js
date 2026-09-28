@@ -47,7 +47,7 @@ const PAGES = [
   { path: '/procedures/gastric-sleeve.html', priority: '0.9', es: '/es/procedures/gastric-sleeve.html' },
   { path: '/procedures/gastric-bypass.html', priority: '0.9', es: '/es/procedures/gastric-bypass.html' },
   { path: '/procedures/gastric-balloon.html', priority: '0.8', es: '/es/procedures/gastric-balloon.html' },
-  { path: '/procedures/lap-band.html', priority: '0.8', es: '/es/procedures/lap-band.html' },
+  { path: '/procedures/lap-band-removal.html', priority: '0.8', es: '/es/procedures/lap-band-removal.html' },
   { path: '/procedures/revision-bariatric-surgery.html', priority: '0.8', es: '/es/procedures/revision-bariatric-surgery.html' },
   { path: '/procedures/general-surgery.html', priority: '0.7', es: '/es/procedures/general-surgery.html' },
   { path: '/procedures/laparoscopic-surgery.html', priority: '0.7', es: '/es/procedures/laparoscopic-surgery.html' },
@@ -104,7 +104,7 @@ const businessSchema = () => ({
       name: PHYSICIAN.name,
       jobTitle: PHYSICIAN.jobTitle,
       description: PHYSICIAN.description,
-      image: `${ORIGIN}/media/Dr-Irfan-Wadiwala-DO-62235-zoom.jpg`,
+      image: `${ORIGIN}/media/dr-wadiwala.jpg`,
       medicalSpecialty: 'Surgical',
       worksFor: { '@id': `${ORIGIN}/#clinic` },
       address: {

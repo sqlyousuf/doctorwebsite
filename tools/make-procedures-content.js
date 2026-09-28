@@ -18,10 +18,43 @@
 const fs = require('fs');
 const path = require('path');
 
+/*
+ * The practice asked for the same three changes on each procedure page, so
+ * they are the default rather than repeated seven times:
+ *
+ *   - drop the opening paragraphs, which restate the hero directly beneath it
+ *   - drop the closing "Why Choose / Why Patients Trust" list, since the page
+ *     already ends on an appointment call to action
+ *   - leave a slot for the procedure animation they are supplying
+ *
+ * A page's own `edits` merge over these.
+ */
+const DEFAULT_EDITS = {
+  dropIntro: true,
+  dropSections: [/^why (choose|patients trust)/i],
+  videoSlot: true,
+};
+
 const META = {
   'sleeve-gastrectomy.html': {
     slug: 'gastric-sleeve',
     nav: 'Gastric Sleeve',
+    /*
+     * Page-level edits requested by the practice. Declared here rather than
+     * applied to the generated file, so they survive the next re-import.
+     */
+    edits: {
+      appendToList: [
+        {
+          afterHeading: /^recovery after/i,
+          items: [
+            'Special dietary phases (liquid → pureed → soft → regular foods)',
+            'Lifelong vitamin supplementation is required to avoid deficiencies',
+          ],
+        },
+      ],
+      videoSlot: true,
+    },
     seoTitle: 'Gastric Sleeve Surgery Houston, TX | Sleeve Gastrectomy',
     description:
       'Gastric sleeve surgery in Houston, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon. Most insurance accepted.',
@@ -37,6 +70,9 @@ const META = {
   'gastric-bypass-surgery.html': {
     slug: 'gastric-bypass',
     nav: 'Gastric Bypass',
+    // Same three edits as the sleeve page, requested for this one too.
+    // The comparison to Lap-Band is not useful on the bypass page itself.
+    edits: { replaceText: [[', though more involved than Lap-Band due to digestive rerouting', '']] },
     seoTitle: 'Gastric Bypass Surgery Houston, TX | Roux-en-Y',
     description:
       'Laparoscopic gastric bypass (Roux-en-Y) in Houston, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon.',
@@ -52,6 +88,14 @@ const META = {
   'gastric-balloon-surgery.html': {
     slug: 'gastric-balloon',
     nav: 'Gastric Balloon',
+    edits: {
+      appendToList: [
+        {
+          afterHeading: /^recovery after/i,
+          items: ['Special dietary phases (liquid → pureed → soft → regular foods)'],
+        },
+      ],
+    },
     seoTitle: 'Gastric Balloon Houston, TX | Non-Surgical Weight Loss',
     description:
       'Gastric balloon in Houston, TX — a non-surgical, temporary weight loss option placed and removed endoscopically.',
@@ -64,12 +108,37 @@ const META = {
     ],
   },
   'lap-band-surgery.html': {
-    slug: 'lap-band',
-    nav: 'Lap-Band',
-    seoTitle: 'Lap-Band Surgery Houston, TX | Adjustable Gastric Band',
+    slug: 'lap-band-removal',
+    nav: 'Lap-Band Removal',
+    /*
+     * Renamed to Lap-Band Removal as asked, and held as a draft.
+     *
+     * The body below is still the practice's copy about *placing* a band —
+     * what it is, its benefits, how the band is fitted and adjusted. Removal
+     * is a different operation, and publishing placement copy under a removal
+     * heading would tell a patient the opposite of what the page promises.
+     * Writing removal copy is not ours to do, so the page is noindex with a
+     * banner until they supply it.
+     *
+     * Worth deciding first: their Revision page already covers "Band Removal
+     * or Conversion — replacing a gastric band with sleeve or bypass", so this
+     * may be better as a section there than a page of its own.
+     */
+    edits: {
+      // Sections that describe fitting and adjusting a band, which do not
+      // apply when the operation is removal.
+      dropSections: [/^adjusting and managing/i],
+    },
+    draft: true,
+    reviewNotes: [
+      'The body of this page still describes placing a Lap-Band, not removing one. Please supply the removal copy: what the procedure involves, who needs it, recovery, and what happens next (conversion to sleeve or bypass, or no further surgery).',
+      'Decide whether this should be its own page at all — the Revision Bariatric Surgery page already covers band removal and conversion. Merging may serve patients better than two pages on the same subject.',
+      'Confirm the FAQs, which currently answer questions about having a band fitted.',
+    ],
+    seoTitle: 'Lap-Band Removal Houston, TX | Gastric Band Removal',
     description:
-      'LAP-BAND® adjustable gastric band surgery in Houston, TX with Dr. Irfan Wadiwala. Reversible and adjustable.',
-    tagline: 'An adjustable, reversible band — no stapling or rerouting.',
+      'LAP-BAND® removal in Houston, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon.',
+    tagline: 'Removing an adjustable gastric band.',
     image: 'u-1514416309827-bfb0cf433a2d.jpg',
     stats: [
       ['Up to 65%', 'of excess body weight lost'],
@@ -80,6 +149,14 @@ const META = {
   'revision-bariatric-surgery.html': {
     slug: 'revision-bariatric-surgery',
     nav: 'Revision Surgery',
+    edits: {
+      replaceText: [
+        [
+          'Revision bariatric surgery is performed when a previous weight loss procedure did not achieve the desired outcome or led to complications. This corrective procedure can:',
+          'If your initial weight loss surgery didn’t deliver the results you hoped for — or if you’re experiencing complications — revision bariatric surgery may be the solution. This corrective procedure can:',
+        ],
+      ],
+    },
     seoTitle: 'Revision Bariatric Surgery Houston, TX | Second Procedure',
     description:
       'Revision bariatric surgery in Houston, TX for weight regain, inadequate loss, reflux or complications after an earlier procedure.',
@@ -90,6 +167,11 @@ const META = {
   'general-surgery.html': {
     slug: 'general-surgery',
     nav: 'General Surgery',
+    edits: {
+      // Unlike the other pages, this one's opening paragraphs are wanted —
+      // just under the services heading rather than above it.
+      moveIntroAfter: /^our general surgery services/i,
+    },
     seoTitle: 'General Surgery Houston, TX | Hernia & Gallbladder',
     description:
       'General surgery in Houston, TX — hernia repair, gallbladder removal, appendectomy and more, with Dr. Irfan Wadiwala.',
@@ -204,6 +286,56 @@ function applyCorrections(page) {
   }
 }
 
+/** Apply a page's declared edits to its imported blocks. */
+function applyEdits(page, edits) {
+  if (!edits) return;
+
+  if (edits.moveIntroAfter) {
+    const firstHeading = page.body.findIndex((b) => b.type === 'h2' || b.type === 'h3');
+    if (firstHeading > 0) {
+      const intro = page.body.splice(0, firstHeading);
+      const target = page.body.findIndex((b) => (b.type === 'h2' || b.type === 'h3') && edits.moveIntroAfter.test(b.text));
+      if (target !== -1) page.body.splice(target + 1, 0, ...intro);
+    }
+  } else if (edits.dropIntro) {
+    const firstHeading = page.body.findIndex((b) => b.type === 'h2' || b.type === 'h3');
+    if (firstHeading > 0) page.body.splice(0, firstHeading);
+  }
+
+  for (const pattern of edits.dropSections || []) {
+    // Every match, not just the first: the revision page opens with "Why
+    // Choose Dr. Wadiwala" and closes with "Why Choose Houston Surgical
+    // Weight Loss", and both are meant to go.
+    for (;;) {
+      const i = page.body.findIndex((b) => (b.type === 'h2' || b.type === 'h3') && pattern.test(b.text));
+      if (i === -1) break;
+      const level = page.body[i].type;
+      let end = i + 1;
+      // A section runs until the next heading at the same level or higher.
+      while (end < page.body.length && !(page.body[end].type === 'h2' || page.body[end].type === level)) end++;
+      page.body.splice(i, end - i);
+    }
+  }
+
+  for (const [find, replace] of edits.replaceText || []) {
+    for (const b of page.body) {
+      if (b.type === 'p' && b.text.includes(find)) b.text = b.text.replace(find, replace).replace(/\s+\./g, '.');
+    }
+  }
+
+  for (const add of edits.appendToList || []) {
+    const h = page.body.findIndex((b) => (b.type === 'h2' || b.type === 'h3') && add.afterHeading.test(b.text));
+    if (h === -1) continue;
+    // The last list inside that section is the one to extend.
+    let target = -1;
+    for (let i = h + 1; i < page.body.length; i++) {
+      if (page.body[i].type === 'h2' || page.body[i].type === 'h3') break;
+      if (page.body[i].type === 'list') target = i;
+    }
+    if (target !== -1) page.body[target].items.push(...add.items);
+  }
+}
+
 const imported = JSON.parse(fs.readFileSync(process.argv[2] || '.imported.json', 'utf8'));
 const out = [];
 
@@ -214,6 +346,10 @@ for (const page of imported) {
     console.error(`make-procedures-content: no metadata for ${page.file}`);
     process.exit(1);
   }
+  const edits = { ...DEFAULT_EDITS, ...(meta.edits || {}) };
+  // Array options add to the defaults rather than replacing them.
+  edits.dropSections = [...(DEFAULT_EDITS.dropSections || []), ...((meta.edits || {}).dropSections || [])];
+  applyEdits(page, edits);
   const body = renderBlocks(page.body, 6);
   const faq = page.faqs
     .map(
@@ -232,6 +368,7 @@ for (const page of imported) {
     stats: [
 ${meta.stats.map(([f, l]) => `      [${js(f)}, ${js(l)}],`).join('\n')}
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: ${js(page.title.replace(/ Specialist in Houston, TX$/, ''))},

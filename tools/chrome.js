@@ -94,7 +94,7 @@ const footerFor = ({ lang = 'en', up = '../', pcPrefix = '../patient-center/', h
  */
 function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = '../patient-center/', active = {} } = {}) {
   const t = UI[lang];
-  const anchors = ['#services', '#about', '#process', '#testimonials', '#insurance', '#faq'];
+  const anchors = ['#about', '#services', '#process', '#testimonials', '#insurance', '#faq'];
   const primary = t.primary
     .map((label, i) => `        <li><a href="${home}${anchors[i]}">${label}</a></li>`)
     .join('\n');

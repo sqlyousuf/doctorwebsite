@@ -74,7 +74,7 @@ const copy = [
 
   // ---- primary nav (must run before the bare footer links below) ----
   ['<li><a href="#services">Procedures</a></li>', '<li><a href="#services">Procedimientos</a></li>', 1],
-  ['<li><a href="#about">Our Surgeon</a></li>', '<li><a href="#about">Nuestro Cirujano</a></li>', 1],
+  ['<li><a href="#about">About Us</a></li>', '<li><a href="#about">Sobre Nosotros</a></li>', 1],
   ['<li><a href="#process">How It Works</a></li>', '<li><a href="#process">Cómo Funciona</a></li>', 1],
   ['<li><a href="#testimonials">Stories</a></li>', '<li><a href="#testimonials">Testimonios</a></li>', 1],
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],
@@ -431,7 +431,7 @@ const copy = [
   ['<h4>Houston Surgical Weight Loss</h4>', '<h4>Houston Surgical Weight Loss</h4>', 1],
   ['4.8 average rating &middot; 3,000+ patients treated', '4.8 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
-  ['<a href="#about">Our Surgeon</a>', '<a href="#about">Nuestro Cirujano</a>', 1],
+  ['<a href="#about">About Us</a>', '<a href="#about">Sobre Nosotros</a>', 1],
   ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],
   ['<a href="#insurance">Insurance</a>', '<a href="#insurance">Seguro</a>', 1],
   [

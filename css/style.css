@@ -638,14 +638,16 @@ p a:hover { text-decoration: underline; }
 
 .about-media {
   margin: 0 auto;
-  max-width: 340px;
+  /* Was capped at 340px because the old headshot was only 300px wide and went
+     soft above it. The replacement is 853px, so the frame can be larger. */
+  max-width: 420px;
   width: 100%;
   text-align: center;
 }
 .about-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 300 / 396;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
   border: 1px solid var(--accent);
@@ -1894,6 +1896,16 @@ p a:hover { text-decoration: underline; }
 }
 
 /* ---------- Procedure pages ---------- */
+
+/* On procedure pages the h3s name whole operations — hernia, gallbladder,
+   intestinal — so they carry more weight than an inline subheading. */
+.prose-proc h3 {
+  font-size: 1.22rem;
+  letter-spacing: 0.08em;
+  margin-top: 38px;
+}
+.prose-proc h3 + p { margin-top: 0; }
+
 
 /* The figures that answer "what does this actually do", above the fold. */
 .proc-stats {

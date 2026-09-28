@@ -44,15 +44,13 @@ const pages = [
       ['6–12 months', 'the balloon stays in place'],
       ['2–3 days', 'back to work and normal activity'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Gastric Balloon Surgery',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>If diet and exercise alone haven’t delivered lasting results, gastric balloon surgery could be the safe, non-surgical solution you’ve been looking for.</p>
-      <p>At Houston Surgical Weight Loss, Dr. Irfan Wadiwala, a fellowship-trained and board-certified bariatric surgeon, offers gastric balloon procedures to help patients lose weight and build healthier habits. Many patients experience significant results—losing up to <strong>30–40% of their excess body weight within six months</strong>.</p>
-      <p>Call <strong>(281) 653-6544</strong> or schedule your consultation online today to find out if gastric balloon surgery is the right option for you.</p>
       <h2 class="display bar">What is Gastric Balloon Surgery?</h2>
       <p>Gastric balloon surgery is a <strong>non-surgical, minimally invasive, FDA-approved weight loss procedure</strong>. It involves placing a soft, expandable balloon inside your stomach, which reduces the amount of food you can eat at one time.</p>
       <p>This smaller stomach space:</p>
@@ -104,6 +102,7 @@ const pages = [
       <ul class="prose-list">
         <li>It is usually removed after 6–12 months</li>
         <li>Healthy eating and lifestyle changes are key to maintaining long-term results</li>
+        <li>Special dietary phases (liquid → pureed → soft → regular foods)</li>
       </ul>
       <h2 class="display bar">Managing Your Gastric Balloon</h2>
       <p>One of the main advantages of gastric balloon surgery is that it acts as a <strong>training tool</strong> for portion control and mindful eating.</p>
@@ -121,14 +120,6 @@ const pages = [
         <li>Are committed to lifestyle changes that promote long-term health</li>
       </ul>
       <p>During your consultation, Dr. Wadiwala will review your medical history and goals to determine if gastric balloon surgery is the best option for you.</p>
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Gastric Balloon Surgery</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with 18+ years of experience</li>
-        <li>Specialized expertise in non-surgical, minimally invasive weight loss procedures</li>
-        <li>Personalized care plans tailored to your goals</li>
-        <li>Comprehensive support including dietary guidance and follow-ups</li>
-        <li>Convenient telehealth and in-office consultations</li>
-      </ul>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -169,15 +160,13 @@ const pages = [
       ['1–2 days', 'most patients go home'],
       ['2–4 weeks', 'back to normal routines'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Gastric Bypass Surgery',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>If you’ve been struggling with obesity and haven’t achieved lasting results through diet, exercise, or non-surgical methods, <strong>gastric bypass surgery</strong> may be the safe and effective solution for long-term weight loss.</p>
-      <p>At Houston Surgical Weight Loss, fellowship-trained and board-certified bariatric surgeon <strong>Dr. Irfan Wadiwala</strong> offers laparoscopic gastric bypass surgery to help patients lose significant weight and improve obesity-related health conditions. Many patients lose <strong>60–80% of their excess body weight within the first 12–18 months</strong> following surgery.</p>
-      <p>Call <strong>(281) 653-6544</strong> or schedule your consultation online today to learn if gastric bypass is the right step toward a healthier future.</p>
       <h2 class="display bar">What is Gastric Bypass Surgery?</h2>
       <p><strong>Gastric bypass surgery</strong> (also known as <strong>Roux-en-Y gastric bypass</strong>) is an FDA-approved, minimally invasive weight loss procedure. During surgery:</p>
       <ul class="prose-list">
@@ -209,7 +198,7 @@ const pages = [
         <li>Scarring is minimal</li>
       </ul>
       <h2 class="display bar">Recovery After Gastric Bypass</h2>
-      <p>Recovery is usually faster with laparoscopic techniques, though more involved than Lap-Band due to digestive rerouting.</p>
+      <p>Recovery is usually faster with laparoscopic techniques.</p>
       <p>What to expect:</p>
       <ul class="prose-list">
         <li>Many patients go home within 1–2 days</li>
@@ -227,14 +216,6 @@ const pages = [
         <li>Want a proven, long-term solution for obesity and related health risks</li>
       </ul>
       <p>During your consultation, Dr. Wadiwala will review your medical history, lifestyle, and goals to determine if gastric bypass is right for you.</p>
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Gastric Bypass Surgery</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with 18+ years of experience</li>
-        <li>Expertise in laparoscopic, minimally invasive gastric bypass</li>
-        <li>Proven track record of helping patients achieve life-changing results</li>
-        <li>Personalized care, from initial consultation to lifelong follow-up</li>
-        <li>Telehealth and in-office visits for ongoing support</li>
-      </ul>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -273,15 +254,16 @@ const pages = [
       ['1–3 weeks', 'recovery, laparoscopic'],
       ['4–6 weeks', 'recovery, open surgery'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Comprehensive Surgical Care with Advanced Technology and Compassionate Support in Houston',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
+      <h2 class="display bar">Our General Surgery Services</h2>
       <p>At Houston Surgical Weight Loss, our team is dedicated to providing comprehensive general, laparoscopic, and bariatric surgical care. We focus on the diagnosis, treatment, and management of both common and complex medical conditions, ensuring every patient receives safe, effective, and personalized care.</p>
       <p>Our surgeons collaborate closely with referring physicians and specialists to create customized treatment plans. By combining advanced surgical technology with compassionate care, we aim to minimize recovery time and maximize results.</p>
-      <h2 class="display bar">Our General Surgery Services</h2>
       <p>We provide a wide range of general surgeries, focusing on minimally invasive and laparoscopic techniques for faster healing and less discomfort. Our services include hernia repairs, gallbladder removals, and intestinal surgeries for conditions like colon cancer, IBD, and diverticulitis. We also perform stomach, liver, pancreas, and spleen surgeries, using advanced methods to improve recovery and outcomes. Laparoscopic procedures are emphasized for smaller incisions, quicker recovery, and reduced pain. Additionally, we offer skin and soft tissue surgeries, including biopsies, tumor removal, and reconstructive treatments. Below are some of our most common procedures.</p>
       <h3>Hernia Repair</h3>
       <p>A <strong>hernia</strong> occurs when an organ or tissue pushes through a weak spot in the surrounding muscle wall. Hernias most often occur in the:</p>
@@ -402,27 +384,25 @@ const pages = [
     `,
   },
   {
-    slug: 'lap-band',
-    nav: 'Lap-Band',
+    slug: 'lap-band-removal',
+    nav: 'Lap-Band Removal',
     title: 'Lap-Band® Surgery Specialist in Houston, TX',
-    seoTitle: 'Lap-Band Surgery Houston, TX | Adjustable Gastric Band',
-    tagline: 'An adjustable, reversible band — no stapling or rerouting.',
-    description: 'LAP-BAND® adjustable gastric band surgery in Houston, TX with Dr. Irfan Wadiwala. Reversible and adjustable.',
+    seoTitle: 'Lap-Band Removal Houston, TX | Gastric Band Removal',
+    tagline: 'Removing an adjustable gastric band.',
+    description: 'LAP-BAND® removal in Houston, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon.',
     image: '../media/img/u-1514416309827-bfb0cf433a2d.jpg',
     stats: [
       ['Up to 65%', 'of excess body weight lost'],
       ['1–2 weeks', 'back to normal activities'],
       ['Adjustable', 'and fully reversible'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Lap-Band® Surgery',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>If you’ve struggled to lose weight through diet and exercise alone, Lap-Band® surgery may be the safe, effective, and adjustable solution you’ve been looking for.</p>
-      <p>At Houston Surgical Weight Loss, Dr. Irfan Wadiwala, a fellowship-trained and board-certified bariatric surgeon, offers laparoscopic Lap-Band surgery to help patients achieve sustainable weight loss. With this minimally invasive procedure, many patients lose up to 65% of their excess body weight within the first year.</p>
-      <p>Call (281) 653-6544 or schedule your consultation online today to learn if Lap-Band surgery is the right step toward a healthier, more confident you.</p>
       <h2 class="display bar">What is Lap-Band® Surgery?</h2>
       <p>Lap-Band surgery is a <strong>minimally invasive, FDA-approved weight loss procedure</strong> that uses a specialized adjustable band to reduce the size of your stomach.</p>
       <p>This smaller stomach pouch:</p>
@@ -479,14 +459,6 @@ const pages = [
         <li>Fewer digestive complications occur</li>
         <li>Nutritional needs are simpler, often requiring <strong>just one daily multivitamin</strong><strong></strong></li>
       </ul>
-      <h2 class="display bar">Adjusting and Managing Your Lap-Band®</h2>
-      <p>One of the main advantages of Lap-Band surgery is that it’s <strong>completely adjustable</strong> to your progress.</p>
-      <ul class="prose-list">
-        <li>Adjustments are made through the <strong>saline reservoir</strong> under your skin.</li>
-        <li>The band is tightened or loosened as your weight loss journey evolves.</li>
-        <li>Adjustments are quick, simple, and <strong>don’t require another surgery</strong>.</li>
-      </ul>
-      <p>This flexibility ensures that your weight loss plan remains effective and personalized over time.</p>
       <h2 class="display bar">Is Lap-Band Surgery Right for You?</h2>
       <p>Ideal candidates for Lap-Band surgery are typically individuals who:</p>
       <ul class="prose-list">
@@ -496,14 +468,6 @@ const pages = [
         <li>Prefer a weight loss option that is <strong>adjustable and reversible</strong><strong></strong></li>
       </ul>
       <p>During your consultation, Dr. Wadiwala will review your health history and goals to determine whether Lap-Band surgery is your best option.</p>
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Lap-Band Surgery</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with over 18 years of experience</li>
-        <li>Expertise in laparoscopic, minimally invasive weight loss surgery</li>
-        <li>Personalized care plans tailored to your health and weight loss goals</li>
-        <li>Ongoing support, including band adjustments and long-term monitoring</li>
-        <li>Convenient telehealth consultations and in-office appointments</li>
-      </ul>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -545,14 +509,13 @@ const pages = [
     stats: [
       ['Same day', 'most patients go home'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Laparoscopic Surgery – Minimally Invasive Surgery with Faster Recovery in Houston',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>At Houston Surgical Weight Loss, we specialize in laparoscopic surgery in Houston, a modern minimally invasive technique widely used for procedures such as bariatric surgery, gallbladder removal, appendectomy, hernia repair, and other abdominal conditions. This advanced surgical approach uses small incisions and precision-guided instruments to reduce pain, minimize scarring, and promote faster healing compared to traditional open surgery. Many patients benefit from shorter hospital stays or same-day discharge, allowing them to return to normal activities more quickly.</p>
-      <p>Dr. Irfan Wadiwala, a fellowship-trained, board-certified surgeon with over 18 years of experience, brings extensive expertise in advanced laparoscopic and weight loss procedures, with a strong focus on patient safety, surgical precision, and long-term success. His patient-centered approach ensures that each treatment plan is carefully tailored to the individual’s condition, helping patients achieve optimal outcomes with the latest minimally invasive techniques available in Houston.</p>
       <h2 class="display bar">Why Laparoscopic Surgery is the Preferred Choice</h2>
       <p>Laparoscopic surgery, also known as <strong>minimally invasive surgery</strong>, uses <strong>small incisions</strong> and a <strong>laparoscope</strong> — a thin, flexible tube with a tiny camera on the end — to view and operate inside the body. This camera projects a magnified image of the abdominal organs onto a screen, allowing the surgeon to work with exceptional precision without the need for a large open incision.</p>
       <p><strong>Advantages of laparoscopic surgery include:</strong></p>
@@ -688,14 +651,6 @@ const pages = [
         <li>Flexible financing plans for self-pay patients</li>
       </ul>
       <p>Many insurance plans cover laparoscopic surgeries when they are medically necessary. Our staff will guide you through every step, from cost planning to recovery.</p>
-      <h2 class="display bar">Why Patients Trust Houston Surgical Weight Loss</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified surgeon with 18+ years of experience.</li>
-        <li>Expertise in laparoscopic hernia repair, gallbladder surgery, colon surgery, and bariatric procedures.</li>
-        <li>Focus on minimally invasive techniques for better results and quicker recovery.</li>
-        <li>Personalized care plans designed for each patient’s health and lifestyle needs.</li>
-        <li>Convenient telehealth consultations and comprehensive follow-up care.</li>
-      </ul>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -737,25 +692,15 @@ const pages = [
     stats: [
       ['2–3 weeks', 'back to normal activities'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Revision Bariatric Surgery',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>If your initial weight loss surgery didn’t deliver the results you hoped for—or if you’re experiencing complications—<strong>Revision Bariatric Surgery</strong> may be the solution.</p>
-      <p>At Houston Surgical Weight Loss, Dr. Irfan Wadiwala, a fellowship-trained and board-certified bariatric surgeon, specializes in safe and effective revision bariatric procedures to help patients restore their health and achieve lasting weight loss. Whether you’re struggling with weight regain, unresolved medical issues, or problems from your first procedure, revision surgery offers a second chance at success.</p>
-      <p>Call <strong>(281) 653-6544</strong> or schedule your consultation online today to learn if revision bariatric surgery is right for you.</p>
-      <h2 class="display bar">Why Choose Dr. Wadiwala as Your Revision Bariatric Surgeon</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained bariatric surgeon</li>
-        <li>Extensive experience in revision procedures</li>
-        <li>Advanced minimally invasive techniques</li>
-        <li>Personalized surgical planning</li>
-        <li>Strong long-term follow-up care</li>
-      </ul>
       <h2 class="display bar">What is Revision Bariatric Surgery?</h2>
-      <p>Revision bariatric surgery is performed when a previous weight loss procedure did not achieve the desired outcome or led to complications. This corrective procedure can:</p>
+      <p>If your initial weight loss surgery didn’t deliver the results you hoped for — or if you’re experiencing complications — revision bariatric surgery may be the solution. This corrective procedure can:</p>
       <ul class="prose-list">
         <li>Address weight regain after bariatric surgery</li>
         <li>Correct complications such as band slippage, strictures, or reflux</li>
@@ -813,15 +758,6 @@ const pages = [
         <li>Are motivated to make long-term lifestyle changes for better health</li>
       </ul>
       <p>Dr. Wadiwala will carefully review your surgical history, current health, and weight loss goals to determine if revision surgery is your best option. Patients searching for a <strong>revision bariatric surgeon near me in Houston, Spring, and Cypress</strong> trust our clinic for advanced revision procedures and personalized care. Our location makes it easy for patients across the Greater Houston area to access expert bariatric revision surgery.</p>
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Revision Bariatric Surgery</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with <strong>over 18 years of experience</strong><strong></strong></li>
-        <li>Specialized expertise in <strong>complex revision procedures</strong><strong></strong></li>
-        <li>Minimally invasive laparoscopic approach for quicker recovery</li>
-        <li>Personalized care plans tailored to your unique needs</li>
-        <li>Long-term support, from surgery to lifestyle changes</li>
-        <li>Convenient <strong>telehealth consultations and in-office appointments</strong></li>
-      </ul>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
@@ -870,15 +806,13 @@ const pages = [
       ['Same day', 'most patients go home'],
       ['2–4 weeks', 'back to normal routines'],
     ],
+    edits: { videoSlot: true },
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Sleeve Gastrectomy',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <p>If diet and exercise alone haven’t brought the lasting results you’re looking for, sleeve gastrectomy may be the safe and effective solution to help you achieve sustainable weight loss.</p>
-      <p>At Houston Surgical Weight Loss, fellowship-trained and board-certified bariatric surgeon <strong>Dr. Irfan Wadiwala</strong> specializes in laparoscopic sleeve gastrectomy. This minimally invasive procedure helps patients lose up to 70% of their excess body weight within the first year while improving obesity-related health conditions.</p>
-      <p>Call <strong>(281) 653-6544</strong> or schedule a consultation online today to learn if sleeve gastrectomy is the right step toward a healthier, more confident you.</p>
       <h2 class="display bar">What is Sleeve Gastrectomy?</h2>
       <p>Sleeve gastrectomy, also called <strong>gastric sleeve surgery</strong>, is an FDA-approved, minimally invasive bariatric procedure. During this surgery, a large portion of the stomach is removed, leaving behind a smaller, sleeve-shaped stomach pouch.</p>
       <p>This new pouch:</p>
@@ -919,6 +853,8 @@ const pages = [
         <li>Return to light activities within 1–2 weeks</li>
         <li>Resume normal routines in 2–4 weeks</li>
         <li>Long-term weight loss begins within the first few months</li>
+        <li>Special dietary phases (liquid → pureed → soft → regular foods)</li>
+        <li>Lifelong vitamin supplementation is required to avoid deficiencies</li>
       </ul>
       <p>Patients typically experience less pain, fewer complications, and a smoother recovery compared to more invasive procedures.</p>
       <h2 class="display bar">Is Sleeve Gastrectomy Right for You?</h2>
@@ -931,15 +867,6 @@ const pages = [
         <li>Want a permanent solution without implants or intestinal rerouting</li>
       </ul>
       <p>During your consultation, Dr. Wadiwala will carefully review your medical history and weight loss goals to determine if sleeve gastrectomy is your best option.</p>
-      <h2 class="display bar">Why Choose Houston Surgical Weight Loss for Sleeve Gastrectomy</h2>
-      <ul class="prose-list">
-        <li>Fellowship-trained, board-certified bariatric surgeon with 18+ years of experience</li>
-        <li>Expertise in minimally invasive laparoscopic weight loss surgery</li>
-        <li>Personalized care plans tailored to your goals</li>
-        <li>Comprehensive support before, during, and after surgery</li>
-        <li>Telehealth and in-office consultation options</li>
-      </ul>
-      <p>Our mission is to help you achieve safe, lasting weight loss with the support you deserve.</p>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
