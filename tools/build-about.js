@@ -103,6 +103,22 @@ function pageSchema(page, lang, url) {
       ],
     };
   }
+  if (page.slug === 'dietitian') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${ORIGIN}/#dietitian`,
+      name: 'Florencia Pillow',
+      honorificSuffix: 'RDN',
+      jobTitle: 'Registered Dietitian Nutritionist',
+      description:
+        'Bilingual Registered Dietitian Nutritionist supporting patients before and after weight loss surgery, in English and Spanish.',
+      url,
+      worksFor: { '@id': `${ORIGIN}/#clinic` },
+      knowsLanguage: ['en', 'es'],
+      telephone: BUSINESS.phone,
+    };
+  }
   return { '@context': 'https://schema.org', '@type': 'AboutPage', url };
 }
 

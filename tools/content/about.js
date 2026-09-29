@@ -175,39 +175,40 @@ const pages = [
   {
     slug: 'dietitian',
     nav: 'Our Dietitian',
-    draft: true,
-    reviewNotes: [
-      'Flo&rsquo;s photograph — a headshot, portrait orientation, as large a file as she has.',
-      'Her biography: training, credentials (RD / LD), and how long she has worked with bariatric patients.',
-      'Her full name, and the credentials she wants shown after it.',
-      'Confirm what she actually covers. The list below is a reasonable guess from standard bariatric practice, not her words.',
-    ],
-    seoTitle: 'Our In-House Dietitian | Houston Surgical Weight Loss',
-    title: 'Our In-House Dietitian',
-    tagline: 'Nutrition support before surgery, and for as long as you need it afterwards.',
+    seoTitle: 'Florencia Pillow, RDN | Dietitian, Houston Surgical Weight Loss',
+    title: 'Florencia Pillow, RDN',
+    tagline: 'Bilingual Registered Dietitian Nutritionist.',
     description:
-      'Meet Flo, the in-house dietitian at Houston Surgical Weight Loss in Spring, TX, who supports patients before and after bariatric surgery.',
+      'Florencia Pillow, RDN, is the bilingual registered dietitian nutritionist at Houston Surgical Weight Loss in Spring, TX, supporting patients before and after weight loss surgery.',
     image: '../media/img/about-dietitian.jpg',
     body: `
-      <p class="intro">Surgery is one part of the work. What you eat afterwards — and how you rebuild the habit of
-      eating — is the part that carries the result. Flo is our in-house dietitian, and she works with patients
-      through both.</p>
+      <p class="intro">Florencia is a bilingual Registered Dietitian Nutritionist with six years of experience
+      helping patients build healthier habits, and with a passion for making a difference in the fight against
+      obesity. At Houston Surgical Weight Loss she provides nutrition guidance in English and Spanish, to support
+      patients before and after weight loss surgery.</p>
 
-      ${photoSlot('a headshot of Flo, portrait orientation')}
+      ${photoSlot('a headshot of Florencia, portrait orientation')}
 
-      <h2 class="display bar">What She Helps With</h2>
+      <h2 class="display bar">How Florencia Works With Patients</h2>
+      <p>Florencia helps patients understand each stage of their nutrition plan, from preparing for surgery to
+      meeting protein and hydration goals and adjusting to long-term eating habits. With a practical, compassionate
+      approach, she works with each patient to build a plan that fits their needs, their preferences and their
+      cultural traditions.</p>
+
       ${ul([
-        'The preoperative diet, and what to expect from it',
-        'The staged return to eating after surgery — liquids, then pureed, then soft, then regular food',
-        'Protein and fluid targets, and how to reach them when your stomach is small',
-        'Vitamin and mineral supplementation, which is lifelong after most procedures',
-        'Working around food intolerances that can appear after surgery',
-        'Long-term follow-up, not only the first few weeks',
+        'Preparing for surgery',
+        'Meeting protein and hydration goals',
+        'Adjusting to long-term eating habits',
       ])}
 
-      <h2 class="display bar">Meeting Flo</h2>
+      <h2 class="display bar">Nutrition in English and Spanish</h2>
+      <p>Florencia sees patients in either language. Food is one of the most personal things a clinician can ask you
+      to change, and it is far easier to talk it through — and to be understood about what you actually eat at home —
+      in your own words.</p>
+
+      <h2 class="display bar">Meeting Florencia</h2>
       <p>Nutrition visits are part of the programme rather than something you have to arrange elsewhere. Ask about
-      seeing Flo at your consultation, or call the office on <a href="${PHONE_HREF}">${PHONE}</a>.</p>
+      seeing Florencia at your consultation, or call the office on <a href="${PHONE_HREF}">${PHONE}</a>.</p>
     `,
   },
 ];

@@ -152,37 +152,39 @@ const translations = {
   },
 
   dietitian: {
-    title: 'Nuestra Nutricionista',
-    tagline: 'Apoyo nutricional antes de la cirugía, y por todo el tiempo que lo necesite después.',
-    seoTitle: 'Nuestra Nutricionista | Houston Surgical Weight Loss',
+    title: 'Florencia Pillow, RDN',
+    tagline: 'Nutricionista Dietista Registrada bilingüe.',
+    seoTitle: 'Florencia Pillow, RDN | Nutricionista, Houston Surgical Weight Loss',
     description:
-      'Conozca a Flo, la nutricionista de Houston Surgical Weight Loss en Spring, TX, que acompaña a los pacientes antes y después de la cirugía bariátrica.',
-    reviewNotes: [
-      'La fotografía de Flo — un retrato vertical, en el tamaño más grande que tenga.',
-      'Su biografía: formación, credenciales (RD / LD), y cuánto tiempo lleva trabajando con pacientes bariátricos.',
-      'Su nombre completo, y las credenciales que quiere que aparezcan después.',
-      'Confirmar qué cubre realmente. La lista de abajo es una suposición razonable de la práctica bariátrica habitual, no son sus palabras.',
-    ],
+      'Florencia Pillow, RDN, es la nutricionista bilingüe de Houston Surgical Weight Loss en Spring, TX, y acompaña a los pacientes antes y después de la cirugía para bajar de peso.',
     body: `
-      <p class="intro">La cirugía es solo una parte del trabajo. Lo que come después — y cómo reconstruye el hábito
-      de comer — es la parte que sostiene el resultado. Flo es nuestra nutricionista, y acompaña a los pacientes en
-      ambas.</p>
+      <p class="intro">Florencia es Nutricionista Dietista Registrada (RDN) bilingüe, con seis años de experiencia
+      ayudando a pacientes a construir hábitos más saludables, y con una verdadera vocación por marcar la diferencia
+      en la lucha contra la obesidad. En Houston Surgical Weight Loss ofrece orientación nutricional en inglés y en
+      español, para acompañar a los pacientes antes y después de la cirugía para bajar de peso.</p>
 
-      ${photoSlot('un retrato de Flo, en orientación vertical')}
+      ${photoSlot('un retrato de Florencia, en orientación vertical')}
 
-      <h2 class="display bar">En Qué Le Ayuda</h2>
+      <h2 class="display bar">Cómo Trabaja Florencia con los Pacientes</h2>
+      <p>Florencia ayuda a los pacientes a entender cada etapa de su plan de nutrición, desde la preparación para la
+      cirugía hasta alcanzar las metas de proteína e hidratación y adaptarse a hábitos de alimentación a largo plazo.
+      Con un enfoque práctico y compasivo, trabaja con cada paciente para crear un plan que se ajuste a sus
+      necesidades, sus preferencias y sus tradiciones culturales.</p>
+
       ${ul([
-        'La dieta previa a la cirugía, y qué esperar de ella',
-        'El regreso por etapas a la comida después de la cirugía — líquidos, luego puré, luego blandos, luego comida normal',
-        'Las metas de proteína y líquidos, y cómo alcanzarlas cuando el estómago es pequeño',
-        'Los suplementos de vitaminas y minerales, que son de por vida después de la mayoría de los procedimientos',
-        'Cómo manejar las intolerancias alimentarias que pueden aparecer después de la cirugía',
-        'El seguimiento a largo plazo, no solo las primeras semanas',
+        'La preparación para la cirugía',
+        'Las metas de proteína e hidratación',
+        'La adaptación a hábitos de alimentación a largo plazo',
       ])}
 
-      <h2 class="display bar">Cómo Ver a Flo</h2>
+      <h2 class="display bar">Nutrición en Inglés y en Español</h2>
+      <p>Florencia atiende en cualquiera de los dos idiomas. La comida es una de las cosas más personales que un
+      profesional de la salud le puede pedir cambiar, y es mucho más fácil hablarlo — y que le entiendan de verdad
+      sobre lo que come en casa — en sus propias palabras.</p>
+
+      <h2 class="display bar">Cómo Ver a Florencia</h2>
       <p>Las visitas de nutrición son parte del programa y no algo que usted tenga que buscar por su cuenta.
-      Pregunte por Flo en su consulta, o llame a la oficina al <a href="${PHONE_HREF}">${PHONE}</a>.</p>
+      Pregunte por Florencia en su consulta, o llame a la oficina al <a href="${PHONE_HREF}">${PHONE}</a>.</p>
     `,
   },
 };
