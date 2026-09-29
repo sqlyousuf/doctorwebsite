@@ -25,8 +25,14 @@ const UI = {
     langLabel: 'Language',
     home: 'Home',
     procedures: 'Procedures',
+    aboutUs: 'About Us',
     breadcrumbLabel: 'Breadcrumb',
     moreInPatientCenter: 'More in the Patient Center',
+    moreAboutUs: 'More About Us',
+    draftTitle: 'Draft — not yet reviewed by Dr. Wadiwala',
+    draftBody:
+      'This page is a working draft. It is served <code>noindex</code> and kept out of the sitemap until it is signed off.',
+    draftSub: 'Before publishing, please confirm:',
     ctaHeading: "Questions? We're Here to Help",
     ctaBody:
       'Call the office and one of our team will walk you through it — no appointment needed to ask a question.',
@@ -48,8 +54,14 @@ const UI = {
     langLabel: 'Idioma',
     home: 'Inicio',
     procedures: 'Procedimientos',
+    aboutUs: 'Sobre Nosotros',
     breadcrumbLabel: 'Ruta de navegación',
     moreInPatientCenter: 'Más en el Centro del Paciente',
+    moreAboutUs: 'Más Sobre Nosotros',
+    draftTitle: 'Borrador — aún no revisado por el Dr. Wadiwala',
+    draftBody:
+      'Esta página es un borrador de trabajo. Se sirve como <code>noindex</code> y se mantiene fuera del mapa del sitio hasta que sea aprobada.',
+    draftSub: 'Antes de publicar, por favor confirme:',
     ctaHeading: '¿Tiene Preguntas? Estamos Para Ayudarle',
     ctaBody:
       'Llame a la oficina y alguien de nuestro equipo le explicará todo — no necesita cita para hacer una pregunta.',
@@ -75,7 +87,14 @@ const NAV_ES = {
   'for-out-of-town-patients': 'Para Pacientes de Fuera',
 };
 
+/** The About Us menu labels, which are also each page's nav label. */
+const ABOUT_ES = {
+  'our-office': 'Nuestra Oficina',
+  'dr-wadiwala': 'Dr. Wadiwala',
+  dietitian: 'Nuestra Nutricionista',
+};
+
 /** Sub-items under a Patient Center entry (currently just the store). */
 const SUB_NAV_ES = { 'Vitamin E Store': 'Tienda de Vitaminas' };
 
-module.exports = { UI, NAV_ES, SUB_NAV_ES };
+module.exports = { UI, NAV_ES, ABOUT_ES, SUB_NAV_ES };

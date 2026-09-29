@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const { ORIGIN, PAGES: ALL_PAGES } = require('./site.js');
 const { pages: procedurePages } = require('./content/procedures.js');
+const { pages: aboutPages } = require('./content/about.js');
 
 /*
  * A draft page is noindex and must stay out of the sitemap — listing a page
@@ -20,7 +21,9 @@ const { pages: procedurePages } = require('./content/procedures.js');
  * every procedure path, so the draft slugs are filtered out here rather than
  * maintained in two places.
  */
-const DRAFT_SLUGS = new Set(procedurePages.filter((p) => p.draft).map((p) => p.slug));
+const DRAFT_SLUGS = new Set(
+  [...procedurePages, ...aboutPages].filter((p) => p.draft).map((p) => p.slug)
+);
 const isDraft = (p) => [...DRAFT_SLUGS].some((slug) => p.endsWith(`/${slug}.html`));
 const PAGES = ALL_PAGES.filter((x) => !isDraft(x.path));
 

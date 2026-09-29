@@ -1980,6 +1980,104 @@ p a:hover { text-decoration: underline; }
 .review-placeholder p:last-child { margin-bottom: 0; }
 
 /* ----------------------------------------------------------------------
+   About Us pages.
+   ---------------------------------------------------------------------- */
+
+/* Dr. Wadiwala's portrait, above his biography. Floated beside the prose on a
+   wide screen and full width on a narrow one, rather than a fixed column that
+   would strand the text at tablet sizes. */
+.about-portrait {
+  margin: 0 0 clamp(20px, 3vw, 30px);
+  max-width: 320px;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 720px) {
+  .about-portrait {
+    float: right;
+    max-width: 300px;
+    margin: 4px 0 24px 32px;
+  }
+}
+
+/* Address / hours / contact, side by side. */
+.office-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin: clamp(20px, 3vw, 28px) 0;
+}
+
+.office-card {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: clamp(16px, 2.4vw, 22px);
+}
+
+.office-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: var(--track-lg);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.office-card p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.office-card a { color: var(--accent); }
+.office-closed { color: var(--muted); }
+
+/* The map. A fixed aspect ratio keeps the iframe from collapsing before it
+   loads, which otherwise shifts everything below it. */
+.office-map {
+  margin: clamp(20px, 3vw, 30px) 0;
+  border: 1px solid var(--line);
+  line-height: 0;
+}
+
+.office-map iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border: 0;
+}
+
+/* A photograph the practice still owes us. Deliberately conspicuous: it is a
+   gap in the page, and it should read as one until it is filled. */
+.photo-slot {
+  border: 2px dashed var(--line);
+  background: var(--paper-2);
+  padding: clamp(22px, 4vw, 34px);
+  margin-block: clamp(14px, 2vw, 20px);
+  text-align: center;
+}
+
+.photo-slot p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.photo-slot strong { color: var(--body); }
+
+/* ----------------------------------------------------------------------
    Procedure animation.
 
    Stock medical animations come on a saturated orange ground that fights the

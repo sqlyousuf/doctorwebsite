@@ -74,7 +74,15 @@ const copy = [
 
   // ---- primary nav (must run before the bare footer links below) ----
   ['<li><a href="#services">Procedures</a></li>', '<li><a href="#services">Procedimientos</a></li>', 1],
-  ['<li><a href="#about">About Us</a></li>', '<li><a href="#about">Sobre Nosotros</a></li>', 1],
+
+  // ---- About Us dropdown ----
+  // Three pages, each with a Spanish twin under es/about/. index.html says
+  // "about/x.html", and es/index.html sits inside es/, so the same relative
+  // path already resolves to the Spanish page — only the labels change.
+  ['>About Us<svg class="sub-caret"', '>Sobre Nosotros<svg class="sub-caret"', 1],
+  ['>Our Office</a>', '>Nuestra Oficina</a>', 1],
+  ['>Our Dietitian</a>', '>Nuestra Nutricionista</a>', 1],
+
   ['<li><a href="#process">How It Works</a></li>', '<li><a href="#process">Cómo Funciona</a></li>', 1],
   ['<li><a href="#testimonials">Stories</a></li>', '<li><a href="#testimonials">Testimonios</a></li>', 1],
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],

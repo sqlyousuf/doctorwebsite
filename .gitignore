@@ -1,2 +1,5 @@
 # Intermediate output of tools/import-procedures.js — regenerate, never commit.
 .imported.json
+
+# Watermarked stock comps dropped in for licensing review — never ship these.
+/pic*.png

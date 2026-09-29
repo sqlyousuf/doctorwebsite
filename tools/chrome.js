@@ -15,7 +15,8 @@
 const fs = require('fs');
 const path = require('path');
 const { pages: patientCenterPages } = require('./patient-center-content.js');
-const { UI, NAV_ES, SUB_NAV_ES } = require('./i18n.js');
+const { pages: aboutPages } = require('./content/about.js');
+const { UI, NAV_ES, SUB_NAV_ES, ABOUT_ES } = require('./i18n.js');
 
 const root = path.join(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
@@ -92,12 +93,33 @@ const footerFor = ({ lang = 'en', up = '../', pcPrefix = '../patient-center/', h
  * page, `pcPrefix` how this page reaches its own language's Patient Center,
  * and `active` marks the current page as `{ patientCenter: slug }`.
  */
-function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = '../patient-center/', active = {} } = {}) {
+function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = '../patient-center/', aboutPrefix = '../about/', active = {} } = {}) {
   const t = UI[lang];
-  const anchors = ['#about', '#services', '#process', '#testimonials', '#insurance', '#faq'];
+  /*
+   * About Us is a dropdown rather than an anchor — the practice asked for three
+   * pages under it. The other five stay as anchors on the home page, so this
+   * array is t.primary offset by one.
+   */
+  const anchors = ['#services', '#process', '#testimonials', '#insurance', '#faq'];
   const primary = t.primary
+    .slice(1)
     .map((label, i) => `        <li><a href="${home}${anchors[i]}">${label}</a></li>`)
     .join('\n');
+
+  const aboutItems = aboutPages
+    .map((page) => {
+      const current = active.about === page.slug ? ' aria-current="page"' : '';
+      const label = lang === 'es' ? ABOUT_ES[page.slug] || page.nav : page.nav;
+      return `          <li><a href="${aboutPrefix}${page.slug}.html"${current}>${label}</a></li>`;
+    })
+    .join('\n');
+
+  const aboutMenu = `        <li class="has-sub">
+          <a href="#" class="sub-toggle" aria-expanded="false" aria-haspopup="true">${t.aboutUs}<svg class="sub-caret" aria-hidden="true"><use href="#ic-caret"/></svg></a>
+          <ul class="nav-sub">
+${aboutItems}
+          </ul>
+        </li>`;
 
   const items = [];
   for (const page of patientCenterPages) {
@@ -111,6 +133,7 @@ function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = 
 
   const lanternCurrent = active.patientCenter === 'lantern' ? ' aria-current="page"' : '';
   return `      <ul class="nav-links" id="navLinks">
+${aboutMenu}
 ${primary}
         <li class="has-sub">
           <a href="#" class="sub-toggle" aria-expanded="false" aria-haspopup="true">${t.patientCenter}<svg class="sub-caret" aria-hidden="true"><use href="#ic-caret"/></svg></a>
