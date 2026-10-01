@@ -85,8 +85,8 @@ const translations = {
       <h2 class="display bar">¿Es la Gastrectomía en Manga Adecuada para Usted?</h2>
       <p>Puede ser candidato a la gastrectomía en manga si usted:</p>
       ${ul([
-        'Tiene un IMC de 35 o más con enfermedades asociadas',
-        'Tiene un IMC de 40 o más sin enfermedades asociadas',
+        'Tiene un IMC de 30 o más con enfermedades asociadas',
+        'Tiene un IMC de 35 o más sin enfermedades asociadas',
         'No ha logrado una pérdida de peso significativa solo con dieta y ejercicio',
         'Está comprometido con cambios de estilo de vida a largo plazo',
         'Desea una solución permanente, sin implantes ni redirección intestinal',

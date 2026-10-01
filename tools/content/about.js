@@ -99,15 +99,15 @@ const pages = [
   {
     slug: 'dr-wadiwala',
     nav: 'Dr. Wadiwala',
-    seoTitle: 'Dr. Irfan Wadiwala, DO | Bariatric Surgeon, Houston TX',
-    title: 'Dr. Irfan Wadiwala, DO',
+    seoTitle: 'Dr. Irfan Wadiwala | Bariatric Surgeon, Houston TX',
+    title: 'Dr. Irfan Wadiwala',
     tagline: 'Fellowship-trained bariatric surgeon and board-certified general surgeon.',
     description:
       'Dr. Irfan Wadiwala is a fellowship-trained bariatric surgeon and board-certified general surgeon in Spring, TX, with two decades of surgical experience.',
     image: '../media/img/about-surgeon.jpg',
     portrait: {
       src: 'media/dr-wadiwala.jpg',
-      alt: 'Dr. Irfan Wadiwala, DO',
+      alt: 'Dr. Irfan Wadiwala',
       width: 853,
       height: 1280,
     },
@@ -133,6 +133,7 @@ const pages = [
         'HCA Houston Healthcare Northwest',
         'St. Luke&rsquo;s Health – The Vintage Hospital',
         'Houston Methodist Willowbrook Hospital',
+        'Townsen Hospital System',
       ])}
 
       <h2 class="display bar">Education &amp; Training</h2>

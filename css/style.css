@@ -1195,14 +1195,6 @@ p a:hover { text-decoration: underline; }
   font-size: 0.78rem;
   letter-spacing: 0.1em;
 }
-/* The Vitamin E Store sits under Bariatric Vitamins on the old site; keep it
-   visually nested rather than promoting it to a sibling. */
-.nav-sub-child a::before {
-  content: "\2013";
-  margin-right: 8px;
-  color: var(--muted);
-}
-
 @media (min-width: 1024px) {
   .nav-sub {
     position: absolute;

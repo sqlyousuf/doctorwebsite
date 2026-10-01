@@ -24,7 +24,7 @@ const BUSINESS = {
 };
 
 const PHYSICIAN = {
-  name: 'Irfan Wadiwala, DO',
+  name: 'Irfan Wadiwala',
   jobTitle: 'Bariatric and General Surgeon',
   description:
     'Fellowship-trained bariatric surgeon and board-certified general surgeon with two decades of surgical experience.',

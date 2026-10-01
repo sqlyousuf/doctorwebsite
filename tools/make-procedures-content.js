@@ -48,6 +48,9 @@ const META = {
       replaceText: [
         ['No implanted devices (unlike Lap-Band®)', 'No implanted devices'],
         ['Yes. Unlike the Lap-Band®, this procedure is not reversible since', 'Yes. This procedure is not reversible, since'],
+        // BMI thresholds as the practice gives them, lower than their old page.
+        ['Have a BMI of 35 or higher with comorbidities', 'Have a BMI of 30 or higher with comorbidities'],
+        ['Have a BMI of 40 or higher without comorbidities', 'Have a BMI of 35 or higher without comorbidities'],
       ],
       appendToList: [
         {

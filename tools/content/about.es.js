@@ -86,9 +86,9 @@ const translations = {
   },
 
   'dr-wadiwala': {
-    title: 'Dr. Irfan Wadiwala, DO',
+    title: 'Dr. Irfan Wadiwala',
     tagline: 'Cirujano bariátrico con subespecialidad y cirujano general certificado.',
-    seoTitle: 'Dr. Irfan Wadiwala, DO | Cirujano Bariátrico en Houston, TX',
+    seoTitle: 'Dr. Irfan Wadiwala | Cirujano Bariátrico en Houston, TX',
     description:
       'El Dr. Irfan Wadiwala es cirujano bariátrico con subespecialidad y cirujano general certificado en Spring, TX, con dos décadas de experiencia quirúrgica.',
     body: `
@@ -114,6 +114,7 @@ const translations = {
         'HCA Houston Healthcare Northwest',
         'St. Luke&rsquo;s Health – The Vintage Hospital',
         'Houston Methodist Willowbrook Hospital',
+        'Townsen Hospital System',
       ])}
 
       <h2 class="display bar">Formación Académica</h2>
