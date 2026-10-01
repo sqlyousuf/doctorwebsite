@@ -93,7 +93,7 @@ const copy = [
   // while still linking across to ../patient-center/. When Spanish versions
   // of those pages are written, point these at es/patient-center/ instead.
   ['>Patient Center<svg class="sub-caret"', '>Centro del Paciente<svg class="sub-caret"', 1],
-  ['>Self-Pay</a>', '>Pago Particular</a>', 1],
+  ['>Self-Pay</a>', '>Pago Particular</a>', 2],
   ['>Patient Forms</a>', '>Formularios del Paciente</a>', 1],
   ['>After Surgery</a>', '>Después de la Cirugía</a>', 1],
   ['>Vitamin Guide</a>', '>Guía de Vitaminas</a>', 1],
@@ -414,11 +414,11 @@ const copy = [
   ['4.8 average rating &middot; 3,000+ patients treated', '4.8 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
   ['<a href="#about">About Us</a>', '<a href="#about">Sobre Nosotros</a>', 1],
-  ['<a href="#process">How It Works</a>', '<a href="#process">Cómo Funciona</a>', 1],
+  ['<a href="#testimonials">Stories</a>', '<a href="#testimonials">Testimonios</a>', 1],
   ['<a href="#insurance">Insurance</a>', '<a href="#insurance">Seguro</a>', 1],
   [
-    '<a href="patient-center/self-pay.html">Patient Center</a>',
-    '<a href="patient-center/self-pay.html">Centro del Paciente</a>',
+    '<a href="patient-center/patient-forms.html">Patient Center</a>',
+    '<a href="patient-center/patient-forms.html">Centro del Paciente</a>',
     1,
   ],
   ['<a href="#faq">FAQ</a>', '<a href="#faq">Preguntas</a>', 1],
