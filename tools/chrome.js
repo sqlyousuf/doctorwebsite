@@ -100,7 +100,7 @@ function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = 
    * which the practice asked to lift out of Patient Center into the main row.
    * This array is t.primary offset by one.
    */
-  const targets = ['#services', '#process', '#testimonials', 'self-pay', '#insurance', '#faq'];
+  const targets = ['#services', '#testimonials', 'self-pay', '#insurance', '#faq'];
   const primary = t.primary
     .slice(1)
     .map((label, i) => {

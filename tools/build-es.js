@@ -83,7 +83,6 @@ const copy = [
   ['>Our Office</a>', '>Nuestra Oficina</a>', 1],
   ['>Our Dietitian</a>', '>Nuestra Nutricionista</a>', 1],
 
-  ['<li><a href="#process">How It Works</a></li>', '<li><a href="#process">Cómo Funciona</a></li>', 1],
   ['<li><a href="#testimonials">Stories</a></li>', '<li><a href="#testimonials">Testimonios</a></li>', 1],
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],
   ['<li><a href="#faq">FAQ</a></li>', '<li><a href="#faq">Preguntas</a></li>', 1],
