@@ -149,8 +149,8 @@ const copy = [
   // ---- split intro ----
   ['Bariatric Surgical<br>Weight Loss', 'Pérdida de Peso<br>Quirúrgica', 1],
   [
-    'Houston Surgical Weight Loss, with Dr. Irfan Wadiwala, offers a full range of <a href="#services">minimally invasive bariatric procedures</a> — including gastric sleeve, gastric bypass, gastric balloon, lap-band, and revision surgery — so you can choose the option that best fits your health history and your goals.',
-    'Houston Surgical Weight Loss, con el Dr. Irfan Wadiwala, ofrece una gama completa de <a href="#services">procedimientos bariátricos mínimamente invasivos</a> — incluyendo manga gástrica, bypass gástrico, balón gástrico, banda gástrica y cirugía de revisión — para que usted elija la opción que mejor se adapte a su historial médico y a sus metas.',
+    'Houston Surgical Weight Loss, with Dr. Irfan Wadiwala, offers a full range of <a href="#services">minimally invasive bariatric procedures</a> — including gastric sleeve, gastric bypass, gastric balloon, and revision surgery — so you can choose the option that best fits your health history and your goals.',
+    'Houston Surgical Weight Loss, con el Dr. Irfan Wadiwala, ofrece una gama completa de <a href="#services">procedimientos bariátricos mínimamente invasivos</a> — incluyendo manga gástrica, bypass gástrico, balón gástrico y cirugía de revisión — para que usted elija la opción que mejor se adapte a su historial médico y a sus metas.',
     1,
   ],
   ['>Explore Procedures</a>', '>Ver Procedimientos</a>', 1],
@@ -163,8 +163,8 @@ const copy = [
 
   // The Spanish procedure pages exist now, so the cards link to those rather
   // than dropping the link or sending a Spanish reader into English.
-  ['>Read more <svg', '>Leer más <svg', 6],
-  ['href="procedures/', 'href="procedures/', 6],
+  ['>Read more <svg', '>Leer más <svg', 5],
+  ['href="procedures/', 'href="procedures/', 5],
 
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],
@@ -184,12 +184,6 @@ const copy = [
   [
     "A temporary, non-surgical balloon placed in the stomach to encourage portion control and jump-start weight loss for patients who aren't ready for surgery.",
     'Un balón temporal y no quirúrgico que se coloca en el estómago para favorecer el control de las porciones e impulsar la pérdida de peso en pacientes que aún no están listos para una cirugía.',
-    1,
-  ],
-  ['<h3>Lap-Band</h3>', '<h3>Banda Gástrica</h3>', 1],
-  [
-    'An adjustable band placed around the upper stomach to control food intake, offering a reversible option with a shorter initial recovery.',
-    'Una banda ajustable que se coloca alrededor de la parte superior del estómago para controlar la ingesta de alimentos; es una opción reversible con una recuperación inicial más corta.',
     1,
   ],
   ['<h3>Revision Surgery</h3>', '<h3>Cirugía de Revisión</h3>', 1],
@@ -470,7 +464,6 @@ const copy = [
   ['"name": "Gastric Sleeve"', '"name": "Manga Gástrica"', 1],
   ['"name": "Gastric Bypass"', '"name": "Bypass Gástrico"', 1],
   ['"name": "Gastric Balloon"', '"name": "Balón Gástrico"', 1],
-  ['"name": "Lap-Band"', '"name": "Banda Gástrica"', 1],
   ['"name": "Revision Bariatric Surgery"', '"name": "Cirugía Bariátrica de Revisión"', 1],
   ['"name": "Medical Weight Loss"', '"name": "Pérdida de Peso Médica"', 1],
 

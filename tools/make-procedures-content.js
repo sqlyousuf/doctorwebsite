@@ -120,45 +120,12 @@ const META = {
       ['2–3 days', 'back to work and normal activity'],
     ],
   },
-  'lap-band-surgery.html': {
-    slug: 'lap-band-removal',
-    nav: 'Lap-Band Removal',
-    /*
-     * Renamed to Lap-Band Removal as asked, and held as a draft.
-     *
-     * The body below is still the practice's copy about *placing* a band —
-     * what it is, its benefits, how the band is fitted and adjusted. Removal
-     * is a different operation, and publishing placement copy under a removal
-     * heading would tell a patient the opposite of what the page promises.
-     * Writing removal copy is not ours to do, so the page is noindex with a
-     * banner until they supply it.
-     *
-     * Worth deciding first: their Revision page already covers "Band Removal
-     * or Conversion — replacing a gastric band with sleeve or bypass", so this
-     * may be better as a section there than a page of its own.
-     */
-    edits: {
-      // Sections that describe fitting and adjusting a band, which do not
-      // apply when the operation is removal.
-      dropSections: [/^adjusting and managing/i],
-    },
-    draft: true,
-    reviewNotes: [
-      'The body of this page still describes placing a Lap-Band, not removing one. Please supply the removal copy: what the procedure involves, who needs it, recovery, and what happens next (conversion to sleeve or bypass, or no further surgery).',
-      'Decide whether this should be its own page at all — the Revision Bariatric Surgery page already covers band removal and conversion. Merging may serve patients better than two pages on the same subject.',
-      'Confirm the FAQs, which currently answer questions about having a band fitted.',
-    ],
-    seoTitle: 'Lap-Band Removal Houston, TX | Gastric Band Removal',
-    description:
-      'LAP-BAND® removal in Houston, TX with Dr. Irfan Wadiwala, a fellowship-trained bariatric surgeon.',
-    tagline: 'Removing an adjustable gastric band.',
-    image: 'u-1514416309827-bfb0cf433a2d.jpg',
-    stats: [
-      ['Up to 65%', 'of excess body weight lost'],
-      ['1–2 weeks', 'back to normal activities'],
-      ['Adjustable', 'and fully reversible'],
-    ],
-  },
+  /*
+   * The practice does not offer Lap-Band, so its imported page is skipped
+   * rather than built. Mentions of the band on other pages (revision, the
+   * sleeve comparison) are about converting or comparing, and stay.
+   */
+  'lap-band-surgery.html': { skip: true },
   'revision-bariatric-surgery.html': {
     slug: 'revision-bariatric-surgery',
     nav: 'Revision Surgery',
@@ -359,6 +326,7 @@ for (const page of imported) {
     console.error(`make-procedures-content: no metadata for ${page.file}`);
     process.exit(1);
   }
+  if (meta.skip) continue;
   const edits = { ...DEFAULT_EDITS, ...(meta.edits || {}) };
   // Array options add to the defaults rather than replacing them.
   edits.dropSections = [...(DEFAULT_EDITS.dropSections || []), ...((meta.edits || {}).dropSections || [])];
