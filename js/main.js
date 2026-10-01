@@ -53,6 +53,48 @@ if (navToggle && navWrap) {
   });
 }
 
+/*
+ * Once the full header has scrolled away, pin a slim copy of the menu to the
+ * top so a reader never has to scroll back up to get around. The header
+ * itself becomes the bar (logo and call-to-action hidden), and the body takes
+ * its full height as padding so nothing below jumps.
+ */
+(function stickyHeader() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  const root = document.documentElement;
+  let fullHeight = 0;
+
+  const setFixed = (fixed) => {
+    if (fixed === header.classList.contains('is-fixed')) return;
+    // An open burger menu belongs to whichever header it was opened in.
+    closeNav();
+    header.classList.toggle('is-fixed', fixed);
+    document.body.style.paddingTop = fixed ? `${fullHeight}px` : '';
+    root.style.setProperty('--bar-h', fixed ? `${header.offsetHeight}px` : '0px');
+  };
+
+  const measure = () => {
+    setFixed(false);
+    fullHeight = header.offsetHeight;
+  };
+
+  const update = () => setFixed(window.scrollY > fullHeight);
+
+  measure();
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  // Phones fire resize as the address bar shows and hides; only a change in
+  // width can change the header's height.
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
+    measure();
+    update();
+  });
+})();
+
 // Reveal sections as they scroll into view.
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {

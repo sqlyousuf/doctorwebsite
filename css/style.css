@@ -44,7 +44,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
+  /* Room for the pinned menu bar, so a jump to a section is not hidden under it. */
+  scroll-padding-top: 84px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -332,6 +333,29 @@ p a:hover { text-decoration: underline; }
 .nav-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 .header-cta { width: 100%; max-width: 420px; }
+
+/* The pinned bar, once the full header has scrolled away (see main.js): just
+   the menu, with the logo and call-to-action left behind at the top. */
+.site-header.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.45);
+  animation: header-in 0.28s ease;
+}
+.site-header.is-fixed .brand,
+.site-header.is-fixed .header-cta { display: none; }
+.site-header.is-fixed .header-inner { padding-top: 10px; padding-bottom: 10px; gap: 0; }
+/* On a phone the open menu can be taller than the screen. */
+.site-header.is-fixed .nav-wrap.open { max-height: calc(100vh - 60px); overflow-y: auto; }
+@keyframes header-in {
+  from { transform: translateY(-100%); }
+  to { transform: none; }
+}
+/* The language pill is fixed at top left; step it below the bar. */
+.lang-switch { transition: top 0.28s ease; }
+body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12px); }
 
 /* ---------- Hero ---------- */
 
@@ -1070,6 +1094,7 @@ p a:hover { text-decoration: underline; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .site-header.is-fixed { animation: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero-video { animation: none; transform: scale(1.02); }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -1145,6 +1170,10 @@ p a:hover { text-decoration: underline; }
 
 @media (min-width: 1024px) {
   .nav-toggle { display: none; }
+  /* The pinned bar keeps to one row: the store and Lantern stay at the top. */
+  .site-header.is-fixed .nav-break,
+  .site-header.is-fixed .nav-shop-item,
+  .site-header.is-fixed .nav-brand-item { display: none; }
   .header-inner { padding-bottom: 22px; }
   .header-cta { max-width: none; width: auto; }
   .split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
