@@ -163,8 +163,8 @@ const copy = [
 
   // The Spanish procedure pages exist now, so the cards link to those rather
   // than dropping the link or sending a Spanish reader into English.
-  ['>Read more <svg', '>Leer más <svg', 5],
-  ['href="procedures/', 'href="procedures/', 5],
+  ['>Read more <svg', '>Leer más <svg', 6],
+  ['href="procedures/', 'href="procedures/', 6],
 
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],
@@ -184,6 +184,12 @@ const copy = [
   [
     "A temporary, non-surgical balloon placed in the stomach to encourage portion control and jump-start weight loss for patients who aren't ready for surgery.",
     'Un balón temporal y no quirúrgico que se coloca en el estómago para favorecer el control de las porciones e impulsar la pérdida de peso en pacientes que aún no están listos para una cirugía.',
+    1,
+  ],
+  ['<h3>Acid Reflux</h3>', '<h3>Reflujo Ácido</h3>', 1],
+  [
+    'Anti-reflux surgery such as Nissen fundoplication — a minimally invasive treatment for severe GERD that lets patients resume normal eating faster.',
+    'Cirugía antirreflujo, como la funduplicatura de Nissen — un tratamiento mínimamente invasivo para el ERGE severo que permite a los pacientes volver a comer con normalidad más rápido.',
     1,
   ],
   ['<h3>Revision Surgery</h3>', '<h3>Cirugía de Revisión</h3>', 1],
