@@ -75,7 +75,6 @@ const UI = {
 /** The Patient Center menu labels, which are also each page's nav label. */
 const NAV_ES = {
   'self-pay': 'Pago Particular',
-  'financing-payment': 'Financiamiento y Pagos',
   'patient-forms': 'Formularios del Paciente',
   'after-surgery': 'Después de la Cirugía',
   'vitamin-guide': 'Guía de Vitaminas',

@@ -87,6 +87,36 @@ const pages = [
         'Lifetime follow up with Houston Surgical Weight Loss',
       ])}
 
+      <h2 class="display bar">Payment &amp; Financing</h2>
+      <p>The self-pay price is payable by cashier's check or money order to WIFUMAM PA. You can also pay for your
+      procedure over time with convenient financing options.</p>
+
+      <h3>Accepted Payment Methods</h3>
+      ${ul(['Visa', 'MasterCard', 'Discover', 'American Express'])}
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
+          <h3>Cherry</h3>
+          <p>Ask our team about applying for a Cherry payment plan for your procedure.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
+          <h3>CareCredit</h3>
+          <p>CareCredit financing is accepted for bariatric and general surgery procedures.</p>
+        </article>
+      </div>
+
+      <h3>Important Information</h3>
+      ${ul([
+        'Prices are subject to change and will be confirmed at the time of scheduling.',
+        `The costs listed do NOT include:${ul([
+          'Medications',
+          'Vitamin supplements',
+          'Psychological consultation required for bariatric surgery clearance',
+        ])}`,
+      ])}
+
       <h2 class="display bar">Benefits of Self-Pay</h2>
       <div class="card-grid">
         <article class="card">
@@ -146,66 +176,6 @@ const pages = [
             'Instructions on which medications to stop or continue',
           ])}<p>You'll receive a customized pre-surgery plan at your consultation.</p>`,
         ],
-      ])}
-    `,
-  },
-
-  {
-    slug: 'financing-payment',
-    nav: 'Financing Payment',
-    seoTitle: 'Weight Loss Surgery Financing | Houston, TX',
-    title: 'Financing &amp; Payment Options',
-    tagline: 'Financing options for weight loss surgery — vertical sleeve gastrectomy starting at $6,999.',
-    description:
-      'Financing and payment options for weight loss surgery at Houston Surgical Weight Loss, including an all-inclusive self-pay price, Cherry and CareCredit.',
-    image: '../media/img/u-1563013544-824ae1b704d3.jpg',
-    body: `
-      <p class="intro">Vertical Sleeve Gastrectomy starting at <strong>$6,999</strong>.</p>
-
-      <div class="price-block">
-        <p class="price-label">Special Offer</p>
-        <p class="price-figure">$6,999<span class="price-starting">*</span></p>
-        <p class="price-fine">All-Inclusive. Payable by cashier's check or money order to WIFUMAM PA.</p>
-      </div>
-
-      <h2 class="display bar">Includes</h2>
-      ${ul([
-        "Surgeon's fees",
-        'Hospital fees',
-        'Anesthesia',
-        'Labs and diagnostics',
-        'Dietitian services',
-        'Follow-up appointments for 1 year',
-        '$1,000 hospital rebate',
-      ])}
-
-      <h2 class="display bar">Financing Option</h2>
-      <p>Pay for your procedure over time with convenient financing options.</p>
-
-      <h3>Accepted Payment Methods</h3>
-      ${ul(['Visa', 'MasterCard', 'Discover', 'American Express'])}
-
-      <div class="card-grid">
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>Cherry</h3>
-          <p>Ask our team about applying for a Cherry payment plan for your procedure.</p>
-        </article>
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>CareCredit</h3>
-          <p>CareCredit financing is accepted for bariatric and general surgery procedures.</p>
-        </article>
-      </div>
-
-      <h2 class="display bar">Important Information</h2>
-      ${ul([
-        'Prices are subject to change and will be confirmed at the time of scheduling.',
-        `The costs listed do NOT include:${ul([
-          'Medications',
-          'Vitamin supplements',
-          'Psychological consultation required for bariatric surgery clearance',
-        ])}`,
       ])}
     `,
   },

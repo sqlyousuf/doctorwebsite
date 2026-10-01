@@ -88,6 +88,36 @@ const translations = {
         'Seguimiento de por vida con Houston Surgical Weight Loss',
       ])}
 
+      <h2 class="display bar">Pago y Financiamiento</h2>
+      <p>El precio de pago particular se paga con cheque de caja u orden de pago a nombre de WIFUMAM PA. También
+      puede pagar su procedimiento a plazos con opciones de financiamiento convenientes.</p>
+
+      <h3>Formas de Pago Aceptadas</h3>
+      ${ul(['Visa', 'MasterCard', 'Discover', 'American Express'])}
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
+          <h3>Cherry</h3>
+          <p>Pregunte a nuestro equipo sobre cómo solicitar un plan de pagos Cherry para su procedimiento.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
+          <h3>CareCredit</h3>
+          <p>Aceptamos financiamiento CareCredit para procedimientos bariátricos y de cirugía general.</p>
+        </article>
+      </div>
+
+      <h3>Información Importante</h3>
+      ${ul([
+        'Los precios están sujetos a cambios y se confirmarán al momento de programar la cirugía.',
+        `Los costos indicados NO incluyen:${ul([
+          'Medicamentos',
+          'Suplementos vitamínicos',
+          'La consulta psicológica requerida para la autorización de cirugía bariátrica',
+        ])}`,
+      ])}
+
       <h2 class="display bar">Beneficios del Pago Particular</h2>
       <div class="card-grid">
         <article class="card">
@@ -148,63 +178,6 @@ const translations = {
             'Indicaciones sobre qué medicamentos suspender o continuar',
           ])}<p>Recibirá un plan preoperatorio personalizado en su consulta.</p>`,
         ],
-      ])}
-    `,
-  },
-
-  'financing-payment': {
-    title: 'Financiamiento y Opciones de Pago',
-    seoTitle: 'Financiamiento de Cirugía Bariátrica | Houston, TX',
-    tagline: 'Opciones de financiamiento para la cirugía de pérdida de peso — manga gástrica desde $6,999.',
-    description:
-      'Opciones de financiamiento y pago para la cirugía de pérdida de peso en Houston Surgical Weight Loss, incluyendo pago particular, Cherry y CareCredit.',
-    body: `
-      <p class="intro">Gastrectomía Vertical en Manga desde <strong>$6,999</strong>.</p>
-
-      <div class="price-block">
-        <p class="price-label">Oferta Especial</p>
-        <p class="price-figure">$6,999<span class="price-starting">*</span></p>
-        <p class="price-fine">Precio integral. Pagadero con cheque de caja u orden de pago a nombre de WIFUMAM PA.</p>
-      </div>
-
-      <h2 class="display bar">Incluye</h2>
-      ${ul([
-        'Honorarios del cirujano',
-        'Honorarios del hospital',
-        'Anestesia',
-        'Laboratorios y diagnósticos',
-        'Servicios de dietista',
-        'Citas de seguimiento durante 1 año',
-        'Reembolso hospitalario de $1,000',
-      ])}
-
-      <h2 class="display bar">Opción de Financiamiento</h2>
-      <p>Pague su procedimiento a plazos con opciones de financiamiento convenientes.</p>
-
-      <h3>Formas de Pago Aceptadas</h3>
-      ${ul(['Visa', 'MasterCard', 'Discover', 'American Express'])}
-
-      <div class="card-grid">
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>Cherry</h3>
-          <p>Pregunte a nuestro equipo sobre cómo solicitar un plan de pagos Cherry para su procedimiento.</p>
-        </article>
-        <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>CareCredit</h3>
-          <p>Aceptamos financiamiento CareCredit para procedimientos bariátricos y de cirugía general.</p>
-        </article>
-      </div>
-
-      <h2 class="display bar">Información Importante</h2>
-      ${ul([
-        'Los precios están sujetos a cambios y se confirmarán al momento de programar la cirugía.',
-        `Los costos indicados NO incluyen:${ul([
-          'Medicamentos',
-          'Suplementos vitamínicos',
-          'La consulta psicológica requerida para la autorización de cirugía bariátrica',
-        ])}`,
       ])}
     `,
   },

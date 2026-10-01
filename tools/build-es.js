@@ -95,7 +95,6 @@ const copy = [
   // of those pages are written, point these at es/patient-center/ instead.
   ['>Patient Center<svg class="sub-caret"', '>Centro del Paciente<svg class="sub-caret"', 1],
   ['>Self-Pay</a>', '>Pago Particular</a>', 2],
-  ['>Financing Payment</a>', '>Financiamiento y Pagos</a>', 1],
   ['>Patient Forms</a>', '>Formularios del Paciente</a>', 1],
   ['>After Surgery</a>', '>Después de la Cirugía</a>', 1],
   ['>Vitamin Guide</a>', '>Guía de Vitaminas</a>', 1],

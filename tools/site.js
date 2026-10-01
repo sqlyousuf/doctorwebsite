@@ -55,7 +55,6 @@ const PAGES = [
   { path: '/procedures/laparoscopic-surgery.html', priority: '0.7', es: '/es/procedures/laparoscopic-surgery.html' },
   { path: '/patient-center/self-pay.html', priority: '0.9', es: '/es/patient-center/self-pay.html' },
   { path: '/patient-center/lantern.html', priority: '0.9', es: '/es/patient-center/lantern.html' },
-  { path: '/patient-center/financing-payment.html', priority: '0.8', es: '/es/patient-center/financing-payment.html' },
   { path: '/patient-center/bariatric-vitamins.html', priority: '0.7', es: '/es/patient-center/bariatric-vitamins.html' },
   { path: '/patient-center/after-surgery.html', priority: '0.7', es: '/es/patient-center/after-surgery.html' },
   { path: '/patient-center/pre-op-and-post-op.html', priority: '0.7', es: '/es/patient-center/pre-op-and-post-op.html' },
