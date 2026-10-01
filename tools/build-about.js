@@ -136,7 +136,7 @@ ${(page.reviewNotes || []).map((n) => `      <li>${n}</li>`).join('\n')}
 </aside>`;
 };
 
-/** Dr. Wadiwala's portrait, which only his page carries. */
+/** A headshot, for the pages that have one: Dr. Wadiwala and Florencia. */
 const portraitBlock = (portrait, up) => `      <figure class="about-portrait">
         <img src="${up}${portrait.src}" alt="${escapeAttr(portrait.alt)}"
           width="${portrait.width}" height="${portrait.height}" loading="lazy">

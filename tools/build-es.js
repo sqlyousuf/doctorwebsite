@@ -94,7 +94,7 @@ const copy = [
   // while still linking across to ../patient-center/. When Spanish versions
   // of those pages are written, point these at es/patient-center/ instead.
   ['>Patient Center<svg class="sub-caret"', '>Centro del Paciente<svg class="sub-caret"', 1],
-  ['>Self-Pay</a>', '>Pago Particular</a>', 1],
+  ['>Self-Pay</a>', '>Pago Particular</a>', 2],
   ['>Financing Payment</a>', '>Financiamiento y Pagos</a>', 1],
   ['>Patient Forms</a>', '>Formularios del Paciente</a>', 1],
   ['>After Surgery</a>', '>Después de la Cirugía</a>', 1],
@@ -319,28 +319,6 @@ const copy = [
   ['Fellowship-Trained Specialist', 'Especialista con Subespecialidad', 1],
   ['Most Major Insurance Accepted', 'Aceptamos la Mayoría de Seguros', 1],
   ['In-Person &amp; Virtual Consults', 'Consultas Presenciales y Virtuales', 1],
-
-  // ---- guide ----
-  ['>Download Your Weight Loss Success Guide Now!</h2>', '>¡Descargue Ahora Su Guía de Éxito para la Pérdida de Peso!</h2>', 1],
-  [
-    'Our free guide is packed with practical insights for pre- and post-surgery success, with nutrition and lifestyle guidance for lasting results!',
-    '¡Nuestra guía gratuita está llena de consejos prácticos para tener éxito antes y después de la cirugía, con orientación sobre nutrición y estilo de vida para resultados duraderos!',
-    1,
-  ],
-  [
-    "We'd love to stay in touch and assist you further. We respect your privacy and will only send you relevant, valuable information to support your weight loss journey.",
-    'Nos encantaría mantenernos en contacto y seguir ayudándole. Respetamos su privacidad y solo le enviaremos información relevante y útil para apoyar su camino de pérdida de peso.',
-    1,
-  ],
-  [
-    'By downloading this guide, you are opting in for email updates. You can unsubscribe at any time.',
-    'Al descargar esta guía, usted acepta recibir novedades por correo electrónico. Puede darse de baja en cualquier momento.',
-    1,
-  ],
-  ['placeholder="Name" aria-label="Name"', 'placeholder="Nombre" aria-label="Nombre"', 1],
-  ['placeholder="Email" aria-label="Email address"', 'placeholder="Correo electrónico" aria-label="Correo electrónico"', 1],
-  ['placeholder="Phone Number" aria-label="Phone number"', 'placeholder="Número de teléfono" aria-label="Número de teléfono"', 1],
-  ['>Submit</button>', '>Enviar</button>', 1],
 
   // ---- faq ----
   ['>Frequently Asked Questions</h2>', '>Preguntas Frecuentes</h2>', 1],

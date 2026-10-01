@@ -8,7 +8,7 @@
  * tools/build-es.js applies to the home page, adapted to whole bodies.
  *
  * Voice: formal "usted" throughout, matching es/index.html. Proper nouns stay
- * as they are — the practice name, Bariatric Fusion®, Lantern, LAP-BAND®, the
+ * as they are — the practice name, Bariatric Fusion®, Lantern, the
  * employer list, hospital and product names.
  *
  * Lantern lives in tools/content/lantern.es.js; it is long enough to warrant
@@ -258,7 +258,7 @@ const translations = {
       plazo, y el verdadero éxito comienza después del procedimiento. Esto requiere nuevos hábitos, dedicación y
       seguimiento regular para garantizar una pérdida de peso segura y sostenible.</p>
       <p>Houston Surgical Weight Loss ofrece apoyo integral que incluye citas de seguimiento de rutina, orientación
-      dietética personalizada, ajustes de la banda gástrica cuando son necesarios y acceso continuo a nuestro equipo
+      dietética personalizada y acceso continuo a nuestro equipo
       para preguntas o inquietudes. Un equipo de profesionales ayuda a los pacientes a adaptarse a su nuevo estilo de
       vida y los guía hacia sus metas durante todo el proceso.</p>
 
@@ -266,7 +266,6 @@ const translations = {
       <p>La recuperación de cada paciente es única y depende del tipo de procedimiento y de cómo responda el
       cuerpo.</p>
       ${ul([
-        'El alta el mismo día aplica a los pacientes de cirugía LAP-BAND®',
         'Es normal sentir algo de dolor y molestia durante unos días, pero se controla con los medicamentos recetados',
         'Los pacientes deben traer a alguien que los lleve a casa el día de la cirugía',
         'No maneje ningún vehículo hasta que el cirujano lo autorice oficialmente',
@@ -278,7 +277,6 @@ const translations = {
       <p>El seguimiento constante es esencial para el éxito y la seguridad a largo plazo.</p>
       ${ul([
         'Varias citas se realizan durante el primer año para monitorear el progreso y la cicatrización',
-        'Los ajustes de la banda gástrica pueden hacerse en cualquier momento para aumentar o reducir la ingesta de alimentos',
         'Un equipo dedicado está disponible las 24 horas para responder preguntas o atender inquietudes entre visitas',
       ])}
       <p>Las visitas de seguimiento regulares permiten dar seguimiento a la pérdida de peso, atender los problemas a
@@ -321,7 +319,7 @@ const translations = {
           `<p>El seguimiento es fundamental para el éxito.</p>${ul([
             '<strong>Primer año:</strong> las visitas suelen ser a la semana, al mes, a los 3 meses, a los 6 meses y al año de la cirugía',
             '<strong>Después del primer año:</strong> las citas pueden programarse anualmente o según se necesite',
-          ])}<p>Estas visitas permiten al cirujano monitorear el progreso, ajustar la dieta o la banda gástrica y resolver cualquier duda.</p>`,
+          ])}<p>Estas visitas permiten al cirujano monitorear el progreso, ajustar la dieta y resolver cualquier duda.</p>`,
         ],
         [
           '¿Necesitaré tomar vitaminas y suplementos después de la cirugía?',

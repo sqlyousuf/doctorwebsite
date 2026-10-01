@@ -265,14 +265,13 @@ const pages = [
       true success beginning after the procedure. This requires new habits, dedication, and regular follow-up to ensure
       safe and sustainable weight loss.</p>
       <p>Houston Surgical Weight Loss provides comprehensive support including routine follow-up appointments,
-      personalized dietary guidance, gastric band adjustments when needed, and ongoing access to our care team for
+      personalized dietary guidance, and ongoing access to our care team for
       questions or concerns. A team of professionals helps patients adjust to their new lifestyle and guides them
       toward their goals throughout the process.</p>
 
       <h2 class="display bar">Recovery After Weight Loss Surgery</h2>
       <p>Every patient's recovery experience is unique, depending on the procedure type and how the body responds.</p>
       ${ul([
-        'Same-day discharge applies to LAP-BAND® surgery patients',
         'Some mild pain and discomfort are expected for a few days but can be controlled with prescribed medication',
         'Patients must bring someone to drive them home on surgery day',
         'Do not operate a vehicle until the surgeon officially releases clearance',
@@ -284,7 +283,6 @@ const pages = [
       <p>Consistent follow-up is essential for long-term success and safety.</p>
       ${ul([
         'Several appointments occur within the first year to monitor progress and healing',
-        'Gastric band adjustments can be made anytime to increase or decrease food intake as needed',
         'A dedicated team is available 24/7 to answer questions or address concerns between visits',
       ])}
       <p>Regular follow-up visits track weight loss, address challenges early, and ensure patients stay on the path to
@@ -325,7 +323,7 @@ const pages = [
           `<p>Follow-up care is vital to success.</p>${ul([
             '<strong>First year:</strong> Visits typically occur at 1 week, 1 month, 3 months, 6 months, and 12 months post-surgery',
             '<strong>After the first year:</strong> Appointments may be scheduled annually or as needed to ensure long-term success',
-          ])}<p>These visits allow the surgeon to monitor weight loss progress, make adjustments to diet or gastric band, and address any questions or concerns.</p>`,
+          ])}<p>These visits allow the surgeon to monitor weight loss progress, make adjustments to diet, and address any questions or concerns.</p>`,
         ],
         [
           'Will I need to take vitamins and supplements after surgery?',

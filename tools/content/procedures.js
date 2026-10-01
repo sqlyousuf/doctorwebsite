@@ -489,7 +489,6 @@ const pages = [
       <ul class="prose-list">
         <li>Gastric sleeve surgery</li>
         <li>Gastric bypass</li>
-        <li>Adjustable gastric banding</li>
       </ul>
       <p>These weight loss surgeries are now safer, less invasive, and more effective than ever, helping patients achieve lasting results while minimizing recovery time.</p>
       <h3>Other Laparoscopic Procedures</h3>
@@ -588,7 +587,7 @@ const pages = [
       <p>If your initial weight loss surgery didn’t deliver the results you hoped for — or if you’re experiencing complications — revision bariatric surgery may be the solution. This corrective procedure can:</p>
       <ul class="prose-list">
         <li>Address weight regain after bariatric surgery</li>
-        <li>Correct complications such as band slippage, strictures, or reflux</li>
+        <li>Correct complications such as strictures or reflux</li>
         <li>Improve weight-related medical conditions like diabetes, high blood pressure, or sleep apnea</li>
         <li>Enhance or replace older procedures with more effective techniques</li>
       </ul>
@@ -606,13 +605,11 @@ const pages = [
       <p>Dr. Wadiwala may recommend revision surgery if you are experiencing:</p>
       <ul class="prose-list">
         <li><strong>Insufficient Weight Loss or Weight Regain</strong> – despite previous surgery, weight has returned.</li>
-        <li><strong>Medical Complications</strong> – such as reflux, nutritional deficiencies, or band-related issues.</li>
-        <li><strong>Outdated Procedures</strong> – older methods like Lap-Band® may be revised or converted to more effective options such as sleeve gastrectomy or gastric bypass.</li>
+        <li><strong>Medical Complications</strong> – such as reflux or nutritional deficiencies.</li>
       </ul>
       <h2 class="display bar">What to Expect During the Procedure</h2>
       <p>Revision bariatric surgery is typically performed using <strong>minimally invasive laparoscopic techniques</strong>, which allow for smaller incisions, less pain, and quicker recovery. The approach will depend on your original surgery and your current needs. Options may include:</p>
       <ul class="prose-list">
-        <li><strong>Band Removal or Conversion</strong> – replacing a gastric band with sleeve or bypass.</li>
         <li><strong>Sleeve to Bypass Conversion</strong> – for patients with reflux or poor weight loss results.</li>
         <li><strong>Gastric Bypass Revision</strong> – adjustments to improve restriction and absorption.</li>
       </ul>
@@ -638,7 +635,7 @@ const pages = [
       <p>You may be a candidate if you:</p>
       <ul class="prose-list">
         <li>Previously had bariatric surgery but didn’t achieve lasting results</li>
-        <li>Experienced complications such as reflux, band slippage, or ulcers</li>
+        <li>Experienced complications such as reflux or ulcers</li>
         <li>Have regained weight after initial success</li>
         <li>Are motivated to make long-term lifestyle changes for better health</li>
       </ul>
@@ -660,7 +657,7 @@ const pages = [
         ],
         [
           'What types of revisions are available?',
-          '<p>Common options include converting Lap-Band® to sleeve or bypass, revising a sleeve to bypass, or modifying a gastric bypass for better results.</p>',
+          '<p>Common options include revising a sleeve to bypass or modifying a gastric bypass for better results.</p>',
         ],
         [
           'How long is the recovery?',
@@ -715,7 +712,7 @@ const pages = [
         <li>Minimally invasive laparoscopic procedure</li>
         <li>High success rate with long-term weight loss</li>
         <li>Improves or resolves obesity-related conditions (diabetes, sleep apnea, hypertension)</li>
-        <li>No implanted devices (unlike Lap-Band®)</li>
+        <li>No implanted devices</li>
         <li>No rerouting of the intestines (unlike gastric bypass)</li>
         <li>Reduced hunger due to decreased ghrelin production</li>
       </ul>
@@ -766,7 +763,7 @@ const pages = [
         ],
         [
           'Is sleeve gastrectomy permanent?',
-          '<p>Yes. Unlike the Lap-Band®, this procedure is not reversible since part of the stomach is removed.</p>',
+          '<p>Yes. This procedure is not reversible, since part of the stomach is removed.</p>',
         ],
         [
           'How long is the recovery period?',

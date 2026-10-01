@@ -44,6 +44,11 @@ const META = {
      * applied to the generated file, so they survive the next re-import.
      */
     edits: {
+      // The practice does not offer Lap-Band, so the sleeve is not compared to it.
+      replaceText: [
+        ['No implanted devices (unlike Lap-Band®)', 'No implanted devices'],
+        ['Yes. Unlike the Lap-Band®, this procedure is not reversible since', 'Yes. This procedure is not reversible, since'],
+      ],
       appendToList: [
         {
           afterHeading: /^recovery after/i,
@@ -122,8 +127,8 @@ const META = {
   },
   /*
    * The practice does not offer Lap-Band, so its imported page is skipped
-   * rather than built. Mentions of the band on other pages (revision, the
-   * sleeve comparison) are about converting or comparing, and stay.
+   * rather than built, and the band is edited out of the sleeve, revision and
+   * laparoscopic pages as well.
    */
   'lap-band-surgery.html': { skip: true },
   'revision-bariatric-surgery.html': {
@@ -135,7 +140,17 @@ const META = {
           'Revision bariatric surgery is performed when a previous weight loss procedure did not achieve the desired outcome or led to complications. This corrective procedure can:',
           'If your initial weight loss surgery didn’t deliver the results you hoped for — or if you’re experiencing complications — revision bariatric surgery may be the solution. This corrective procedure can:',
         ],
+        // The practice does not offer Lap-Band, so band-specific reasons and
+        // options come out.
+        ['complications such as band slippage, strictures, or reflux', 'complications such as strictures or reflux'],
+        ['such as reflux, nutritional deficiencies, or band-related issues.', 'such as reflux or nutritional deficiencies.'],
+        ['complications such as reflux, band slippage, or ulcers', 'complications such as reflux or ulcers'],
+        [
+          'Common options include converting Lap-Band® to sleeve or bypass, revising a sleeve to bypass, or modifying',
+          'Common options include revising a sleeve to bypass or modifying',
+        ],
       ],
+      dropItems: [/^<strong>Outdated Procedures<\/strong>/, /^<strong>Band Removal or Conversion<\/strong>/],
     },
     seoTitle: 'Revision Bariatric Surgery Houston, TX | Second Procedure',
     description:
@@ -165,6 +180,7 @@ const META = {
   'laparoscopic-surgery.html': {
     slug: 'laparoscopic-surgery',
     nav: 'Laparoscopic Surgery',
+    edits: { dropItems: [/^Adjustable gastric banding$/] },
     seoTitle: 'Laparoscopic Surgery Houston, TX | Minimally Invasive',
     description:
       'Minimally invasive laparoscopic surgery in Houston, TX with Dr. Irfan Wadiwala — smaller incisions and faster recovery.',
@@ -297,10 +313,19 @@ function applyEdits(page, edits) {
     }
   }
 
+  // Text edits and item drops reach the FAQ answers as well as the body, so a
+  // phrase can be taken out of the whole page in one place.
+  const blocks = [...page.body, ...page.faqs.flatMap((f) => f.a)];
+
   for (const [find, replace] of edits.replaceText || []) {
-    for (const b of page.body) {
+    for (const b of blocks) {
       if (b.type === 'p' && b.text.includes(find)) b.text = b.text.replace(find, replace).replace(/\s+\./g, '.');
+      if (b.type === 'list') b.items = b.items.map((i) => i.replace(find, replace));
     }
+  }
+
+  for (const pattern of edits.dropItems || []) {
+    for (const b of blocks) if (b.type === 'list') b.items = b.items.filter((i) => !pattern.test(i));
   }
 
   for (const add of edits.appendToList || []) {

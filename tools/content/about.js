@@ -11,9 +11,7 @@
  * throughout, requested earlier: "over 18 years" and "18+ years" both
  * become "two decades".
  *
- * The dietitian page is a shell. Flo is sending her photograph and biography;
- * until they arrive the page is marked `draft`, which gives it a review
- * banner, a noindex tag and keeps it out of the sitemap.
+ * The dietitian page carries Flo's own biography and headshot.
  */
 
 const PHONE = '281-653-6544';
@@ -181,13 +179,17 @@ const pages = [
     description:
       'Florencia Pillow, RDN, is the bilingual registered dietitian nutritionist at Houston Surgical Weight Loss in Spring, TX, supporting patients before and after weight loss surgery.',
     image: '../media/img/about-dietitian.jpg',
+    portrait: {
+      src: 'media/florencia-pillow.jpg',
+      alt: 'Florencia Pillow, RDN',
+      width: 1138,
+      height: 1448,
+    },
     body: `
       <p class="intro">Florencia is a bilingual Registered Dietitian Nutritionist with six years of experience
       helping patients build healthier habits, and with a passion for making a difference in the fight against
       obesity. At Houston Surgical Weight Loss she provides nutrition guidance in English and Spanish, to support
       patients before and after weight loss surgery.</p>
-
-      ${photoSlot('a headshot of Florencia, portrait orientation')}
 
       <h2 class="display bar">How Florencia Works With Patients</h2>
       <p>Florencia helps patients understand each stage of their nutrition plan, from preparing for surgery to

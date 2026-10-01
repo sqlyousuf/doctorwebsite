@@ -163,8 +163,6 @@ const translations = {
       en la lucha contra la obesidad. En Houston Surgical Weight Loss ofrece orientación nutricional en inglés y en
       español, para acompañar a los pacientes antes y después de la cirugía para bajar de peso.</p>
 
-      ${photoSlot('un retrato de Florencia, en orientación vertical')}
-
       <h2 class="display bar">Cómo Trabaja Florencia con los Pacientes</h2>
       <p>Florencia ayuda a los pacientes a entender cada etapa de su plan de nutrición, desde la preparación para la
       cirugía hasta alcanzar las metas de proteína e hidratación y adaptarse a hábitos de alimentación a largo plazo.

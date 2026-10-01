@@ -97,13 +97,19 @@ function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = 
   const t = UI[lang];
   /*
    * About Us is a dropdown rather than an anchor — the practice asked for three
-   * pages under it. The other five stay as anchors on the home page, so this
-   * array is t.primary offset by one.
+   * pages under it. The rest are anchors on the home page, except Self-Pay,
+   * which the practice asked to lift out of Patient Center into the main row.
+   * This array is t.primary offset by one.
    */
-  const anchors = ['#services', '#process', '#testimonials', '#insurance', '#faq'];
+  const targets = ['#services', '#process', '#testimonials', 'self-pay', '#insurance', '#faq'];
   const primary = t.primary
     .slice(1)
-    .map((label, i) => `        <li><a href="${home}${anchors[i]}">${label}</a></li>`)
+    .map((label, i) => {
+      const target = targets[i];
+      if (target.startsWith('#')) return `        <li><a href="${home}${target}">${label}</a></li>`;
+      const current = active.patientCenter === target ? ' aria-current="page"' : '';
+      return `        <li><a href="${pcPrefix}${target}.html"${current}>${label}</a></li>`;
+    })
     .join('\n');
 
   const aboutItems = aboutPages

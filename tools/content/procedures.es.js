@@ -8,7 +8,7 @@
  * same text in Spanish.
  *
  * Voice: formal "usted", matching the rest of the Spanish site. Product and
- * procedure brand names stay as they are — LAP-BAND®, Nissen, Roux-en-Y.
+ * procedure brand names stay as they are — Nissen, Roux-en-Y.
  */
 
 const ul = (items) => `<ul class="prose-list">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
@@ -47,7 +47,7 @@ const translations = {
         'Procedimiento laparoscópico mínimamente invasivo',
         'Alta tasa de éxito con pérdida de peso a largo plazo',
         'Mejora o resuelve condiciones relacionadas con la obesidad (diabetes, apnea del sueño, hipertensión)',
-        'Sin dispositivos implantados, a diferencia de la banda LAP-BAND®',
+        'Sin dispositivos implantados',
         'Sin redirección de los intestinos, a diferencia del bypass gástrico',
         'Menos hambre gracias a la menor producción de grelina',
       ])}
@@ -105,7 +105,7 @@ const translations = {
       ],
       [
         '¿La gastrectomía en manga es permanente?',
-        '<p>Sí. A diferencia de la banda LAP-BAND®, este procedimiento no es reversible, ya que se retira parte del estómago.</p>',
+        '<p>Sí. Este procedimiento no es reversible, ya que se retira parte del estómago.</p>',
       ],
       [
         '¿Cuánto dura la recuperación?',
@@ -346,7 +346,7 @@ const translations = {
       puede:</p>
       ${ul([
         'Atender la recuperación de peso después de una cirugía bariátrica',
-        'Corregir complicaciones como deslizamiento de la banda, estrecheces o reflujo',
+        'Corregir complicaciones como estrecheces o reflujo',
         'Mejorar condiciones médicas relacionadas con el peso, como diabetes, hipertensión o apnea del sueño',
         'Mejorar o reemplazar procedimientos antiguos con técnicas más eficaces',
       ])}
@@ -367,8 +367,7 @@ const translations = {
       <p>El Dr. Wadiwala puede recomendar una cirugía de revisión si usted presenta:</p>
       ${ul([
         '<strong>Pérdida de peso insuficiente o recuperación del peso</strong> — el peso ha regresado a pesar de la cirugía previa.',
-        '<strong>Complicaciones médicas</strong> — como reflujo, deficiencias nutricionales o problemas con la banda.',
-        '<strong>Procedimientos antiguos</strong> — métodos como la banda LAP-BAND® pueden revisarse o convertirse en opciones más eficaces, como la manga gástrica o el bypass gástrico.',
+        '<strong>Complicaciones médicas</strong> — como reflujo o deficiencias nutricionales.',
       ])}
 
       <h2 class="display bar">Qué Esperar Durante el Procedimiento</h2>
@@ -376,7 +375,6 @@ const translations = {
       que permiten incisiones más pequeñas, menos dolor y una recuperación más rápida. El abordaje dependerá de su
       cirugía original y de sus necesidades actuales. Las opciones pueden incluir:</p>
       ${ul([
-        '<strong>Retiro o conversión de la banda</strong> — reemplazar una banda gástrica por manga o bypass.',
         '<strong>Conversión de manga a bypass</strong> — para pacientes con reflujo o resultados insuficientes.',
         '<strong>Revisión del bypass gástrico</strong> — ajustes para mejorar la restricción y la absorción.',
       ])}
@@ -409,7 +407,7 @@ const translations = {
       <p>Puede ser candidato si usted:</p>
       ${ul([
         'Se sometió antes a una cirugía bariátrica pero no logró resultados duraderos',
-        'Ha tenido complicaciones como reflujo, deslizamiento de la banda o úlceras',
+        'Ha tenido complicaciones como reflujo o úlceras',
         'Ha recuperado peso después de un éxito inicial',
         'Está motivado a hacer cambios de estilo de vida a largo plazo para mejorar su salud',
       ])}
@@ -433,7 +431,7 @@ const translations = {
       ],
       [
         '¿Qué tipos de revisión existen?',
-        '<p>Las opciones comunes incluyen convertir una banda LAP-BAND® en manga o bypass, revisar una manga para convertirla en bypass, o modificar un bypass gástrico para mejorar los resultados.</p>',
+        '<p>Las opciones comunes incluyen revisar una manga para convertirla en bypass o modificar un bypass gástrico para mejorar los resultados.</p>',
       ],
       [
         '¿Cuánto dura la recuperación?',
@@ -715,7 +713,7 @@ const translations = {
 
       <h3>Cirugía Laparoscópica para Bajar de Peso</h3>
       <p>La cirugía laparoscópica ha transformado por completo los procedimientos bariátricos, como:</p>
-      ${ul(['Cirugía de manga gástrica', 'Bypass gástrico', 'Banda gástrica ajustable'])}
+      ${ul(['Cirugía de manga gástrica', 'Bypass gástrico'])}
       <p>Estas cirugías son hoy más seguras, menos invasivas y más eficaces que nunca, y ayudan a los pacientes a
       obtener resultados duraderos con un tiempo de recuperación menor.</p>
 
