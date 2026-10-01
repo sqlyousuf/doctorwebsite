@@ -93,7 +93,5 @@ const ABOUT_ES = {
   dietitian: 'Nuestra Nutricionista',
 };
 
-/** Sub-items under a Patient Center entry (currently just the store). */
-const SUB_NAV_ES = { 'Vitamin E Store': 'Tienda de Vitaminas' };
 
-module.exports = { UI, NAV_ES, ABOUT_ES, SUB_NAV_ES };
+module.exports = { UI, NAV_ES, ABOUT_ES };

@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const { pages: patientCenterPages } = require('./patient-center-content.js');
 const { pages: aboutPages } = require('./content/about.js');
-const { UI, NAV_ES, SUB_NAV_ES, ABOUT_ES } = require('./i18n.js');
+const { UI, NAV_ES, ABOUT_ES } = require('./i18n.js');
 
 const root = path.join(__dirname, '..');
 const src = fs.readFileSync(path.join(root, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
@@ -62,7 +62,6 @@ const VITAMIN_STORE = (() => {
 
 /** A page's nav label in the requested language. */
 const navLabel = (page, lang) => (lang === 'es' ? NAV_ES[page.slug] || page.nav : page.nav);
-const subLabel = (sub, lang) => (lang === 'es' ? SUB_NAV_ES[sub.nav] || sub.nav : sub.nav);
 
 /**
  * The footer.
@@ -129,12 +128,11 @@ ${aboutItems}
 
   const items = [];
   for (const page of patientCenterPages) {
+    // Self-Pay has its own place in the main row, and Lantern and the Vitamin E
+    // Store their own buttons beneath it, so none of them is repeated here.
+    if (page.slug === 'self-pay' || page.slug === 'lantern') continue;
     const current = active.patientCenter === page.slug ? ' aria-current="page"' : '';
     items.push(`          <li><a href="${pcPrefix}${page.slug}.html"${current}>${navLabel(page, lang)}</a></li>`);
-    for (const sub of page.sub || []) {
-      const attrs = sub.external ? ' target="_blank" rel="noopener"' : '';
-      items.push(`          <li class="nav-sub-child"><a href="${sub.href}"${attrs}>${subLabel(sub, lang)}</a></li>`);
-    }
   }
 
   const lanternCurrent = active.patientCenter === 'lantern' ? ' aria-current="page"' : '';

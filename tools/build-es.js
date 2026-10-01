@@ -94,13 +94,11 @@ const copy = [
   // while still linking across to ../patient-center/. When Spanish versions
   // of those pages are written, point these at es/patient-center/ instead.
   ['>Patient Center<svg class="sub-caret"', '>Centro del Paciente<svg class="sub-caret"', 1],
-  ['>Self-Pay</a>', '>Pago Particular</a>', 2],
+  ['>Self-Pay</a>', '>Pago Particular</a>', 1],
   ['>Patient Forms</a>', '>Formularios del Paciente</a>', 1],
   ['>After Surgery</a>', '>Después de la Cirugía</a>', 1],
   ['>Vitamin Guide</a>', '>Guía de Vitaminas</a>', 1],
   ['>Bariatric Vitamins</a>', '>Vitaminas Bariátricas</a>', 1],
-  ['>Vitamin E Store</a>', '>Tienda de Vitaminas</a>', 1],
-  ['>Lantern</a>', '>Lantern</a>', 1],
   ['>Pre-Op and Post-Op</a>', '>Preoperatorio y Postoperatorio</a>', 1],
   ['>Exercise Regimens</a>', '>Rutinas de Ejercicio</a>', 1],
   ['>Discharge Instructions</a>', '>Instrucciones de Alta</a>', 1],
