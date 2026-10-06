@@ -694,7 +694,6 @@ const pages = [
     ],
     edits: { videoSlot: false },
     explainer: {"src":"gastric-sleeve-explainer","seconds":57,"credit":"Video: Houston Surgical Weight Loss","caption":"How a gastric sleeve is done: a short narrated look at sleeve gastrectomy.","captionEs":"Cómo se realiza la manga gástrica: una guía narrada breve sobre la gastrectomía en manga."},
-    video: {"src":"gastric-sleeve","seconds":18,"credit":"Animation: F1Digitals via Pixabay (Pixabay Content License)","caption":"How a sleeve gastrectomy is performed: about 75-80% of the stomach is removed, leaving a narrow, banana-shaped sleeve.","captionEs":"Cómo se realiza una gastrectomía en manga: se extrae cerca del 75-80% del estómago y queda una manga estrecha con forma de plátano."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Sleeve Gastrectomy',
