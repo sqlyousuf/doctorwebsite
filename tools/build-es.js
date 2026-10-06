@@ -138,9 +138,9 @@ const copy = [
   ['Surgical and Medical Weight Loss with Proven Results', 'Pérdida de peso quirúrgica y médica con resultados comprobados', 1],
 
   // ---- lifestyle strip ----
-  ['<figcaption>Lighter.</figcaption>', '<figcaption>Ligera.</figcaption>', 1],
+  ['<figcaption>Better.</figcaption>', '<figcaption>Mejor.</figcaption>', 1],
+  ['<figcaption>Healthier.</figcaption>', '<figcaption>Saludable.</figcaption>', 1],
   ['<figcaption>Stronger.</figcaption>', '<figcaption>Fuerte.</figcaption>', 1],
-  ['<figcaption>Steady.</figcaption>', '<figcaption>Estable.</figcaption>', 1],
 
   // ---- split intro ----
   ['Bariatric Surgical<br>Weight Loss', 'Pérdida de Peso<br>Quirúrgica', 1],
@@ -301,6 +301,11 @@ const copy = [
     'Aceptamos efectivo, cheques de caja, tarjetas de débito, tarjetas de crédito y financiamiento para hacer posible su cirugía. Hay planes mensuales flexibles y programas de costo reducido disponibles para pacientes que califiquen.',
     1,
   ],
+  ['> Lower BMI qualification</li>', '> Requisito de IMC más bajo</li>', 1],
+  ['> No additional testing</li>', '> Sin pruebas adicionales</li>', 1],
+  ['> Age limit 16 years and older</li>', '> Edad mínima: 16 años en adelante</li>', 1],
+  ['<p>Apply for financing online with <a', '<p>Solicite financiamiento en línea con <a', 1],
+  ['>Cherry</a> or <a', '>Cherry</a> o <a', 1],
   ['<span class="price-label">Self-Pay Rates</span>', '<span class="price-label">Precios de Pago Particular</span>', 1],
   ['<span class="price-starting">Starting at</span>', '<span class="price-starting">Desde</span>', 1],
   ['alt="Operating room at Houston Surgical Weight Loss"', 'alt="Sala de operaciones de Houston Surgical Weight Loss"', 1],

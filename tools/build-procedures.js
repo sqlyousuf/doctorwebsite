@@ -113,6 +113,30 @@ const videoFigure = (video, lang, up) => {
       </figure>`;
 };
 
+/**
+ * The practice's own narrated explainer. Unlike the animation it has a voice
+ * track, so it waits to be played: no autoplay or loop, and `preload="none"`
+ * so a reader who never presses play never downloads it. The narration is in
+ * English, which the Spanish caption says up front.
+ */
+const explainerFigure = (video, lang, up) => {
+  const caption = lang === 'es' ? video.captionEs : video.caption;
+  const length = `${Math.floor(video.seconds / 60)}:${String(video.seconds % 60).padStart(2, '0')}`;
+  const meta = lang === 'es' ? `${length} · narración en inglés` : length;
+  return `      <figure class="proc-video">
+        <video
+          src="${up}media/video/${video.src}.mp4"
+          poster="${up}media/video/${video.src}.jpg"
+          width="1280" height="720"
+          playsinline preload="none" controls
+          aria-label="${escapeAttr(caption)}"></video>
+        <figcaption>
+          <span class="proc-video-text">${caption} <span class="proc-video-length">(${meta})</span></span>
+          <span class="proc-video-credit">${video.credit}</span>
+        </figcaption>
+      </figure>`;
+};
+
 function renderPage(basePage, lang) {
   const page = localised(basePage, lang);
   const t = UI[lang];
@@ -209,7 +233,12 @@ ${page.stats.map(([f, l]) => `      <div><dt>${f}</dt><dd>${l}</dd></div>`).join
 <article class="pad-lg">
   <div class="container narrow prose prose-proc">
 ${page.body.trim()}
-${basePage.video ? videoFigure(basePage.video, lang, up) : basePage.edits && basePage.edits.videoSlot ? videoSlot(lang) : ''}
+${[
+  basePage.explainer && explainerFigure(basePage.explainer, lang, up),
+  basePage.video ? videoFigure(basePage.video, lang, up) : basePage.edits && basePage.edits.videoSlot && videoSlot(lang),
+]
+  .filter(Boolean)
+  .join('\n')}
   </div>
 </article>
 

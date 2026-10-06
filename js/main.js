@@ -315,16 +315,41 @@ if (apptOverlay) {
 }
 
 /* ======================================================================
+   Review strip.
+
+   Clones the cards once so the CSS loop has no seam, hides the copies from
+   assistive tech, and scales the duration to the number of reviews so the
+   pace stays the same however many there are. Reduced motion keeps the
+   plain swipeable row.
+   ====================================================================== */
+
+(function reviewMarquee() {
+  const marquee = document.querySelector('.review-marquee');
+  if (!marquee || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const track = marquee.querySelector('.review-track');
+  const cards = [...track.children];
+  cards.forEach((card) => {
+    const copy = card.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.inert = true;
+    track.appendChild(copy);
+  });
+  marquee.style.setProperty('--review-duration', cards.length * 9 + 's');
+  marquee.classList.add('is-scrolling');
+})();
+
+/* ======================================================================
    Procedure animations.
 
    The clips autoplay because they are silent illustration, not something the
    reader chose to watch. Two exceptions: anyone who has asked the system for
    reduced motion gets the poster frame and the play button instead, and a
    clip that is off screen stays paused rather than looping out of sight.
+   Narrated explainers carry no autoplay attribute and are left to the reader.
    ====================================================================== */
 
 (function procVideos() {
-  const vids = document.querySelectorAll('.proc-video video');
+  const vids = document.querySelectorAll('.proc-video video[autoplay]');
   if (!vids.length) return;
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

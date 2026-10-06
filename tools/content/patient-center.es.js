@@ -51,6 +51,12 @@ const translations = {
       complicaciones menor que el promedio nacional. No es necesario arriesgarse viajando a México para obtener
       resultados inferiores.</p>
 
+      <ul class="check-list">
+        <li><svg><use href="#ic-check"/></svg> Requisito de IMC más bajo</li>
+        <li><svg><use href="#ic-check"/></svg> Sin pruebas adicionales</li>
+        <li><svg><use href="#ic-check"/></svg> Edad mínima: 16 años en adelante</li>
+      </ul>
+
       <h2 class="display bar">Cirugía Bariátrica Experta y Atención Personalizada</h2>
       <p>Su cirugía será realizada por el Dr. Wadiwala — cirujano capacitado en Estados Unidos, certificado por la
       junta médica y perteneciente a un Centro de Excelencia. Los procedimientos se realizan en el Townsen Hospital
@@ -100,11 +106,13 @@ const translations = {
           <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
           <h3>Cherry</h3>
           <p>Pregunte a nuestro equipo sobre cómo solicitar un plan de pagos Cherry para su procedimiento.</p>
+          <p><a class="card-link" href="https://pay.withcherry.com/houston-surgical-weight-loss" target="_blank" rel="noopener">Solicitar con Cherry <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
           <h3>CareCredit</h3>
           <p>Aceptamos financiamiento CareCredit para procedimientos bariátricos y de cirugía general.</p>
+          <p><a class="card-link" href="https://www.carecredit.com/go/FPK293/" target="_blank" rel="noopener">Solicitar con CareCredit <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>
       </div>
 
@@ -137,10 +145,10 @@ const translations = {
         </article>
         <article class="card">
           <span class="card-index">03</span>
-          <h3>Sin Edad Mínima</h3>
+          <h3>16 Años en Adelante</h3>
           <p>Casi ningún seguro cubre la cirugía para bajar de peso en pacientes menores de 18 años. Esto es
-          desafortunado, porque la cirugía es segura para los adolescentes y funciona. Hemos operado a decenas de
-          estos pacientes y también podemos ayudarle a usted.</p>
+          desafortunado, porque la cirugía es segura para los adolescentes y funciona. Con pago particular, operamos a
+          pacientes de 16 años en adelante. Hemos operado a decenas de estos pacientes y también podemos ayudarle a usted.</p>
         </article>
       </div>
 
@@ -350,6 +358,9 @@ const translations = {
         </article>
       </div>
 
+      <p>Para una mejor absorción, tome cada dosis de calcio con al menos 2 horas de diferencia. Además, tome el hierro
+      con al menos 2 horas de diferencia del calcio.</p>
+
       <p>Explore opciones confiables de vitaminas bariátricas diseñadas para apoyar su nutrición y recuperación
       después de la cirugía de pérdida de peso.</p>
 
@@ -417,7 +428,7 @@ const translations = {
         'Vitamina C para reforzar la inmunidad y la reparación de tejidos',
         'Citrato de calcio para fortalecer huesos y dientes',
       ])}
-      <p>Cada suplemento está disponible en forma líquida, masticable o en cápsula, para que sea fácil incorporarlo a
+      <p>Cada suplemento está disponible en forma masticable o en cápsula, para que sea fácil incorporarlo a
       su rutina diaria.</p>
 
       <h2 class="display bar">Cómo Tomar Sus Vitaminas Bariátricas</h2>
@@ -505,7 +516,7 @@ const translations = {
         ],
         [
           '¿En qué presentaciones vienen?',
-          '<p>Nuestros suplementos Bariatric Fusion® están disponibles en forma líquida, masticable y en cápsula, para que elija la que más le convenga.</p>',
+          '<p>Nuestros suplementos Bariatric Fusion® están disponibles en forma masticable y en cápsula, para que elija la que más le convenga.</p>',
         ],
         [
           '¿Puedo comprarlas en línea?',
@@ -527,9 +538,9 @@ const translations = {
   'pre-op-and-post-op': {
     title: 'Dieta Preoperatoria y Postoperatoria',
     seoTitle: 'Dieta Pre y Postoperatoria Bariátrica | Houston, TX',
-    tagline: 'El ayuno líquido de dos semanas antes de la cirugía, y las cuatro etapas después.',
+    tagline: 'El ayuno líquido de dos semanas antes de la cirugía, y las cinco etapas después.',
     description:
-      'El ayuno líquido proteico preoperatorio y las cuatro etapas de la dieta posoperatoria para los pacientes de cirugía bariátrica en Houston Surgical Weight Loss.',
+      'El ayuno líquido proteico preoperatorio y las cinco etapas de la dieta posoperatoria para los pacientes de cirugía bariátrica en Houston Surgical Weight Loss.',
     body: `
       <h2 class="display bar">Ayuno Líquido Proteico Preoperatorio</h2>
       <h3>¿Cuándo Comienza la Dieta Preoperatoria?</h3>
@@ -547,11 +558,12 @@ const translations = {
       ])}
 
       <h3>Qué Puede Comer y Beber</h3>
-      <p>Durante el ayuno líquido preoperatorio, concéntrese en líquidos claros, altos en proteína y bajos en azúcar.
+      <p>Durante la dieta proteica preoperatoria, concéntrese en líquidos claros, altos en proteína y bajos en azúcar.
       Se permiten:</p>
       ${ul([
+        '<strong>1 comida:</strong> 3 oz de proteína magra y 2 tazas de verduras sin almidón',
+        '<strong>2 batidos de proteína bajos en azúcar:</strong> Premier Protein, Fairlife Protein, Ensure Max, Atkins Advantage, etc.',
         '<strong>Agua:</strong> al menos 8 vasos al día.',
-        '<strong>Batidos de proteína bajos en azúcar:</strong> Premier Protein, Fairlife Protein, Ensure Max, Atkins Advantage, etc.',
         '<strong>Caldos claros:</strong> de pollo, res o verduras.',
         'Leche al 1% o descremada',
         'Gelatina sin azúcar (Jell-O)',
@@ -564,7 +576,7 @@ const translations = {
       <hr class="mini-rule">
 
       <h2 class="display bar">Etapas de la Dieta Posoperatoria</h2>
-      <p>Después de la cirugía, su estómago necesitará tiempo para sanar y adaptarse. Su dieta avanzará en cuatro
+      <p>Después de la cirugía, su estómago necesitará tiempo para sanar y adaptarse. Su dieta avanzará en cinco
       etapas, comenzando con líquidos claros y pasando gradualmente a alimentos sólidos.</p>
       <p>Avanzar demasiado rápido o saltarse etapas puede causar complicaciones y retrasar su recuperación.</p>
 
@@ -587,41 +599,55 @@ const translations = {
           <span class="card-index">02</span>
           <h3>Etapa 2: Líquidos Completos (Días 4–14)</h3>
           <p><strong>Objetivo:</strong> aportar nutrientes esenciales mientras el estómago sigue sanando.</p>
-          <p>Líquidos y alimentos suaves permitidos:</p>
+          <p>Líquidos permitidos:</p>
           ${ul([
+            'Los líquidos claros de la etapa 1',
             'Batidos de proteína bajos en azúcar (Premier Protein, Fairlife, Ensure Max, etc.)',
-            'Yogur bajo en azúcar o yogur griego',
+            'Yogur bebible bajo en azúcar o yogur griego',
             'Caldos claros o sopas licuadas',
             'Leche al 1% o descremada',
-            'Pudín sin azúcar',
-            'Papillas (consistencia suave)',
-            'Jugo de fruta sin azúcar añadida',
+            'Sopas de proteína',
           ])}
         </article>
         <article class="card">
           <span class="card-index">03</span>
-          <h3>Etapa 3: Purés y Alimentos Suaves (Semanas 3–5)</h3>
-          <p><strong>Objetivo:</strong> reintroducir alimentos suaves y nutritivos conforme el estómago se adapta.</p>
+          <h3>Etapa 3: Purés (Semanas 3–4)</h3>
+          <p><strong>Objetivo:</strong> reintroducir alimentos nutritivos en puré conforme el estómago se adapta.</p>
           <p>Alimentos permitidos:</p>
           ${ul([
-            'Pollo y pescado tiernos (procesados si es necesario)',
-            'Tofu suave',
+            'Pollo y pescado tiernos (procesados hasta hacerlos puré si es necesario)',
+            'Tofu suave machacado',
             'Huevos revueltos',
             'Cereales calientes como avena o crema de trigo',
-            'Frutas y verduras suaves o en puré',
+            'Frutas y verduras machacadas',
             'Frijoles y legumbres machacados',
             'Lácteos bajos en grasa: requesón, yogur, leche descremada',
           ])}
         </article>
         <article class="card">
           <span class="card-index">04</span>
-          <h3>Etapa 4: Alimentos Sólidos (Semana 6 en Adelante)</h3>
+          <h3>Etapa 4: Alimentos Suaves (Semanas 5–6)</h3>
+          <p><strong>Objetivo:</strong> reintroducir alimentos suaves y nutritivos conforme el estómago se adapta.</p>
+          <p>Alimentos permitidos:</p>
+          ${ul([
+            'Pollo y pescado suaves y tiernos',
+            'Tofu suave',
+            'Huevos',
+            'Cereales calientes como avena o crema de trigo',
+            'Frutas y verduras suaves',
+            'Frijoles y legumbres',
+            'Lácteos bajos en grasa: requesón, yogur, leche descremada',
+          ])}
+        </article>
+        <article class="card">
+          <span class="card-index">05</span>
+          <h3>Etapa 5: Alimentos Sólidos (Semana 7 en Adelante)</h3>
           <p><strong>Objetivo:</strong> pasar a una alimentación equilibrada y sostenible a largo plazo.</p>
           <p>Alimentos permitidos:</p>
           ${ul([
             'Proteínas magras (pollo, pescado, pavo, tofu)',
             'Frutas y verduras frescas',
-            'Granos integrales con moderación',
+            'Granos integrales con moderación (después de 6 meses)',
             'Grasas saludables, principalmente insaturadas (aguacate, aceite de oliva, nueces)',
             'Lácteos bajos en grasa',
           ])}
@@ -635,8 +661,9 @@ const translations = {
           <tbody>
             <tr><td>Etapa 1: Líquidos claros</td><td>Días 1–3</td><td>Hidratación y cicatrización</td></tr>
             <tr><td>Etapa 2: Líquidos completos</td><td>Días 4–14</td><td>Proteína y nutrientes esenciales</td></tr>
-            <tr><td>Etapa 3: Purés y suaves</td><td>Semanas 3–5</td><td>Alimentos suaves y nutritivos</td></tr>
-            <tr><td>Etapa 4: Alimentos regulares</td><td>Semana 6 – de por vida</td><td>Alimentación equilibrada</td></tr>
+            <tr><td>Etapa 3: Purés</td><td>Semanas 3–4</td><td>Alimentos nutritivos en puré</td></tr>
+            <tr><td>Etapa 4: Alimentos suaves</td><td>Semanas 5–6</td><td>Alimentos suaves y nutritivos</td></tr>
+            <tr><td>Etapa 5: Alimentos regulares</td><td>Semana 7 – de por vida</td><td>Alimentación equilibrada</td></tr>
           </tbody>
         </table>
       </div>
@@ -653,7 +680,7 @@ const translations = {
         ],
         [
           '¿Cuándo puedo volver a una dieta normal?',
-          '<p>La mayoría de los pacientes pasa a una dieta regular en la semana 6. Sin embargo, es esencial seguir cada etapa con cuidado, introducir los alimentos poco a poco y en porciones pequeñas, y evitar aquellos que causen molestias o síndrome de vaciamiento rápido. Su equipo quirúrgico y su dietista vigilarán su progreso y le indicarán cuándo avanzar con seguridad.</p>',
+          '<p>La mayoría de los pacientes pasa a una dieta regular en la semana 7. Sin embargo, es esencial seguir cada etapa con cuidado, introducir los alimentos poco a poco y en porciones pequeñas, y evitar aquellos que causen molestias o síndrome de vaciamiento rápido. Su equipo quirúrgico y su dietista vigilarán su progreso y le indicarán cuándo avanzar con seguridad.</p>',
         ],
       ])}
 

@@ -53,6 +53,12 @@ const pages = [
       procedure since 2008 and have completed over 10,000 procedures with great outcomes and a complication rate lower
       than the national average. There is no need to take the risk of travelling to Mexico for inferior outcomes.</p>
 
+      <ul class="check-list">
+        <li><svg><use href="#ic-check"/></svg> Lower BMI qualification</li>
+        <li><svg><use href="#ic-check"/></svg> No additional testing</li>
+        <li><svg><use href="#ic-check"/></svg> Age limit 16 years and older</li>
+      </ul>
+
       <h2 class="display bar">Expert Bariatric Surgery &amp; Personalized Care</h2>
       <p>Your surgery will be performed by Dr. Wadiwala — a US trained, board-certified, Center of Excellence surgeon.
       Procedures are performed at the Townsen Hospital System or a comparable facility, all of which are fully
@@ -99,11 +105,13 @@ const pages = [
           <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
           <h3>Cherry</h3>
           <p>Ask our team about applying for a Cherry payment plan for your procedure.</p>
+          <p><a class="card-link" href="https://pay.withcherry.com/houston-surgical-weight-loss" target="_blank" rel="noopener">Apply with Cherry <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
           <h3>CareCredit</h3>
           <p>CareCredit financing is accepted for bariatric and general surgery procedures.</p>
+          <p><a class="card-link" href="https://www.carecredit.com/go/FPK293/" target="_blank" rel="noopener">Apply with CareCredit <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>
       </div>
 
@@ -135,10 +143,10 @@ const pages = [
         </article>
         <article class="card">
           <span class="card-index">03</span>
-          <h3>No Minimum Age</h3>
+          <h3>Age 16 and Older</h3>
           <p>Almost no insurance will pay for weight-loss surgery for patients under the age of 18. This is unfortunate
-          because the surgery is safe for adolescents and it works. We have operated on dozens of such patients, and we
-          can help you too.</p>
+          because the surgery is safe for adolescents and it works. With self-pay, we operate on patients 16 years and
+          older. We have operated on dozens of such patients, and we can help you too.</p>
         </article>
       </div>
 
@@ -350,6 +358,9 @@ const pages = [
         </article>
       </div>
 
+      <p>For the best absorption, take each calcium dose at least 2 hours apart. Also, take iron at least 2 hours apart
+      from calcium.</p>
+
       <p>Explore trusted bariatric vitamin options designed to support your nutrition and recovery after weight loss
       surgery.</p>
 
@@ -425,7 +436,7 @@ const pages = [
         'Vitamin C to boost immunity and tissue repair',
         'Calcium Citrate to strengthen bones and teeth',
       ])}
-      <p>Each supplement is available in liquid, chewable, or capsule form, making it easy to fit into your daily
+      <p>Each supplement is available in chewable or capsule form, making it easy to fit into your daily
       routine.</p>
 
       <h2 class="display bar">How to Take Your Bariatric Vitamins</h2>
@@ -514,7 +525,7 @@ const pages = [
         ],
         [
           'What forms do bariatric vitamins come in?',
-          '<p>Our Bariatric Fusion® supplements are available in liquid, chewable, and capsule forms, allowing you to choose what works best for your comfort and lifestyle.</p>',
+          '<p>Our Bariatric Fusion® supplements are available in chewable and capsule forms, allowing you to choose what works best for your comfort and lifestyle.</p>',
         ],
         [
           'Can I buy bariatric vitamins online?',
@@ -540,9 +551,9 @@ const pages = [
     nav: 'Pre-Op and Post-Op',
     seoTitle: 'Pre-Op &amp; Post-Op Bariatric Diet | Houston, TX',
     title: 'Pre-Op and Post-Op Diet',
-    tagline: 'The two-week liquid fast before surgery, and the four diet stages after it.',
+    tagline: 'The two-week liquid fast before surgery, and the five diet stages after it.',
     description:
-      'The pre-op protein liquid fast and the four post-op diet stages for bariatric surgery patients at Houston Surgical Weight Loss.',
+      'The pre-op protein liquid fast and the five post-op diet stages for bariatric surgery patients at Houston Surgical Weight Loss.',
     image: '../media/img/u-1490645935967-10de6ba17061.jpg',
     body: `
       <h2 class="display bar">Pre-Op Protein Liquid Fast</h2>
@@ -561,10 +572,11 @@ const pages = [
       ])}
 
       <h3>What You Can Eat and Drink</h3>
-      <p>During the pre-op liquid fast, focus on high-protein, low-sugar, and clear liquids. Allowed items include:</p>
+      <p>During the pre-op protein diet, focus on high-protein, low-sugar, and clear liquids. Allowed items include:</p>
       ${ul([
+        '<strong>1 meal:</strong> 3oz of lean protein and 2 cups of non-starchy vegetables',
+        '<strong>2 low-sugar protein shakes:</strong> Premier Protein, Fairlife Protein, Ensure Max, Atkins Advantage, etc.',
         '<strong>Water:</strong> Aim for at least 8 cups per day.',
-        '<strong>Low-sugar protein shakes:</strong> Premier Protein, Fairlife Protein, Ensure Max, Atkins Advantage, etc.',
         '<strong>Clear broths:</strong> Chicken, beef, or vegetable broth.',
         '1% or skim milk',
         'Sugar-free gelatin (Jell-O)',
@@ -577,7 +589,7 @@ const pages = [
       <hr class="mini-rule">
 
       <h2 class="display bar">Post-Op Diet Stages</h2>
-      <p>After surgery, your stomach will need time to heal and adjust. Your diet will progress in four stages, starting
+      <p>After surgery, your stomach will need time to heal and adjust. Your diet will progress in five stages, starting
       with clear liquids and gradually transitioning to solid foods.</p>
       <p>Advancing too quickly or skipping stages can cause complications and slow down your recovery.</p>
 
@@ -599,41 +611,55 @@ const pages = [
           <span class="card-index">02</span>
           <h3>Stage 2: Full Liquids (Days 4–14)</h3>
           <p><strong>Purpose:</strong> Provide essential nutrients while your stomach continues to heal.</p>
-          <p>Allowed liquids and soft foods:</p>
+          <p>Allowed liquids:</p>
           ${ul([
+            'Clear liquids from stage 1',
             'Low-sugar protein shakes (Premier Protein, Fairlife, Ensure Max, etc.)',
-            'Low-sugar yogurt or Greek yogurt',
+            'Drinkable low-sugar yogurt or Greek yogurt',
             'Clear broths or smooth, blended soups',
             '1% or skim milk',
-            'Sugar-free pudding',
-            'Baby food (smooth consistency)',
-            'No sugar added fruit juice',
+            'Protein soups',
           ])}
         </article>
         <article class="card">
           <span class="card-index">03</span>
-          <h3>Stage 3: Pureed / Soft Foods (Weeks 3–5)</h3>
-          <p><strong>Purpose:</strong> Begin reintroducing soft, nutrient-dense foods as your stomach adapts.</p>
+          <h3>Stage 3: Pureed Foods (Weeks 3–4)</h3>
+          <p><strong>Purpose:</strong> Begin reintroducing pureed, nutrient-dense foods as your stomach adapts.</p>
           <p>Allowed foods:</p>
           ${ul([
-            'Tender poultry and fish (pulse in a food processor if needed)',
-            'Soft tofu',
+            'Tender poultry and fish (pulse in a food processor if needed to make pureed)',
+            'Mashed soft tofu',
             'Scrambled eggs',
             'Hot cereals like oatmeal or cream of wheat',
-            'Soft or mashed fruits and vegetables',
+            'Mashed fruits and vegetables',
             'Mashed beans and legumes',
             'Low-fat dairy: cottage cheese, yogurt, skim milk',
           ])}
         </article>
         <article class="card">
           <span class="card-index">04</span>
-          <h3>Stage 4: Regular / Solid Foods (Week 6 and Beyond)</h3>
+          <h3>Stage 4: Soft Foods (Weeks 5–6)</h3>
+          <p><strong>Purpose:</strong> Begin reintroducing soft, nutrient-dense foods as your stomach adapts.</p>
+          <p>Allowed foods:</p>
+          ${ul([
+            'Soft, tender poultry and fish',
+            'Soft tofu',
+            'Eggs',
+            'Hot cereals like oatmeal or cream of wheat',
+            'Soft fruits and vegetables',
+            'Beans and legumes',
+            'Low-fat dairy: cottage cheese, yogurt, skim milk',
+          ])}
+        </article>
+        <article class="card">
+          <span class="card-index">05</span>
+          <h3>Stage 5: Regular / Solid Foods (Week 7 and Beyond)</h3>
           <p><strong>Purpose:</strong> Transition to a balanced, sustainable long-term diet.</p>
           <p>Allowed foods:</p>
           ${ul([
             'Lean proteins (chicken, fish, turkey, tofu)',
             'Fresh fruits and vegetables',
-            'Whole grains in moderation',
+            'Whole grains in moderation (after 6 months)',
             'Healthy fats, focusing on unsaturated fats (avocado, olive oil, nuts)',
             'Low-fat dairy products',
           ])}
@@ -647,8 +673,9 @@ const pages = [
           <tbody>
             <tr><td>Stage 1: Clear Liquids</td><td>Days 1–3</td><td>Hydration &amp; healing</td></tr>
             <tr><td>Stage 2: Full Liquids</td><td>Days 4–14</td><td>Protein &amp; essential nutrients</td></tr>
-            <tr><td>Stage 3: Pureed/Soft Foods</td><td>Weeks 3–5</td><td>Introduce soft, nutrient-rich foods</td></tr>
-            <tr><td>Stage 4: Regular Foods</td><td>Week 6 – Lifetime</td><td>Long-term, balanced eating</td></tr>
+            <tr><td>Stage 3: Pureed Foods</td><td>Weeks 3–4</td><td>Introduce pureed, nutrient-rich foods</td></tr>
+            <tr><td>Stage 4: Soft Foods</td><td>Weeks 5–6</td><td>Introduce soft, nutrient-rich foods</td></tr>
+            <tr><td>Stage 5: Regular Foods</td><td>Week 7 – Lifetime</td><td>Long-term, balanced eating</td></tr>
           </tbody>
         </table>
       </div>
@@ -665,7 +692,7 @@ const pages = [
         ],
         [
           'When can I return to a normal diet after surgery?',
-          "<p>Most patients transition to a regular diet by Week 6. However, it's essential to follow each stage carefully, introduce foods slowly and in small amounts, and avoid foods that may cause discomfort or dumping syndrome. Your surgical team and dietitian will monitor your progress and guide you on when to safely advance to each stage.</p>",
+          "<p>Most patients transition to a regular diet by Week 7. However, it's essential to follow each stage carefully, introduce foods slowly and in small amounts, and avoid foods that may cause discomfort or dumping syndrome. Your surgical team and dietitian will monitor your progress and guide you on when to safely advance to each stage.</p>",
         ],
       ])}
 

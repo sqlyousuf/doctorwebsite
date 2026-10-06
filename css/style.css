@@ -737,7 +737,36 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 
 /* ---------- Testimonials ---------- */
 
-.testimonial-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+/* Reviews scroll sideways on their own. Without script (or with reduced
+   motion) the strip is simply a row the reader can swipe. main.js clones the
+   cards once so the loop is seamless, then adds .is-scrolling; the track then
+   slides left by exactly one set of cards — half its width less half a gap. */
+.review-marquee {
+  --review-gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.review-marquee::-webkit-scrollbar { display: none; }
+.review-track {
+  display: flex;
+  gap: var(--review-gap);
+  width: max-content;
+  padding-block: 6px;
+}
+.review-track .testimonial-card { flex: 0 0 min(360px, 80vw); }
+
+.review-marquee.is-scrolling { overflow: hidden; }
+.review-marquee.is-scrolling .review-track {
+  animation: review-scroll var(--review-duration, 45s) linear infinite;
+}
+.review-marquee.is-scrolling:hover .review-track,
+.review-marquee.is-scrolling:focus-within .review-track { animation-play-state: paused; }
+
+@keyframes review-scroll {
+  to { transform: translateX(calc(-50% - var(--review-gap) / 2)); }
+}
 
 .testimonials {
   background: linear-gradient(165deg, var(--ink) 0%, var(--ink-2) 52%, var(--ink) 100%);
@@ -1141,7 +1170,6 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   #services .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   #services .card-grid > * { grid-column: span 2; }
   #services .card-grid > :last-child:nth-child(odd) { grid-column: 2 / span 2; }
-  .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trust-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .star-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1183,7 +1211,6 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   /* A last row of two starts one track in; a last row of one sits in the middle. */
   #services .card-grid > :nth-child(3n + 1):nth-last-child(2) { grid-column: 2 / span 2; }
   #services .card-grid > :nth-child(3n + 1):last-child { grid-column: 3 / span 2; }
-  .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .process-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .trust-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .about-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: center; }
@@ -1374,8 +1401,21 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 
 .prose > h2.display { margin-top: clamp(42px, 5vw, 64px); }
 .prose > h2.display:first-child { margin-top: 0; }
+/* The lead paragraph runs the full column, like the paragraphs under it. */
+.prose > .intro { max-width: none; }
 .prose h3 { margin-top: 30px; }
 .prose .card h3 { margin-top: 0; }
+
+/* An outbound link at the foot of a card, e.g. a financing application. */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.card-link:hover { text-decoration: underline; }
+.card-link svg { width: 15px; height: 15px; flex: none; }
 .prose .card-grid,
 .prose .split,
 .prose .table-wrap,
@@ -2128,6 +2168,8 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 }
 
 .proc-video-text { display: block; }
+
+.proc-video-length { color: var(--muted); white-space: nowrap; }
 
 .proc-video-credit {
   display: block;

@@ -44,7 +44,8 @@ const pages = [
       ['6–12 months', 'the balloon stays in place'],
       ['2–3 days', 'back to work and normal activity'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    explainer: {"src":"gastric-balloon-explainer","seconds":85,"credit":"Video: Houston Surgical Weight Loss","caption":"How a gastric balloon is placed: a short narrated guide to this temporary, non-surgical option.","captionEs":"Cómo se coloca un balón gástrico: una guía narrada breve sobre esta opción temporal y no quirúrgica."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Gastric Balloon Surgery',
@@ -160,7 +161,8 @@ const pages = [
       ['1–2 days', 'most patients go home'],
       ['2–4 weeks', 'back to normal routines'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    explainer: {"src":"gastric-bypass-explainer","seconds":86,"credit":"Video: Houston Surgical Weight Loss","caption":"How gastric bypass is done: a short narrated look at Roux-en-Y gastric bypass.","captionEs":"Cómo se realiza el bypass gástrico: una guía narrada breve sobre el bypass gástrico en Y de Roux."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Gastric Bypass Surgery',
@@ -254,7 +256,8 @@ const pages = [
       ['1–3 weeks', 'recovery, laparoscopic'],
       ['4–6 weeks', 'recovery, open surgery'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    explainer: {"src":"general-surgery-explainer","seconds":196,"credit":"Video: Houston Surgical Weight Loss","caption":"General surgery explained: a narrated patient guide to seven common procedure categories.","captionEs":"La cirugía general explicada: una guía narrada para pacientes sobre siete categorías comunes de procedimientos."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Comprehensive Surgical Care with Advanced Technology and Compassionate Support in Houston',
@@ -576,7 +579,8 @@ const pages = [
     stats: [
       ['2–3 weeks', 'back to normal activities'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    explainer: {"src":"revision-bariatric-surgery-explainer","seconds":73,"credit":"Video: Houston Surgical Weight Loss","caption":"Revision bariatric surgery: a short narrated guide to why a revision may help and what to expect.","captionEs":"Cirugía bariátrica de revisión: una guía narrada breve sobre por qué puede ayudar una revisión y qué esperar."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Revision Bariatric Surgery',
@@ -689,6 +693,7 @@ const pages = [
       ['2–4 weeks', 'back to normal routines'],
     ],
     edits: { videoSlot: false },
+    explainer: {"src":"gastric-sleeve-explainer","seconds":57,"credit":"Video: Houston Surgical Weight Loss","caption":"How a gastric sleeve is done: a short narrated look at sleeve gastrectomy.","captionEs":"Cómo se realiza la manga gástrica: una guía narrada breve sobre la gastrectomía en manga."},
     video: {"src":"gastric-sleeve","seconds":18,"credit":"Animation: F1Digitals via Pixabay (Pixabay Content License)","caption":"How a sleeve gastrectomy is performed: about 75-80% of the stomach is removed, leaving a narrow, banana-shaped sleeve.","captionEs":"Cómo se realiza una gastrectomía en manga: se extrae cerca del 75-80% del estómago y queda una manga estrecha con forma de plátano."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
