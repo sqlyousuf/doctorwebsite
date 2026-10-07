@@ -1835,6 +1835,8 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   margin-bottom: 16px;
 }
 .surgery-head h3 { margin: 0 0 4px; }
+/* Smaller than on the home page cards: here the picture sits beside the title. */
+.surgery-head .card-art { width: 72px; height: 72px; margin-bottom: 0; flex: none; }
 .surgery-sub {
   margin: 0;
   font-family: var(--display);
