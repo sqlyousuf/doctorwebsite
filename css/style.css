@@ -748,36 +748,55 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 
 /* ---------- Testimonials ---------- */
 
-/* Reviews scroll sideways on their own. Without script (or with reduced
-   motion) the strip is simply a row the reader can swipe. main.js clones the
-   cards once so the loop is seamless, then adds .is-scrolling; the track then
-   slides left by exactly one set of cards — half its width less half a gap. */
-.review-marquee {
-  --review-gap: 20px;
+/* Strips that scroll sideways on their own: the home page reviews and the
+   Lantern employer logos. Without script (or with reduced motion) a strip is
+   simply a row the reader can swipe. main.js clones the items once so the
+   loop is seamless, then adds .is-scrolling; the track then slides left by
+   exactly one set of items, which is half its width less half a gap. */
+.marquee {
+  --marquee-gap: 20px;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
-.review-marquee::-webkit-scrollbar { display: none; }
-.review-track {
+.marquee::-webkit-scrollbar { display: none; }
+.marquee-track {
   display: flex;
-  gap: var(--review-gap);
+  gap: var(--marquee-gap);
   width: max-content;
-  padding-block: 6px;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
 }
-.review-track .testimonial-card { flex: 0 0 min(360px, 80vw); }
+.marquee.is-scrolling { overflow: hidden; }
+.marquee.is-scrolling .marquee-track {
+  animation: marquee-scroll var(--marquee-duration, 45s) linear infinite;
+}
+.marquee.is-scrolling:hover .marquee-track,
+.marquee.is-scrolling:focus-within .marquee-track { animation-play-state: paused; }
 
-.review-marquee.is-scrolling { overflow: hidden; }
-.review-marquee.is-scrolling .review-track {
-  animation: review-scroll var(--review-duration, 45s) linear infinite;
+@keyframes marquee-scroll {
+  to { transform: translateX(calc(-50% - var(--marquee-gap) / 2)); }
 }
-.review-marquee.is-scrolling:hover .review-track,
-.review-marquee.is-scrolling:focus-within .review-track { animation-play-state: paused; }
 
-@keyframes review-scroll {
-  to { transform: translateX(calc(-50% - var(--review-gap) / 2)); }
+.marquee-track .testimonial-card { flex: 0 0 min(360px, 80vw); }
+
+/* Employer logos, each on its own white tile so logos drawn with and without a
+   white ground sit alike. */
+.logo-marquee { --marquee-gap: 14px; margin-block: 26px 10px; }
+.logo-track li {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 168px;
+  height: 84px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
 }
+.logo-track img { display: block; max-width: 100%; max-height: 48px; width: auto; height: auto; }
+.logo-note { margin-bottom: 28px; }
 
 .testimonials {
   background: linear-gradient(165deg, var(--ink) 0%, var(--ink-2) 52%, var(--ink) 100%);

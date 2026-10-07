@@ -315,27 +315,29 @@ if (apptOverlay) {
 }
 
 /* ======================================================================
-   Review strip.
+   Scrolling strips (home page reviews, Lantern employer logos).
 
-   Clones the cards once so the CSS loop has no seam, hides the copies from
-   assistive tech, and scales the duration to the number of reviews so the
-   pace stays the same however many there are. Reduced motion keeps the
-   plain swipeable row.
+   Clones the items once so the CSS loop has no seam, hides the copies from
+   assistive tech, and scales the duration to the number of items so the
+   pace holds however many there are; data-seconds sets the time per item.
+   Reduced motion keeps the plain swipeable row.
    ====================================================================== */
 
-(function reviewMarquee() {
-  const marquee = document.querySelector('.review-marquee');
-  if (!marquee || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const track = marquee.querySelector('.review-track');
-  const cards = [...track.children];
-  cards.forEach((card) => {
-    const copy = card.cloneNode(true);
-    copy.setAttribute('aria-hidden', 'true');
-    copy.inert = true;
-    track.appendChild(copy);
+(function marquees() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.marquee').forEach((marquee) => {
+    const track = marquee.querySelector('.marquee-track');
+    const items = [...track.children];
+    items.forEach((item) => {
+      const copy = item.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      copy.inert = true;
+      track.appendChild(copy);
+    });
+    const perItem = Number(marquee.dataset.seconds) || 9;
+    marquee.style.setProperty('--marquee-duration', items.length * perItem + 's');
+    marquee.classList.add('is-scrolling');
   });
-  marquee.style.setProperty('--review-duration', cards.length * 9 + 's');
-  marquee.classList.add('is-scrolling');
 })();
 
 /* ======================================================================

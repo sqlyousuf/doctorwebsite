@@ -273,6 +273,45 @@ ${names.map((n) => `          <li>${n}</li>`).join('\n')}
   )
   .join('\n');
 
+/**
+ * Logos for a sample of the best-known names on the list, shown as a scrolling
+ * strip above it. All are public-domain files from Wikimedia Commons; the
+ * names remain their owners' trademarks, which the note under the strip says.
+ */
+const employerLogos = [
+  ['att', 'AT&amp;T'],
+  ['home-depot', 'The Home Depot'],
+  ['southwest', 'Southwest Airlines'],
+  ['marriott', 'Marriott International'],
+  ['state-farm', 'State Farm'],
+  ['7-eleven', '7-Eleven'],
+  ['phillips-66', 'Phillips 66'],
+  ['hilton', 'Hilton'],
+  ['medtronic', 'Medtronic'],
+  ['dollar-general', 'Dollar General'],
+  ['pnc', 'PNC Bank'],
+  ['red-bull', 'Red Bull'],
+  ['bnsf', 'BNSF Railway'],
+  ['hyatt', 'Hyatt Hotels'],
+  ['sysco', 'Sysco'],
+  ['directv', 'DIRECTV'],
+  ['mckesson', 'McKesson'],
+  ['edward-jones', 'Edward Jones'],
+  ['davita', 'DaVita'],
+  ['kbr', 'KBR'],
+  ['nextera', 'NextEra Energy'],
+  ['husqvarna', 'Husqvarna'],
+];
+
+/** The strip itself; `up` climbs from the page to the site root, `label` names the region. */
+const employerLogoStrip = (up, label) => `      <div class="marquee logo-marquee" data-seconds="2.5" role="region" aria-label="${label}">
+        <ul class="marquee-track logo-track">
+${employerLogos
+  .map(([slug, name]) => `          <li><img src="${up}media/logos/employers/${slug}.svg" alt="${name}" loading="lazy"></li>`)
+  .join('\n')}
+        </ul>
+      </div>`;
+
 const steps = [
   [
     'Your employer enrols in Lantern',
@@ -510,6 +549,10 @@ ${steps
       <p>If you or a covered family member works for any of the organisations below, contact us today and we will verify
       your eligibility.</p>
 
+${employerLogoStrip('../', 'Some of the employers that offer Lantern benefits')}
+      <p class="fine logo-note">Logos are trademarks of their respective owners, shown only to identify employers on
+      Lantern's published list. Their use does not imply any endorsement of Houston Surgical Weight Loss.</p>
+
       <div class="employer-finder">
         <label class="employer-search" for="employerSearch">
           <svg aria-hidden="true"><use href="#ic-search"/></svg>
@@ -591,4 +634,4 @@ ${s.stats
     `,
 };
 
-module.exports = { page, employerCount, employerGroups };
+module.exports = { page, employerCount, employerGroups, employerLogoStrip };

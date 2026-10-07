@@ -11,7 +11,7 @@
  * qualifications stay as they are.
  */
 
-const { employerGroups, employerCount } = require('./lantern.js');
+const { employerGroups, employerCount, employerLogoStrip } = require('./lantern.js');
 
 const PHONE = '281-653-6544';
 const PHONE_HREF = 'tel:+12816536544';
@@ -222,6 +222,11 @@ ${steps
       un beneficio bariátrico dedicado que acompaña al plan médico principal del empleador.</p>
       <p>Si usted o un familiar cubierto trabaja en alguna de las organizaciones de la lista, comuníquese con nosotros
       hoy y verificaremos su elegibilidad.</p>
+
+${employerLogoStrip('../../', 'Algunos de los empleadores que ofrecen beneficios Lantern')}
+      <p class="fine logo-note">Los logotipos son marcas registradas de sus respectivos dueños y se muestran solo para
+      identificar a empleadores de la lista publicada por Lantern. Su uso no implica que respalden a Houston Surgical
+      Weight Loss.</p>
 
       <div class="employer-finder">
         <label class="employer-search" for="employerSearch">
