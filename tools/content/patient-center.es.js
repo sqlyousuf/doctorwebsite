@@ -103,14 +103,12 @@ const translations = {
 
       <div class="card-grid">
         <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>Cherry</h3>
+          <h3 class="pay-logo"><img src="../../media/img/pay-cherry.jpg" alt="Cherry" width="266" height="90" loading="lazy"></h3>
           <p>Pregunte a nuestro equipo sobre cómo solicitar un plan de pagos Cherry para su procedimiento.</p>
           <p><a class="card-link" href="https://pay.withcherry.com/houston-surgical-weight-loss" target="_blank" rel="noopener">Solicitar con Cherry <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>
         <article class="card">
-          <span class="card-icon"><svg><use href="#ic-card"/></svg></span>
-          <h3>CareCredit</h3>
+          <h3 class="pay-logo"><img src="../../media/img/pay-carecredit.jpg" alt="CareCredit" width="404" height="74" loading="lazy"></h3>
           <p>Aceptamos financiamiento CareCredit para procedimientos bariátricos y de cirugía general.</p>
           <p><a class="card-link" href="https://www.carecredit.com/go/FPK293/" target="_blank" rel="noopener">Solicitar con CareCredit <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
         </article>

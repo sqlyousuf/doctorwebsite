@@ -1445,6 +1445,10 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   color: var(--accent);
 }
 .card-link:hover { text-decoration: underline; }
+
+/* A financing provider's wordmark standing in for the card heading. */
+.pay-logo { margin-bottom: 14px; }
+.pay-logo img { display: block; height: 40px; width: auto; }
 .card-link svg { width: 15px; height: 15px; flex: none; }
 .prose .card-grid,
 .prose .split,
