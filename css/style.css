@@ -654,6 +654,17 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 .card-icon svg { width: 22px; height: 22px; }
 .card:hover .card-icon { background: var(--accent); color: var(--white); }
 
+/* Procedure illustration in place of a line icon. Drawn on white, so it sits
+   straight on the white card with no frame. */
+.card-art {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 16px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.card:hover .card-art { transform: scale(1.05); }
+
 /* ---------- About ---------- */
 
 .about { background: var(--paper-2); }

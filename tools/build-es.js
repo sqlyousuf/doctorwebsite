@@ -462,7 +462,7 @@ const copy = [
   // into the English site, which is exactly the bug being fixed.
   ['href="css/', 'href="../css/', 1],
   ['src="js/', 'src="../js/', 1],
-  ['src="media/', 'src="../media/', 10],
+  ['src="media/', 'src="../media/', 16],
   ['poster="media/', 'poster="../media/', 1],
 ];
 
