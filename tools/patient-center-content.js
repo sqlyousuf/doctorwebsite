@@ -206,17 +206,17 @@ const pages = [
       <div class="card-grid">
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-clipboard"/></svg></span>
-          <h3>New Patient Form — English (PDF Format)</h3>
-          <p><a href="#">Click here to download</a></p>
+          <h3>New Patient Form — English</h3>
+          <p><a class="card-link" href="../media/forms/new-patient-forms-english.pdf" target="_blank" rel="noopener">Download the PDF <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
+          <p><a href="../media/forms/new-patient-forms-english.docx" download>Word version</a> (to fill in on a computer)</p>
         </article>
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-clipboard"/></svg></span>
-          <h3>Formulario para Nuevos Pacientes — Español (Formato PDF)</h3>
-          <p><a href="#">Haga clic aquí para descargar</a></p>
+          <h3>Formulario para Nuevos Pacientes — Español</h3>
+          <p><a class="card-link" href="../media/forms/new-patient-forms-spanish.pdf" target="_blank" rel="noopener">Descargar el PDF <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
+          <p><a href="../media/forms/new-patient-forms-spanish.docx" download>Versión de Word</a> (para llenarla en la computadora)</p>
         </article>
       </div>
-
-      <p class="fine">The form PDFs are supplied by the practice and linked here once they are uploaded.</p>
 
       <p>If you have any questions while filling out the forms, please feel free to contact us at
       <a href="${PHONE_HREF}"><strong>${PHONE}</strong></a> — we're happy to help.</p>

@@ -205,17 +205,17 @@ const translations = {
       <div class="card-grid">
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-clipboard"/></svg></span>
-          <h3>Formulario para Nuevos Pacientes — Inglés (Formato PDF)</h3>
-          <p><a href="#">Haga clic aquí para descargar</a></p>
+          <h3>Formulario para Nuevos Pacientes — Inglés</h3>
+          <p><a class="card-link" href="../../media/forms/new-patient-forms-english.pdf" target="_blank" rel="noopener">Descargar el PDF <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
+          <p><a href="../../media/forms/new-patient-forms-english.docx" download>Versión de Word</a> (para llenarla en la computadora)</p>
         </article>
         <article class="card">
           <span class="card-icon"><svg><use href="#ic-clipboard"/></svg></span>
-          <h3>Formulario para Nuevos Pacientes — Español (Formato PDF)</h3>
-          <p><a href="#">Haga clic aquí para descargar</a></p>
+          <h3>Formulario para Nuevos Pacientes — Español</h3>
+          <p><a class="card-link" href="../../media/forms/new-patient-forms-spanish.pdf" target="_blank" rel="noopener">Descargar el PDF <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a></p>
+          <p><a href="../../media/forms/new-patient-forms-spanish.docx" download>Versión de Word</a> (para llenarla en la computadora)</p>
         </article>
       </div>
-
-      <p class="fine">Los archivos PDF los proporciona la práctica y se enlazarán aquí una vez que estén cargados.</p>
 
       <p>Si tiene alguna duda mientras completa los formularios, no dude en comunicarse con nosotros al
       <a href="${PHONE_HREF}"><strong>${PHONE}</strong></a> — con gusto le ayudamos.</p>
