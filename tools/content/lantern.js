@@ -483,6 +483,9 @@ const page = {
       </div>
 
       <h2 class="display bar">What Is Lantern?</h2>
+${employerLogoStrip('../', 'Some of the employers that offer Lantern benefits')}
+      <p class="fine logo-note">Logos are trademarks of their respective owners, shown only to identify employers on
+      Lantern's published list. Their use does not imply any endorsement of Houston Surgical Weight Loss.</p>
       <p>Lantern is a national employer-sponsored healthcare platform that specialises in connecting employees with
       high-quality, credentialed surgical providers at dramatically reduced — or completely eliminated — costs to the
       patient.</p>
@@ -548,10 +551,6 @@ ${steps
       the employer's main health plan.</p>
       <p>If you or a covered family member works for any of the organisations below, contact us today and we will verify
       your eligibility.</p>
-
-${employerLogoStrip('../', 'Some of the employers that offer Lantern benefits')}
-      <p class="fine logo-note">Logos are trademarks of their respective owners, shown only to identify employers on
-      Lantern's published list. Their use does not imply any endorsement of Houston Surgical Weight Loss.</p>
 
       <div class="employer-finder">
         <label class="employer-search" for="employerSearch">

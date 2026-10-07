@@ -155,6 +155,10 @@ const page = {
       </div>
 
       <h2 class="display bar">¿Qué Es Lantern?</h2>
+${employerLogoStrip('../../', 'Algunos de los empleadores que ofrecen beneficios Lantern')}
+      <p class="fine logo-note">Los logotipos son marcas registradas de sus respectivos dueños y se muestran solo para
+      identificar a empleadores de la lista publicada por Lantern. Su uso no implica que respalden a Houston Surgical
+      Weight Loss.</p>
       <p>Lantern es una plataforma nacional de salud patrocinada por empleadores que se especializa en conectar a los
       empleados con proveedores quirúrgicos acreditados y de alta calidad, a un costo drásticamente reducido o
       totalmente eliminado para el paciente.</p>
@@ -222,11 +226,6 @@ ${steps
       un beneficio bariátrico dedicado que acompaña al plan médico principal del empleador.</p>
       <p>Si usted o un familiar cubierto trabaja en alguna de las organizaciones de la lista, comuníquese con nosotros
       hoy y verificaremos su elegibilidad.</p>
-
-${employerLogoStrip('../../', 'Algunos de los empleadores que ofrecen beneficios Lantern')}
-      <p class="fine logo-note">Los logotipos son marcas registradas de sus respectivos dueños y se muestran solo para
-      identificar a empleadores de la lista publicada por Lantern. Su uso no implica que respalden a Houston Surgical
-      Weight Loss.</p>
 
       <div class="employer-finder">
         <label class="employer-search" for="employerSearch">
