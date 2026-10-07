@@ -339,7 +339,7 @@ const steps = [
 
 const surgeries = [
   {
-    icon: 'ic-bypass',
+    art: 'proc-bypass',
     name: 'Gastric Bypass Surgery',
     sub: 'Roux-En-Y Gastric Bypass',
     body: `<p>The gold-standard bariatric procedure for patients with severe obesity, type 2 diabetes, or gastroesophageal
@@ -353,7 +353,7 @@ const surgeries = [
     ],
   },
   {
-    icon: 'ic-sleeve',
+    art: 'proc-sleeve',
     name: 'Gastric Sleeve Surgery',
     sub: 'Sleeve Gastrectomy',
     body: `<p>During a laparoscopic sleeve gastrectomy we remove approximately 80% of the stomach, leaving a narrow,
@@ -367,7 +367,7 @@ const surgeries = [
     ],
   },
   {
-    icon: 'ic-revision',
+    art: 'proc-revision',
     name: 'Revisional Bariatric Surgery',
     sub: 'After a previous procedure',
     body: `<p>For patients who have already had a bariatric or foregut procedure — a gastric band, sleeve, stomach
@@ -580,7 +580,7 @@ ${surgeries
   .map(
     (s) => `        <article class="surgery-card">
           <div class="surgery-head">
-            <span class="card-icon"><svg><use href="#${s.icon}"/></svg></span>
+            <img class="card-art" src="../media/img/${s.art}.jpg" width="120" height="120" alt="" loading="lazy">
             <div>
               <h3>${s.name}</h3>
               <p class="surgery-sub">${s.sub}</p>

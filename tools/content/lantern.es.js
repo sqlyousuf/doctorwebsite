@@ -59,7 +59,7 @@ const steps = [
 
 const surgeries = [
   {
-    icon: 'ic-bypass',
+    art: 'proc-bypass',
     name: 'Bypass Gástrico',
     sub: 'Bypass Gástrico en Y de Roux',
     body: `<p>El procedimiento bariátrico de referencia para pacientes con obesidad severa, diabetes tipo 2 o enfermedad
@@ -73,7 +73,7 @@ const surgeries = [
     ],
   },
   {
-    icon: 'ic-sleeve',
+    art: 'proc-sleeve',
     name: 'Gastrectomía en Manga',
     sub: 'Manga Gástrica',
     body: `<p>Durante una gastrectomía en manga laparoscópica retiramos aproximadamente el 80% del estómago, dejando un
@@ -88,7 +88,7 @@ const surgeries = [
     ],
   },
   {
-    icon: 'ic-revision',
+    art: 'proc-revision',
     name: 'Cirugía Bariátrica de Revisión',
     sub: 'Después de un procedimiento previo',
     body: `<p>Para pacientes que ya se sometieron a un procedimiento bariátrico o del tracto digestivo superior — banda
@@ -255,7 +255,7 @@ ${surgeries
   .map(
     (s) => `        <article class="surgery-card">
           <div class="surgery-head">
-            <span class="card-icon"><svg><use href="#${s.icon}"/></svg></span>
+            <img class="card-art" src="../../media/img/${s.art}.jpg" width="120" height="120" alt="" loading="lazy">
             <div>
               <h3>${s.name}</h3>
               <p class="surgery-sub">${s.sub}</p>
