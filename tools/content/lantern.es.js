@@ -296,40 +296,6 @@ ${s.stats.map(([figure, label]) => `            <div><dt>${figure}</dt><dd>${lab
           '<p>Normalmente no. Le informaremos qué requiere su plan específico durante la verificación de elegibilidad.</p>',
         ],
       ])}
-
-      <h2 class="display bar">Dr. Irfan Wadiwala — Cirujano Bariátrico y General</h2>
-      <p>Cirujano bariátrico con subespecialidad y cirujano general certificado por la junta médica, con dos décadas
-      de experiencia quirúrgica y miles de procedimientos bariátricos exitosos.</p>
-      <h3>Su experiencia incluye</h3>
-      ${ul([
-        'Manga gástrica, bypass gástrico y cirugía bariátrica de revisión',
-        'Técnicas laparoscópicas avanzadas y mínimamente invasivas',
-        'Reparación de hernias, extirpación de vesícula, apendicectomías y extirpación de quistes',
-      ])}
-      <h3>Privilegios Hospitalarios</h3>
-      ${ul([
-        'HCA Houston Healthcare Northwest',
-        "St. Luke's Health – The Vintage Hospital",
-        'Houston Methodist Willowbrook Hospital',
-      ])}
-      <h3>Formación Académica</h3>
-      ${ul([
-        'Subespecialidad en Cirugía Bariátrica Laparoscópica – Penn State Milton Hershey Medical Center',
-        'Residencia en Cirugía General – Martin Luther King y Arrowhead Regional Medical Center, Los Ángeles',
-        'Doctor en Medicina Osteopática, Summa Cum Laude – Western University, Pomona, CA',
-        'Certificado por la junta médica en Cirugía General y Cirugía Bariátrica',
-      ])}
-      <p>El Dr. Wadiwala trata a la persona completa y acompaña a sus pacientes desde la educación preoperatoria hasta
-      el seguimiento a largo plazo.</p>
-
-      <h2 class="display bar">Por Qué Elegir Houston Surgical Weight Loss</h2>
-      ${ul([
-        'Cirujano bariátrico certificado y con subespecialidad, con dos décadas de experiencia',
-        'Especialista en cirugía de pérdida de peso laparoscópica mínimamente invasiva',
-        'Planes de atención personalizados según sus metas',
-        'Apoyo integral antes, durante y después de la cirugía',
-        'Opciones de consulta por telemedicina y en la oficina',
-      ])}
     `,
 };
 

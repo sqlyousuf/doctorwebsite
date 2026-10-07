@@ -137,6 +137,18 @@ const explainerFigure = (video, lang, up) => {
       </figure>`;
 };
 
+/**
+ * The explainer is the quickest way into the page, so it goes straight under
+ * the opening heading rather than after the FAQ.
+ */
+function leadWithExplainer(body, figure) {
+  if (!figure) return body;
+  const end = body.indexOf('</h2>');
+  if (end < 0) return figure + '\n' + body;
+  const at = end + '</h2>'.length;
+  return body.slice(0, at) + '\n' + figure + body.slice(at);
+}
+
 function renderPage(basePage, lang) {
   const page = localised(basePage, lang);
   const t = UI[lang];
@@ -232,9 +244,8 @@ ${page.stats.map(([f, l]) => `      <div><dt>${f}</dt><dd>${l}</dd></div>`).join
 <!-- ======================= CONTENT ======================= -->
 <article class="pad-lg">
   <div class="container narrow prose prose-proc">
-${page.body.trim()}
+${leadWithExplainer(page.body.trim(), basePage.explainer && explainerFigure(basePage.explainer, lang, up))}
 ${[
-  basePage.explainer && explainerFigure(basePage.explainer, lang, up),
   basePage.video ? videoFigure(basePage.video, lang, up) : basePage.edits && basePage.edits.videoSlot && videoSlot(lang),
 ]
   .filter(Boolean)
