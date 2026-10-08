@@ -116,17 +116,18 @@ const videoFigure = (video, lang, up) => {
 /**
  * The practice's own narrated explainer. Unlike the animation it has a voice
  * track, so it waits to be played: no autoplay or loop, and `preload="none"`
- * so a reader who never presses play never downloads it. The narration is in
- * English, which the Spanish caption says up front.
+ * so a reader who never presses play never downloads it. Spanish pages play
+ * the practice's Spanish recording, saved alongside as `<src>-es`.
  */
 const explainerFigure = (video, lang, up) => {
   const caption = lang === 'es' ? video.captionEs : video.caption;
-  const length = `${Math.floor(video.seconds / 60)}:${String(video.seconds % 60).padStart(2, '0')}`;
-  const meta = lang === 'es' ? `${length} · narración en inglés` : length;
+  const src = lang === 'es' ? `${video.src}-es` : video.src;
+  const seconds = lang === 'es' ? video.secondsEs : video.seconds;
+  const meta = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
   return `      <figure class="proc-video">
         <video
-          src="${up}media/video/${video.src}.mp4"
-          poster="${up}media/video/${video.src}.jpg"
+          src="${up}media/video/${src}.mp4"
+          poster="${up}media/video/${src}.jpg"
           width="1280" height="720"
           playsinline preload="none" controls
           aria-label="${escapeAttr(caption)}"></video>
