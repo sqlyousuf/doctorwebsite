@@ -1538,12 +1538,16 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 .pc-cta .intro { color: rgba(255, 255, 255, 0.78); }
 
 .pc-related { background: var(--paper-2); }
+/* Flex rather than grid so a short last row (two links on the About pages)
+   sits in the middle instead of hugging the left. */
 .pc-link-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: clamp(26px, 4vw, 38px);
 }
+.pc-link-grid > .pc-link { flex: 0 0 100%; }
 .pc-link {
   display: flex;
   align-items: center;
@@ -1569,10 +1573,10 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 .pc-link svg { width: 17px; height: 17px; flex: none; color: var(--accent); }
 
 @media (min-width: 640px) {
-  .pc-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pc-link-grid > .pc-link { flex-basis: calc((100% - 12px) / 2); }
 }
 @media (min-width: 1024px) {
-  .pc-link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pc-link-grid > .pc-link { flex-basis: calc((100% - 24px) / 3); }
 }
 
 /* ======================================================================
