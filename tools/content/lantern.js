@@ -83,6 +83,7 @@ const employers = [
       'Digital Realty',
       'DIRECTV',
       'Dollar General',
+      'Dollar Tree',
       'Drivetime',
       'Duraserv',
       'Dutch Maid Logistics',
@@ -234,6 +235,7 @@ const employers = [
   [
     'T',
     [
+      'Target',
       'TCU (Texas Christian University)',
       'Tetra',
       'The Home Depot',
@@ -282,6 +284,7 @@ ${names.map((n) => `          <li>${n}</li>`).join('\n')}
 const employerLogos = [
   ['att', 'AT&amp;T'],
   ['home-depot', 'The Home Depot'],
+  ['target', 'Target'],
   ['southwest', 'Southwest Airlines'],
   ['american-airlines', 'American Airlines'],
   ['marriott', 'Marriott International'],
@@ -291,6 +294,7 @@ const employerLogos = [
   ['hilton', 'Hilton'],
   ['medtronic', 'Medtronic'],
   ['dollar-general', 'Dollar General'],
+  ['dollar-tree', 'Dollar Tree'],
   ['pnc', 'PNC Bank'],
   ['red-bull', 'Red Bull'],
   ['bnsf', 'BNSF Railway'],
