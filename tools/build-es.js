@@ -83,7 +83,7 @@ const copy = [
   ['>Our Office</a>', '>Nuestra Oficina</a>', 1],
   ['>Our Dietitian</a>', '>Nuestra Nutricionista</a>', 1],
 
-  ['<li><a href="#testimonials">Stories</a></li>', '<li><a href="#testimonials">Testimonios</a></li>', 1],
+  ['<li><a href="results.html">Results</a></li>', '<li><a href="results.html">Resultados</a></li>', 1],
   ['<li><a href="#insurance">Insurance</a></li>', '<li><a href="#insurance">Seguro</a></li>', 1],
   ['<li><a href="#faq">FAQ</a></li>', '<li><a href="#faq">Preguntas</a></li>', 1],
 
@@ -419,7 +419,8 @@ const copy = [
   ['4.8 average rating &middot; 3,000+ patients treated', '4.8 de calificación promedio &middot; más de 3,000 pacientes atendidos', 1],
   ['<a href="#services">Procedures</a>', '<a href="#services">Procedimientos</a>', 1],
   ['<a href="#about">About Us</a>', '<a href="#about">Sobre Nosotros</a>', 1],
-  ['<a href="#testimonials">Stories</a>', '<a href="#testimonials">Testimonios</a>', 1],
+  ['<a href="results.html">Results</a>', '<a href="results.html">Resultados</a>', 1],
+  ['>See Real Patient Results</a>', '>Vea Resultados Reales de Pacientes</a>', 1],
   ['<a href="#insurance">Insurance</a>', '<a href="#insurance">Seguro</a>', 1],
   [
     '<a href="patient-center/patient-forms.html">Patient Center</a>',

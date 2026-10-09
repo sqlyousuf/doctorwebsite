@@ -341,6 +341,99 @@ if (apptOverlay) {
 })();
 
 /* ======================================================================
+   Real Results page.
+
+   Every photo is a plain link to its full-size file. Here those links open
+   in a full-screen viewer instead, stepping through one patient's photos —
+   including the ones not shown on the card — with buttons, arrow keys or a
+   swipe. Long stories are cut to a few lines with a button to read on.
+   ====================================================================== */
+
+(function resultsPage() {
+  const viewer = document.getElementById('photoViewer');
+  if (!viewer || typeof viewer.showModal !== 'function') return;
+
+  const img = viewer.querySelector('.viewer-img');
+  const caption = viewer.querySelector('.viewer-caption');
+  const count = viewer.querySelector('.viewer-count');
+  const prev = viewer.querySelector('.viewer-prev');
+  const next = viewer.querySelector('.viewer-next');
+  const of = viewer.dataset.of || 'of';
+  let photos = [];
+  let index = 0;
+  let opener = null;
+
+  const show = (i) => {
+    index = (i + photos.length) % photos.length;
+    const link = photos[index];
+    const thumb = link.querySelector('img');
+    img.src = link.href;
+    img.alt = thumb ? thumb.alt : '';
+    caption.textContent = link.dataset.caption || '';
+    count.textContent = photos.length > 1 ? `${index + 1} ${of} ${photos.length}` : '';
+    prev.hidden = next.hidden = photos.length < 2;
+  };
+
+  const open = (gallery, start, from) => {
+    photos = [...document.querySelectorAll(`a[data-gallery="${gallery}"]`)];
+    if (!photos.length) return;
+    opener = from;
+    show(Math.max(0, photos.indexOf(start)));
+    viewer.showModal();
+  };
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[data-gallery]');
+    if (link) {
+      e.preventDefault();
+      open(link.dataset.gallery, link, link);
+      return;
+    }
+    // "+2 more photos" opens at the first photo the card does not show.
+    const more = e.target.closest('[data-gallery-open]');
+    if (more) {
+      const gallery = more.dataset.galleryOpen;
+      open(gallery, document.querySelector(`a[data-gallery="${gallery}"][hidden]`), more);
+    }
+  });
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+  // A click on the dark surround, not the photo or a control, closes it.
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer || e.target.classList.contains('viewer-frame')) viewer.close();
+  });
+  viewer.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+  let touchX = null;
+  viewer.addEventListener('touchstart', (e) => (touchX = e.touches[0].clientX), { passive: true });
+  viewer.addEventListener('touchend', (e) => {
+    if (touchX === null || photos.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+    touchX = null;
+  });
+  viewer.addEventListener('close', () => {
+    img.removeAttribute('src');
+    if (opener) opener.focus();
+  });
+
+  document.querySelectorAll('.story-text').forEach((text) => {
+    const toggle = text.parentElement.querySelector('.story-toggle');
+    if (!toggle || text.scrollHeight < 260) return;
+    text.classList.add('is-clamped');
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      text.classList.remove('is-clamped');
+      toggle.remove();
+    });
+  });
+})();
+
+/* ======================================================================
    Procedure animations.
 
    The clips autoplay because they are silent illustration, not something the

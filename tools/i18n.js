@@ -14,7 +14,7 @@
 const UI = {
   en: {
     htmlLang: 'en',
-    primary: ['About Us', 'Procedures', 'Stories', 'Self-Pay', 'Insurance', 'FAQ'],
+    primary: ['About Us', 'Procedures', 'Results', 'Self-Pay', 'Insurance', 'FAQ'],
     patientCenter: 'Patient Center',
     vitaminStore: 'Vitamin E Store',
     vitaminStoreAria: 'Vitamin E Store — opens in a new tab',
@@ -43,7 +43,7 @@ const UI = {
   },
   es: {
     htmlLang: 'es',
-    primary: ['Sobre Nosotros', 'Procedimientos', 'Testimonios', 'Pago Particular', 'Seguro', 'Preguntas'],
+    primary: ['Sobre Nosotros', 'Procedimientos', 'Resultados', 'Pago Particular', 'Seguro', 'Preguntas'],
     patientCenter: 'Centro del Paciente',
     vitaminStore: 'Tienda de Vitaminas',
     vitaminStoreAria: 'Tienda de Vitaminas — se abre en una pestaña nueva',

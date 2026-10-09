@@ -60,6 +60,9 @@ const VITAMIN_STORE = (() => {
   return store.href;
 })();
 
+/** The results page, which sits beside whichever home page `home` points at. */
+const resultsHref = (home) => home.replace(/index\.html$/, 'results.html');
+
 /** A page's nav label in the requested language. */
 const navLabel = (page, lang) => (lang === 'es' ? NAV_ES[page.slug] || page.nav : page.nav);
 
@@ -80,6 +83,7 @@ const footerFor = ({ lang = 'en', up = '../', pcPrefix = '../patient-center/', h
   return extractFrom(doc, 'footer', '<footer class="site-footer">', '</footer>', where)
     .replace(/<a href="#([a-z][\w-]*)"/g, `<a href="${home}#$1"`)
     .replace(/href="patient-center\//g, `href="${pcPrefix}`)
+    .replace(/href="results\.html"/g, `href="${resultsHref(home)}"`)
     // English says src="media/…"; the Spanish footer already says "../media/…"
     // because it sits a level down. Normalise both to this page's depth.
     .replace(/src="(?:\.\.\/)?media\//g, `src="${up}media/`);
@@ -100,12 +104,17 @@ function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = 
    * which the practice asked to lift out of Patient Center into the main row.
    * This array is t.primary offset by one.
    */
-  const targets = ['#services', '#testimonials', 'self-pay', '#insurance', '#faq'];
+  const targets = ['#services', 'results', 'self-pay', '#insurance', '#faq'];
   const primary = t.primary
     .slice(1)
     .map((label, i) => {
       const target = targets[i];
       if (target.startsWith('#')) return `        <li><a href="${home}${target}">${label}</a></li>`;
+      // The results page sits beside each language's home page.
+      if (target === 'results') {
+        const current = active.results ? ' aria-current="page"' : '';
+        return `        <li><a href="${resultsHref(home)}"${current}>${label}</a></li>`;
+      }
       const current = active.patientCenter === target ? ' aria-current="page"' : '';
       return `        <li><a href="${pcPrefix}${target}.html"${current}>${label}</a></li>`;
     })

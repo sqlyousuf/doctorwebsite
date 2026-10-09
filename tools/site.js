@@ -44,6 +44,7 @@ const PHYSICIAN = {
 /** Every indexable page: path, priority, and whether it has a Spanish twin. */
 const PAGES = [
   { path: '/', priority: '1.0', es: '/es/' },
+  { path: '/results.html', priority: '0.9', es: '/es/results.html' },
   { path: '/about/our-office.html', priority: '0.8', es: '/es/about/our-office.html' },
   { path: '/about/dr-wadiwala.html', priority: '0.8', es: '/es/about/dr-wadiwala.html' },
   { path: '/about/dietitian.html', priority: '0.6', es: '/es/about/dietitian.html' },
