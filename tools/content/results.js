@@ -119,7 +119,7 @@ const patients = [
   },
   {
     slug: 'jennifer',
-    name: 'Jennifer',
+    name: 'Jennifer C.',
     procedure: 'sleeve',
     photos: [combined('jennifer-combined')],
     lang: 'es',
@@ -157,6 +157,7 @@ const patients = [
   },
 
   // Photos only.
+  { slug: 'jennifer-2', name: 'Jennifer', photos: [combined('jennifer-2-combined')] },
   { slug: 'emely', name: 'Emely', photos: [pair('emely-before', 'emely-after'), pair('emely-before-side', 'emely-after-side')] },
   { slug: 'jean-carlos', name: 'Jean Carlos', photos: [combined('jean-carlos-combined')] },
   { slug: 'oriana', name: 'Oriana', photos: [pair('oriana-before', 'oriana-after')] },
