@@ -26,6 +26,7 @@ const employers = [
       'Advanced Medical Pricing Solutions (TPA)',
       'Agiliti',
       'Alaska Railroad Corporation',
+      'American Airlines',
       'AMN Healthcare',
       'ArcBest',
       'Archdiocese of Miami',
@@ -282,6 +283,7 @@ const employerLogos = [
   ['att', 'AT&amp;T'],
   ['home-depot', 'The Home Depot'],
   ['southwest', 'Southwest Airlines'],
+  ['american-airlines', 'American Airlines'],
   ['marriott', 'Marriott International'],
   ['state-farm', 'State Farm'],
   ['7-eleven', '7-Eleven'],
@@ -293,14 +295,12 @@ const employerLogos = [
   ['red-bull', 'Red Bull'],
   ['bnsf', 'BNSF Railway'],
   ['hyatt', 'Hyatt Hotels'],
-  ['sysco', 'Sysco'],
   ['directv', 'DIRECTV'],
   ['mckesson', 'McKesson'],
   ['edward-jones', 'Edward Jones'],
   ['davita', 'DaVita'],
   ['kbr', 'KBR'],
   ['nextera', 'NextEra Energy'],
-  ['husqvarna', 'Husqvarna'],
 ];
 
 /** The strip itself; `up` climbs from the page to the site root, `label` names the region. */
