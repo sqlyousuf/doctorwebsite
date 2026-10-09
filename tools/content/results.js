@@ -17,7 +17,7 @@
  */
 
 const pair = (before, after) => ({ before, after });
-const combined = (file) => ({ combined: file });
+const combined = (file, opts = {}) => ({ combined: file, ...opts });
 
 const patients = [
   {
@@ -158,6 +158,13 @@ const patients = [
 
   // Photos only.
   { slug: 'jennifer-2', name: 'Jennifer', photos: [combined('jennifer-2-combined')] },
+  // Sent without names, so shown without them.
+  { slug: 'patient-5', photos: [combined('patient-5-combined')] },
+  { slug: 'patient-1', photos: [pair('patient-1-before', 'patient-1-after')] },
+  { slug: 'patient-4', photos: [combined('patient-4-combined')] },
+  { slug: 'patient-2', photos: [pair('patient-2-before', 'patient-2-after')] },
+  // A collage: before photos on top, after below, so no left/right tags.
+  { slug: 'patient-3', photos: [combined('patient-3-combined', { untagged: true })] },
   { slug: 'emely', name: 'Emely', photos: [pair('emely-before', 'emely-after'), pair('emely-before-side', 'emely-after-side')] },
   { slug: 'jean-carlos', name: 'Jean Carlos', photos: [combined('jean-carlos-combined')] },
   { slug: 'oriana', name: 'Oriana', photos: [pair('oriana-before', 'oriana-after')] },
@@ -189,6 +196,7 @@ const copy = {
     storiesHeading: 'In Their Own Words',
     galleryHeading: 'More Transformations',
     galleryIntro: 'More of our patients, before and after.',
+    patient: 'Patient',
     before: 'Before',
     after: 'After',
     beforeAlt: (n) => `${n} before weight loss surgery`,
@@ -224,6 +232,7 @@ const copy = {
     storiesHeading: 'En Sus Propias Palabras',
     galleryHeading: 'Más Transformaciones',
     galleryIntro: 'Más de nuestros pacientes, antes y después.',
+    patient: 'Paciente',
     before: 'Antes',
     after: 'Después',
     beforeAlt: (n) => `${n} antes de la cirugía para bajar de peso`,

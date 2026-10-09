@@ -39,15 +39,22 @@ const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, 
 const paras = (list, lang) =>
   list.map((p) => `            <p${lang ? ` lang="${lang}"` : ''}>${esc(p)}</p>`).join('\n');
 
+/*
+ * A patient the practice sent without a name is shown without one: the photo
+ * alt text says "Patient", and the viewer caption is just Before / After.
+ */
+const who = (p, c) => p.name || c.patient;
+const captionFor = (p, label) => (p.name ? `${p.name} · ${label}` : label);
+
 /** One photo link: the thumbnail, its Before/After tag, and the full-size target. */
 function photoLink(p, file, when, up, c, { hidden = false } = {}) {
   const src = `${up}media/results/${file}.jpg`;
   const label = when === 'before' ? c.before : c.after;
-  const alt = when === 'before' ? c.beforeAlt(p.name) : c.afterAlt(p.name);
+  const alt = when === 'before' ? c.beforeAlt(who(p, c)) : c.afterAlt(who(p, c));
   if (hidden) {
-    return `          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(`${p.name} · ${label}`)}" hidden><img src="${src}" alt="${escapeAttr(alt)}" loading="lazy"></a>`;
+    return `          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(captionFor(p, label))}" hidden><img src="${src}" alt="${escapeAttr(alt)}" loading="lazy"></a>`;
   }
-  return `          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(`${p.name} · ${label}`)}">
+  return `          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(captionFor(p, label))}">
             <img src="${src}" alt="${escapeAttr(alt)}" loading="lazy">
             <span class="ba-tag ba-tag-${when}">${label}</span>
           </a>`;
@@ -59,11 +66,14 @@ function photoBlock(p, up, c) {
   let shown;
   if (first.combined) {
     const src = `${up}media/results/${first.combined}.jpg`;
+    // Corner tags assume before on the left and after on the right; a collage
+    // laid out any other way (`untagged`) goes without them.
+    const tags = first.untagged
+      ? ''
+      : `\n            <span class="ba-tag ba-tag-before">${c.before}</span>\n            <span class="ba-tag ba-tag-after">${c.after}</span>`;
     shown = `        <div class="ba-pair ba-combined">
-          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(`${p.name} · ${c.before} / ${c.after}`)}">
-            <img src="${src}" alt="${escapeAttr(`${c.beforeAlt(p.name)} / ${c.afterAlt(p.name)}`)}" loading="lazy">
-            <span class="ba-tag ba-tag-before">${c.before}</span>
-            <span class="ba-tag ba-tag-after">${c.after}</span>
+          <a class="ba-photo" href="${src}" data-gallery="${p.slug}" data-caption="${escapeAttr(captionFor(p, `${c.before} / ${c.after}`))}">
+            <img src="${src}" alt="${escapeAttr(`${c.beforeAlt(who(p, c))} / ${c.afterAlt(who(p, c))}`)}" loading="lazy">${tags}
           </a>
         </div>`;
   } else {
@@ -118,7 +128,7 @@ ${paras(text)}
 /** A photos-only patient, as a gallery tile. */
 const galleryCard = (p, up, c) => `      <article class="result-card" id="${p.slug}">
 ${photoBlock(p, up, c)}
-        <h3 class="result-name">${p.name}</h3>
+${p.name ? `        <h3 class="result-name">${p.name}</h3>` : ''}
       </article>`;
 
 /** A Google review, in the language it was written in. */
