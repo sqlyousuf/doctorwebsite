@@ -249,27 +249,8 @@ const copy = [
 
   // ---- testimonials ----
   ['>What Our Patients Are Saying</h2>', '>Lo Que Dicen Nuestros Pacientes</h2>', 1],
-  ['<p class="t-sub">I finally feel comfortable in my own skin.</p>', '<p class="t-sub">Por fin me siento cómoda conmigo misma.</p>', 1],
-  [
-    "The whole team made me feel supported from day one. Eighteen months later I'm active, off my blood pressure medication, and finally comfortable in my own skin.",
-    'Todo el equipo me hizo sentir apoyada desde el primer día. Dieciocho meses después estoy activa, ya no tomo medicamento para la presión y por fin me siento cómoda conmigo misma.',
-    1,
-  ],
-  ['<span>Gastric Sleeve Patient</span>', '<span>Paciente de Manga Gástrica</span>', 1],
-  ['<p class="t-sub">A plan I could actually stick to.</p>', '<p class="t-sub">Un plan que de verdad pude seguir.</p>', 1],
-  [
-    'I tried every diet before coming here. The medical weight loss program finally gave me a plan I could actually stick to, with real accountability.',
-    'Probé todas las dietas antes de venir aquí. El programa de pérdida de peso médica por fin me dio un plan que pude seguir de verdad, con un acompañamiento real.',
-    1,
-  ],
-  ['<span>Medical Weight Loss Patient</span>', '<span>Paciente de Pérdida de Peso Médica</span>', 1],
-  ["<p class=\"t-sub\">I've never felt more informed about a decision.</p>", '<p class="t-sub">Nunca me había sentido tan informada al tomar una decisión.</p>', 1],
-  [
-    "Dr. Wadiwala took the time to answer every question, even the ones I was embarrassed to ask. I've never felt more informed about a decision.",
-    'El Dr. Wadiwala se tomó el tiempo de responder cada pregunta, incluso las que me daba pena hacer. Nunca me había sentido tan informada al tomar una decisión.',
-    1,
-  ],
-  ['<span>Gastric Bypass Patient</span>', '<span>Paciente de Bypass Gástrico</span>', 1],
+  // The reviews stay in the language they were written in; only the label is translated.
+  ['<span>Google Review</span>', '<span>Reseña de Google</span>', require('./content/reviews.js').reviews.length],
 
   // ---- insurance ----
   ['>Insurance</h2>', '>Seguro Médico</h2>', 1],

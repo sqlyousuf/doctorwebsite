@@ -21,6 +21,7 @@
 const fs = require('fs');
 const path = require('path');
 const { patients, copy } = require('./content/results.js');
+const { reviews, GOOGLE_REVIEWS_URL } = require('./content/reviews.js');
 const { ORIGIN } = require('./site.js');
 const { UI } = require('./i18n.js');
 const { root, sprite, footerFor, apptModalFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
@@ -120,6 +121,15 @@ ${photoBlock(p, up, c)}
         <h3 class="result-name">${p.name}</h3>
       </article>`;
 
+/** A Google review, in the language it was written in. */
+const reviewCard = (r, c) => `      <figure class="review-card">
+        <span class="stars" role="img" aria-label="${c.starsLabel}">${'<svg aria-hidden="true"><use href="#ic-star"/></svg>'.repeat(5)}</span>
+        <blockquote lang="en">
+${paras(r.text)}
+        </blockquote>
+        <figcaption><strong>${esc(r.name)}</strong> <span>${c.googleLabel}${r.procedure ? ` · ${c.procedures[r.procedure]}` : ''}</span></figcaption>
+      </figure>`;
+
 function renderPage(lang) {
   const c = copy[lang];
   const t = UI[lang];
@@ -208,6 +218,7 @@ ${header({ nav, lang, up, home })}
     <nav class="results-jump" aria-label="${c.kicker}">
       <a href="#stories">${c.jumpStories} <span>${stories.length}</span></a>
       <a href="#gallery">${c.jumpGallery} <span>${gallery.length}</span></a>
+      <a href="#reviews">${c.jumpReviews} <span>${reviews.length}</span></a>
     </nav>
   </div>
 </section>
@@ -230,6 +241,21 @@ ${stories.map((p) => storyCard(p, lang, up, c)).join('\n')}
     <div class="result-grid">
 ${gallery.map((p) => galleryCard(p, up, c)).join('\n')}
     </div>
+  </div>
+</section>
+
+<!-- ======================= GOOGLE REVIEWS ======================= -->
+<section class="pad-lg results-reviews" id="reviews">
+  <div class="container">
+    <h2 class="display bar">${c.reviewsHeading}</h2>
+    <p>${c.reviewsIntro}</p>
+    <div class="review-grid">
+${reviews.map((r) => reviewCard(r, c)).join('\n')}
+    </div>${
+      GOOGLE_REVIEWS_URL
+        ? `\n    <div class="center-cta"><a href="${GOOGLE_REVIEWS_URL}" class="btn btn-outline" target="_blank" rel="noopener">${c.readAll}</a></div>`
+        : ''
+    }
   </div>
 </section>
 

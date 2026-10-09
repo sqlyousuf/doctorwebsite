@@ -832,6 +832,14 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.82);
 }
+/* In the scrolling strip a long review is cut to a few lines so the cards
+   stay a similar height; the Real Results page carries every review in full. */
+.marquee-track .testimonial-card blockquote {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
 .t-foot {
   margin-top: 22px;
   padding-top: 18px;
@@ -2424,6 +2432,35 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 @media (min-width: 1024px) {
   .result-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ---------- Google reviews ---------- */
+
+/* Columns rather than a grid, so short and long reviews pack without gaps. */
+.review-grid { columns: 1; column-gap: 20px; margin-top: clamp(22px, 3vw, 32px); }
+.review-card {
+  break-inside: avoid;
+  margin: 0 0 20px;
+  padding: 22px 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px -24px rgba(11, 29, 42, 0.45);
+}
+.review-card .stars { color: var(--gold); }
+.review-card blockquote { margin: 12px 0 14px; padding: 0; }
+.review-card blockquote p { font-size: 0.95rem; margin-bottom: 10px; }
+.review-card blockquote p:last-child { margin-bottom: 0; }
+.review-card figcaption { font-size: 0.85rem; color: var(--muted); }
+.review-card figcaption strong {
+  display: block;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: var(--track-sm);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+@media (min-width: 700px) { .review-grid { columns: 2; } }
+@media (min-width: 1024px) { .review-grid { columns: 3; } }
 
 /* ---------- Full-size viewer ---------- */
 
