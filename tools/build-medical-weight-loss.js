@@ -49,8 +49,25 @@ const stepAction = (a) => {
   return `<a class="step-action" href="../index.html${a.href}">${a.label} <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>`;
 };
 
-const medCard = (m, c, i) => `      <article class="card med-card reveal" style="--delay:${(i % 3) * 80}ms">
-        <h3>${m.name}</h3>
+/*
+ * A medication's picture, if the practice has supplied one. Drop a file named
+ * after the drug — media/img/meds/wegovy.png, ozempic.jpg and so on — and the
+ * next build picks it up; until then the card simply has no picture.
+ */
+const MED_DIR = path.join(root, 'media', 'img', 'meds');
+const medKey = (name) => name.toLowerCase().replace(/[^a-z]/g, '');
+function medImage(i, up) {
+  const name = content.en.meds[i].name;
+  const file = ['png', 'jpg', 'jpeg', 'webp']
+    .map((ext) => `${medKey(name)}.${ext}`)
+    .find((f) => fs.existsSync(path.join(MED_DIR, f)));
+  return file
+    ? `        <img class="med-img" src="${up}media/img/meds/${file}" alt="${escapeAttr(name.replace('®', ''))}" loading="lazy">\n`
+    : '';
+}
+
+const medCard = (m, c, i, up) => `      <article class="card med-card reveal" style="--delay:${(i % 3) * 80}ms">
+${medImage(i, up)}        <h3>${m.name}</h3>
         <p class="med-generic">${m.generic}</p>
         <p>${m.about}</p>
         <p class="med-form"><strong>${c.howTaken}:</strong> ${m.form}</p>
@@ -221,7 +238,7 @@ ${c.included
     <h2 class="display center reveal">${c.medsHeading}</h2>
     <p class="intro center reveal">${c.medsIntro}</p>
     <div class="card-grid med-grid">
-${c.meds.map((m, i) => medCard(m, c, i)).join('\n')}
+${c.meds.map((m, i) => medCard(m, c, i, up)).join('\n')}
     </div>
     <p class="med-note">${c.medsNote}</p>
   </div>

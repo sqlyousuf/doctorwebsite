@@ -16,9 +16,6 @@
 const draft = true;
 
 const reviewNotes = [
-  'Which of the six medications listed does the practice actually prescribe? Remove any it does not.',
-  'Does the team handle prior authorizations, as the Insurance Support card and step 2 say?',
-  'Is it true there is no long-term contract (FAQ: "Do I have to commit to a long-term program?")?',
   'Dr. Wadiwala to check every medication summary — dosing, side effects, who should not take it, warnings.',
 ];
 
@@ -203,36 +200,6 @@ const en = {
         'It can make birth control pills less effective — use a non-oral or backup method for 4 weeks after starting and after each dose increase',
         'Tell us about any history of pancreatitis, gallbladder disease or kidney disease',
         'Low blood sugar is more likely if you also take insulin or a sulfonylurea',
-      ],
-    },
-    {
-      name: 'Contrave®',
-      generic: 'Naltrexone & bupropion · tablet',
-      about:
-        "Contrave combines two medicines that work on the brain's hunger and reward centers: bupropion, which reduces appetite, and naltrexone, which helps curb cravings. It is FDA-approved for chronic weight management.",
-      form: 'An extended-release tablet taken by mouth. The dose builds up over four weeks to two tablets twice a day, and your progress is reviewed at 12 weeks.',
-      benefits: [
-        'A non-injectable option',
-        'Helps with food cravings and emotional eating',
-        'An alternative for patients who cannot take GLP-1 medications',
-      ],
-      sideEffects: [
-        'Nausea, constipation, headache and vomiting',
-        'Dizziness, trouble sleeping and dry mouth',
-        'Higher blood pressure or heart rate',
-      ],
-      avoid: [
-        'Uncontrolled high blood pressure',
-        'A seizure disorder, or a history of anorexia or bulimia',
-        'Current use of opioids or opioid-dependence treatment',
-        'Suddenly stopping alcohol, benzodiazepines, barbiturates or seizure medicines',
-        'An MAO inhibitor taken in the past 14 days, or another medicine containing bupropion',
-        'Pregnancy',
-      ],
-      warnings: [
-        'Bupropion carries a warning about suicidal thoughts and mood changes — tell us about any history of depression or other mental health conditions',
-        'Interacts with many antidepressants and other medicines, so bring a full list of what you take',
-        'Avoid or limit alcohol while taking it',
       ],
     },
     {
@@ -499,36 +466,6 @@ const es = {
         'Puede hacer que las pastillas anticonceptivas funcionen menos — use un método no oral o de respaldo durante 4 semanas después de empezar y después de cada aumento de dosis',
         'Infórmenos de cualquier antecedente de pancreatitis, enfermedad de la vesícula o enfermedad renal',
         'El azúcar baja en la sangre es más probable si también usa insulina o una sulfonilurea',
-      ],
-    },
-    {
-      name: 'Contrave®',
-      generic: 'Naltrexona y bupropión · tableta',
-      about:
-        'Contrave combina dos medicamentos que actúan sobre los centros del hambre y de la recompensa del cerebro: el bupropión, que reduce el apetito, y la naltrexona, que ayuda a controlar los antojos. Está aprobado por la FDA para el control del peso a largo plazo.',
-      form: 'Una tableta de liberación prolongada que se toma por boca. La dosis aumenta durante cuatro semanas hasta dos tabletas dos veces al día, y su progreso se revisa a las 12 semanas.',
-      benefits: [
-        'Una opción sin inyecciones',
-        'Ayuda con los antojos y con comer por emociones',
-        'Una alternativa para pacientes que no pueden tomar medicamentos GLP-1',
-      ],
-      sideEffects: [
-        'Náuseas, estreñimiento, dolor de cabeza y vómito',
-        'Mareo, dificultad para dormir y boca seca',
-        'Aumento de la presión arterial o del ritmo cardíaco',
-      ],
-      avoid: [
-        'Presión arterial alta no controlada',
-        'Un trastorno convulsivo, o antecedentes de anorexia o bulimia',
-        'Uso actual de opioides o de tratamiento para la dependencia de opioides',
-        'Dejar de golpe el alcohol, las benzodiazepinas, los barbitúricos o los medicamentos anticonvulsivos',
-        'Haber tomado un inhibidor de la MAO en los últimos 14 días, u otro medicamento que contenga bupropión',
-        'Embarazo',
-      ],
-      warnings: [
-        'El bupropión tiene una advertencia sobre pensamientos suicidas y cambios de ánimo — infórmenos de cualquier antecedente de depresión u otra condición de salud mental',
-        'Interactúa con muchos antidepresivos y otros medicamentos, así que traiga una lista completa de lo que toma',
-        'Evite o limite el alcohol mientras lo toma',
       ],
     },
     {
