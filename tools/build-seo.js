@@ -14,6 +14,7 @@ const path = require('path');
 const { ORIGIN, PAGES: ALL_PAGES } = require('./site.js');
 const { pages: procedurePages } = require('./content/procedures.js');
 const { pages: aboutPages } = require('./content/about.js');
+const medicalWeightLoss = require('./content/medical-weight-loss.js');
 
 /*
  * A draft page is noindex and must stay out of the sitemap — listing a page
@@ -22,7 +23,7 @@ const { pages: aboutPages } = require('./content/about.js');
  * maintained in two places.
  */
 const DRAFT_SLUGS = new Set(
-  [...procedurePages, ...aboutPages].filter((p) => p.draft).map((p) => p.slug)
+  [...procedurePages, ...aboutPages, medicalWeightLoss].filter((p) => p.draft).map((p) => p.slug)
 );
 const isDraft = (p) => [...DRAFT_SLUGS].some((slug) => p.endsWith(`/${slug}.html`));
 const PAGES = ALL_PAGES.filter((x) => !isDraft(x.path));

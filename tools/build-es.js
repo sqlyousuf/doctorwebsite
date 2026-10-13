@@ -73,7 +73,8 @@ const copy = [
   ],
 
   // ---- primary nav (must run before the bare footer links below) ----
-  ['<li><a href="#services">Procedures</a></li>', '<li><a href="#services">Procedimientos</a></li>', 1],
+  ['<li><a href="#services">Bariatric Surgery</a></li>', '<li><a href="#services">Cirugía Bariátrica</a></li>', 1],
+  ['<li><a href="procedures/medical-weight-loss.html">Medical Weight Loss</a></li>', '<li><a href="procedures/medical-weight-loss.html">Pérdida de Peso Médica</a></li>', 1],
 
   // ---- About Us dropdown ----
   // Three pages, each with a Spanish twin under es/about/. index.html says
@@ -160,7 +161,7 @@ const copy = [
   // The Spanish procedure pages exist now, so the cards link to those rather
   // than dropping the link or sending a Spanish reader into English.
   ['>Read more <svg', '>Leer más <svg', 6],
-  ['href="procedures/', 'href="procedures/', 6],
+  ['href="procedures/', 'href="procedures/', 7],
 
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],

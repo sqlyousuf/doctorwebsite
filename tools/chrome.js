@@ -104,12 +104,17 @@ function buildNav({ lang = 'en', up = '../', home = '../index.html', pcPrefix = 
    * which the practice asked to lift out of Patient Center into the main row.
    * This array is t.primary offset by one.
    */
-  const targets = ['#services', 'results', 'self-pay', '#insurance', '#faq'];
+  const targets = ['#services', 'medical-weight-loss', 'results', 'self-pay', '#insurance', '#faq'];
   const primary = t.primary
     .slice(1)
     .map((label, i) => {
       const target = targets[i];
       if (target.startsWith('#')) return `        <li><a href="${home}${target}">${label}</a></li>`;
+      // Medical Weight Loss has its own page among that language's procedures.
+      if (target === 'medical-weight-loss') {
+        const current = active.medicalWeightLoss ? ' aria-current="page"' : '';
+        return `        <li><a href="${home.replace(/index\.html$/, 'procedures/medical-weight-loss.html')}"${current}>${label}</a></li>`;
+      }
       // The results page sits beside each language's home page.
       if (target === 'results') {
         const current = active.results ? ' aria-current="page"' : '';
