@@ -277,6 +277,10 @@ const en = {
       'Generally, adults with a BMI of 30 or more, or 27 or more with a weight-related condition such as type 2 diabetes, high blood pressure or sleep apnea. Dr. Wadiwala will review your history to confirm the right fit.',
     ],
     [
+      'Is there a minimum age requirement for this program?',
+      'Yes, participants must be at least 16 years old to enroll in our medical weight loss program.',
+    ],
+    [
       'Do I have to commit to a long-term program?',
       'No long-term contract is required. Weight is a chronic condition, though, and many patients keep taking medication to maintain their results. Dr. Wadiwala will talk with you about how long treatment is likely to last.',
     ],
@@ -301,8 +305,12 @@ const en = {
       'Dr. Wadiwala reviews your medical history, current medications, past weight loss attempts and goals, and may order lab work. You will leave with a clear plan for your next steps. Visits are available in person or virtually.',
     ],
     [
-      'Do I still need to change my diet and exercise?',
-      'Yes. Medication works best alongside healthy eating, regular activity and good sleep. Our team, including our dietitian, can help you build habits that last.',
+      'What type of support can I expect during the program?',
+      'You will receive continuous support from our medical team.',
+    ],
+    [
+      'Are there any lifestyle changes I will need to make?',
+      'Yes, while our program provides medication and support, successful weight loss often requires changes in mindset, diet, exercise, and overall lifestyle.',
     ],
     [
       'Can I take weight loss medication after bariatric surgery?',
@@ -311,6 +319,10 @@ const en = {
     [
       'What happens when I reach my goal weight?',
       'Dr. Wadiwala will work with you on a maintenance plan. That may mean continuing at a lower dose or tapering gradually, along with the habits that keep the weight off.',
+    ],
+    [
+      'What makes your program different from others?',
+      'Our program focuses exclusively on medical weight loss, providing expert guidance and a personalized approach. We offer a comprehensive range of services, including medications and dietary support.',
     ],
   ],
 };
@@ -561,6 +573,10 @@ const es = {
       'Por lo general, adultos con un IMC de 30 o más, o de 27 o más con una condición relacionada con el peso, como diabetes tipo 2, presión arterial alta o apnea del sueño. El Dr. Wadiwala revisará su historial para confirmar si es adecuado para usted.',
     ],
     [
+      '¿Hay una edad mínima para este programa?',
+      'Sí, los participantes deben tener al menos 16 años para inscribirse en nuestro programa de pérdida de peso médica.',
+    ],
+    [
       '¿Tengo que comprometerme con un programa a largo plazo?',
       'No se requiere un contrato a largo plazo. Sin embargo, el peso es una condición crónica, y muchos pacientes siguen tomando el medicamento para mantener sus resultados. El Dr. Wadiwala hablará con usted sobre cuánto tiempo podría durar el tratamiento.',
     ],
@@ -585,8 +601,12 @@ const es = {
       'El Dr. Wadiwala revisa su historial médico, sus medicamentos actuales, sus intentos anteriores de bajar de peso y sus metas, y puede pedir análisis de laboratorio. Saldrá con un plan claro para sus próximos pasos. Las consultas pueden ser en persona o virtuales.',
     ],
     [
-      '¿Aún necesito cambiar mi alimentación y hacer ejercicio?',
-      'Sí. El medicamento funciona mejor junto con una alimentación saludable, actividad regular y buen descanso. Nuestro equipo, incluida nuestra nutricionista, puede ayudarle a crear hábitos duraderos.',
+      '¿Qué tipo de apoyo puedo esperar durante el programa?',
+      'Recibirá apoyo continuo de nuestro equipo médico.',
+    ],
+    [
+      '¿Tendré que hacer cambios en mi estilo de vida?',
+      'Sí. Aunque nuestro programa ofrece medicamentos y apoyo, una pérdida de peso exitosa a menudo requiere cambios de mentalidad, alimentación, ejercicio y estilo de vida en general.',
     ],
     [
       '¿Puedo tomar medicamentos para bajar de peso después de una cirugía bariátrica?',
@@ -595,6 +615,10 @@ const es = {
     [
       '¿Qué pasa cuando alcanzo mi peso meta?',
       'El Dr. Wadiwala trabajará con usted en un plan de mantenimiento. Puede significar continuar con una dosis más baja o reducirla poco a poco, junto con los hábitos que le ayudan a no recuperar el peso.',
+    ],
+    [
+      '¿Qué hace diferente a su programa?',
+      'Nuestro programa se enfoca exclusivamente en la pérdida de peso médica, con orientación experta y un enfoque personalizado. Ofrecemos una amplia gama de servicios, incluidos medicamentos y apoyo nutricional.',
     ],
   ],
 };
