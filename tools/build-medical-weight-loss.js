@@ -66,8 +66,9 @@ function medImage(i, up) {
     : '';
 }
 
-const medCard = (m, c, i, up) => `      <article class="card med-card reveal" style="--delay:${(i % 3) * 80}ms">
-${medImage(i, up)}        <h3>${m.name}</h3>
+/* The name set as a coloured wordmark, after the drug's own branding; the colours are in css/style.css. */
+const medCard = (m, c, i, up) => `      <article class="card med-card med-card--${medKey(content.en.meds[i].name)} reveal" style="--delay:${(i % 3) * 80}ms">
+${medImage(i, up)}        <h3 class="med-brand">${m.name.replace('®', '<sup>®</sup>')}</h3>
         <p class="med-generic">${m.generic}</p>
         <p>${m.about}</p>
         <p class="med-form"><strong>${c.howTaken}:</strong> ${m.form}</p>

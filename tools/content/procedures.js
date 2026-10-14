@@ -397,7 +397,8 @@ const pages = [
     stats: [
       ['Same day', 'most patients go home'],
     ],
-    edits: { videoSlot: true },
+    edits: { videoSlot: false },
+    explainer: {"src":"acid-reflux-explainer","seconds":160,"secondsEs":207,"credit":"Video: Houston Surgical Weight Loss","caption":"Acid reflux: a narrated guide to its symptoms and treatment options.","captionEs":"Reflujo ácido: una guía narrada sobre sus síntomas y opciones de tratamiento."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
       name: 'Laparoscopic Surgery – Minimally Invasive Surgery with Faster Recovery in Houston',

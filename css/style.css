@@ -2778,13 +2778,37 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   object-fit: contain;
   margin-bottom: 20px;
 }
-.med-card h3 { margin-bottom: 4px; }
+/* Each medication card carries its drug's colours: a bar along the top and
+   the name set as a gradient wordmark, echoing the brand without its logo. */
+.med-card { --med-1: var(--accent); --med-2: var(--accent-bright); border-top: 4px solid var(--med-1); }
+.med-card--wegovy { --med-1: #0098a6; --med-2: #c4157a; }
+.med-card--ozempic { --med-1: #d7261e; --med-2: #f28c00; }
+.med-card--mounjaro { --med-1: #5b1f8f; --med-2: #a12fb0; }
+.med-card--zepbound { --med-1: #1f5f8b; --med-2: #3fa7c4; }
+.med-card--contrave { --med-1: #0057a8; --med-2: #2b8fd6; }
+.med-card--phentermine { --med-1: #2e7d4f; --med-2: #7fb534; }
+
+.med-card h3.med-brand {
+  margin-bottom: 6px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  background: linear-gradient(90deg, var(--med-1), var(--med-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.med-card--ozempic h3.med-brand { text-transform: uppercase; letter-spacing: 0.02em; }
+.med-brand sup { font-size: 0.4em; font-weight: 400; vertical-align: super; }
 .med-generic {
   font-family: var(--display);
   font-size: 0.74rem !important;
   text-transform: uppercase;
   letter-spacing: var(--track-sm);
-  color: var(--accent);
+  color: var(--med-1);
   margin-bottom: 14px !important;
 }
 .med-card > p { margin-bottom: 12px; }
