@@ -2219,6 +2219,11 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 
 .proc-video-length { color: var(--muted); white-space: nowrap; }
 
+/* Phone-shot clips (patient testimonials) are portrait: keep them phone-sized
+   and centred rather than stretched across the column. */
+.proc-video-portrait { max-width: 380px; margin-inline: auto; }
+.proc-video-portrait video { aspect-ratio: 9 / 16; }
+
 .proc-video-credit {
   display: block;
   margin-top: 4px;
@@ -2237,6 +2242,9 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
    ====================================================================== */
 
 .results-intro { padding-top: clamp(36px, 5vw, 56px); }
+.results-video { padding-bottom: 0; }
+.results-outro { padding-bottom: clamp(36px, 5vw, 56px); }
+.results-outro .results-disclaimer { margin-top: 0; }
 .results-disclaimer {
   display: flex;
   gap: 12px;

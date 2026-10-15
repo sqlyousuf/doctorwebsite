@@ -271,7 +271,7 @@ const en = {
   faq: [
     [
       'Who is a good candidate for medical weight loss?',
-      'Generally, adults with a BMI of 30 or more, or 27 or more with a weight-related condition such as type 2 diabetes, high blood pressure or sleep apnea. Dr. Wadiwala will review your history to confirm the right fit.',
+      'Generally, adults with a BMI of 25 or more, especially those with a weight-related condition such as type 2 diabetes, high blood pressure or sleep apnea. Dr. Wadiwala will review your history to confirm the right fit.',
     ],
     [
       'Is there a minimum age requirement for this program?',
@@ -567,7 +567,7 @@ const es = {
   faq: [
     [
       '¿Quién es buen candidato para la pérdida de peso médica?',
-      'Por lo general, adultos con un IMC de 30 o más, o de 27 o más con una condición relacionada con el peso, como diabetes tipo 2, presión arterial alta o apnea del sueño. El Dr. Wadiwala revisará su historial para confirmar si es adecuado para usted.',
+      'Por lo general, adultos con un IMC de 25 o más, especialmente quienes tienen una condición relacionada con el peso, como diabetes tipo 2, presión arterial alta o apnea del sueño. El Dr. Wadiwala revisará su historial para confirmar si es adecuado para usted.',
     ],
     [
       '¿Hay una edad mínima para este programa?',

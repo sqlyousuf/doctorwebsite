@@ -53,7 +53,7 @@ const PAGES = [
   { path: '/procedures/gastric-balloon.html', priority: '0.8', es: '/es/procedures/gastric-balloon.html' },
   { path: '/procedures/revision-bariatric-surgery.html', priority: '0.8', es: '/es/procedures/revision-bariatric-surgery.html' },
   { path: '/procedures/general-surgery.html', priority: '0.7', es: '/es/procedures/general-surgery.html' },
-  { path: '/procedures/laparoscopic-surgery.html', priority: '0.7', es: '/es/procedures/laparoscopic-surgery.html' },
+  { path: '/procedures/acid-reflux.html', priority: '0.7', es: '/es/procedures/acid-reflux.html' },
   { path: '/procedures/medical-weight-loss.html', priority: '0.9', es: '/es/procedures/medical-weight-loss.html' },
   { path: '/patient-center/self-pay.html', priority: '0.9', es: '/es/patient-center/self-pay.html' },
   { path: '/patient-center/lantern.html', priority: '0.9', es: '/es/patient-center/lantern.html' },

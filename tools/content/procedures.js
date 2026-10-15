@@ -387,184 +387,56 @@ const pages = [
     `,
   },
   {
-    slug: 'laparoscopic-surgery',
-    nav: 'Laparoscopic Surgery',
-    title: 'Laparoscopic Surgery – Minimally Invasive Surgery with Faster Recovery in Houston',
-    seoTitle: 'Laparoscopic Surgery Houston, TX | Minimally Invasive',
-    tagline: 'Smaller incisions, less pain, a faster way back.',
-    description: 'Minimally invasive laparoscopic surgery in Houston, TX with Dr. Irfan Wadiwala — smaller incisions and faster recovery.',
+    slug: 'acid-reflux',
+    nav: 'Acid Reflux',
+    title: 'Acid Reflux (GERD) Treatment in Houston',
+    seoTitle: 'Acid Reflux & GERD Surgery Houston, TX | Nissen Fundoplication',
+    tagline: 'Lasting relief when heartburn won’t go away.',
+    description: 'Acid reflux and GERD treatment in Houston, TX with Dr. Irfan Wadiwala, including minimally invasive anti-reflux surgery such as Nissen fundoplication.',
     image: '../media/img/u-1576091160550-2173dba999ef.jpg',
     stats: [
-      ['Same day', 'most patients go home'],
+      ['Small incisions', 'minimally invasive anti-reflux surgery'],
     ],
     edits: { videoSlot: false },
     explainer: {"src":"acid-reflux-explainer","seconds":160,"secondsEs":207,"credit":"Video: Houston Surgical Weight Loss","caption":"Acid reflux: a narrated guide to its symptoms and treatment options.","captionEs":"Reflujo ácido: una guía narrada sobre sus síntomas y opciones de tratamiento."},
     procedureSchema: {
       '@type': 'MedicalProcedure',
-      name: 'Laparoscopic Surgery – Minimally Invasive Surgery with Faster Recovery in Houston',
+      name: 'Anti-Reflux Surgery (Nissen Fundoplication)',
       procedureType: 'https://schema.org/SurgicalProcedure',
     },
     body: `
-      <h2 class="display bar">Why Laparoscopic Surgery is the Preferred Choice</h2>
-      <p>Laparoscopic surgery, also known as <strong>minimally invasive surgery</strong>, uses <strong>small incisions</strong> and a <strong>laparoscope</strong> — a thin, flexible tube with a tiny camera on the end — to view and operate inside the body. This camera projects a magnified image of the abdominal organs onto a screen, allowing the surgeon to work with exceptional precision without the need for a large open incision.</p>
-      <p><strong>Advantages of laparoscopic surgery include:</strong></p>
+      <h2 class="display bar">What Is Acid Reflux?</h2>
+      <p>Acid reflux happens when stomach acid flows back up into the esophagus, the tube that carries food from your mouth to your stomach. Normally a ring of muscle at the bottom of the esophagus closes to keep acid where it belongs. When that valve is weak or relaxes at the wrong time, acid escapes upward. When reflux happens often, it is called <strong>gastroesophageal reflux disease (GERD)</strong>.</p>
+      <h2 class="display bar">Common Symptoms</h2>
       <ul class="prose-list">
-        <li>Smaller, less noticeable scars</li>
-        <li>Less post-operative pain and discomfort</li>
-        <li>Lower risk of complications such as infections</li>
-        <li>Shorter hospital stays</li>
-        <li>Faster return to daily activities and work</li>
-        <li>Reduced overall recovery time</li>
+        <li>Heartburn: a burning feeling in the chest, often after eating or when lying down</li>
+        <li>A sour or bitter taste from acid coming back into the throat or mouth</li>
+        <li>Trouble swallowing, or a feeling of food stuck in the throat</li>
+        <li>Chronic cough, hoarseness or sore throat</li>
+        <li>Chest discomfort or bloating</li>
       </ul>
-      <p>This technique was initially developed for gynecological procedures and gallbladder surgeries but has now expanded to <strong>a wide variety of abdominal and weight loss surgeries</strong>.</p>
-      <h2 class="display bar">Continuous Advancements in Laparoscopic Surgery</h2>
-      <p>Today’s laparoscopic procedures are safer and more effective than ever before. The <strong>risk-to-benefit ratio</strong> has improved dramatically, making laparoscopic surgery the standard of care for many conditions.</p>
-      <ul class="prose-list">
-        <li><strong>Repeat Procedures:</strong> Laparoscopic surgery can now be safely performed on patients who have had previous open or laparoscopic surgeries.</li>
-        <li><strong>Multiple Access Points:</strong> Typically, <strong>five small incisions</strong> are made, with one slightly larger incision to allow safe entry and prevent organ injury.</li>
-        <li><strong>Advanced Techniques:</strong> Surgeons can now perform complex operations, such as bariatric procedures and anti-reflux surgeries, with less trauma to surrounding tissue.</li>
-      </ul>
-      <p>These advancements ensure better outcomes, less recovery time, and an overall safer experience for patients.</p>
-      <h2 class="display bar">Common Laparoscopic Procedures We Perform in Houston</h2>
-      <p>At Houston Surgical Weight Loss, we offer a full range of laparoscopic services tailored to meet each patient’s unique needs. Whether you need a simple procedure or a complex surgery, our minimally invasive approach is designed for safety and efficiency.</p>
-      <h3>Laparoscopic Hernia Repair</h3>
-      <p>Hernias occur when tissue pushes through a weak area in the muscle wall, often in the <strong>groin, navel, or near prior surgical incisions</strong>.</p>
-      <p><strong>Common causes:</strong></p>
-      <ul class="prose-list">
-        <li>Obesity</li>
-        <li>Heavy lifting or physical strain</li>
-        <li>Chronic coughing or constipation</li>
-        <li>Previous abdominal surgeries</li>
-      </ul>
-      <p><strong>Benefits of laparoscopic hernia repair:</strong></p>
-      <ul class="prose-list">
-        <li>Smaller incisions and minimal scarring</li>
-        <li>Less suturing required</li>
-        <li>Faster recovery and return to normal activity</li>
-        <li>Reduced discomfort compared to traditional open hernia repair</li>
-      </ul>
-      <p>Most patients go home <strong>the same day</strong>, making this one of the most convenient and effective treatments available.</p>
-      <h3>Laparoscopic Gallbladder Removal Procedure</h3>
-      <p>The gallbladder stores bile that aids in digestion. When bile becomes imbalanced, <strong>gallstones</strong> can form, leading to:</p>
-      <ul class="prose-list">
-        <li>Sudden abdominal pain after meals</li>
-        <li>Nausea and vomiting</li>
-        <li>Indigestion and bloating</li>
-      </ul>
-      <p><strong>Laparoscopic gallbladder removal (cholecystectomy)</strong> is the gold standard for treating gallstone-related problems. It offers:</p>
-      <ul class="prose-list">
-        <li>Small, precise incisions for minimal scarring</li>
-        <li>Faster, more comfortable recovery</li>
-        <li>Lower infection risk</li>
-        <li>Outpatient surgery in most cases</li>
-      </ul>
-      <p>If you are researching <strong>laparoscopic gallbladder removal costs</strong>, our team can provide clear estimates and help you navigate insurance coverage and financing options.</p>
-      <h3>Laparoscopic Colon and Intestinal Surgery in Houston</h3>
-      <p>Laparoscopic techniques are ideal for treating conditions of the <strong>small intestine and colon</strong>, including:</p>
-      <ul class="prose-list">
-        <li>Colon or rectal cancer</li>
-        <li>Inflammatory bowel disease (IBD)</li>
-        <li>Diverticulitis</li>
-        <li>Precancerous polyps</li>
-        <li>Rectal prolapse</li>
-      </ul>
-      <p><strong>Benefits:</strong></p>
-      <ul class="prose-list">
-        <li>Precise removal of affected tissue</li>
-        <li>Preservation of healthy tissue</li>
-        <li>Faster recovery compared to open surgery</li>
-        <li>Smaller scars and lower complication rates</li>
-      </ul>
-      <p>This approach greatly improves patient comfort and long-term digestive health.</p>
-      <h3>Laparoscopic Stomach (Gastric) Surgery</h3>
-      <p>The stomach is essential for digestion and nutrient absorption. Certain conditions may require surgical intervention, such as:</p>
-      <ul class="prose-list">
-        <li>Severe <strong>GERD (acid reflux)</strong></li>
-        <li>Chronic stomach ulcers</li>
-        <li>Stomach cancer</li>
-      </ul>
-      <p><strong>Common procedures:</strong></p>
-      <ul class="prose-list">
-        <li><strong>Nissen Fundoplication:</strong> A minimally invasive treatment for GERD, allowing patients to <strong>resume normal eating faster</strong> and heal more comfortably.</li>
-        <li><strong>Partial or Total Gastrectomy:</strong> Removal of part or all of the stomach when needed for complex conditions like cancer.</li>
-      </ul>
-      <h3>Laparoscopic Weight Loss Surgery</h3>
-      <p>Laparoscopic surgery has completely transformed <strong>bariatric procedures</strong>, such as:</p>
-      <ul class="prose-list">
-        <li>Gastric sleeve surgery</li>
-        <li>Gastric bypass</li>
-      </ul>
-      <p>These weight loss surgeries are now safer, less invasive, and more effective than ever, helping patients achieve lasting results while minimizing recovery time.</p>
-      <h3>Other Laparoscopic Procedures</h3>
-      <p>Our advanced skills also extend to:</p>
-      <ul class="prose-list">
-        <li><strong>Spleen removal (splenectomy)</strong> for trauma or certain medical conditions</li>
-        <li><strong>Appendectomy (appendix removal)</strong></li>
-        <li><strong>Liver tumor removal or tissue resection</strong></li>
-        <li><strong>Pancreatic surgery</strong> for tumors or chronic pancreatitis</li>
-      </ul>
-      <p>Each procedure is carefully planned to deliver optimal outcomes with the least disruption to the body. Patients searching for <strong>laparoscopic weight loss surgery in Houston</strong> often choose minimally invasive options due to lower risk, faster recovery, and proven long-term success in managing obesity and related health conditions.</p>
-      <h2 class="display bar">Benefits of Laparoscopic Surgery vs. Open Surgery</h2>
-      <div class="table-wrap">
-        <table class="prose-table">
-          <thead><tr><th>Feature</th><th>Laparoscopic Surgery</th><th>Open Surgery</th></tr></thead>
-          <tbody>
-            <tr><td>Incision Size</td><td>Small incisions (½ inch or less)</td><td>Large incision</td></tr>
-            <tr><td>Scarring</td><td>Minimal, less visible</td><td>Significant, more noticeable</td></tr>
-            <tr><td>Recovery Time</td><td>1–3 weeks for most patients</td><td>4–6 weeks or longer</td></tr>
-            <tr><td>Hospital Stay</td><td>Outpatient or 1 night</td><td>Several nights required</td></tr>
-            <tr><td>Infection Risk</td><td>Lower risk</td><td>Higher risk</td></tr>
-            <tr><td>Return to Activities</td><td>Faster</td><td>Slower</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h2 class="display bar">Laparoscopic Surgery Recovery Time</h2>
-      <p>Recovery time depends on the procedure and patient health:</p>
-      <ul class="prose-list">
-        <li>Simple procedures (hernia, appendix): 1–2 weeks</li>
-        <li>Gallbladder removal: 1 week or less</li>
-        <li>Complex surgeries (colon, stomach): 3–4 weeks or more</li>
-      </ul>
-      <p>Most patients experience:</p>
-      <ul class="prose-list">
-        <li>Less pain after surgery</li>
-        <li>Faster mobility</li>
-        <li>Shorter downtime before returning to work and daily life</li>
-      </ul>
-      <h2 class="display bar">Minimally Invasive Surgery in Houston – Cost and Insurance</h2>
-      <p>The <strong>cost of laparoscopic surgery</strong> varies based on the procedure, complexity, and insurance coverage. At Houston Surgical Weight Loss, we provide:</p>
-      <ul class="prose-list">
-        <li>Transparent cost estimates</li>
-        <li>Insurance verification assistance</li>
-        <li>Flexible financing plans for self-pay patients</li>
-      </ul>
-      <p>Many insurance plans cover laparoscopic surgeries when they are medically necessary. Our staff will guide you through every step, from cost planning to recovery.</p>
+      <p>Over time, untreated GERD can irritate and damage the lining of the esophagus, so ongoing symptoms are worth having checked.</p>
+      <h2 class="display bar">Treatment Options</h2>
+      <p>Many people start with <strong>lifestyle changes</strong>, such as smaller meals, avoiding trigger foods, not eating late at night and losing excess weight, along with <strong>medication</strong> to reduce stomach acid. When symptoms continue despite these steps, or when you would rather not depend on medication long term, <strong>anti-reflux surgery</strong> may be an option.</p>
+      <h2 class="display bar">Anti-Reflux Surgery: Nissen Fundoplication</h2>
+      <p><strong>Nissen fundoplication</strong> is a minimally invasive treatment for severe GERD. The upper part of the stomach is wrapped around the lower esophagus to strengthen the valve, so acid stays in the stomach. Dr. Wadiwala performs it laparoscopically, through a few small incisions, allowing patients to <strong>resume normal eating faster</strong> and heal more comfortably.</p>
+      <p>If you also have a hiatal hernia, where part of the stomach pushes up through the diaphragm, it is often repaired during the same operation.</p>
+      <h2 class="display bar">Acid Reflux and Weight</h2>
+      <p>Extra weight puts pressure on the stomach and makes reflux more likely. For patients who are also considering weight loss surgery, Dr. Wadiwala will talk through which procedure is the best fit. <a href="gastric-bypass.html">Gastric bypass</a> is often recommended for reflux-related cases.</p>
 
       <h2 class="display bar">Frequently Asked Questions</h2>
       ${faq([
         [
-          'What is laparoscopic surgery and why is it preferred?',
-          '<p>It uses small incisions and a camera for precision, resulting in <strong>less pain, smaller scars, and faster recovery</strong> compared to open surgery.</p>',
+          'When should I see a surgeon about acid reflux?',
+          '<p>If you have heartburn or reflux most weeks, if medication is no longer controlling it, or if you have trouble swallowing, schedule a <strong>consultation</strong> to explore your options.</p>',
         ],
         [
-          'Can laparoscopic surgery be repeated if I had previous open surgery?',
-          '<p>Yes. Modern techniques allow repeat laparoscopic surgeries, even after previous open operations, with safety measures to protect organs.</p>',
+          'Is anti-reflux surgery covered by insurance?',
+          '<p>Many insurance plans cover anti-reflux surgery when it is medically necessary. Our team helps verify coverage before your procedure.</p>',
         ],
         [
-          'How long is the laparoscopic surgery recovery time?',
-          '<ul class="prose-list">  <li>Hernia or appendix surgery: 1–2 weeks</li>  <li>Gallbladder removal: About 1 week</li>  <li>Colon or stomach surgery: 3–4 weeks or more</li></ul>',
-        ],
-        [
-          'What is the average cost of laparoscopic gallbladder removal?',
-          '<p>Costs vary depending on insurance and complexity. We provide <strong>clear cost estimates</strong> and financing options for self-pay patients.</p>',
-        ],
-        [
-          'Is laparoscopic surgery covered by insurance?',
-          '<p>Yes, most insurance plans cover medically necessary laparoscopic surgeries. Our team helps verify coverage before your procedure.</p>',
-        ],
-        [
-          'How do I know if I need laparoscopic general surgery near me?',
-          '<p>If you are experiencing ongoing abdominal pain, digestive issues, or hernia symptoms, schedule a <strong>consultation</strong> to explore your options.</p>',
+          'Will I still need reflux medication after surgery?',
+          '<p>Many patients are able to reduce or stop their reflux medication after surgery. Dr. Wadiwala will talk through what to expect in your case.</p>',
         ],
       ])}
     `,

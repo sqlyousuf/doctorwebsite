@@ -191,6 +191,9 @@ const copy = {
       'Every photo on this page belongs to a real patient of Dr. Wadiwala. They are shared exactly as the patients sent them: no filters, no retouching. Tap any photo to see it full size.',
     disclaimer:
       '<strong>Individual results vary.</strong> How much weight someone loses, and how quickly, depends on the procedure, their health and their commitment to diet, exercise and follow-up care. These results are not a guarantee of yours.',
+    jumpVideo: 'Video testimonial',
+    videoHeading: 'Hear It From Our Patients',
+    videoCaption: 'A patient shares her experience with Dr. Wadiwala and the team.',
     jumpStories: 'Their stories',
     jumpGallery: 'More transformations',
     storiesHeading: 'In Their Own Words',
@@ -227,6 +230,9 @@ const copy = {
       'Cada foto de esta página es de un paciente real del Dr. Wadiwala. Se muestran tal como los pacientes las enviaron: sin filtros ni retoques. Toque cualquier foto para verla en tamaño completo.',
     disclaimer:
       '<strong>Los resultados varían de una persona a otra.</strong> Cuánto peso baja alguien, y qué tan rápido, depende del procedimiento, de su salud y de su compromiso con la dieta, el ejercicio y el seguimiento. Estos resultados no garantizan los suyos.',
+    jumpVideo: 'Testimonio en video',
+    videoHeading: 'Escúchelo de Nuestros Pacientes',
+    videoCaption: 'Una paciente comparte su experiencia con el Dr. Wadiwala y su equipo.',
     jumpStories: 'Sus historias',
     jumpGallery: 'Más transformaciones',
     storiesHeading: 'En Sus Propias Palabras',

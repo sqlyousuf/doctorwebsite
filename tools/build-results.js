@@ -26,6 +26,12 @@ const { ORIGIN } = require('./site.js');
 const { UI } = require('./i18n.js');
 const { root, sprite, footerFor, apptModalFor, buildNav, header, tail, escapeAttr, plain } = require('./chrome.js');
 
+/**
+ * The practice's patient testimonial, shot portrait on a phone. Narrated, so
+ * like the procedure explainers it waits to be played (`preload="none"`).
+ */
+const TESTIMONIAL = { src: 'patient-testimonial', length: '0:47' };
+
 const PHONE = '281-653-6544';
 const PHONE_HREF = 'tel:+12816536544';
 const HERO = 'u-1518611012118-696072aa579a.jpg';
@@ -224,12 +230,31 @@ ${header({ nav, lang, up, home })}
 <section class="results-intro">
   <div class="container narrow">
     <p class="intro">${c.intro}</p>
-    <p class="results-disclaimer"><svg aria-hidden="true"><use href="#ic-info"/></svg> <span>${c.disclaimer}</span></p>
     <nav class="results-jump" aria-label="${c.kicker}">
+      <a href="#video">${c.jumpVideo} <span>1</span></a>
       <a href="#stories">${c.jumpStories} <span>${stories.length}</span></a>
       <a href="#gallery">${c.jumpGallery} <span>${gallery.length}</span></a>
       <a href="#reviews">${c.jumpReviews} <span>${reviews.length}</span></a>
     </nav>
+  </div>
+</section>
+
+<!-- ======================= VIDEO TESTIMONIAL ======================= -->
+<section class="pad-lg results-video" id="video">
+  <div class="container">
+    <h2 class="display bar">${c.videoHeading}</h2>
+    <figure class="proc-video proc-video-portrait">
+      <video
+        src="${up}media/video/${TESTIMONIAL.src}.mp4"
+        poster="${up}media/video/${TESTIMONIAL.src}.jpg"
+        width="720" height="1280"
+        playsinline preload="none" controls
+        aria-label="${escapeAttr(c.videoCaption)}"></video>
+      <figcaption>
+        <span class="proc-video-text">${c.videoCaption} <span class="proc-video-length">(${TESTIMONIAL.length})</span></span>
+        <span class="proc-video-credit">Video: Houston Surgical Weight Loss</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -266,6 +291,13 @@ ${reviews.map((r) => reviewCard(r, c)).join('\n')}
         ? `\n    <div class="center-cta"><a href="${GOOGLE_REVIEWS_URL}" class="btn btn-outline" target="_blank" rel="noopener">${c.readAll}</a></div>`
         : ''
     }
+  </div>
+</section>
+
+<!-- ======================= DISCLAIMER ======================= -->
+<section class="results-outro">
+  <div class="container narrow">
+    <p class="results-disclaimer"><svg aria-hidden="true"><use href="#ic-info"/></svg> <span>${c.disclaimer}</span></p>
   </div>
 </section>
 

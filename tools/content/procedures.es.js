@@ -605,190 +605,60 @@ const translations = {
     ],
   },
 
-  'laparoscopic-surgery': {
-    title: 'Cirugía Laparoscópica — Mínimamente Invasiva, con Recuperación Más Rápida en Houston',
-    seoTitle: 'Cirugía Laparoscópica en Houston, TX | Mínimamente Invasiva',
-    tagline: 'Incisiones más pequeñas, menos dolor y un regreso más rápido.',
+  'acid-reflux': {
+    title: 'Tratamiento del Reflujo Ácido (ERGE) en Houston',
+    seoTitle: 'Cirugía de Reflujo Ácido y ERGE en Houston, TX | Funduplicatura de Nissen',
+    tagline: 'Alivio duradero cuando la acidez no se va.',
     description:
-      'Cirugía laparoscópica mínimamente invasiva en Houston, TX con el Dr. Irfan Wadiwala: incisiones más pequeñas y recuperación más rápida.',
-    stats: [['El mismo día', 'la mayoría de los pacientes regresa a casa']],
+      'Tratamiento del reflujo ácido y la ERGE en Houston, TX con el Dr. Irfan Wadiwala, incluida la cirugía antirreflujo mínimamente invasiva como la funduplicatura de Nissen.',
+    stats: [['Incisiones pequeñas', 'cirugía antirreflujo mínimamente invasiva']],
     body: `
-      <h2 class="display bar">Por Qué la Cirugía Laparoscópica es la Opción Preferida</h2>
-      <p>La cirugía laparoscópica, también conocida como cirugía mínimamente invasiva, utiliza incisiones pequeñas y un
-      laparoscopio — un tubo delgado y flexible con una cámara diminuta en la punta — para ver y operar dentro del
-      cuerpo. Esa cámara proyecta una imagen ampliada de los órganos abdominales en una pantalla, lo que permite al
-      cirujano trabajar con una precisión excepcional sin necesidad de una gran incisión abierta.</p>
-      <p>Entre las ventajas de la cirugía laparoscópica están:</p>
+      <h2 class="display bar">¿Qué Es el Reflujo Ácido?</h2>
+      <p>El reflujo ácido ocurre cuando el ácido del estómago regresa hacia el esófago, el tubo que lleva los alimentos
+      de la boca al estómago. Normalmente, un anillo muscular en la parte baja del esófago se cierra para mantener el
+      ácido en su lugar. Cuando esa válvula está débil o se relaja en el momento equivocado, el ácido sube. Cuando el
+      reflujo es frecuente, se llama <strong>enfermedad por reflujo gastroesofágico (ERGE)</strong>.</p>
+      <h2 class="display bar">Síntomas Comunes</h2>
       ${ul([
-        'Cicatrices más pequeñas y menos visibles',
-        'Menos dolor y molestias después de la operación',
-        'Menor riesgo de complicaciones como infecciones',
-        'Estancias hospitalarias más cortas',
-        'Regreso más rápido a las actividades diarias y al trabajo',
-        'Menor tiempo total de recuperación',
+        'Acidez: una sensación de ardor en el pecho, a menudo después de comer o al acostarse',
+        'Sabor agrio o amargo por el ácido que regresa a la garganta o la boca',
+        'Dificultad para tragar, o sensación de comida atorada en la garganta',
+        'Tos crónica, ronquera o dolor de garganta',
+        'Molestia en el pecho o inflamación',
       ])}
-      <p>Esta técnica se desarrolló inicialmente para procedimientos ginecológicos y cirugías de vesícula, pero hoy se
-      ha extendido a una amplia variedad de cirugías abdominales y de pérdida de peso.</p>
-
-      <h2 class="display bar">Avances Continuos en la Cirugía Laparoscópica</h2>
-      <p>Los procedimientos laparoscópicos de hoy son más seguros y eficaces que nunca. La relación entre riesgo y
-      beneficio ha mejorado enormemente, lo que convierte a la cirugía laparoscópica en el estándar de atención para
-      muchas condiciones.</p>
-      ${ul([
-        '<strong>Procedimientos repetidos:</strong> la cirugía laparoscópica puede realizarse con seguridad en pacientes con cirugías abiertas o laparoscópicas previas.',
-        '<strong>Múltiples puntos de acceso:</strong> normalmente se realizan cinco incisiones pequeñas, con una algo más grande para permitir una entrada segura y evitar lesionar órganos.',
-        '<strong>Técnicas avanzadas:</strong> hoy los cirujanos pueden realizar operaciones complejas, como procedimientos bariátricos y cirugías antirreflujo, con menos daño al tejido circundante.',
-      ])}
-      <p>Estos avances se traducen en mejores resultados, menos tiempo de recuperación y una experiencia más segura para
-      el paciente.</p>
-
-      <h2 class="display bar">Procedimientos Laparoscópicos que Realizamos</h2>
-      <p>En Houston Surgical Weight Loss ofrecemos una gama completa de servicios laparoscópicos adaptados a las
-      necesidades de cada paciente. Ya sea que necesite un procedimiento sencillo o una cirugía compleja, nuestro
-      abordaje mínimamente invasivo está diseñado para la seguridad y la eficiencia.</p>
-
-      <h3>Reparación Laparoscópica de Hernias</h3>
-      <p>Las hernias ocurren cuando un tejido empuja a través de una zona débil de la pared muscular, con frecuencia en
-      la ingle, el ombligo o cerca de incisiones quirúrgicas previas.</p>
-      <p>Causas comunes:</p>
-      ${ul([
-        'Obesidad',
-        'Levantar objetos pesados o esfuerzo físico',
-        'Tos crónica o estreñimiento',
-        'Cirugías abdominales previas',
-      ])}
-      <p>Ventajas de la reparación laparoscópica de hernias:</p>
-      ${ul([
-        'Incisiones más pequeñas y cicatrización mínima',
-        'Menos suturas necesarias',
-        'Recuperación más rápida y regreso pronto a la actividad normal',
-        'Menos molestias que con la reparación abierta tradicional',
-      ])}
-      <p>La mayoría de los pacientes regresa a casa el mismo día, lo que la convierte en uno de los tratamientos más
-      convenientes y eficaces disponibles.</p>
-
-      <h3>Extirpación Laparoscópica de la Vesícula</h3>
-      <p>La vesícula almacena la bilis que ayuda a la digestión. Cuando la bilis se desequilibra, pueden formarse
-      cálculos que provocan:</p>
-      ${ul(['Dolor abdominal repentino después de comer', 'Náuseas y vómito', 'Indigestión e inflamación'])}
-      <p>La extirpación laparoscópica de la vesícula (colecistectomía) es el estándar de oro para tratar los problemas
-      por cálculos biliares. Ofrece:</p>
-      ${ul([
-        'Incisiones pequeñas y precisas, con cicatrización mínima',
-        'Recuperación más rápida y cómoda',
-        'Menor riesgo de infección',
-        'Cirugía ambulatoria en la mayoría de los casos',
-      ])}
-      <p>Si está investigando el costo de la extirpación laparoscópica de vesícula, nuestro equipo puede darle
-      estimaciones claras y ayudarle con la cobertura del seguro y las opciones de financiamiento.</p>
-
-      <h3>Cirugía Laparoscópica de Colon e Intestino</h3>
-      <p>Las técnicas laparoscópicas son ideales para tratar condiciones del intestino delgado y del colon, entre
-      ellas:</p>
-      ${ul([
-        'Cáncer de colon o de recto',
-        'Enfermedad inflamatoria intestinal',
-        'Diverticulitis',
-        'Pólipos precancerosos',
-        'Prolapso rectal',
-      ])}
-      <p>Ventajas:</p>
-      ${ul([
-        'Extirpación precisa del tejido afectado',
-        'Conservación del tejido sano',
-        'Recuperación más rápida que con cirugía abierta',
-        'Cicatrices más pequeñas y menores tasas de complicación',
-      ])}
-      <p>Este abordaje mejora considerablemente la comodidad del paciente y su salud digestiva a largo plazo.</p>
-
-      <h3>Cirugía Laparoscópica de Estómago</h3>
-      <p>El estómago es esencial para la digestión y la absorción de nutrientes. Algunas condiciones pueden requerir
-      intervención quirúrgica, como:</p>
-      ${ul(['Reflujo grave (ERGE)', 'Úlceras gástricas crónicas', 'Cáncer de estómago'])}
-      <p>Procedimientos comunes:</p>
-      ${ul([
-        '<strong>Funduplicatura de Nissen:</strong> un tratamiento mínimamente invasivo para la ERGE, que permite retomar la alimentación normal más rápido y sanar con mayor comodidad.',
-        '<strong>Gastrectomía parcial o total:</strong> extirpación de parte o de todo el estómago cuando es necesario en condiciones complejas como el cáncer.',
-      ])}
-
-      <h3>Cirugía Laparoscópica para Bajar de Peso</h3>
-      <p>La cirugía laparoscópica ha transformado por completo los procedimientos bariátricos, como:</p>
-      ${ul(['Cirugía de manga gástrica', 'Bypass gástrico'])}
-      <p>Estas cirugías son hoy más seguras, menos invasivas y más eficaces que nunca, y ayudan a los pacientes a
-      obtener resultados duraderos con un tiempo de recuperación menor.</p>
-
-      <h3>Otros Procedimientos Laparoscópicos</h3>
-      <p>Nuestra experiencia también abarca:</p>
-      ${ul([
-        'Extirpación del bazo (esplenectomía) por traumatismo o ciertas condiciones médicas',
-        'Apendicectomía (extirpación del apéndice)',
-        'Extirpación de tumores hepáticos o resección de tejido',
-        'Cirugía de páncreas por tumores o pancreatitis crónica',
-      ])}
-      <p>Cada procedimiento se planifica con cuidado para lograr los mejores resultados con la menor alteración posible
-      del cuerpo. Los pacientes que buscan cirugía laparoscópica para bajar de peso en Houston suelen elegir opciones
-      mínimamente invasivas por su menor riesgo, su recuperación más rápida y su éxito comprobado a largo plazo.</p>
-
-      <h2 class="display bar">Laparoscópica frente a Cirugía Abierta</h2>
-      <div class="table-wrap">
-        <table class="prose-table">
-          <thead><tr><th>Característica</th><th>Cirugía Laparoscópica</th><th>Cirugía Abierta</th></tr></thead>
-          <tbody>
-            <tr><td>Tamaño de la incisión</td><td>Incisiones pequeñas (½ pulgada o menos)</td><td>Incisión grande</td></tr>
-            <tr><td>Cicatrización</td><td>Mínima, menos visible</td><td>Considerable, más notoria</td></tr>
-            <tr><td>Tiempo de recuperación</td><td>1–3 semanas para la mayoría</td><td>4–6 semanas o más</td></tr>
-            <tr><td>Estancia hospitalaria</td><td>Ambulatoria o 1 noche</td><td>Varias noches</td></tr>
-            <tr><td>Riesgo de infección</td><td>Menor</td><td>Mayor</td></tr>
-            <tr><td>Retorno a las actividades</td><td>Más rápido</td><td>Más lento</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 class="display bar">Tiempo de Recuperación</h2>
-      <p>El tiempo de recuperación depende del procedimiento y de la salud del paciente:</p>
-      ${ul([
-        'Procedimientos sencillos (hernia, apéndice): 1–2 semanas',
-        'Extirpación de vesícula: 1 semana o menos',
-        'Cirugías complejas (colon, estómago): 3–4 semanas o más',
-      ])}
-      <p>La mayoría de los pacientes experimenta:</p>
-      ${ul(['Menos dolor después de la cirugía', 'Mayor movilidad más pronto', 'Menos tiempo fuera del trabajo y la vida diaria'])}
-
-      <h2 class="display bar">Costo y Seguro</h2>
-      <p>El costo de la cirugía laparoscópica varía según el procedimiento, su complejidad y la cobertura del seguro.
-      En Houston Surgical Weight Loss ofrecemos:</p>
-      ${ul(['Estimaciones de costo transparentes', 'Ayuda con la verificación del seguro', 'Planes de financiamiento flexibles para pacientes de pago particular'])}
-      <p>Muchos planes de seguro cubren las cirugías laparoscópicas cuando son médicamente necesarias. Nuestro personal
-      le acompañará en cada paso, desde la planificación del costo hasta la recuperación.</p>
+      <p>Con el tiempo, la ERGE sin tratar puede irritar y dañar el revestimiento del esófago, por lo que vale la pena
+      revisar los síntomas que no desaparecen.</p>
+      <h2 class="display bar">Opciones de Tratamiento</h2>
+      <p>Muchas personas comienzan con <strong>cambios en el estilo de vida</strong>, como comidas más pequeñas, evitar
+      los alimentos que lo provocan, no comer tarde por la noche y bajar el exceso de peso, junto con
+      <strong>medicamentos</strong> para reducir el ácido del estómago. Cuando los síntomas continúan a pesar de esto, o
+      cuando prefiere no depender de medicamentos a largo plazo, la <strong>cirugía antirreflujo</strong> puede ser una
+      opción.</p>
+      <h2 class="display bar">Cirugía Antirreflujo: Funduplicatura de Nissen</h2>
+      <p>La <strong>funduplicatura de Nissen</strong> es un tratamiento mínimamente invasivo para la ERGE severa. La parte
+      superior del estómago se envuelve alrededor de la parte baja del esófago para reforzar la válvula, de modo que el
+      ácido se quede en el estómago. El Dr. Wadiwala la realiza por laparoscopia, a través de unas pocas incisiones
+      pequeñas, lo que permite a los pacientes <strong>volver a comer con normalidad más pronto</strong> y sanar con más
+      comodidad.</p>
+      <p>Si además tiene una hernia hiatal, en la que parte del estómago sube a través del diafragma, con frecuencia se
+      repara en la misma operación.</p>
+      <h2 class="display bar">El Reflujo Ácido y el Peso</h2>
+      <p>El exceso de peso presiona el estómago y hace más probable el reflujo. Para los pacientes que también están
+      considerando una cirugía para bajar de peso, el Dr. Wadiwala le explicará qué procedimiento es el más adecuado. El
+      <a href="gastric-bypass.html">bypass gástrico</a> suele recomendarse en casos relacionados con el reflujo.</p>
     `,
     faqs: [
       [
-        '¿Qué es la cirugía laparoscópica y por qué se prefiere?',
-        '<p>Utiliza incisiones pequeñas y una cámara para lograr precisión, lo que se traduce en menos dolor, cicatrices más pequeñas y una recuperación más rápida que la cirugía abierta.</p>',
+        '¿Cuándo debo consultar a un cirujano por el reflujo ácido?',
+        '<p>Si tiene acidez o reflujo la mayoría de las semanas, si los medicamentos ya no lo controlan, o si tiene dificultad para tragar, programe una <strong>consulta</strong> para conocer sus opciones.</p>',
       ],
       [
-        '¿Se puede repetir si ya tuve una cirugía abierta?',
-        '<p>Sí. Las técnicas modernas permiten repetir cirugías laparoscópicas, incluso después de operaciones abiertas previas, con medidas de seguridad para proteger los órganos.</p>',
+        '¿El seguro cubre la cirugía antirreflujo?',
+        '<p>Muchos planes de seguro cubren la cirugía antirreflujo cuando es médicamente necesaria. Nuestro equipo le ayuda a verificar la cobertura antes del procedimiento.</p>',
       ],
       [
-        '¿Cuánto dura la recuperación?',
-        `${ul([
-          'Cirugía de hernia o apéndice: 1–2 semanas',
-          'Extirpación de vesícula: alrededor de 1 semana',
-          'Cirugía de colon o estómago: 3–4 semanas o más',
-        ])}`,
-      ],
-      [
-        '¿Cuál es el costo promedio de una extirpación laparoscópica de vesícula?',
-        '<p>Los costos varían según el seguro y la complejidad. Ofrecemos estimaciones claras y opciones de financiamiento para pacientes de pago particular.</p>',
-      ],
-      [
-        '¿El seguro cubre la cirugía laparoscópica?',
-        '<p>Sí, la mayoría de los planes cubre las cirugías laparoscópicas médicamente necesarias. Nuestro equipo le ayuda a verificar la cobertura antes del procedimiento.</p>',
-      ],
-      [
-        '¿Cómo sé si necesito cirugía general laparoscópica?',
-        '<p>Si tiene dolor abdominal persistente, problemas digestivos o síntomas de hernia, programe una consulta para conocer sus opciones.</p>',
+        '¿Seguiré necesitando medicamentos para el reflujo después de la cirugía?',
+        '<p>Muchos pacientes pueden reducir o dejar sus medicamentos para el reflujo después de la cirugía. El Dr. Wadiwala le explicará qué esperar en su caso.</p>',
       ],
     ],
   },
