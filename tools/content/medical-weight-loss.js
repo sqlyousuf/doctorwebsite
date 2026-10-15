@@ -8,12 +8,12 @@
  * and dietitian-office-hour cards.
  *
  * The copy is ours, not theirs, and the medication summaries are drawn from
- * each drug's FDA labeling. That is clinical content the practice has not yet
- * signed off, so the page ships as a draft (noindex, review banner) until
- * Dr. Wadiwala has read it — flip `draft` to false once he has.
+ * each drug's FDA labeling. Dr. Wadiwala reviewed and signed off on that
+ * clinical content in October 2026, so the page is published. Set `draft`
+ * back to true (noindex, review banner) if it needs another review.
  */
 
-const draft = true;
+const draft = false;
 
 const reviewNotes = [
   'Dr. Wadiwala to check every medication summary — dosing, side effects, who should not take it, warnings.',

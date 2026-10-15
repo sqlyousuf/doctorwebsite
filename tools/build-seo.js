@@ -39,12 +39,15 @@ for (const { path: p, es } of PAGES) {
   if (es && !fs.existsSync(fileFor(es))) problems.push(`listed in site.js but not on disk: ${es}`);
 }
 
-// And the reverse: every built patient-center page must be in the list.
+// And the reverse: every built patient-center page must be in the list. A
+// meta-refresh stub left at an old URL is a redirect, not a page, so it stays
+// out of the sitemap.
 const listed = new Set(PAGES.map((x) => x.path));
+const isRedirect = (file) => /<meta http-equiv="refresh"/i.test(fs.readFileSync(file, 'utf8'));
 for (const dir of ['patient-center', 'procedures']) {
   for (const f of fs.readdirSync(path.join(root, dir)).filter((f) => f.endsWith('.html'))) {
     const rel = `/${dir}/${f}`;
-    if (!listed.has(rel) && !isDraft(rel)) problems.push(`on disk but missing from site.js PAGES: ${rel}`);
+    if (!listed.has(rel) && !isDraft(rel) && !isRedirect(path.join(root, dir, f))) problems.push(`on disk but missing from site.js PAGES: ${rel}`);
   }
 }
 
