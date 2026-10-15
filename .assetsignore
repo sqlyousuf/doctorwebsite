@@ -1,0 +1,11 @@
+# Files in the repo that are not part of the public website.
+# Cloudflare reads this when uploading the site (like .gitignore for deploys).
+.git
+.gitignore
+.assetsignore
+.nojekyll
+.imported.json
+wrangler.jsonc
+node_modules
+tools
+*.build.log

@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "doctorwebsite",
+  "compatibility_date": "2026-10-12",
+  "observability": {
+    "enabled": true
+  },
+  // Plain static site: publish the repo root, minus what .assetsignore lists.
+  "assets": {
+    "directory": "."
+  }
+}
