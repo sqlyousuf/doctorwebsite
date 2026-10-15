@@ -1355,9 +1355,12 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
 
   /* The open menu is taller than the screen, so the floating candidate pill
      ends up sitting on top of the links it overlaps. Stand it down until the
-     menu closes. */
-  body:has(.nav-wrap.open) .candidate-pill {
+     menu closes. The language pill would cover the first menu item, so it
+     steps aside too. */
+  body:has(.nav-wrap.open) .candidate-pill,
+  body:has(.nav-wrap.open) .lang-switch {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
   }
 }
