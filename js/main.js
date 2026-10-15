@@ -176,6 +176,92 @@ if (apptOverlay) {
     }
   };
 
+  // The dialog appears on English and Spanish pages; one script serves both.
+  const ES = document.documentElement.lang === 'es';
+  const PHONE = '<a href="tel:+12816536544">281-653-6544</a>';
+  const EMAIL = '<a href="mailto:info@houstonsurgicalweightloss.com">info@houstonsurgicalweightloss.com</a>';
+  const T = ES
+    ? {
+        fields: { firstName: 'nombre', lastName: 'apellido', email: 'correo electrónico', phone: 'número de teléfono' },
+        missing: 'Por favor, agregue su ',
+        badEmail: 'Por favor, revise su correo electrónico.',
+        sending: 'Enviando…',
+        notHuman: 'No pudimos verificar su solicitud. Espere un momento e inténtelo de nuevo, o llámenos al ' + PHONE + '.',
+        failed: 'No pudimos enviar su solicitud. Por favor, llámenos al ' + PHONE + ' o escríbanos a ' + EMAIL + '.',
+        doneTitle: 'Gracias',
+        doneBody: 'Recibimos su solicitud. Nuestro equipo le llamará pronto para programar su cita. ' +
+          'Si lo prefiere, llámenos al ' + PHONE + '.',
+      }
+    : {
+        fields: { firstName: 'first name', lastName: 'last name', email: 'email', phone: 'phone number' },
+        missing: 'Please add your ',
+        badEmail: 'Please check your email address.',
+        sending: 'Sending…',
+        notHuman: 'We could not verify your request. Please wait a moment and try again, or call us on ' + PHONE + '.',
+        failed: 'We could not send your request. Please call us on ' + PHONE + ' or email ' + EMAIL + '.',
+        doneTitle: 'Thank you',
+        doneBody: 'We have received your request and our team will call you shortly to book your appointment. ' +
+          'You can also call us on ' + PHONE + '.',
+      };
+
+  /* Cloudflare Turnstile keeps bots off the form. Its script loads only when
+     the dialog first opens, so ordinary page views never fetch it, and it
+     stays invisible unless Cloudflare wants the visitor to tick a box. The
+     site key is public; the secret half lives on the Worker (worker/index.js). */
+  const TURNSTILE_SITE_KEY = '';
+  let turnstileWidget = null;
+  let turnstileToken = '';
+  let tokenWaiters = [];
+
+  const loadTurnstile = () => {
+    if (!TURNSTILE_SITE_KEY || turnstileWidget !== null) return;
+    turnstileWidget = 'loading';
+    window.onTurnstileLoad = () => {
+      const box = document.createElement('div');
+      box.className = 'appt-turnstile';
+      form.querySelector('.appt-submit').before(box);
+      turnstileWidget = window.turnstile.render(box, {
+        sitekey: TURNSTILE_SITE_KEY,
+        language: ES ? 'es' : 'en',
+        appearance: 'interaction-only',
+        callback: (token) => {
+          turnstileToken = token;
+          tokenWaiters.splice(0).forEach((resolve) => resolve(token));
+        },
+        'expired-callback': () => (turnstileToken = ''),
+        'error-callback': () => (turnstileToken = ''),
+      });
+    };
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+
+  // Someone quick can submit before the check finishes; give it a few seconds.
+  const waitForToken = (ms) =>
+    turnstileToken || !TURNSTILE_SITE_KEY
+      ? Promise.resolve(turnstileToken)
+      : new Promise((resolve) => {
+          const done = (token) => {
+            clearTimeout(timeout);
+            resolve(token);
+          };
+          const timeout = setTimeout(() => {
+            tokenWaiters = tokenWaiters.filter((w) => w !== done);
+            resolve('');
+          }, ms);
+          tokenWaiters.push(done);
+        });
+
+  // A token is single-use, so every attempt needs a fresh one.
+  const resetTurnstile = () => {
+    turnstileToken = '';
+    if (window.turnstile && typeof turnstileWidget === 'string' && turnstileWidget !== 'loading') {
+      window.turnstile.reset(turnstileWidget);
+    }
+  };
+
   const hasSubmitted = () => {
     const at = Number(read('localStorage', SUBMITTED_KEY));
     return Boolean(at) && Date.now() - at < SUBMITTED_MS;
@@ -194,6 +280,7 @@ if (apptOverlay) {
     apptOverlay.hidden = false;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => apptOverlay.classList.add('is-open'));
+    loadTurnstile();
     const first = apptOverlay.querySelector('#apptFirst');
     if (first) first.focus();
     // A deliberate click does not burn one of the automatic appearances.
@@ -240,16 +327,26 @@ if (apptOverlay) {
     }
   });
 
-  form.addEventListener('submit', (e) => {
+  const submitBtn = form.querySelector('.appt-submit');
+  const submitLabel = submitBtn.textContent;
+  let sending = false;
+
+  const showError = (html) => {
+    errorBox.hidden = false;
+    errorBox.innerHTML = html;
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (sending) return;
     const data = new FormData(form);
     const field = (k) => String(data.get(k) || '').trim();
 
     const required = [
-      ['apptFirst', field('firstName'), 'first name'],
-      ['apptLast', field('lastName'), 'last name'],
-      ['apptEmail', field('email'), 'email'],
-      ['apptPhone', field('phone'), 'phone number'],
+      ['apptFirst', field('firstName'), T.fields.firstName],
+      ['apptLast', field('lastName'), T.fields.lastName],
+      ['apptEmail', field('email'), T.fields.email],
+      ['apptPhone', field('phone'), T.fields.phone],
     ];
     const missing = required.filter(([, v]) => !v);
     const badEmail = field('email') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(field('email'));
@@ -259,38 +356,55 @@ if (apptOverlay) {
 
     if (missing.length || badEmail) {
       errorBox.hidden = false;
-      errorBox.textContent = missing.length
-        ? 'Please add your ' + missing.map((m) => m[2]).join(', ') + '.'
-        : 'Please check your email address.';
+      errorBox.textContent = missing.length ? T.missing + missing.map((m) => m[2]).join(', ') + '.' : T.badEmail;
       document.getElementById(missing.length ? missing[0][0] : 'apptEmail').focus();
       return;
     }
     errorBox.hidden = true;
 
-    // No form backend on this static site, so hand off to the visitor's mail
-    // client with everything already filled in. Replace this with a real
-    // endpoint when the practice has one.
-    const body = [
-      'Visit type: ' + field('visitType'),
-      'Patient: ' + field('patientType'),
-      'Name: ' + field('firstName') + ' ' + field('lastName'),
-      'Email: ' + field('email'),
-      'Phone: ' + field('phone'),
-      'Date of birth: ' + (field('dob') || '(not given)'),
-    ].join('\n');
-    window.location.href =
-      'mailto:info@houstonsurgicalweightloss.com' +
-      '?subject=' +
-      encodeURIComponent('Appointment Request — ' + field('firstName') + ' ' + field('lastName')) +
-      '&body=' +
-      encodeURIComponent(body);
+    // The Worker (worker/index.js) emails the request to the practice.
+    sending = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = T.sending;
+    let outcome = 'failed';
+    try {
+      const turnstileToken = await waitForToken(8000);
+      const res = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          visitType: field('visitType'),
+          patientType: field('patientType'),
+          firstName: field('firstName'),
+          lastName: field('lastName'),
+          email: field('email'),
+          phone: field('phone'),
+          dob: field('dob'),
+          lang: ES ? 'es' : 'en',
+          turnstileToken,
+        }),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (result.ok) outcome = 'sent';
+      else if (result.error === 'verification_failed') outcome = 'notHuman';
+    } catch (err) {
+      /* network failure — falls through to the error message */
+    }
+    sending = false;
+
+    if (outcome !== 'sent') {
+      resetTurnstile();
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitLabel;
+      showError(T[outcome]);
+      return;
+    }
 
     form.innerHTML =
       '<div class="appt-done">' +
       '<svg aria-hidden="true"><use href="#ic-check"/></svg>' +
-      '<h3>Thank you</h3>' +
-      '<p>Your email app should open with your request ready to send. If it does not, call us on ' +
-      '<a href="tel:+12816536544">281-653-6544</a> and we will book you in.</p>' +
+      '<h3>' + T.doneTitle + '</h3>' +
+      '<p>' + T.doneBody + '</p>' +
       '</div>';
     // Someone who has asked for an appointment should not be asked again.
     write('localStorage', SUBMITTED_KEY, String(Date.now()));

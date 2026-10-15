@@ -5,8 +5,25 @@
   "observability": {
     "enabled": true
   },
+  // Handles /api/* only (the appointment form); every other path is served
+  // straight from the static assets without running the Worker.
+  "main": "worker/index.js",
   // Plain static site: publish the repo root, minus what .assetsignore lists.
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // Not secret, so kept here. The four keys (TURNSTILE_SECRET, MS_TENANT_ID,
+  // MS_CLIENT_ID, MS_CLIENT_SECRET) are Worker secrets set in the dashboard,
+  // never in this repo. See worker/index.js.
+  //   MAIL_FROM  the one sender every alert comes from, so the office can
+  //              filter on it. A Microsoft 365 shared mailbox (no licence).
+  //   MAIL_TO    the one inbox that receives them. TESTING ONLY while it is a
+  //              personal Gmail: switch to the practice's inbox before real
+  //              patients use the form.
+  "vars": {
+    "MAIL_FROM": "website@houstonsurgicalweightloss.com",
+    "MAIL_TO": "sqlabrar@gmail.com"
   }
 }

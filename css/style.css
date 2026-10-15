@@ -2674,8 +2674,13 @@ body:has(.site-header.is-fixed) .lang-switch { top: calc(var(--bar-h, 0px) + 12p
   color: #7f1d17;
 }
 .appt-error[hidden] { display: none; }
+.appt-error a { color: inherit; font-weight: 700; }
+
+/* Turnstile stays zero-height unless it needs the visitor to tick a box. */
+.appt-turnstile:not(:empty) { margin-bottom: 12px; }
 
 .appt-submit { width: 100%; margin-top: 4px; }
+.appt-submit:disabled { opacity: 0.7; cursor: wait; }
 
 .appt-fine {
   margin: 14px 0 0;

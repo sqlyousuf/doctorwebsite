@@ -8,4 +8,6 @@
 wrangler.jsonc
 node_modules
 tools
+worker
+.dev.vars
 *.build.log

@@ -3,3 +3,7 @@
 
 # Watermarked stock comps dropped in for licensing review — never ship these.
 /pic*.png
+
+# Local secrets for `wrangler dev` — never commit.
+.dev.vars
+.wrangler/
