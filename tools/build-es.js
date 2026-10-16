@@ -130,6 +130,8 @@ const copy = [
   ['aria-label="Scroll to content"', 'aria-label="Desplazarse al contenido"', 1],
 
   // ---- why us ----
+  // Same sentence twice: the visible lead and the clinic's JSON-LD description.
+  ['Houston Surgical Weight Loss is a premier bariatric surgery center serving Greater Houston, Spring, and The Woodlands, specializing in laparoscopic gastric sleeve, gastric bypass, and revision weight loss surgery.', 'Houston Surgical Weight Loss es un centro líder de cirugía bariátrica que atiende al área metropolitana de Houston, Spring y The Woodlands, especializado en manga gástrica laparoscópica, bypass gástrico y cirugía de revisión para bajar de peso.', 2],
   ['Bariatric Surgery and<br>Medical Weight Loss', 'Cirugía Bariátrica y<br>Pérdida de Peso Médica', 1],
   ['Board-Certified, Fellowship-Trained Bariatric Surgeon', 'Cirujano bariátrico certificado y con subespecialidad', 1],
   ['Houston Location with In-Person &amp; Virtual Consultations', 'Consultas presenciales y virtuales en Houston', 1],
@@ -161,7 +163,7 @@ const copy = [
   // The Spanish procedure pages exist now, so the cards link to those rather
   // than dropping the link or sending a Spanish reader into English.
   ['>Read more <svg', '>Leer más <svg', 6],
-  ['href="procedures/', 'href="procedures/', 7],
+  ['href="procedures/', 'href="procedures/', 11],
 
   // ---- procedures ----
   ['>Bariatric Surgical Options</h2>', '>Opciones de Cirugía Bariátrica</h2>', 1],
@@ -214,7 +216,49 @@ const copy = [
   ['Board-Certified in General &amp; Bariatric Surgery', 'Certificado en Cirugía General y Bariátrica', 1],
   ['Fellowship-Trained in Minimally Invasive &amp; Bariatric Surgery', 'Subespecialidad en Cirugía Mínimamente Invasiva y Bariátrica', 1],
   ['Member, American Society for Metabolic &amp; Bariatric Surgery', 'Miembro de la American Society for Metabolic and Bariatric Surgery', 1],
-  ['>Request a Consultation</a>', '>Solicite una Consulta</a>', 1],
+  // ---- procedure comparison ----
+  ['Compare Weight Loss Procedures', 'Compare los Procedimientos para Bajar de Peso', 1],
+  ['How gastric sleeve, gastric bypass, gastric balloon and revision surgery compare at a glance. Figures are typical ranges; your results depend on your health, your starting weight and your follow-up care.', 'Cómo se comparan la manga gástrica, el bypass gástrico, el balón gástrico y la cirugía de revisión. Las cifras son rangos típicos; sus resultados dependen de su salud, su peso inicial y su seguimiento.', 1],
+  ['>Bariatric procedure comparison at Houston Surgical Weight Loss<', '>Comparación de procedimientos bariátricos en Houston Surgical Weight Loss<', 1],
+  ['>Gastric Sleeve</a></th>', '>Manga Gástrica</a></th>', 1],
+  ['>Gastric Bypass</a></th>', '>Bypass Gástrico</a></th>', 1],
+  ['>Gastric Balloon</a></th>', '>Balón Gástrico</a></th>', 1],
+  ['>Revision Surgery</a></th>', '>Cirugía de Revisión</a></th>', 1],
+  ['<th scope="row">Approach</th>', '<th scope="row">Técnica</th>', 1],
+  ['<td>Laparoscopic surgery</td>', '<td>Cirugía laparoscópica</td>', 2],
+  ['<td>Laparoscopic surgery (Roux-en-Y)</td>', '<td>Cirugía laparoscópica (Roux-en-Y)</td>', 1],
+  ['<td>Non-surgical, placed endoscopically with no incisions</td>', '<td>No quirúrgico, colocado por endoscopia sin incisiones</td>', 1],
+  ['<th scope="row">How it works</th>', '<th scope="row">Cómo funciona</th>', 1],
+  ['<td>Removes 70–80% of the stomach, limiting portions and reducing hunger hormones</td>', '<td>Extirpa del 70 al 80% del estómago, lo que limita las porciones y reduce las hormonas del hambre</td>', 1],
+  ['<td>Creates a small stomach pouch and reroutes the intestine, reducing both intake and calorie absorption</td>', '<td>Crea una pequeña bolsa gástrica y desvía el intestino, lo que reduce tanto la ingesta como la absorción de calorías</td>', 1],
+  ['<td>A soft balloon fills part of the stomach so you feel full sooner</td>', '<td>Un balón suave ocupa parte del estómago para que se sienta lleno más pronto</td>', 1],
+  ['<td>Adjusts or converts an earlier weight loss surgery, such as sleeve to bypass</td>', '<td>Ajusta o convierte una cirugía previa para bajar de peso, por ejemplo de manga a bypass</td>', 1],
+  ['<th scope="row">Typical weight loss</th>', '<th scope="row">Pérdida de peso típica</th>', 1],
+  ['<td>Up to 70% of excess body weight in the first year</td>', '<td>Hasta el 70% del exceso de peso corporal en el primer año</td>', 1],
+  ['<td>60–80% of excess body weight within 12–18 months</td>', '<td>Del 60 al 80% del exceso de peso corporal en 12 a 18 meses</td>', 1],
+  ['<td>30–40% of excess body weight</td>', '<td>Del 30 al 40% del exceso de peso corporal</td>', 1],
+  ['<td>Depends on the original procedure and the revision performed</td>', '<td>Depende del procedimiento original y de la revisión realizada</td>', 1],
+  ['<th scope="row">Hospital stay</th>', '<th scope="row">Estancia hospitalaria</th>', 1],
+  ['<td>Most patients go home the same day</td>', '<td>La mayoría de los pacientes regresa a casa el mismo día</td>', 1],
+  ['<td>1–2 days</td>', '<td>1 a 2 días</td>', 1],
+  ['<td>Outpatient, home the same day</td>', '<td>Ambulatorio, regresa a casa el mismo día</td>', 1],
+  ['<td>Depends on the revision performed</td>', '<td>Depende de la revisión realizada</td>', 1],
+  ['<th scope="row">Back to normal routines</th>', '<th scope="row">Regreso a la rutina normal</th>', 1],
+  ['<td>2–4 weeks</td>', '<td>2 a 4 semanas</td>', 2],
+  ['<td>2–3 days</td>', '<td>2 a 3 días</td>', 1],
+  ['<td>2–3 weeks</td>', '<td>2 a 3 semanas</td>', 1],
+  ['<th scope="row">Permanent or temporary</th>', '<th scope="row">Permanente o temporal</th>', 1],
+  ['<td>Permanent</td>', '<td>Permanente</td>', 1],
+  ['<td>Long-term</td>', '<td>A largo plazo</td>', 2],
+  ['<td>Temporary, removed after 6–12 months</td>', '<td>Temporal, se retira después de 6 a 12 meses</td>', 1],
+  ['<th scope="row">Often a fit for</th>', '<th scope="row">Suele ser adecuado para</th>', 1],
+  ['<td>BMI 35+, or 30+ with related health conditions</td>', '<td>IMC de 35 o más, o de 30 o más con problemas de salud relacionados</td>', 1],
+  ['<td>BMI 40+, or 35+ with related health conditions; often recommended for reflux</td>', '<td>IMC de 40 o más, o de 35 o más con problemas de salud relacionados; suele recomendarse en casos de reflujo</td>', 1],
+  ['<td>BMI 30–40, or patients not ready for surgery</td>', '<td>IMC de 30 a 40, o pacientes que aún no están listos para la cirugía</td>', 1],
+  ['<td>Weight regain, too little weight loss, reflux or complications after a prior surgery</td>', '<td>Recuperación de peso, pérdida insuficiente, reflujo o complicaciones tras una cirugía previa</td>', 1],
+  ['Dr. Wadiwala will recommend the procedure that best fits your health history and goals during your consultation.', 'Durante su consulta, el Dr. Wadiwala le recomendará el procedimiento que mejor se adapte a su historial de salud y a sus metas.', 1],
+
+  ['>Request a Consultation</a>', '>Solicite una Consulta</a>', 2],
 
   // ---- process ----
   ['>Your Path, In Four Steps</h2>', '>Su Camino, En Cuatro Pasos</h2>', 1],
