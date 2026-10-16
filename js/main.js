@@ -208,7 +208,7 @@ if (apptOverlay) {
      the dialog first opens, so ordinary page views never fetch it, and it
      stays invisible unless Cloudflare wants the visitor to tick a box. The
      site key is public; the secret half lives on the Worker (worker/index.js). */
-  const TURNSTILE_SITE_KEY = '';
+  const TURNSTILE_SITE_KEY = '0x4AAAAAAFY1DAWpEvkIdQBp';
   let turnstileWidget = null;
   let turnstileToken = '';
   let tokenWaiters = [];
