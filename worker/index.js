@@ -115,6 +115,11 @@ async function verifyTurnstile(env, token, ip) {
     return false;
   }
   const result = await res.json();
+  // Error codes say which side is wrong (e.g. invalid-input-secret vs a bad
+  // or expired token, or a hostname mismatch) and carry no patient data.
+  if (result.success !== true) {
+    console.error('appointment: turnstile rejected', (result['error-codes'] || []).join(','), result.hostname || '');
+  }
   return result.success === true;
 }
 
