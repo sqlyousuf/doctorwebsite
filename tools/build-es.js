@@ -216,6 +216,10 @@ const copy = [
   ['Board-Certified in General &amp; Bariatric Surgery', 'Certificado en Cirugía General y Bariátrica', 1],
   ['Fellowship-Trained in Minimally Invasive &amp; Bariatric Surgery', 'Subespecialidad en Cirugía Mínimamente Invasiva y Bariátrica', 1],
   ['Member, American Society for Metabolic &amp; Bariatric Surgery', 'Miembro de la American Society for Metabolic and Bariatric Surgery', 1],
+  // ---- footer social ----
+  ['aria-label="Instagram — opens in a new tab"', 'aria-label="Instagram — se abre en una pestaña nueva"', 1],
+  ['aria-label="TikTok — opens in a new tab"', 'aria-label="TikTok — se abre en una pestaña nueva"', 1],
+
   // ---- procedure comparison ----
   ['Compare Weight Loss Procedures', 'Compare los Procedimientos para Bajar de Peso', 1],
   ['How gastric sleeve, gastric bypass, gastric balloon and revision surgery compare at a glance. Figures are typical ranges; your results depend on your health, your starting weight and your follow-up care.', 'Cómo se comparan la manga gástrica, el bypass gástrico, el balón gástrico y la cirugía de revisión. Las cifras son rangos típicos; sus resultados dependen de su salud, su peso inicial y su seguimiento.', 1],
