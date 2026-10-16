@@ -21,7 +21,6 @@ const PHONE_HREF = 'tel:+12816536544';
 const FAX = '281-807-9702';
 
 const ul = (items) => `<ul class="prose-list">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
-const photoSlot = (label) => `<div class="photo-slot"><p><strong>Falta una fotografía:</strong> ${label}</p></div>`;
 
 const translations = {
   'our-office': {
@@ -59,10 +58,6 @@ const translations = {
           src="https://www.google.com/maps?q=5220+FM+2920+Rd+Suite+120+Spring+TX+77388&amp;output=embed"
           width="600" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
-      <h2 class="display bar">Nuestro Edificio</h2>
-      ${photoSlot('el exterior del edificio, para que los pacientes lo reconozcan al llegar')}
-      ${photoSlot('la recepción y una sala de consulta')}
 
       <h2 class="display bar">Por Qué los Pacientes Eligen Houston Surgical Weight Loss</h2>
       ${ul([

@@ -21,16 +21,6 @@ const FAX = '281-807-9702';
 /** Shorthand so the copy below stays readable. */
 const ul = (items) => `<ul class="prose-list">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
 
-/*
- * A slot for a photograph the practice still owes us. Their current site has
- * no exterior or interior shots of the building anywhere — every page was
- * checked — so there is nothing to carry over and nothing honest to put in
- * its place. A stock photograph of somebody else's clinic under a heading
- * reading "our building" would be a misrepresentation, so the slot stays
- * visible until a real photograph arrives.
- */
-const photoSlot = (label) => `<div class="photo-slot"><p><strong>Photograph needed:</strong> ${label}</p></div>`;
-
 const pages = [
   {
     slug: 'our-office',
@@ -70,10 +60,6 @@ const pages = [
           src="https://www.google.com/maps?q=5220+FM+2920+Rd+Suite+120+Spring+TX+77388&amp;output=embed"
           width="600" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
-      <h2 class="display bar">Our Building</h2>
-      ${photoSlot('the outside of the building, so patients can recognise it as they arrive')}
-      ${photoSlot('the reception area and a consultation room')}
 
       <h2 class="display bar">Why Patients Choose Houston Surgical Weight Loss</h2>
       ${ul([
